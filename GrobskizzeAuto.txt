@@ -1,0 +1,25 @@
+Grobskizze Benutzerhandbuch 
+19.03.2026
+
+Was soll unser Produkt können? 
+minimalanforderung: 
+closed casing 
+Riemenbreite 80mm Keilrippenriemen 
+Geschwindigkeitsregelung (ggf. Beschleungiungsregelung) 
+v=1,8-7,6 cm/s 
+Volumina: 500 x 100 x 70 
+Fehlerbehandlung (Störungsmitteilungen)  
+Visuelle Anzeige der Geschwindigkeit und Fehlermeldung 
+Schutzkontakt 
+Per SchuKoStecker an Steckdose (inkl. Netzteil) 
+transpportierbar einhändig 
+Einfache Wartung des Riemens 
+
+
+Was sind Mögliche weitere Bausteine
+Hilfsmittelfreie Demontierbarkeit
+Objekterkennung 
+Autom. Richtungswahl 
+
+
+
