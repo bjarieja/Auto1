@@ -12,14 +12,12 @@ Fehlerbehandlung (Störungsmitteilungen)
 Visuelle Anzeige der Geschwindigkeit und Fehlermeldung 
 Schutzkontakt 
 Per SchuKoStecker an Steckdose (inkl. Netzteil) 
-transpportierbar einhändig 
-Einfache Wartung des Riemens 
 
 
 Was sind Mögliche weitere Bausteine
 Hilfsmittelfreie Demontierbarkeit
 Objekterkennung 
 Autom. Richtungswahl 
-
-
+Einfache Wartung des Riemens
+transportierbar einhändig  
 
