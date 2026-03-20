@@ -39,13 +39,11 @@ Nachfolgende sind übliche Fehlerquellen bei Mikrocontroller Projekten hKHKDHKHD
 	\item Unzureichende Kühlung von Motortreiber oder Spannungsregler
 	\item Kommunikationsprobleme bei serieller Schnittstelle (Debugging erschwert)
 \end{itemize}
-Diese Fehlerquellen sollten vorab abgestellt und überprüft worden ein.  
+Diese Fehlerquellen sollten vorab abgestellt und überprüft worden ein. Um eine effektive Störungsbehebung durchführen zu können ist es hilfreich sich 
 
-
-\section{Einleitung}
-Dieser Leitfaden beschreibt systematisch die Fehlersuche in einem Microcontroller-basierten Aufbau unter Berücksichtigung der DIN-Richtlinien. Die DIN 31051 definiert die Instandhaltung und systematische Fehlersuche, während DIN 50126 und DIN 50128 Vorgaben für Qualitätssicherung von Systemen und Software bereitstellen. Ziel ist es, Fehler effizient, reproduzierbar und dokumentiert zu identifizieren.
 
 \section{DIN-Richtlinien für Troubleshooting}
+Um eine effektive Störungsbehebung durchführen zu können ist es hilfreich sich an bewährten Leitfäden und Standards zu orientieren. Hierfür gibt das Deutsche Institut für Normung e.V. in einigen DIN Normen Hilfestellung. Einige der DIN Normen sind im nachfolgenden gelistet. 
 \begin{enumerate}[label=\arabic*.]
 	\item \textbf{Fehlererkennung (DIN 31051, Abschnitt 5)}: Abweichungen vom Soll-Zustand erkennen und dokumentieren.
 	\item \textbf{Fehleranalyse (DIN 31051, Abschnitt 6)}: Ursache des Fehlers systematisch ermitteln, z.\,B. durch logische Fehlerbäume oder Funktionsprüfung.
@@ -150,13 +148,5 @@ Dieser Leitfaden beschreibt systematisch die Fehlersuche in einem Microcontrolle
 	\item LCD I\textsuperscript{2}C-Adresse falsch oder Bus-Konflikt
 \end{itemize}
 
-\section{Profi-Tipps DIN-konform}
-\begin{itemize}[label=-]
-	\item Messungen systematisch dokumentieren
-	\item Modular testen, nicht alle Komponenten gleichzeitig
-	\item Debug-Modus und Breakpoints für Software verwenden
-	\item Minimalaufbau: MCU + Sensor + Motor + Display
-	\item Sicherheitsmaßnahmen einhalten: Spannungen trennen, Schutzkleidung
-\end{itemize}
 
 
