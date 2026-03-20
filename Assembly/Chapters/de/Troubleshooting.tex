@@ -12,137 +12,65 @@
 %%%%%%%%%%%%
 
 \chapter{Troubleshooting}
-Zur Sicherstellung eines zuverlässigen Betriebs des Förderband-Demonstrators ist ein systematisches Vorgehen bei der Störungsbehebung erforderlich. Grundlage hierfür bildet die strukturierte Analyse des Systems unter Berücksichtigung der in der DIN 19226 definierten Größen wie Ein- und Ausgangsgrößen, Stellgrößen sowie möglicher Störgrößen.
- hKHKDHKHDKHDKHDKHKHDEB
+Dieses Kapitel  dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems effizient wiederherzustellen.
+
 \begin{itemize}
-	\item Unzureichende Spannungsversorgung des Motors oder des Mikrocontrollers
-	\item Fehlende gemeinsame Masse (GND) zwischen Arduino und Motortreiber
-	\item Falsche Verdrahtung der Motoranschlüsse oder des Treibers
-	\item Verwendung eines ungeeigneten oder unterdimensionierten Motortreibers
-	\item Fehlende oder falsche Ansteuerung des Enable-Pins am Motortreiber
-	\item Verwendung falscher Pin-Nummern im Programmcode
-	\item Überlastung des Arduino-Pins durch direkten Motoranschluss
-	\item Fehlende Freilaufdiode (Schutzdiode) bei induktiven Lasten
-	\item Störungen durch elektromagnetische Einflüsse (EMI) des Motors
-	\item Spannungseinbrüche durch hohe Anlaufströme des Motors
-	\item Überhitzung des Motortreibers durch zu hohe Stromaufnahme
-	\item Fehlerhafte oder instabile Stromversorgung (z. B. schwaches Netzteil oder Batterie)
-	\item Blockierende Programmstrukturen (z. B. Verwendung von \texttt{delay()})
-	\item Fehlende oder fehlerhafte Initialisierung der Pins im Setup
-	\item Logikfehler im Code (z. B. falsche Bedingungen oder Schleifen)
-	\item Fehlende Entkopplung (Kondensatoren) zur Stabilisierung der Versorgung
-	\item Mechanische Probleme (z. B. Blockaden oder zu hohe Reibung im System)
-	\item Unzureichende Kühlung von Motortreiber oder Spannungsregler
-	\item Kommunikationsprobleme bei serieller Schnittstelle (Debugging erschwert)
-\end{itemize}
-Diese Fehlerquellen sollten vorab abgestellt und überprüft worden ein. Um eine effektive Störungsbehebung durchführen zu können ist es hilfreich sich 
-
-
-\section{DIN-Richtlinien für Troubleshooting}
-Um eine effektive Störungsbehebung durchführen zu können ist es hilfreich sich an bewährten Leitfäden und Standards zu orientieren. Hierfür gibt das Deutsche Institut für Normung e.V. in einigen DIN Normen Hilfestellung. Einige der DIN Normen sind im nachfolgenden gelistet. 
-\begin{enumerate}[label=\arabic*.]
-	\item \textbf{Fehlererkennung (DIN 31051, Abschnitt 5)}: Abweichungen vom Soll-Zustand erkennen und dokumentieren.
-	\item \textbf{Fehleranalyse (DIN 31051, Abschnitt 6)}: Ursache des Fehlers systematisch ermitteln, z.\,B. durch logische Fehlerbäume oder Funktionsprüfung.
-	\item \textbf{Fehlerbehebung (DIN 31051, Abschnitt 7)}: Geeignete Maßnahmen ableiten, reparieren oder Komponenten austauschen.
-	\item \textbf{Funktionsprüfung nach Behebung (DIN 31051, Abschnitt 8)}: Überprüfen, dass die Funktion wieder vollständig hergestellt ist.
-	\item \textbf{Dokumentation (DIN 50126)}: Alle Messungen, Ergebnisse und Änderungen protokollieren, um zukünftige Analysen zu erleichtern.
-	\item \textbf{Sicherheitsmaßnahmen (DIN 31051 und 50128)}: Vor Arbeitsbeginn Spannungen trennen, Schutzkleidung nutzen, normgerechte Messmethoden anwenden.
-\end{enumerate}
-
-\section{Vorbereitung}
-\subsection{Unterlagen und Dokumentation}
-\begin{itemize}[label=-]
-	\item Schaltplan und Komponentenliste
-	\item Datenblätter von MCU, Motor, Treiber, Sensoren, Display
-	\item Software- und Programmiercode
-	\item DIN-relevante Checklisten für Fehlersuche
-\end{itemize}
-
-\subsection{Werkzeuge}
-\begin{itemize}[label=-]
-	\item Multimeter, Labornetzteil
-	\item Oszilloskop
-	\item Logik-Analyzer
-	\item Debugger/Programmiergerät
-	\item Werkzeug für mechanische Prüfungen
+	
+	\item \textbf{Fehler: Förderband startet nicht} \\
+	Mögliche Ursachen: Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor, falsche Pin-Konfiguration \\
+	Behebung: Spannungsversorgung gemäß \textit{DIN EN 60204-1} prüfen, Verkabelung nach Schaltplan kontrollieren, Motor testen/ersetzen, Pin-Belegung im Code verifizieren
+	
+	\item \textbf{Fehler: Förderband läuft unregelmäßig} \\
+	Mögliche Ursachen: Instabile Spannungsversorgung, PWM-Signal fehlerhaft, mechanische Blockade \\
+	Behebung: Spannungsstabilität gemäß \textit{VDE 0100} sicherstellen, PWM-Signal im Code prüfen, mechanische Teile reinigen und schmieren
+	
+	\item \textbf{Fehler: Sensor liefert keine Daten} \\
+	Mögliche Ursachen: Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI) \\
+	Behebung: Sensorinitialisierung prüfen, Verbindungen gemäß \textit{ISO/IEC 61131-2} kontrollieren, Sensor ggf. austauschen
+	
+	\item \textbf{Fehler: Falsche Sensordaten} \\
+	Mögliche Ursachen: Kalibrierungsfehler, Störeinflüsse, Softwarefehler \\
+	Behebung: Sensor gemäß Herstellerangaben kalibrieren, EMV-Störungen gemäß \textit{DIN EN 61000} minimieren, Code überprüfen
+	
+	\item \textbf{Fehler: Arduino reagiert nicht} \\
+	Mögliche Ursachen: Softwareabsturz, fehlerhafte Stromversorgung, defektes Board \\
+	Behebung: Reset durchführen, Spannungsversorgung prüfen (3.3V stabil), Board ersetzen falls notwendig
+	
+	\item \textbf{Fehler: Bluetooth-Verbindung funktioniert nicht} \\
+	Mögliche Ursachen: Falsche Konfiguration, Reichweitenproblem, Störungen \\
+	Behebung: BLE-Konfiguration prüfen, Abstand reduzieren, Störquellen gemäß \textit{ETSI EN 300 328} minimieren
+	
+	\item \textbf{Fehler: Motor überhitzt} \\
+	Mögliche Ursachen: Überlast, Dauerbetrieb, unzureichende Kühlung \\
+	Behebung: Last reduzieren, Pausen einbauen, Kühlung gemäß \textit{DIN EN 60034} verbessern
+	
+	\item \textbf{Fehler: Not-Aus funktioniert nicht} \\
+	Mögliche Ursachen: Verdrahtungsfehler, defekter Schalter, Software ignoriert Signal \\
+	Behebung: Verdrahtung gemäß \textit{DIN EN ISO 13850} prüfen, Schalter testen/ersetzen, Softwarelogik überprüfen
+	
+	\item \textbf{Fehler: Förderband stoppt unerwartet} \\
+	Mögliche Ursachen: Sicherheitsabschaltung, Spannungsabfall, Softwarefehler \\
+	Behebung: Sicherheitskreise prüfen, Spannungsversorgung stabilisieren, Debugging durchführen
+	
+	\item \textbf{Fehler: Kommunikationsprobleme zwischen Modulen} \\
+	Mögliche Ursachen: Bus-Konflikte, falsche Adressen, Leitungsstörungen \\
+	Behebung: Adressen prüfen, Pull-Up-Widerstände korrekt dimensionieren, Leitungen gemäß \textit{ISO 11898} (bei Bus-Systemen) optimieren
+	
 \end{itemize}
 
-\section{Sichtprüfung (DIN 31051)}
-\begin{itemize}[label=-]
-	\item Prüfen der Polung von Bauteilen (Diode, Kondensator, IC)
-	\item Lötstellen auf Kurzschluss oder kalte Lötstellen prüfen
-	\item Kabelverbindungen auf Stabilität und korrekten Sitz prüfen
-	\item Mechanische Bewegungsfreiheit des Motors überprüfen
-	\item Display auf physische Schäden kontrollieren
+\section*{Normative Referenzen}
+\begin{itemize}
+	\item DIN EN 60204-1: Sicherheit von Maschinen – Elektrische Ausrüstung
+	\item DIN EN ISO 13850: Sicherheit von Maschinen – Not-Halt-Funktion
+	\item DIN EN 61000: Elektromagnetische Verträglichkeit (EMV)
+	\item DIN EN 60034: Elektrische Maschinen
+	\item VDE 0100: Errichten von Niederspannungsanlagen
+	\item ISO/IEC 61131-2: Speicherprogrammierbare Steuerungen
 \end{itemize}
 
-\section{Spannungsversorgung (DIN 31051)}
-\begin{enumerate}[label=\arabic*.]
-	\item Netzteil prüfen (Sollspannung, Strombegrenzung)
-	\item MCU-Versorgung messen (Vcc/GND)
-	\item Motorversorgung prüfen, evtl. separat
-	\item Masseverbindungen überprüfen, Potentiale angleichen
-\end{enumerate}
 
-\section{Microcontroller und Software (DIN 50128)}
-\begin{itemize}[label=-]
-	\item Prüfen, ob MCU korrekt programmiert ist
-	\item Lebenszeichen über LEDs oder UART ausgeben
-	\item Watchdog- und Reset-Funktionen prüfen
-	\item Pin-Konfiguration (Ein-/Ausgang) prüfen
-	\item Debug-Modus aktivieren, Signalverläufe dokumentieren
-\end{itemize}
 
-\section{DC-Motor und Regelung (DIN 31051 / 50126)}
-\subsection{Motorprüfung}
-\begin{itemize}[label=-]
-	\item Motor mechanisch testen
-	\item PWM-Signal am Motor-Treiber prüfen
-	\item Treiber auf Überhitzung und Kurzschluss prüfen
-\end{itemize}
 
-\subsection{Regelung prüfen}
-\begin{itemize}[label=-]
-	\item Sensorwerte kontrollieren
-	\item PWM-Ausgang prüfen
-	\item Oszilloskop zur Visualisierung nutzen
-	\item PID-Regelung simulieren, ggf. ohne Motor testen
-\end{itemize}
-
-\section{Sensorik (DIN 50126)}
-\begin{itemize}[label=-]
-	\item Sensoren auf korrekte Werte prüfen
-	\item Analoge Signale am ADC-Eingang messen
-	\item Pull-Up / Pull-Down Widerstände kontrollieren
-	\item Signalfilter überprüfen
-\end{itemize}
-
-\section{LCD / Display}
-\begin{itemize}[label=-]
-	\item Spannungsversorgung prüfen
-	\item Kontrast und Helligkeit einstellen
-	\item Datenleitungen messen (I\textsuperscript{2}C oder parallel)
-	\item Minimal-Beispielcode ausführen
-\end{itemize}
-
-\section{Schrittweises Troubleshooting nach DIN 31051}
-\begin{enumerate}[label=\arabic*.]
-	\item Module isoliert testen (Motor, Sensoren, Display)
-	\item MCU testen: Blink-LED, UART-Ausgaben
-	\item Signalfluss prüfen: Sensor $\rightarrow$ MCU $\rightarrow$ Motor $\rightarrow$ Feedback
-	\item Regelung simulieren ohne Motor
-	\item Schrittweise Integration und Funktionsprüfung
-	\item Alle Ergebnisse dokumentieren
-\end{enumerate}
-
-\section{Typische Fehlerquellen}
-\begin{itemize}[label=-]
-	\item Falsche Pinbelegung oder fehlende Pull-Up/Pull-Down-Widerstände
-	\item PWM-Signal zu niedrig oder Treiber fehlerhaft dimensioniert
-	\item Massepotenzial nicht einheitlich
-	\item Motorüberlastung → MCU-Reset
-	\item LCD I\textsuperscript{2}C-Adresse falsch oder Bus-Konflikt
-\end{itemize}
 
 
 
