@@ -12,10 +12,151 @@
 %%%%%%%%%%%%
 
 \chapter{Troubleshooting}
+Zur Sicherstellung eines zuverlässigen Betriebs des Förderband-Demonstrators ist ein systematisches Vorgehen bei der Störungsbehebung erforderlich. Grundlage hierfür bildet die strukturierte Analyse des Systems unter Berücksichtigung der in der DIN 19226 definierten Größen wie Ein- und Ausgangsgrößen, Stellgrößen sowie möglicher Störgrößen.
+Im ersten Schritt ist grundsätzlich die Energieversorgung des Systems zu überprüfen. Eine fehlerhafte oder unzureichende Spannungsversorgung stellt eine der häufigsten Ursachen für Fehlfunktionen dar. Dabei sind sowohl der Mikrocontroller als auch der Motortreiber getrennt zu betrachten. Spannungsabfälle, lose Verbindungen oder eine unzureichende Stromlieferfähigkeit der Quelle können dazu führen, dass das System nicht oder nur eingeschränkt arbeitet. Anschließend ist die Signalübertragung zwischen den einzelnen Komponenten zu kontrollieren. Hierzu gehört insbesondere die Überprüfung der Verdrahtung zwischen Mikrocontroller und Motortreiber. Fehlerhafte oder vertauschte Leitungen können dazu führen, dass Stellgrößen nicht korrekt übertragen werden. In diesem Zusammenhang ist ein Abgleich zwischen Schaltplan und realem Aufbau durchzuführen. Im nächsten Schritt erfolgt die Überprüfung der Steuerungsfunktion. Dabei wird untersucht, ob das System auf definierte Eingangssignale wie vorgesehen reagiert. Dies kann durch einfache Testprogramme erfolgen, bei denen gezielt Signale ausgegeben werden. Ziel ist es, sicherzustellen, dass die Steuerung im Sinne eines offenen Wirkungsablaufs korrekt arbeitet. Die grundlegenden Prinzipien solcher Steuerungen orientieren sich an den Konzepten, wie sie im Umfeld der Automatisierungstechnik gemäß DIN EN 61131 beschrieben sind.
+Sofern eine Regelung implementiert ist, ist zusätzlich das Verhalten des geschlossenen Regelkreises zu analysieren. Abweichungen zwischen Führungsgröße und Regelgröße können auf fehlerhafte Parametrierung oder unzureichende Rückführung hinweisen. In diesem Zusammenhang ist insbesondere zu prüfen, ob Sensorsignale korrekt erfasst und verarbeitet werden. Auch externe Störgrößen, wie mechanische Belastungen oder Reibung im System, sind zu berücksichtigen. Ein weiterer wichtiger Aspekt der Störungsbehebung ist die Analyse von Grenz- und Fehlersituationen. Hierbei wird das Verhalten des Systems unter extremen Bedingungen untersucht, beispielsweise bei maximaler Belastung oder bei plötzlichen Änderungen der Eingangsgrößen. Ziel ist es, potenzielle Schwachstellen zu identifizieren und geeignete Gegenmaßnahmen abzuleiten.
+Die Durchführung der Störungsbehebung sollte stets nachvollziehbar dokumentiert werden. Dies umfasst die Beschreibung der Ausgangssituation, die durchgeführten Maßnahmen sowie die erzielten Ergebnisse. Eine solche strukturierte Vorgehensweise entspricht den Grundsätzen des Qualitätsmanagements gemäß DIN EN ISO 9001 und ermöglicht eine kontinuierliche Verbesserung des Systems.
+Zusammenfassend erfolgt die Störungsbehebung in einer klaren Reihenfolge: Zunächst wird die Energieversorgung geprüft, anschließend die Signalverbindungen kontrolliert und danach die Steuerungs- und Regelungsfunktionen analysiert. Durch dieses schrittweise Vorgehen können Fehler effizient lokalisiert und behoben werden, wodurch ein stabiler und sicherer Betrieb des Förderband-Demonstrators gewährleistet wird.
+Nachfolgende sind übliche Fehlerquellen bei Mikrocontroller Projekten hKHKDHKHDKHDKHDKHKHDEB
+\begin{itemize}
+	\item Unzureichende Spannungsversorgung des Motors oder des Mikrocontrollers
+	\item Fehlende gemeinsame Masse (GND) zwischen Arduino und Motortreiber
+	\item Falsche Verdrahtung der Motoranschlüsse oder des Treibers
+	\item Verwendung eines ungeeigneten oder unterdimensionierten Motortreibers
+	\item Fehlende oder falsche Ansteuerung des Enable-Pins am Motortreiber
+	\item Verwendung falscher Pin-Nummern im Programmcode
+	\item Überlastung des Arduino-Pins durch direkten Motoranschluss
+	\item Fehlende Freilaufdiode (Schutzdiode) bei induktiven Lasten
+	\item Störungen durch elektromagnetische Einflüsse (EMI) des Motors
+	\item Spannungseinbrüche durch hohe Anlaufströme des Motors
+	\item Überhitzung des Motortreibers durch zu hohe Stromaufnahme
+	\item Fehlerhafte oder instabile Stromversorgung (z. B. schwaches Netzteil oder Batterie)
+	\item Blockierende Programmstrukturen (z. B. Verwendung von \texttt{delay()})
+	\item Fehlende oder fehlerhafte Initialisierung der Pins im Setup
+	\item Logikfehler im Code (z. B. falsche Bedingungen oder Schleifen)
+	\item Fehlende Entkopplung (Kondensatoren) zur Stabilisierung der Versorgung
+	\item Mechanische Probleme (z. B. Blockaden oder zu hohe Reibung im System)
+	\item Unzureichende Kühlung von Motortreiber oder Spannungsregler
+	\item Kommunikationsprobleme bei serieller Schnittstelle (Debugging erschwert)
+\end{itemize}
+Diese Fehlerquellen sollten vorab abgestellt und überprüft worden ein.  
 
 
+\section{Einleitung}
+Dieser Leitfaden beschreibt systematisch die Fehlersuche in einem Microcontroller-basierten Aufbau unter Berücksichtigung der DIN-Richtlinien. Die DIN 31051 definiert die Instandhaltung und systematische Fehlersuche, während DIN 50126 und DIN 50128 Vorgaben für Qualitätssicherung von Systemen und Software bereitstellen. Ziel ist es, Fehler effizient, reproduzierbar und dokumentiert zu identifizieren.
 
+\section{DIN-Richtlinien für Troubleshooting}
+\begin{enumerate}[label=\arabic*.]
+	\item \textbf{Fehlererkennung (DIN 31051, Abschnitt 5)}: Abweichungen vom Soll-Zustand erkennen und dokumentieren.
+	\item \textbf{Fehleranalyse (DIN 31051, Abschnitt 6)}: Ursache des Fehlers systematisch ermitteln, z.\,B. durch logische Fehlerbäume oder Funktionsprüfung.
+	\item \textbf{Fehlerbehebung (DIN 31051, Abschnitt 7)}: Geeignete Maßnahmen ableiten, reparieren oder Komponenten austauschen.
+	\item \textbf{Funktionsprüfung nach Behebung (DIN 31051, Abschnitt 8)}: Überprüfen, dass die Funktion wieder vollständig hergestellt ist.
+	\item \textbf{Dokumentation (DIN 50126)}: Alle Messungen, Ergebnisse und Änderungen protokollieren, um zukünftige Analysen zu erleichtern.
+	\item \textbf{Sicherheitsmaßnahmen (DIN 31051 und 50128)}: Vor Arbeitsbeginn Spannungen trennen, Schutzkleidung nutzen, normgerechte Messmethoden anwenden.
+\end{enumerate}
 
+\section{Vorbereitung}
+\subsection{Unterlagen und Dokumentation}
+\begin{itemize}[label=-]
+	\item Schaltplan und Komponentenliste
+	\item Datenblätter von MCU, Motor, Treiber, Sensoren, Display
+	\item Software- und Programmiercode
+	\item DIN-relevante Checklisten für Fehlersuche
+\end{itemize}
 
+\subsection{Werkzeuge}
+\begin{itemize}[label=-]
+	\item Multimeter, Labornetzteil
+	\item Oszilloskop
+	\item Logik-Analyzer
+	\item Debugger/Programmiergerät
+	\item Werkzeug für mechanische Prüfungen
+\end{itemize}
+
+\section{Sichtprüfung (DIN 31051)}
+\begin{itemize}[label=-]
+	\item Prüfen der Polung von Bauteilen (Diode, Kondensator, IC)
+	\item Lötstellen auf Kurzschluss oder kalte Lötstellen prüfen
+	\item Kabelverbindungen auf Stabilität und korrekten Sitz prüfen
+	\item Mechanische Bewegungsfreiheit des Motors überprüfen
+	\item Display auf physische Schäden kontrollieren
+\end{itemize}
+
+\section{Spannungsversorgung (DIN 31051)}
+\begin{enumerate}[label=\arabic*.]
+	\item Netzteil prüfen (Sollspannung, Strombegrenzung)
+	\item MCU-Versorgung messen (Vcc/GND)
+	\item Motorversorgung prüfen, evtl. separat
+	\item Masseverbindungen überprüfen, Potentiale angleichen
+\end{enumerate}
+
+\section{Microcontroller und Software (DIN 50128)}
+\begin{itemize}[label=-]
+	\item Prüfen, ob MCU korrekt programmiert ist
+	\item Lebenszeichen über LEDs oder UART ausgeben
+	\item Watchdog- und Reset-Funktionen prüfen
+	\item Pin-Konfiguration (Ein-/Ausgang) prüfen
+	\item Debug-Modus aktivieren, Signalverläufe dokumentieren
+\end{itemize}
+
+\section{DC-Motor und Regelung (DIN 31051 / 50126)}
+\subsection{Motorprüfung}
+\begin{itemize}[label=-]
+	\item Motor mechanisch testen
+	\item PWM-Signal am Motor-Treiber prüfen
+	\item Treiber auf Überhitzung und Kurzschluss prüfen
+\end{itemize}
+
+\subsection{Regelung prüfen}
+\begin{itemize}[label=-]
+	\item Sensorwerte kontrollieren
+	\item PWM-Ausgang prüfen
+	\item Oszilloskop zur Visualisierung nutzen
+	\item PID-Regelung simulieren, ggf. ohne Motor testen
+\end{itemize}
+
+\section{Sensorik (DIN 50126)}
+\begin{itemize}[label=-]
+	\item Sensoren auf korrekte Werte prüfen
+	\item Analoge Signale am ADC-Eingang messen
+	\item Pull-Up / Pull-Down Widerstände kontrollieren
+	\item Signalfilter überprüfen
+\end{itemize}
+
+\section{LCD / Display}
+\begin{itemize}[label=-]
+	\item Spannungsversorgung prüfen
+	\item Kontrast und Helligkeit einstellen
+	\item Datenleitungen messen (I\textsuperscript{2}C oder parallel)
+	\item Minimal-Beispielcode ausführen
+\end{itemize}
+
+\section{Schrittweises Troubleshooting nach DIN 31051}
+\begin{enumerate}[label=\arabic*.]
+	\item Module isoliert testen (Motor, Sensoren, Display)
+	\item MCU testen: Blink-LED, UART-Ausgaben
+	\item Signalfluss prüfen: Sensor $\rightarrow$ MCU $\rightarrow$ Motor $\rightarrow$ Feedback
+	\item Regelung simulieren ohne Motor
+	\item Schrittweise Integration und Funktionsprüfung
+	\item Alle Ergebnisse dokumentieren
+\end{enumerate}
+
+\section{Typische Fehlerquellen}
+\begin{itemize}[label=-]
+	\item Falsche Pinbelegung oder fehlende Pull-Up/Pull-Down-Widerstände
+	\item PWM-Signal zu niedrig oder Treiber fehlerhaft dimensioniert
+	\item Massepotenzial nicht einheitlich
+	\item Motorüberlastung → MCU-Reset
+	\item LCD I\textsuperscript{2}C-Adresse falsch oder Bus-Konflikt
+\end{itemize}
+
+\section{Profi-Tipps DIN-konform}
+\begin{itemize}[label=-]
+	\item Messungen systematisch dokumentieren
+	\item Modular testen, nicht alle Komponenten gleichzeitig
+	\item Debug-Modus und Breakpoints für Software verwenden
+	\item Minimalaufbau: MCU + Sensor + Motor + Display
+	\item Sicherheitsmaßnahmen einhalten: Spannungen trennen, Schutzkleidung
+\end{itemize}
 
 
