@@ -1,0 +1,12 @@
+Use Case: 
+Das förderband dient zum Transport von Bauteilen. Heirbei kann festgestellt,
+werden ob sie ein Bauteil auf dem Band befindet und ob es am Ende des Bands ankommt. 
+Es kann mittels eines Potentiometers zusätzlich die Fahrteschwindigkeit eingestellt werden. Das Förderband regelt 
+sich dann auf diese ein. Das Förderband eignet sich zum Transport von konservierungsdosen, für Fertigprodukte. 
+Zeitgleich kann eine Störung des Förderbandes anhand einer roten LED vernommen werden. 
+Der Bediener der Anlage muss diese Störung mithilfe einer Fehlerwarnung und des Störungsbehebungsleitfadens beheben, 
+und mittels eines Drucktasters quitieren. Danach läuft das Band wieder an. Hierbei läuft es erst um die länge X zurück
+und fährt dann wieder vor. Ein Beispiel für eine solche Störung ist das Durchbrechen der Lichtschranke, 
+während des Transportes eines Bauteils. Der Bediener sollte in diesem Fall Fehlerwanrung "LS durchbrochen" erhalten, 
+und dann entsprechend dem Troubleshooting guide beheben und quitieren. 
+ 
