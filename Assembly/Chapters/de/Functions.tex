@@ -12,7 +12,7 @@
 %%%%%%%%%%%%
 
 \chapter{Funktionen}
-In diesem Kapitel werden die Grundfunktionen des elektrischen Transportbands und deren Konfiguration erläutert.
+In diesem Kapitel werden die Grundfunktionen des elektrischen Tischförderbands und deren Konfiguration erläutert.
 Weiterhin werden noch zusätzliche Funktionen des Systems und ihre Verwendung dargestellt.
 
 \section{Grundfunktionen}
@@ -20,17 +20,17 @@ Weiterhin werden noch zusätzliche Funktionen des Systems und ihre Verwendung da
 \begin{itemize}
 	
 	\item \textbf{Betrieb mit konstanter Geschwindigkeit} \\ 
-	Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie mithilfe des Drehreglers [TeilNr02] die gewünschte Bandgeschwindigkeit ein.\\
+	Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie mithilfe des Drehreglers [TeilNr02] die gewünschte Bandgeschwindigkeit ein.
 	In dieser Konfiguration versucht das Transportband die Bandgeschwindigkeit unabhängig von der Belastung beizubehalten.\\
-	
 	Es können Bandgeschwindigkeiten zwischen 1,8 und 7,6 cm/s eingestellt werden.
 	
 	\item \textbf{Umkehr der Laufrichtung}\\
-	Das Transportband kann in zwei Laufrichtungen betrieben werden.
-	Stellen Sie vor Umkehr der Laufrichtung sicher, dass das Transportband vollständig stillsteht.
-	\\
-	Stellen Sie dazu den Drehregler [TeilNr02] auf die niedrigste Position oder schalten Sie das System über den Hauptschalter [TeilNr01] aus. Stellen Sie nun den Richtungswahlschalter [TeilNr03] von Position 01 auf Position 02.\\
-	Nun können Sie das System über den Hauptschalter [TeilNr01] wieder einschalten und die gewünschte Bandgeschwindigkeit mithilfe des Drehreglers [TeilNr02] erneut einstellen.
+	Das Transportband kann in zwei Laufrichtungen betrieben werden.\\
+	Stellen Sie vor Umkehr der Laufrichtung sicher, dass das Transportband vollständig stillsteht.\\
+	Dazu sollte sich der Drehregler [TeilNr02] auf der niedrigsten Einstellung [0] befinden oder der Hauptschalter [TeilNr01] auf der Position [O] stehen.
+	Stellen Sie nun den Richtungswahlschalter [TeilNr03] von Position01 auf Position02.
+	Das System kann anschließend über den Hauptschalter [TeilNr01] eingeschaltet werden.
+	Die gewünschte Bandgeschwindigkeit kann erneut mithilfe des Drehreglers [TeilNr02]  eingestellt werden.
 	
 \end{itemize}
 
@@ -39,9 +39,15 @@ Weiterhin werden noch zusätzliche Funktionen des Systems und ihre Verwendung da
 \begin{itemize}
 	
 	\item \textbf{Betrieb mit Lichtschranken}\\
-	TEXT
+	Für den Betrieb mit Lichtschranken müssen die Lichtschrankenmodule an beiden Enden des Transportbands montiert sein. Stellen Sie sicher, dass diese nicht beschädigt und korrekt auf einander ausgerichtet sind.\\
+	
+	Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an und bewegt sich bis die zweite Lichtschranke unterbochen wird.\\
+	
+	Die Richtung der Bewegung und damit auch die Zuordung der ersten und zweiten Lichtschranke wird durch die Position des Richtungswahlschalters [TeilNr03] bestimmt.\\
+	
+	Timeout: Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes nicht erreichen hält das Transportband selbstständig an.
 	
 	\item \textbf{Betrieb mit programmiertem Bewegungsablauf} \\ 
-	TEXT
+	Sollte für eine Sonderanwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung des Microcontrollers angepasst werden. Weitere Informationen dazu finden sich in der Dokumentation.
 	
 \end{itemize}
