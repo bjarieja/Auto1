@@ -13,7 +13,7 @@
 
 \chapter{Troubleshooting}
 Dieses Kapitel  dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems effizient wiederherzustellen.
-Zuerst werden dei Mechanischen Störungen behandelt, anschließend die elektrischen. 
+Zuerst werden die Mechanischen Störungen behandelt, anschließend die elektrischen. 
 
 \subsection{Mechanische Fehler}
 \begin{itemize}
@@ -27,11 +27,13 @@ Zuerst werden dei Mechanischen Störungen behandelt, anschließend die elektrisc
 	Mögliche Ursache: Die Stützbeine des Förderbandes sind nicht vollständig ausgeklappt und arretiert. \\
 	Behebung: Die Stützbeine erneut einklappen und ausklappen, die Arretierung der Beine überprüfen.  
 	\item \textbf{Das Förderband wackelt}\\ 
-	Mögliche Ursachen: Das Förderband steht auf nicht ebenem Untergrund, das Förderband hat ein beschädigtes Stützbein. 
-	Behebung: Die Stützbeine des Förderbandes auf Beschädigung überprüfen udn ggf. austauschen. Bei keiner Beschädigung das Förderband an einem anderen Ort Positionieren und orientieren 
+	Mögliche Ursachen: Das Förderband steht auf nicht ebenem Untergrund, das Förderband hat ein beschädigtes Stützbein. \\ 
+	Behebung: Die Stützbeine des Förderbandes auf Beschädigung überprüfen und ggf. austauschen. Bei keiner Beschädigung das Förderband an einem anderen Ort positionieren und orientieren. 
+	\item \textbf{Der Riemen des Förderbandes bewegt sich nicht}\\ 
 		
 \end{itemize}
 \subsection{Elektrische Fehler}
+Hier werden alle Fehler die direkten Zusammenhang zur Strom- und Spannungsversorgung haben. Zusätzlich wird hier Hilfestellung zu allen Fehlermeldungen auf dem Bediener
 \begin{itemize}
 	
 	\item \textbf{Fehler: Förderband startet nicht} \\
@@ -40,27 +42,19 @@ Zuerst werden dei Mechanischen Störungen behandelt, anschließend die elektrisc
 	
 	\item \textbf{Fehler: Förderband läuft unregelmäßig} \\
 	Mögliche Ursachen: Instabile Spannungsversorgung, PWM-Signal fehlerhaft, mechanische Blockade \\
-	Behebung: Spannungsstabilität gemäß \textit{VDE 0100} sicherstellen, PWM-Signal im Code prüfen, mechanische Teile reinigen und schmieren
+	Behebung: Spannungsstabilität sicherstellen, mechanische Teile reinigen und schmieren
 	
-	\item \textbf{Fehler: Sensor liefert keine Daten} \\
+	\item \textbf{Fehler: "Sensor liefert keine Daten"} \\
 	Mögliche Ursachen: Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI) \\
-	Behebung: Sensorinitialisierung prüfen, Verbindungen gemäß \textit{ISO/IEC 61131-2} kontrollieren, Sensor ggf. austauschen
+	Behebung: Das elektrische Tischförderband an und abschalten. Das elektrische Tischförderband zurücksetzen. Den Sensor austauschen lassen. 
 	
-	\item \textbf{Fehler: Falsche Sensordaten} \\
-	Mögliche Ursachen: Kalibrierungsfehler, Störeinflüsse, Softwarefehler \\
-	Behebung: Sensor gemäß Herstellerangaben kalibrieren, EMV-Störungen gemäß \textit{DIN EN 61000} minimieren, Code überprüfen
-	
-	\item \textbf{Fehler: Arduino reagiert nicht} \\
+	\item \textbf{ Bedieneroberfläche reagiert nicht} \\
 	Mögliche Ursachen: Softwareabsturz, fehlerhafte Stromversorgung, defektes Board \\
-	Behebung: Reset durchführen, Spannungsversorgung prüfen (3.3V stabil), Board ersetzen falls notwendig
-	
-	\item \textbf{Fehler: Bluetooth-Verbindung funktioniert nicht} \\
-	Mögliche Ursachen: Falsche Konfiguration, Reichweitenproblem, Störungen \\
-	Behebung: BLE-Konfiguration prüfen, Abstand reduzieren, Störquellen gemäß \textit{ETSI EN 300 328} minimieren
-	
+	Behebung: Reset durchführen, Spannungsversorgung prüfen
+		
 	\item \textbf{Fehler: Motor überhitzt} \\
 	Mögliche Ursachen: Überlast, Dauerbetrieb, unzureichende Kühlung \\
-	Behebung: Last reduzieren, Pausen einbauen, Kühlung gemäß \textit{DIN EN 60034} verbessern
+	Behebung: Dauerlaufzeit reduzieren, Pausen einbauen, Umgebungstemperatur senken. 
 	
 	\item \textbf{Fehler: Not-Aus funktioniert nicht} \\
 	Mögliche Ursachen: Verdrahtungsfehler, defekter Schalter, Software ignoriert Signal \\
@@ -72,7 +66,7 @@ Zuerst werden dei Mechanischen Störungen behandelt, anschließend die elektrisc
 	
 	\item \textbf{Fehler: Kommunikationsprobleme zwischen Modulen} \\
 	Mögliche Ursachen: Bus-Konflikte, falsche Adressen, Leitungsstörungen \\
-	Behebung: Adressen prüfen, Pull-Up-Widerstände korrekt dimensionieren, Leitungen gemäß \textit{ISO 11898} (bei Bus-Systemen) optimieren
+	Behebung: Den Hersteller kontaktieren. 
 	
 \end{itemize}
 
