@@ -38,32 +38,22 @@ Hier werden alle Fehler die direkten Zusammenhang zur Strom- und Spannungsversor
 	
 	\item \textbf{Fehler: Förderband startet nicht} \\
 	Mögliche Ursachen: Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor, falsche Pin-Konfiguration \\
-	Behebung: Spannungsversorgung gemäß \textit{DIN EN 60204-1} prüfen, Verkabelung nach Schaltplan kontrollieren, Motor testen/ersetzen, Pin-Belegung im Code verifizieren
-	
+	Behebung: Spannungsversorgung prüfen, korrekte Schaltposition des Hauptschalters prüfen.
 	\item \textbf{Fehler: Förderband läuft unregelmäßig} \\
 	Mögliche Ursachen: Instabile Spannungsversorgung, PWM-Signal fehlerhaft, mechanische Blockade \\
 	Behebung: Spannungsstabilität sicherstellen, mechanische Teile reinigen und schmieren
-	
 	\item \textbf{Fehler: "Sensor liefert keine Daten"} \\
 	Mögliche Ursachen: Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI) \\
 	Behebung: Das elektrische Tischförderband an und abschalten. Das elektrische Tischförderband zurücksetzen. Den Sensor austauschen lassen. 
-	
 	\item \textbf{ Bedieneroberfläche reagiert nicht} \\
 	Mögliche Ursachen: Softwareabsturz, fehlerhafte Stromversorgung, defektes Board \\
 	Behebung: Reset durchführen, Spannungsversorgung prüfen
-		
 	\item \textbf{Fehler: Motor überhitzt} \\
 	Mögliche Ursachen: Überlast, Dauerbetrieb, unzureichende Kühlung \\
 	Behebung: Dauerlaufzeit reduzieren, Pausen einbauen, Umgebungstemperatur senken. 
-	
-	\item \textbf{Fehler: Not-Aus funktioniert nicht} \\
-	Mögliche Ursachen: Verdrahtungsfehler, defekter Schalter, Software ignoriert Signal \\
-	Behebung: Verdrahtung gemäß \textit{DIN EN ISO 13850} prüfen, Schalter testen/ersetzen, Softwarelogik überprüfen
-	
 	\item \textbf{Fehler: Förderband stoppt unerwartet} \\
 	Mögliche Ursachen: Sicherheitsabschaltung, Spannungsabfall, Softwarefehler \\
-	Behebung: Sicherheitskreise prüfen, Spannungsversorgung stabilisieren, Debugging durchführen
-	
+	Behebung: Spannungsversorgung prüfen, elektrisches Tischförderband zurücksetzen, Hersteller kontaktieren
 	\item \textbf{Fehler: Kommunikationsprobleme zwischen Modulen} \\
 	Mögliche Ursachen: Bus-Konflikte, falsche Adressen, Leitungsstörungen \\
 	Behebung: Den Hersteller kontaktieren. 
