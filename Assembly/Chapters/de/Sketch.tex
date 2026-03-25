@@ -13,3 +13,42 @@
 
 \chapter{Skizze}
 
+Technische Übersicht des Tischförderbands
+
+\bigskip
+
+\begin{figure}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw (-5,1) -- (5,1);
+			\draw (5,1) .. controls (5.5523, 1) and (6, 0.5523) .. (6,0)
+			.. controls (6, -0.5523) and (5.5523, -1) .. (5,-1); 
+			% Werte in control mit Bezier-Kurven ermittelt
+			\draw (5,-1) -- (-5,-1);
+			\draw (-5,-1) .. controls (-5.5523,-1) and (-6,-0.5523) .. (-6,0)
+			.. controls (-6,0.5523) and (-5.5523,1) .. (-5,1);
+			% Grundgerüst Förderband
+			\draw (0,-0.7) rectangle (3.5,0.7);
+			% Bedienerpult
+			\draw (0.1,-0.2) rectangle (2,0.6);
+			% Display 
+			\draw (4,-1) rectangle (5,-2);
+			\draw (-4,-1) rectangle (-5,-2);
+			%Stützfüße
+			\draw (2.2,0) rectangle (2.6,0.5);
+			\draw (2.3,0.1) rectangle (2.5,0.4);
+			% An/Aus-Schalter
+			\draw (2.7,0) rectangle (3.1,0.5);
+			\draw (2.8,0.1) rectangle (3.0,0.4);
+			% Richtungsumkehr-Schalter
+			\draw (4,1) -- (4,1.5);
+			\draw (4,1.5) .. controls (4, 1.77615) and (4.22385, 2) .. (4.5,2)
+			.. controls (4.77615, 2) and (5, 1.77615) .. (5,1.5);
+			\draw (5,1.5) -- (5,1);
+			\draw (4.5,1.5) circle [radius=0.4cm];
+			%Lichtschranke
+			\draw (2.9,-0.4) circle [radius=0.2cm];
+		\end{tikzpicture}
+	\end{center}
+\end{figure}
+
