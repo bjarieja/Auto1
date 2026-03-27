@@ -19,18 +19,43 @@ Weiterhin werden noch zusätzliche Funktionen des Systems und ihre Verwendung da
 
 \begin{itemize}
 	
-	\item \textbf{Betrieb mit konstanter Geschwindigkeit} \\ 
-	Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie mithilfe des Drehreglers [TeilNr02] die gewünschte Bandgeschwindigkeit ein.
-	In dieser Konfiguration versucht das Transportband die Bandgeschwindigkeit unabhängig von der Belastung beizubehalten.\\
+	\item \textbf{Betrieb mit fester Förderrichtung} \\ 
+	In diesem Modus erkennt das System, ob am Anfang des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis es das Transportband am anderen Ende verlässt.
+	
+	Dieser Modus kann zum automatischen Weitertransport eines Objektes in einen Behälter oder auf ein weiteres Transportband verwendet werden.
+	
+	Stellen Sie sicher, dass die Lichtschranken nicht beschädigt und korrekt auf einander ausgerichtet sind.\\
+	Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie den Modusschalter [TeilNr03] auf die gewünschte Förderrichtung [L] bzw. [R].
+	Mithilfe des Drehreglers [TeilNr02] kann die gewünschte Bandgeschwindigkeit eingestellt werden.
 	Es können Bandgeschwindigkeiten zwischen 1,8 und 7,6 cm/s eingestellt werden.
+	
+	Wird die Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen, sobald diese wieder freigegeben wird und das Objekt das Transportband verlassen hat.\\
+	
+	Das Transportband versucht die Bandgeschwindigkeit unabhängig von der Belastung beizubehalten.\\
 	
 	\item \textbf{Umkehr der Laufrichtung}\\
 	Das Transportband kann in zwei Laufrichtungen betrieben werden.\\
-	Stellen Sie vor Umkehr der Laufrichtung sicher, dass das Transportband vollständig stillsteht.\\
-	Dazu sollte sich der Drehregler [TeilNr02] auf der niedrigsten Einstellung [0] befinden oder der Hauptschalter [TeilNr01] auf der Position [O] stehen.
-	Stellen Sie nun den Richtungswahlschalter [TeilNr03] von Position01 auf Position02.
-	Das System kann anschließend über den Hauptschalter [TeilNr01] eingeschaltet werden.
-	Die gewünschte Bandgeschwindigkeit kann erneut mithilfe des Drehreglers [TeilNr02]  eingestellt werden.
+	Stellen Sie dazu den Modusschalter [TeilNr03] von [L] auf [R] bzw. von [R] auf [L].
+	Nun wird die jewils andere Lichtschranke zum aktivieren der Bewegung verwendet.
+	Sollte das Transportband bei Änderung der Förderrichtung im Betrieb sein, so bremst es langsam ab und beschleunigt auf die voreingestellte Bandgeschwindigkeit in entgegengesetzter Richtung.
+	
+	\item \textbf{Automatikbetrieb}\\
+	In diesem Modus erkennt das System, ob an einem Ende des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis zum anderen Ende des Transportbandes und verweilt dort.
+	
+	Dieser Modus kann zum automatischen Weitertransport von Objekten in zwei Richtungen verwendet werden. % Hier weiter ergänzen
+	
+	Stellen Sie sicher, dass die Lichtschranken nicht beschädigt und korrekt auf einander ausgerichtet sind.\\
+	Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie den Modusschalter [TeilNr03] auf Automatikbetrieb [A].
+	Mithilfe des Drehreglers [TeilNr02] kann die gewünschte Bandgeschwindigkeit eingestellt werden.
+	Es können Bandgeschwindigkeiten zwischen 1,8 und 7,6 cm/s eingestellt werden.
+	
+	Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen.\\
+	
+	Das System setzt sich nach einer bestimmten Ruhezeit automatisch zurück. Nach ablauf dieser Ruhezeit kann erneut ein Objekt zwischen eine der Beiden Lichtschranken gelegt werden.\\
+	
+	Das Transportband versucht die Bandgeschwindigkeit unabhängig von der Belastung beizubehalten.\\
+	
+	Timeout: Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes nicht erreichen hält das Transportband selbstständig an.
 	
 \end{itemize}
 
@@ -38,16 +63,10 @@ Weiterhin werden noch zusätzliche Funktionen des Systems und ihre Verwendung da
 
 \begin{itemize}
 	
-	\item \textbf{Betrieb mit Lichtschranken}\\
-	Für den Betrieb mit Lichtschranken müssen die Lichtschrankenmodule an beiden Enden des Transportbands montiert sein. Stellen Sie sicher, dass diese nicht beschädigt und korrekt auf einander ausgerichtet sind.\\
-	
-	Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an und bewegt sich bis die zweite Lichtschranke unterbochen wird.\\
-	
-	Die Richtung der Bewegung und damit auch die Zuordung der ersten und zweiten Lichtschranke wird durch die Position des Richtungswahlschalters [TeilNr03] bestimmt.\\
-	
-	Timeout: Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes nicht erreichen hält das Transportband selbstständig an.
-	
 	\item \textbf{Betrieb mit programmiertem Bewegungsablauf} \\ 
-	Sollte für eine Sonderanwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung des Microcontrollers angepasst werden. Weitere Informationen dazu finden sich in der Dokumentation.
+	Sollte für eine Sonderanwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung des Microcontrollers angepasst werden. Weitere Informationen dazu finden Sie in der Dokumentation.
 	
 \end{itemize}
+
+\section{Reset}
+% Funktion Taster erläutern
