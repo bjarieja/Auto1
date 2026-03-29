@@ -12,57 +12,67 @@
 %%%%%%%%%%%%
 
 \chapter{Troubleshooting}
-Dieses Kapitel  dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems effizient wiederherzustellen.
-Zuerst werden die Mechanischen Störungen behandelt, anschließend die elektrischen. 
-
-\subsection{Mechanische Fehler}
+\subsection{Mechanische Fehler} 
+Dieses Kapitel dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems effizient wiederherzustellen.
 \begin{itemize}
-	\item \textbf{Das Förderband lässt sich nicht aufstellen} \\ 
-	Mögliche Ursache: Die Klappbaren Füße sind nur blockiert, Es fehlen die Stützbeine \\
-	Behebung: Stützbeine auf Fremdkörper prüfen und diese entfernen, die Vorspannung der Beine durch leichtes Lösen der Schraube verringern. 
-	\item \textbf{Das Förderband lässt sich nicht bewegen}\\
-	Mögliche Ursachen: Fremdkörper blockieren das Förderband \\
-	Behebung: Das Förderband auf eingeklemmte Fremdkörper überprüfen. Diese Fremdkörper entfernen. 
-	\item \textbf{Das Förderband steht schief} \\ 
-	Mögliche Ursache: Die Stützbeine des Förderbandes sind nicht vollständig ausgeklappt und arretiert. \\
-	Behebung: Die Stützbeine erneut einklappen und ausklappen, die Arretierung der Beine überprüfen.  
-	\item \textbf{Das Förderband wackelt}\\ 
-	Mögliche Ursachen: Das Förderband steht auf nicht ebenem Untergrund, das Förderband hat ein beschädigtes Stützbein. \\ 
-	Behebung: Die Stützbeine des Förderbandes auf Beschädigung überprüfen und ggf. austauschen. Bei keiner Beschädigung das Förderband an einem anderen Ort positionieren und orientieren. 
-	\item \textbf{Der Riemen des Förderbandes bewegt sich nicht}\\ 
-	\textbf{Mögliche Ursachen:} Der Transportriemen des Bandes ist nicht gespannt. \\ 
+	\item \textbf{Das Tischförderband lässt sich nicht aufstellen} \
+	\textbf{Mögliche Ursachen:} Die klappbaren Füße sind blockiert, oder es fehlen die Stützbeine. \
+	\textbf{Behebung:} Stützbeine auf Fremdkörper prüfen und diese entfernen. Die Vorspannung der Beine durch leichtes Lösen der Schraube verringern.
 	
-		
+	\item \textbf{Das Transportband lässt sich nicht bewegen} \\
+	\textbf{Mögliche Ursachen:} Fremdkörper blockieren das Transportband. \\
+	\textbf{Behebung:} Das Förderband auf eingeklemmte Fremdkörper überprüfen und diese entfernen. 
+	
+	\item \textbf{Das Tischförderband steht schief} \\ 
+	\textbf{Mögliche Ursache:} Die Stützbeine des Förderbandes sind nicht vollständig ausgeklappt und arretiert. \\
+	\textbf{Behebung:} Die Stützbeine erneut ein- und ausklappen und die Arretierung überprüfen.  
+	
+	\item \textbf{Das Tischförderband wackelt} \\ 
+	\textbf{Mögliche Ursachen:} Das Tischförderband steht auf einem unebenen Untergrund oder ein Stützbein ist beschädigt. \\ 
+	\textbf{Behebung:} Die Stützbeine auf Beschädigungen überprüfen und ggf. austauschen. Bei keiner Beschädigung das Förderband an einem anderen Ort positionieren. 
+	
+	\item \textbf{Der Riemen des Förderbandes bewegt sich nicht} \\ 
+	\textbf{Mögliche Ursachen:} Das Transportband ist nicht gespannt. \\ 
+	\textbf{Behebung:} Das Transportband mittels Spannvorrichtung spannen. 
+	
 \end{itemize}
+
 \subsection{Elektrische Fehler}
-Hier werden alle Fehler die direkten Zusammenhang zur Strom- und Spannungsversorgung haben. Zusätzlich wird hier Hilfestellung zu allen Fehlermeldungen auf dem Bediener
+Hier werden alle Fehler behandelt, die in direktem Zusammenhang mit der Strom- und Spannungsversorgung stehen. Zusätzlich wird Hilfestellung zu Fehlermeldungen auf dem Bedienerdisplay gegeben.
+
 \begin{itemize}
+	\item \textbf{Das Tischförderband startet nicht} \
+	\textbf{Mögliche Ursachen:} Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor, falsche Pin-Konfiguration. \
+	\textbf{Behebung:} Spannungsversorgung prüfen und die korrekte Schaltposition des Hauptschalters kontrollieren.
 	
-	\item \textbf{Fehler: Förderband startet nicht} \\
-	\textbf{Mögliche Ursachen:} Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor, falsche Pin-Konfiguration \\
-	\textbf{Behebung:} Spannungsversorgung prüfen, korrekte Schaltposition des Hauptschalters prüfen.
-	\item \textbf{Fehler: Förderband läuft unregelmäßig} \\
-	\textbf{Mögliche Ursachen:} Instabile Spannungsversorgung, PWM-Signal fehlerhaft, mechanische Blockade \\
-	\textbf{Behebung:}  Spannungsstabilität sicherstellen, mechanische Teile reinigen und schmieren
-	\item \textbf{Fehler: "Sensor liefert keine Daten"} \\
-	\textbf{Mögliche Ursachen:} Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI) \\
-	\textbf{Behebung:}  Das elektrische Tischförderband an und abschalten. Das elektrische Tischförderband zurücksetzen. Den Sensor austauschen lassen. 
-	\item \textbf{ Bedieneroberfläche reagiert nicht} \\
-	\textbf{Mögliche Ursachen:} Softwareabsturz, fehlerhafte Stromversorgung \\
-	\textbf{Behebung:}  Reset durchführen, Spannungsversorgung prüfen
-	\item \textbf{Fehler: Motor überhitzt} \\
-	\textbf{Mögliche Ursachen:} Überlast, Dauerbetrieb, unzureichende Kühlung \\
-	\textbf{Behebung:}  Dauerlaufzeit reduzieren, Pausen einbauen, Umgebungstemperatur senken. 
-	\item \textbf{Fehler: Förderband stoppt unerwartet} \\
-	Mögliche Ursachen: Sicherheitsabschaltung, Spannungsabfall, Softwarefehler \\
-	\textbf{Behebung:}  Spannungsversorgung prüfen, elektrisches Tischförderband zurücksetzen, Hersteller kontaktieren
-	\item \textbf{Fehler: Kommunikationsprobleme zwischen Modulen} \\
-	\textbf{Mögliche Ursachen:} Bus-Konflikte, falsche Adressen, Leitungsstörungen \\
-	\textbf{Behebung:}  Den Hersteller kontaktieren. 
+	\item \textbf{Das Transportband läuft unregelmäßig schnell} \\
+	\textbf{Mögliche Ursachen:} Instabile Spannungsversorgung, fehlerhaftes PWM-Signal, mechanische Blockade. \\
+	\textbf{Behebung:} Spannungsstabilität sicherstellen, ggf. den Hersteller kontaktieren. 
+	
+	\item \textbf{Fehler: \glqq Sensor liefert keine Daten\grqq} \\
+	\textbf{Mögliche Ursachen:} Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI). \\
+	\textbf{Behebung:} Das Tischförderband aus- und wieder einschalten. Das System mittels Tastenkombination zurücksetzen. Gegebenenfalls den Sensor austauschen lassen. 
+	
+	\item \textbf{Anzeige reagiert nicht} \\
+	\textbf{Mögliche Ursachen:} Softwareabsturz, fehlerhafte Stromversorgung. \\
+	\textbf{Behebung:} Reset durchführen und Spannungsversorgung prüfen.
+	
+	\item \textbf{Fehlermeldung: \glqq Motor überhitzt\grqq} \\
+	\textbf{Mögliche Ursachen:} Überlast, Dauerbetrieb, unzureichende Kühlung. \\
+	\textbf{Behebung:} Dauerlaufzeit reduzieren, Pausen einplanen und die Umgebungstemperatur senken. 
+	
+	\item \textbf{Förderband stoppt unerwartet} \\
+	\textbf{Mögliche Ursachen:} Sicherheitsabschaltung, Spannungsabfall, Softwarefehler. \\
+	\textbf{Behebung:} Spannungsversorgung prüfen, das Tischförderband zurücksetzen und ggf. den Hersteller kontaktieren.
+	
+	\item \textbf{Fehler: \glqq Kommunikationsprobleme zwischen Modulen\grqq} \\
+	\textbf{Mögliche Ursachen:} Bus-Konflikte, falsche Adressen, Leitungsstörungen. \\
+	\textbf{Behebung:} Den Hersteller kontaktieren.  
 	
 \end{itemize}
-
+Alle auf der Anzeige dargestellten Fehler und Fehlermeldungen können gemäß dem Benutzerhandbuch behoben und anschließend quittiert werden. Hierfür muss zunächst der Fehler behoben und anschließend der dafür vorgesehene Taster am Bedienelement betätigt werden. Sollte der Fehler unmittelbar nach der Quittierung erneut auftreten, ist die Spannungsversorgung zu trennen und der Hersteller zu kontaktieren.
 \section*{Normative Referenzen}
+Folgende sind die zur Beschreibung der Fehlerbehebung verwendeten Normen.
 \begin{itemize}
 	\item DIN EN 60204-1: Sicherheit von Maschinen – Elektrische Ausrüstung
 	\item DIN EN ISO 13850: Sicherheit von Maschinen – Not-Halt-Funktion
