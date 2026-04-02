@@ -46,33 +46,38 @@ Technische Übersicht des Tischförderbands
 		\draw (28.625,-9.375) -- (22.75,-8.5);
 		\draw (22.125,-12.25) arc[start angle=-99.16, end angle=-279.77, radius=1.9009];
 		
-		\draw (25,15.875) -- (25,11.375);
+		\draw (25,15.875) -- (25,11.375);				
+		\draw (25,-4.25) -- (25,-8.75);
+	% Lager Rollen	
+		\draw (22.5,22.25) circle (0.75cm);
+		\draw (22.5,-15.25) circle (0.75cm);
+	% Drehpunkt klappbare Stützbeine
+		\draw (22.5,17.375) circle (0.625cm);
+		\draw (22.5,-10.375) circle (0.625cm);
+	% Rahmen Bedienerpult	
 		\draw (25,11.375) -- (20.625,11.875);
 		\draw (20.625,11.875) -- (20.625,-4.875);
 		\draw (20.625,-4.875) -- (25,-4.25);
-		\draw (25,-4.25) -- (25,-8.75);
-		
-		\draw (22.5,22.25) circle (0.75cm);
-		\draw (22.5,-15.25) circle (0.75cm);
-		\draw (22.5,17.375) circle (0.625cm);
-		\draw (22.5,-10.375) circle (0.625cm);
-		
 		\draw (25,11.375) -- (25.5,10.625);
 		\draw (25.5,10.625) -- (25.5,-3.5);
 		\draw (25.5,-3.5) -- (25,-4.25);
-		
+	% Anzeige	
 		\draw[line width=1pt] (20.875,3.5) rectangle (23.75,-4);
-		
-		\draw (20,22.25) rectangle (17.75,21.25);
+	% Lichtschranke 1	
 		\draw (20,-15.25) rectangle (17.75,-14.25);
-		\draw (17.875,22.125) rectangle (18.75,21.375);
 		\draw (17.875,-14.375) rectangle (18.75,-15.125);
+	% Lichtschranke 2	
+		\draw (20,22.25) rectangle (17.75,21.25);
+		\draw (17.875,22.125) rectangle (18.75,21.375);
 		
+	
+	% Hauptschalter	
 		\draw (23.375,4.375) rectangle (24.625,6.5);
 		\draw (23.5,4.5) rectangle (24.5,6.375);
 		\draw[line width=2pt] (24.375,5) -- (23.625,5);
 		\draw[line width=1.6pt] (24,5.75) ellipse (0.375cm and 0.25cm);
 		
+	% Reset-Taster	
 		\draw[line width=1.3pt] (24.375,-3.375) circle (0.375cm);
 		\draw (24.375,-3.375) circle (0.5cm);
 		
@@ -95,109 +100,53 @@ Technische Übersicht des Tischförderbands
 		
 		% Beschriftungen (ohne lokale Fontdefinition)
 		\node[rotate=90, fill=white] at (22,5.5) {L | A | R};
-		
+	
+	% Reset-Taster	
 		\draw[dashed] (25,-3.375) -- (26.875,-3.375);
-		\node[rotate=90, fill=white] at (26.875,-3.375) {\textbf{Reset-Taster}};
-		\node[rotate=90, fill=white] at (27.375,-1.59) {Quittierung von Fehlermeldungen};
-		
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (26.875,-3.375) {\textbf{Reset-Taster}};
+		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (27.575,-1.59) {Quittierung von Fehlermeldungen};
+	
+	% Hauptschalter
 		\draw[dashed] (24.875,5.375) -- (26.75,5.375);
-		\node[rotate=90, fill=white] at (27.125,6) {\textbf{Hauptschalter}};
-		\node[rotate=90, fill=white] at (27.625,7.575) {Einschalten des Tischförderbands};
-		
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (27.125,6) {\textbf{Hauptschalter}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (27.625,7.475) {Einschalten des Tischförderbands};
+	
+	% Modusschalter	
 		\draw[dashed] (20.875,5.5) -- (16,0.375);
-		\node[rotate=90, fill=white] at (16.125,1.675) {\textbf{Modusschalter}};
-		\node[rotate=90, fill=white] at (17.25,5.25) {Modus wählen (Linkslauf / Automatiklauf / Rechtslauf)};
-		\node[rotate=90, fill=white] at (16.75,3.375) {Förderrichtung des Transportbandes};
-		
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (16.125,1.275) {\textbf{Modusschalter}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17.35,5.15) {Modus wählen (Linkslauf / Automatiklauf / Rechtslauf)};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.85,3) {Förderrichtung des Transportbandes};
+	
+	% Klappbare Stützbeine
 		\draw[dashed] (28.75,18.5) -- (30,18.5);
 		\draw[dashed] (30,18.5) -- (30,-11.5);
 		\draw[dashed] (30,-11.5) -- (28.75,-11.5);
 		\draw[dashed] (30,-7.75) -- (31.25,-7.75);
-		\node[rotate=90, fill=white] at (31.25,-5.25) {\textbf{Klappbare Stützbeine}};
-		\node[rotate=90, fill=white] at (31.875,-5.25) {Für Transport einklappen};
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (31.25,-4.45) {\textbf{Klappbare Stützbeine}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.875,-4.85) {Für Transport einklappen};
+	
+	% Lichtschranke 1
+		\draw[dashed] (17.5,-14.75) -- (13.25,-14.75);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (13.025,-12.25) {\textbf{Lichtschranke 1}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (13.75,-10.85) {Transportboxen korrekt platzieren};
+	
+	%Lichtschranke 2
+		\draw[dashed] (14.25,21.75) -- (17.5,21.75);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (13.025,21.25) {\textbf{Lichtschranke 2}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (13.75,22.65) {Transportboxen korrekt platzieren};
 		
-		\draw[dashed] (17.5,-14.75) -- (13.75,-14.75);
-		\draw[dashed] (13.75,-14.75) -- (13.75,21.75);
-		\draw[dashed] (13.75,21.75) -- (17.5,21.75);
-		\draw[dashed] (13.75,-10.25) -- (10.875,-10.25);
-		\node[rotate=90, fill=white] at (11.125,-8.25) {\textbf{Lichtschranken}};
-		\node[rotate=90, fill=white] at (11.75,-6.75) {Transportboxen korrekt platzieren};
-		
-		\draw[dashed] (20.75,-1.5) -- (16.25,-6.5);
-		\node[rotate=90, fill=white] at (16.5,-6.125) {\textbf{Anzeige}};
-		\node[rotate=90, fill=white] at (17,-4.225) {Anzeige von Fehlermeldungen};
-		
-		\draw[dashed] (21.125,10.875) -- (16.25,11.75);
-		\node[rotate=90, fill=white] at (16.125,13.25) {\textbf{Drehregler}};
-		\node[rotate=90, fill=white] at (16.625,14.125) {Stufenlose Einstellung};
+	%Anzeige 
+		\draw[dashed] (20.75,-1.5) -- (17.35,-8.5);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (16.4,-8.325) {\textbf{Anzeige}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17,-6.225) {Anzeige von Fehlermeldungen};
+	
+	% Drehregler
+		\draw[dashed] (21.125,10.875) -- (16.25,12.75);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (15.995,14.35) {\textbf{Drehregler}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.625,15.125) {Stufenlose Einstellung};
 		
 	\end{tikzpicture}
 }
 	\caption{Übersicht der Bedienerelemente}
 	\end{center}
 \end{figure}
-%\begin{figure}
-%	\begin{center}
-%		\begin{tikzpicture}
-			% Grundgerüst Förderband
-%			\draw (-6,1) -- (6,1);
-%			\draw (6,1) .. controls (6.5523, 1) and (7, 0.5523) .. (7,0)
-%			.. controls (7, -0.5523) and (6.5523, -1) .. (6,-1); 
-			% Werte in control mit Bezier-Kurven ermittelt
-%			\draw (6,-1) -- (-6,-1);
-%			\draw (-6,-1) .. controls (-6.5523,-1) and (-7,-0.5523) .. (-7,0)
-%			.. controls (-7,0.5523) and (-6.5523,1) .. (-6,1);
-			% Bedienerpult
-%			\draw (0,-0.9) rectangle (3.7,0.7);
-			% Display
-%			\draw (0.1,-0.2) rectangle (2,0.6);
-			 
-			% An/Aus-Schalter
-%			\draw (0.1,-0.3) rectangle (0.7,-0.7);
-%			\draw (0.15,-0.35) rectangle (0.65,-0.65);
-%			\draw (0.25,-0.4) -- (0.25,-0.6);
-%			\draw (0.5,-0.5) ellipse [x radius=1.5pt, y radius=3pt];
-			
-		% Richtungsumkehr-Schalter	
-		%	\draw (2.7,0) rectangle (3.1,0.5);
-		%	\draw (2.8,0.1) rectangle (3.0,0.4);
-			
-		%Lichtschranken
-			% rechts
-%			\draw (4,1) -- (4,2);
-%			\draw (4.7,1) -- (4.7,2);
-%			\draw (4,2) -- (4.7,2);
-%			\draw (4.1,1.3) rectangle (4.6,1.9);
-			% links
-%			\draw (-4,1) -- (-4,2);
-%			\draw (-4.7,1) -- (-4.7,2);
-%			\draw (-4,2) -- (-4.7,2);
-%			\draw (-4.1,1.3) rectangle (-4.6,1.9);
-		
-		% Poti
-%			\draw (2.5,0) circle [radius=0.3cm];
-%			\draw (2.5,0) circle [radius=0.15cm];
-%			\draw (2.5,0.2) -- (2.5,0.3);
-		
-			
-		% Geraden rechter Stützfuß
-%			\draw (4,-0.2) -- (4.3,-2.5);
-			% linke Gerade
-%			\draw (4.3,-2.5) -- (5.5,-2.5);
-			% untere Gerade
-%			\draw (5.5,-2.5) -- (5.2,-0.2);
-			% rechte Gerade
-%			\draw (4,-0.2) -- (5.2,-0.2);
-			
-			% Geraden linker Stützfuß
-%			\draw (-4,-0.2) -- (-4.3,-2.5); 
-			% linke Gerade (gespiegelt)
-%			\draw (-4.3,-2.5) -- (-5.5,-2.5);
-			% untere Gerade (gespiegelt)
-%			\draw (-5.5,-2.5) -- (-5.2,-0.2);
-			% rechte Gerade (gespiegelt)
-%			\draw (-4,-0.2) -- (-5.2,-0.2);
-		%Stützfüße
-%		\end{tikzpicture}
-%	\end{center}
-%\end{figure}
