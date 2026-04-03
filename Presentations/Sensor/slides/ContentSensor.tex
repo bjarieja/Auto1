@@ -165,32 +165,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \STANDARD{\textbf{Der SENSOR VON UNS HIER }}
 { \begin{center}
 		
-	\begin{tikzpicture}[scale=0.9,line cap=round,line join=round]
-		% Parameter \def\R{4.2} % Radius des Luftspalts (Innenkreis) \def\rcom{1.35} % Kommutator-Außenradius \def\rshaft{0.45} % Wellenradius
-		% Rahmen \fill[white] (-6,-6) rectangle (6,6); \draw[line width=1.2pt] (-6,-6) rectangle (6,6);
-		% Magnetblöcke (Stator) \fill[red!30] (-5.4,-5.2) rectangle (-0.2,5.2); \fill[green!30] (0.2,-5.2) rectangle (5.4,5.2); \node[font=\Large\bfseries] at (-2.8,3.9) {N}; \node[font=\Large\bfseries] at ( 2.8,3.9) {S};
-		% Maschinenöffnung / Luftspalt \fill[white] (0,0) circle (\R);
-		% Stator-Joch (stilisiertes "C") \draw[line width=4.2pt] (
-		(0,0)+(35:R)) arc (35:325:\R);
-		% Polschuhe (stilisiert als kurze, gebogene Segmente) \begin{scope} \path (0,0) coordinate (O); % oberer/rechter Polschuh (grün) \begin{scope}[rotate=-20] \fill[green!45] (2.6, -0.55) rectangle (3.4,0.55); \end{scope} % unterer/linker Polschuh (rot) \begin{scope}[rotate=160] \fill[red!45] (2.6, -0.55) rectangle (3.4,0.55); \end{scope} \end{scope}
-		% Kommutator (orange Ring) + Isolationsspalt (schwarzer Steg) \fill[orange!70!brown] (0,0) circle (\rcom+0.18); \fill[white] (0,0) circle (\rcom-0.22); \draw[line width=1.1pt] (0,0) circle (\rcom+0.18); \draw[line width=1.1pt] (0,0) circle (\rcom-0.22); \fill[black] (-0.15,-1.9) rectangle (0.15,1.9); % Spalt zwischen Segmenten
-		% Welle/Nabe \fill[black] (0,0) circle (\rshaft); \fill[blue!35] (0,0) circle (\rshaft-0.12);
-		% Bürsten (bei etwa 120° und -60°) \foreach \ang in {120,-60}{ \coordinate (B\ang) at (
-			(0,0)+(\ang:\rcom+0.35)); \draw[fill=black,rounded corners=0.5pt] (
-			(B\ang)+(\ang−90:0.30)) -- ++(\ang:0.75) -- ++(\ang+90:0.28) -- ++(\ang:-0.75) -- cycle; }
-		% Zuleitungen: blau (zur oberen Bürste), rot (zur unteren Bürste) \draw[line width=4.0pt, blue!70] (-3.8,-5.6) to[out=90,in=250] (-5.0,0.6) to[out=70,in=190] (
-		(0,0)+(120:\rcom+0.55));
-		\draw[line width=4.0pt, red!70] ( 1.0,-5.6) to[out=90,in=290] (0.0,-1.3) to[out=110,in=190] (
-		(0,0)+(−60:\rcom+0.55));
-		% Ankerleiter symbolisch als "Perlenkette" auf zwei gegenüberliegenden Seiten \foreach \ang/\sA/\sB in {45/{+}/{-},225/{-}/{+}}{ \coordinate (A) at (
-			(0,0)+(\ang:\rcom+0.8)); \coordinate (B) at (
-			(0,0)+(\ang:R−1.2)); \foreach \t in {0,...,6}{ \path let \p1=(
-				(A)!\t/6!(B)) in \node[circle,draw,fill=white,inner sep=1.2pt] at (\p1) {}; } \node[font=\large] at (
-			(0,0)+(\ang:R−0.95)) {\sA}; \node[font=\large] at (
-			(0,0)+(\ang:\rcom+0.55)) {\sB}; }
-		% Drehrichtungspfeile im Luftspalt \foreach \a in {90,210,330}{ \draw[->,line width=0.9pt] (
-			(0,0)+(\a:\rcom+1.6)) arc (\a:\a+30:\rcom+1.6); }
-	\end{tikzpicture} 
+	
 	\end{center}
 }
 
