@@ -13,66 +13,96 @@
 
 
 
-\Mysection{Trajectory Planning}
+\Mysection{Sensoren und Aktoren}
 
-\STANDARD{Trajectory Planning}
+\STANDARD{Sensoren}
 { 
 	
   \framesubtitle{Einleitung}	
-  
+  Sensor (lat: \glqq Fühler" ) dienen zur \textbf{qualitativen} und \textbf{quantitaiven} Auffassung von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen. \cite{Hering:2023} \\ 
+  Jedes Sensorsystem besteht aus folgenden Komponenten: 
+  \begin{itemize}
+  	\item \textbf{Sensor-Element}
+  	\item \textbf{Auswert-Elektronik}
+  \end{itemize}
 }
 
+\STANDARD{Funktionsprinzip}
+{ 
+	Grundsätzlich: Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}
 
-\STANDARD{Trajectory Planning}
+\begin{center}
+\begin{figure}
+\usetikzlibrary{arrows.meta, positioning}
+\begin{tikzpicture}[
+	scale=0.5,
+	transform shape,
+	block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
+	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
+	arrow/.style={->, thick}
+	]
+	
+	% Outer box
+	\node[outer] (system) {};
+	
+	% Inner blocks
+	\node[block] (sensor) at (-3,0) {Sensor-Element};
+	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
+	
+	% Input arrow
+	\draw[arrow] (-8,0) -- (sensor.west)
+	node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
+	node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
+	
+	% Between blocks
+	\draw[arrow] (sensor.east) -- (eval.west)
+	node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
+	
+	% Output arrow
+	\draw[arrow] (eval.east) -- (8,0)
+	node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
+	
+	% Disturbance arrow
+	\draw[arrow] (-3,-3) -- (sensor.south)
+	node[midway, right, xshift=10pt] {Störgrößen};
+	
+\end{tikzpicture}
+	\caption{Wirkprinzip eines Sensorsystemes}
+\end{figure}	
+	\end{center}
+}
+		
+\STANDARD{Optische Näherungssenoren}
 { 
 
 }
 
-\STANDARD{Trajectory Planning}
+\STANDARD{Aktoren}
 { 
 
-  $q_0$: Startposition
-
-  $q_1$: Zielposition
-
-  \begin{figure}[!h]
-    \centering
-    \input{images/s0-nach-s1-1dim}
-  \end{figure}
 }
 
-\section{Notation}
-\STANDARD{Notation}
+%\section{Notation}
+\STANDARD{Motoren}
 { 
 
 
  
 }
-
-
-\section{Bang-Bang-Control}
-
-\STANDARD{Bang-Bang-Control}
+\STANDARD{Motortreiber}
 { 
-
- 
-}
-
-\STANDARD{Water Taxi}
-{
-  
-}
-
-\STANDARD{3D-Printer}
-{
+	
+	
 	
 }
 
-
-\STANDARD{3D-Printer}
-{
-  
+\STANDARD{Möglichkeiten der Steuerung }
+{ 
+	
+	
+	
 }
+
 
 
 \begin{frame}[fragile]{Code}
