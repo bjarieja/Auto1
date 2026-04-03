@@ -29,8 +29,7 @@
 
 \STANDARD{Funktionsprinzip}
 { 
-	Grundsätzlich: Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}
-
+	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
 \begin{center}
 \begin{figure}
 \usetikzlibrary{arrows.meta, positioning}
@@ -70,13 +69,98 @@
 	\caption{Wirkprinzip eines Sensorsystemes}
 \end{figure}	
 	\end{center}
+	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
 }
 		
 \STANDARD{Optische Näherungssenoren}
 { 
-
+Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. 
+\begin{itemize}
+	
+	\item \textbf{Einweg-Lichtschranken:} Transmitter und Receiver gegenüberliegend. Hohe Auflösung, bis zu 10m \cite{Hering:2023}
+	\item \textbf{Reflex-Lichtschranken:} Transmitter und Receiver in einem Gehäuse, \textbf{Reflektor}. Einfache Einstellung, bis zu 5m Abstand \cite{Hering:2023}
+\end{itemize}
 }
+\STANDARD{Optische Näherungssenoren}
+{ 
+	\begin{center}
+	\begin{figure} 
+	\usetikzlibrary{arrows.meta, positioning}
+	
+\usetikzlibrary{arrows.meta, positioning}
 
+\begin{tikzpicture}[
+	scale=0.50,
+	transform shape,
+	block/.style={draw, rectangle, minimum width=2.5cm, minimum height=3cm, align=center},
+	smallblock/.style={draw, rectangle, minimum width=0.6cm, minimum height=3cm},
+	arrow/.style={->, thick},
+	label/.style={font=\normalsize}
+	]
+	
+	% ======================
+	% a) Einweglichtschranke
+	% ======================
+	\node[label] at (-8,6) {\textbf{a)}};
+	
+	% EIN (oben)
+	\node[label] at (-8,4.5) {Ein};
+	
+	\node[block] (S1) at (-10,2) {Sender};
+	\node[block] (E1) at (-6,2) {Empfänger};
+	
+	\draw[arrow] (S1.east) -- (E1.west);
+	
+	% AUS (unten)
+	\node[label] at (-8,-0.5) {Aus};
+	
+	\node[block] (S2) at (-10,-3) {Sender};
+	\node[smallblock] (O) at (-8,-3) {};
+	\node[block] (E2) at (-6,-3) {Empfänger};
+	
+	\draw[arrow] (S2.east) -- (O.west);
+	
+	\node at (O.center) {O};
+	
+	% ======================
+	% b) Reflektorlichtschranke
+	% ======================
+	\node[label] at (6,6) {\textbf{b)}};
+	
+	% EIN (oben)
+	\node[label] at (6,4.5) {Ein};
+	
+	\node[block] (SE1) at (3,2) {};
+	\node[smallblock] (R1) at (9,2) {};
+	
+	% Beschriftungen exakt ausgerichtet
+	\node[label] at (3,3) {Empfänger};
+	\node[label] at (3,1) {Sender};
+	\node[label] at (9,4) {Reflektor};
+	
+	% Hin- und Rückstrahl symmetrisch
+	\draw[arrow] ([yshift=0.4cm]SE1.east) -- ([yshift=0.4cm]R1.west);
+	\draw[arrow] ([yshift=-0.4cm]R1.west) -- ([yshift=-0.4cm]SE1.east);
+	
+	% AUS (unten)
+	\node[label] at (6,-0.5) {Aus};
+	
+	\node[block] (SE2) at (3,-3) {};
+	\node[smallblock] (OBJ) at (6,-3) {};
+	\node[smallblock] (R2) at (9,-3) {};
+	
+	\node[label] at (3,-2) {Empfänger};
+	\node[label] at (3,-4) {Sender};
+	\node[label, yshift=15pt] at (6,-1.5) {Objekt};
+	\node[label, yshift=15pt] at (9,-1.5) {Reflektor};
+	
+	\draw[arrow] (SE2.east) -- (OBJ.west);
+	
+\end{tikzpicture}
+\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke}
+	\end{figure}
+	\end{center}
+}
 \STANDARD{Aktoren}
 { 
 
