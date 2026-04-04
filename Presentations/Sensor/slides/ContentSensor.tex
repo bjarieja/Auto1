@@ -71,10 +71,13 @@
 	\end{center}
 	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
 }
-		
+\STANDARD{Lichtschranken} 
+
+
+
 \STANDARD{Optische Näherungssenoren}
 { 
-Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. 
+Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. Hierbei sind \textbf{Strahlenquellen} beispielsweise der \textbf{Sender} und \textbf{Fotodioden} die \textbf{Empfänger}. 
 \begin{itemize}
 	
 	\item \textbf{Einweg-Lichtschranken:} Sender und Empfänger gegenüberliegend. Hohe Auflösung, bis zu 10m \cite{Hering:2023}
@@ -162,6 +165,105 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	\end{center}
 }
 
+\STANDARD{LED}
+{
+	\begin{center}
+		\begin{figure}
+			
+			\begin{tikzpicture}[>=latex, font=\sffamily]
+				
+				% --- n-Schicht ---
+				\fill[red!20] (0,0) rectangle (3,2);
+				\draw[thick, red!70!black] (0,0) rectangle (3,2);
+				\node at (1.5,1) {\large n};
+				
+				% --- p-Schicht ---
+				\fill[blue!20] (0,2) rectangle (3,3);
+				\draw[thick, blue!70!black] (0,2) rectangle (3,3);
+				\node at (1.5,2.5) {\large p};
+				
+				% --- Lichteinfall (nun von unten nach oben gedreht) ---
+				\foreach \x in {0.6,1.2,1.8,2.4}{
+					\draw[->, ultra thick, yellow!80!black] (\x,3) -- (\x,4);
+				}
+				\node[yellow!80!black, right] at (2.4,3.5) {\large Licht};
+				
+				% --- Elektrischer Anschluss ---
+				% Pluspol oben
+				\draw[thick] (3,2.5) -- (4,2.5) node[right] {+};
+				\draw[thick] (3,0.5) -- (4,0.5) node[right] {-};
+				
+				% Verbindung und Spannungspfeil
+				\draw[thick] (4,2.5) -- (4,0.5);
+				\draw[->, thick] (4.2,2) -- (4.2,1) node[midway, right] {$U$};
+				
+			\end{tikzpicture}
+			\caption{Funktionsprinzip einer LED \cite{Walker:2014}}
+		\end{figure}
+	\end{center}
+
+
+
+
+}
+
+
+
+\STANDARD{Funktionsprinzip Fotodiode}
+{\begin{center}
+		\begin{figure}
+			\begin{tikzpicture}[scale=0.7]
+				
+				% Stil für alle Knoten
+				\tikzset{every node/.style={font=\fontsize{18.2pt}{23.7pt}\selectfont}}
+				
+				% Lichteinfall (gelb)
+				\foreach \x in {10.5,11,11.5} {
+					\draw[very thick, yellow!80!black] (\x,15.5) -- (\x,13.375);
+					% kleine Querstriche am Ende
+					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(-0.1,0.15);
+					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(0.1,0.15);
+				}
+				\node[text=yellow!80!black] at (15,15.25) {Lichteinfall};
+				
+				% n-Schicht (rot)
+				\filldraw[fill=red!20, draw=red!80!black, thick]
+				(6,10.375) rectangle (11,13.375);
+				\node[text=red!80!black] at (7.125,11.875) {n};
+				
+				% p-Schicht (blau)
+				\filldraw[fill=blue!20, draw=blue!80!black, thick]
+				(11,10.375) rectangle (15.5,13.375);
+				\node[text=blue!80!black] at (13.75,11.875) {p};
+				
+				% Sperrschicht
+				\draw[dashed, thick, black!70!black] (10,10.375) -- (10,13.375);
+				\draw[dashed, thick, black!70!black] (12,10.375) -- (12,13.375);
+				\draw[thick] (11,10.375) -- (11,13.375);
+				\node at (11,9.375) {Sperrschicht};
+				
+				% kleine Linien unten
+				\draw (10,9.875) -- (10,10.375);
+				\draw (12,9.875) -- (12,10.375);
+				
+			\end{tikzpicture}
+			\caption{Funktionsprinzip Fotodiode \cite{Walker:2014}}
+		\end{figure}
+	\end{center}
+	
+}
+
+
+\STANDARD{ Aktor Funktionsprinzip } 
+{
+\textbf{Fazit:} 
+\begin{itemize}
+	\item \textbf{Sender (LED):} Durch \textbf{Stromfluss} werden Photonen emittiert. 
+	\item \textbf{Empfänger (Fotodiode):} Durch \textbf{Lichteinfall} wird ein Stromfluss erzeugt. 
+
+	\end{itemize}
+
+}
 \STANDARD{\textbf{Der SENSOR VON UNS HIER }}
 { \begin{center}
 		
