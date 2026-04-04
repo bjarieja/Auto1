@@ -361,9 +361,85 @@ at (10.625,12) {N};
 		\item  \textbf{Schutzfunktion} vor Kurzschluss, Überstrom \& Überhitzung
 		
 	\end{itemize} 
+} 
+\STANDARD{Motortreiber und H Brücke} 
+{
+	\begin{center}
+	\begin{figure}
+	\begin{tikzpicture}
+		\tikzstyle{every node}=[font=\fontsize{9.1pt}{11.8pt}\selectfont]
+		
+		% Leitungen
+		\draw (17.5,11.75) -- (17.5,8.375);
+		\draw (17.5,11.75) -- (14,11.75);
+		\draw (17.5,8.375) -- (11.5,8.375);
+		\draw (14,11.75) -- (11.5,11.75);
+		
+		% Schalterstrukturen
+		\draw (13.625,11.75) -- (13.625,11.25);
+		\draw (13.5,11.25) -- (13.625,10.75);
+		\draw (13.625,10.75) -- (13.625,10.25);
+		
+		\draw (11.5,10.25) -- (11.5,9.625);
+		\draw (11.5,8.375) -- (11.5,9);
+		\draw (11.5,9) -- (11.375,9.625);
+		
+		\draw (13.625,10.25) -- (13.625,8.375);
+		\draw (11.5,11.75) -- (11.5,10.25);
+		
+		% Motor links
+		\draw (12.5,10) circle (0.5);
+		\node at (12.5,10) {M};
+		\draw (13,10) -- (13.625,10);
+		\draw (12,10) -- (11.5,10);
+		
+		% Spannungsquelle rechts (Kreis)
+		\draw (17.5,10) circle (0.625);
+		
+		% Pfeil (ohne Stealth)
+		\draw[->] (18.375,10.5) -- (18.375,9.5);
+		\node at (18.625,10) {U};
+		
+		% Labels
+		\node at (11.75,10.875) {S1};
+		\node at (14,10.875) {S3};
+		\node at (14,9.125) {S4};
+		\node at (11.875,9.125) {S2};
+		
+		\node at (14.75,12.625) {H-Brücke und Gleichstrommotor};
+		
+		% Knotenpunkte
+		\fill (11.5,10.625) circle (2pt);
+		\fill (11.5,11.25) circle (2pt);
+		\fill (13.625,11.25) circle (2pt);
+		\fill (13.625,10.75) circle (2pt);
+		\fill (11.5,9.625) circle (2pt);
+		\fill (11.5,9) circle (2pt);
+		\fill (13.625,9.625) circle (2pt);
+		\fill (13.625,9.125) circle (2pt);
+		
+	\end{tikzpicture}
+	\caption{Schaltschema eies Gleichstrommotors mit einem H-Brücken Motortreiber}
+	\end{figure}
+	\end{center}
 	
+	Alternativ zur Transistor Halbbrücke, welche klassische stromgesteuerte Transistoren verwendet, können auch \textbf{MOSFETS} (Metal-Oxide-Semiconductor Field-Effect Transistor) in Halbbrücken verwendet werden. Diese schalten \textbf{spannungsgesteuert} und sind weitaus \textbf{effizienter}. 
 }
+\STANDARD{Alternativen zur H-Brücken Motortreiber} 
+{ Grundlegend kann ein Gleichstrommotor ebenfalls mittels: 
+	\begin{itemize}
+		\item Linearer Transistor ( MOSFET im Analogbetrieb)
+		\item Relais Umpolung 
+		\item High-Side/Low-Side MOSFET + Umschalter
+			\end{itemize} 
+			betrieben werden
 
+
+
+
+
+
+}
 \STANDARD{Möglichkeiten der Steuerung }
 { 
 	
