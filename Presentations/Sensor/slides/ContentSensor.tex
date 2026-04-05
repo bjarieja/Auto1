@@ -440,9 +440,18 @@ at (10.625,12) {N};
 
 
 }
-\STANDARD{Möglichkeiten der Steuerung }
+\STANDARD{Möglichkeiten des Betriebes}
 { 
-	
+\textbf{Grundlegend:} Ein Motortreiber kann als binärer Verstärker verwendet werden. In diesem Fall werden festgelegte Drehzahlen gefahren. 
+ Allerdings kann er ebenfalls in einer \textbf{Regelstrecke} integriert werden. \cite{Roddeck:2023}
+ \begin{itemize}
+ 	\item Sensor nimmt IST-Wert auf.
+ 	\item  Mikrokontroller vergleicht \textbf{IST} gegen \textbf{SOLL} (\textbf{Rückkopplung})
+ 	\item Mikrokontroller regelt mittels \textbf{Model} (z.B. \textbf{PID}) zum SOLL-Wert nach.
+ \end{itemize} 
+ Auch kann ein Modulationsverfahren wie die  \textbf{Puls-Weiten-Modulation} verwendet werden.
+ Dieses muss jedoch zusätzlich um den Abgleich erweitert werden, sonst ist es nur geeignet für Steuerungen. 
+
 	
 	
 }
@@ -453,12 +462,7 @@ at (10.625,12) {N};
 
 %, numbers=left, caption={Konstruktion eines Keras-Sequential-Modells}, label={src:kerasmodel}]
 
-  \begin{lstlisting}[language=Python]
-import tensorflow as tf
-from tensorflow.keras import datasets, layers, models
-
-MODEL = models.Sequential()
-  \end{lstlisting}
+ 
 
 \end{frame}
 
