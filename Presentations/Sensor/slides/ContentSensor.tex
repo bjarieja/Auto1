@@ -13,7 +13,7 @@
 
 
 
-\Mysection{Sensoren und Aktoren}
+\Mysection{Einleitung}
 
 \STANDARD{Sensoren}
 { 
@@ -26,7 +26,7 @@
   	\item \textbf{Auswerte-Elektronik} z.B. Mikrokontroller
   \end{itemize}
 }
-
+\Mysection{Sensoren}
 \STANDARD{Funktionsprinzip}
 { 
 	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
@@ -71,7 +71,6 @@
 	\end{center}
 	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
 }
-\STANDARD{Lichtschranken} 
 
 
 
@@ -267,7 +266,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	
 	\end{center}
 }
-
+\Mysection{Aktoren}
 \STANDARD{Aktoren}
 { 
 \textbf{Grundsätzlich:} Aktoren dienen der \textbf{Erzeugung} von \textbf{Bewegungen} oder der Aufbringung von \textbf{Kräften} und \textbf{Momenten}. Hierbei fasst der Begriff alle Ausgabeelemente die sowohl analog (z.B. Stellmotoren)  als auch binär (z.B. Relais ) wirken können zusammen \cite{Roddeck:2023} 
@@ -362,7 +361,7 @@ at (10.625,12) {N};
 		
 	\end{itemize} 
 } 
-\STANDARD{Motortreiber und H Brücke} 
+\STANDARD{Motortreiber und H-Brücke} 
 {
 	\begin{center}
 	\begin{figure}
@@ -423,37 +422,37 @@ at (10.625,12) {N};
 	\end{figure}
 	\end{center}
 	
-	Alternativ zur Transistor Halbbrücke, welche klassische stromgesteuerte Transistoren verwendet, können auch \textbf{MOSFETS} (Metal-Oxide-Semiconductor Field-Effect Transistor) in Halbbrücken verwendet werden. Diese schalten \textbf{spannungsgesteuert} und sind weitaus \textbf{effizienter} \cite{Wallaschek:2025}. 
+	Alternativ zur  Transistor Halbbrücke, welche klassische \textbf{stromgesteuerte} Transistoren verwendet, können auch \textbf{MOSFETS} (Metal-Oxide-Semiconductor Field-Effect Transistor) in Halbbrücken verwendet werden. Diese schalten \textbf{spannungsgesteuert} und sind weitaus \textbf{effizienter} \cite{Wallaschek:2025}.  
+	
 }
 \STANDARD{Alternativen zur H-Brücken Motortreiber} 
 { Grundlegend kann ein Gleichstrommotor ebenfalls mittels: 
 	\begin{itemize}
-		\item Linearer Transistor ( MOSFET im Analogbetrieb)
+		\item Linearer Transistor (MOSFET im Analogbetrieb)
 		\item Relais Umpolung 
 		\item High-Side/Low-Side MOSFET + Umschalter
+		\item etc. 
 			\end{itemize} 
-			betrieben werden
-
-
-
-
-
-
+			betrieben werden.\\ 
+			
+\textbf{Die Wahl der Technologie ist abhängig von:}
+\begin{itemize}
+	\item benötigter \textbf{Stromstärke}
+	\item \textbf{Funktionsumfang} (Richtungswechsel, Reaktionsgeschwindigkeit) 
+	\item \textbf{Kühlung und Bauraum}
+\end{itemize}
 }
-\STANDARD{Möglichkeiten des Betriebes}
+\STANDARD{Funktionsprinzip einer Motorregelung}
 { 
 \textbf{Grundlegend:} Ein Motortreiber kann als binärer Verstärker verwendet werden. In diesem Fall werden festgelegte Drehzahlen gefahren. 
  Allerdings kann er ebenfalls in einer \textbf{Regelstrecke} integriert werden. \cite{Roddeck:2023}
  \begin{itemize}
- 	\item Sensor nimmt IST-Wert auf.
+ 	\item Sensor nimmt \textbf{IST-Wert} auf.
  	\item  Mikrokontroller vergleicht \textbf{IST} gegen \textbf{SOLL} (\textbf{Rückkopplung})
  	\item Mikrokontroller regelt mittels \textbf{Model} (z.B. \textbf{PID}) zum SOLL-Wert nach.
  \end{itemize} 
  Auch kann ein Modulationsverfahren wie die  \textbf{Puls-Weiten-Modulation} verwendet werden.
  Dieses muss jedoch zusätzlich um den Abgleich erweitert werden, sonst ist es nur geeignet für Steuerungen. 
-
-	
-	
 }
 
 
