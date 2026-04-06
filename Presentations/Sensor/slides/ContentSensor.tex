@@ -749,7 +749,28 @@ at (10.625,12) {N};
  Auch kann ein Modulationsverfahren wie die  \textbf{Puls-Weiten-Modulation} verwendet werden.
  Dieses muss jedoch zusätzlich um den Abgleich erweitert werden, sonst ist es nur geeignet für Steuerungen. 
 }
+\STANDARD{Standard Regelungsverfahren - PID}{
+PID-Regelung (Proportional-Integral-Differanzial-Regelung) ist eine Methodik um die Differenz zwischen Soll- und Ist-Wert zu minimieren.  
+\begin{figure}
+	$u(t)=K_P e(t)+K_I \int_0^t e(\tau),d\tau+K_D \frac{de(t)}{dt}$
+\end{figure}
 
+
+\begin{itemize}
+	\item Der Proportionalteil reagiert auf Fehler .
+	\item Der Integralteil korrigiert dauerhafte Abweichungen. 
+	\item Der Differenzialteil reagiert auf die Änderung des Fehlers.
+\end{itemize} 
+
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.75]{images/PID.png}
+		\caption{Darstellung der einzelnen und Kombinierten Regelkurven \cite{Radtke:2016}}
+	\end{figure}
+	
+\end{center}
+
+}
 
 
 \begin{frame}[fragile]{Code}
