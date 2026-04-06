@@ -739,20 +739,54 @@ at (10.625,12) {N};
 }
 \STANDARD{Funktionsprinzip einer Motorregelung}
 { 
-\textbf{Grundlegend:} Ein Motortreiber kann als binärer Verstärker verwendet werden. In diesem Fall werden festgelegte Drehzahlen gefahren. 
- Allerdings kann er ebenfalls in einer \textbf{Regelstrecke} integriert werden. \cite{Roddeck:2023}
+\textbf{Grundlegend:} Ein Motortreiber kann sowohl als binärer als auch analoger Verstärker betrachtet werden. 
+\cite{Roddeck:2023}
+Integriert in einer \textbf{Regelstrecke} gilt folgender Ablauf:
  \begin{itemize}
  	\item Sensor nimmt \textbf{IST-Wert} auf.
  	\item  Mikrokontroller vergleicht \textbf{IST} gegen \textbf{SOLL} (\textbf{Rückkopplung})
- 	\item Mikrokontroller regelt mittels \textbf{Model} (z.B. \textbf{PID}) zum SOLL-Wert nach.
+ 	\item Mikrokontroller regelt mittels \textbf{Model} (z.B. \textbf{PID}) zum \textbf{SOLL-Wert} nach. 
+ 	\item Motortreiber \textbf{interpretiert} Signal von Mikrokontroller und passt Ausgangssignal an.
  \end{itemize} 
- Auch kann ein Modulationsverfahren wie die  \textbf{Puls-Weiten-Modulation} verwendet werden.
- Dieses muss jedoch zusätzlich um den Abgleich erweitert werden, sonst ist es nur geeignet für Steuerungen. 
+ Der Motortreiber ist Teil der Streck eund nicht des Reglers somit ist er nur ein Aktor
 }
+
+\STANDARD{Funktionsprinzip einer Motorregelung}
+{ 
+	\textbf{Grundlegend:} Ein Motortreiber kann als binärer (PWM) oder analoger Verstärker betrachtet werden \cite{Roddeck:2023}. 
+	Er ist Teil der \textbf{Strecke}, bestehend aus Motortreiber und Motor.
+} 
+\STANDARD{Funktionsprinzip einer Motorregelung} 
+{
+	Der Ablauf einer geschlossenen Regelung ist wie folgt:
+	\begin{itemize}
+		\item Ein Sensor erfasst den \textbf{Istwert} (z. B. Drehzahl).
+		
+		\item Der Mikrokontroller vergleicht \textbf{Istwert} und \textbf{Sollwert} und bildet die \textbf{Regeldifferenz}:
+		\[
+		e(t) = \text{Soll} - \text{Ist}
+		\]
+		
+		\item Ein \textbf{Regelalgorithmus} (z. B. PID-Regler) berechnet daraus die \textbf{Stellgröße} \(u(t)\).
+		
+		\item Die \textbf{Stellgröße}  wird über den Motortreiber umgesetzt 
+		(z. B. als PWM-Signal oder analoge Spannung).
+		
+		\item Der Motortreiber beeinflusst die \textbf{Strecke} (Motor), wodurch sich der \textbf{Istwert} ändert.
+		
+		\item Der neue \textbf{Istwert} wird erneut erfasst (\textbf{Rückkopplung}), wodurch ein kontinuierlicher Regelkreis entsteht.
+	\end{itemize} 
+	\cite{Roddeck:2023}
+}
+
+
+
+
+
 \STANDARD{Standard Regelungsverfahren - PID}{
 PID-Regelung (Proportional-Integral-Differanzial-Regelung) ist eine Methodik um die Differenz zwischen Soll- und Ist-Wert zu minimieren.  \cite{Roddeck:2023}
 \begin{figure}
-	$u(t)=K_P e(t)+K_I \int_0^t e(\tau),d\tau+K_D \frac{de(t)}{dt}$
+	$u(t)=K_P e(t)+K_I \int_0^t e(\tau)d\tau+K_D \frac{de(t)}{dt}$
 \end{figure}
 
 
