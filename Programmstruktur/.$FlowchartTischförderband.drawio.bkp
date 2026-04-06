@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram name="Seite-1" id="1jJ_U89xQihP_xo7Jinj">
-    <mxGraphModel dx="4237" dy="1216" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="4728" dy="1642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -399,10 +399,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="RESET Taster 5 s. drücken" vertex="1">
-          <mxGeometry height="60" width="120" x="-2280" y="920" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2280" y="1100" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-34" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Rückkehr zu&amp;nbsp;&lt;div&gt;&quot;HS auf I&quot;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="-1960" y="920" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1960" y="1100" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-46" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-39" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -545,7 +545,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-85" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Band auf 0 abbremsen" vertex="1">
-          <mxGeometry height="60" width="120" x="-2120" y="920" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2120" y="1100" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-88" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="TB entfernen" vertex="1">
           <mxGeometry height="60" width="120" x="-360" y="410" as="geometry" />
@@ -554,11 +554,11 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-89" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Moduswechsel" vertex="1">
-          <mxGeometry height="60" width="120" x="-2280" y="520" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2280" y="560" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-97" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1960" y="550" as="targetPoint" />
+            <mxPoint x="-1960" y="590" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-98" connectable="0" parent="dBHuaJbyW-SO5eYqpF4W-97" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N" vertex="1">
@@ -575,28 +575,28 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Abfrage Band läuft?" vertex="1">
-          <mxGeometry height="60" width="120" x="-2120" y="520" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2120" y="560" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-113" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-112" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-94" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Modus wechseln" vertex="1">
-          <mxGeometry height="60" width="120" x="-1960" y="520" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1960" y="560" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-102" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-2000" y="640" as="sourcePoint" />
-            <mxPoint x="-1900" y="580" as="targetPoint" />
+            <mxPoint x="-2000" y="680" as="sourcePoint" />
+            <mxPoint x="-1900" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-101" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Band auf 0 abbremsen" vertex="1">
-          <mxGeometry height="60" width="120" x="-2120" y="610" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2120" y="650" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-107" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Warten auf Objekt in Lichtschranke" vertex="1">
-          <mxGeometry height="60" width="120" x="-1640" y="520" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1640" y="560" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-110" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Anzeige Moduswechsel" vertex="1">
-          <mxGeometry height="60" width="120" x="-1800" y="610" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1800" y="650" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-114" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-107" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -605,13 +605,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-112" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Warten 5 s" vertex="1">
-          <mxGeometry height="60" width="120" x="-1800" y="520" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1800" y="560" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-118" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-117" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-116" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Bandgeschwindigkeit ändern" vertex="1">
-          <mxGeometry height="60" width="120" x="-2280" y="717" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2280" y="820" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-120" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-119" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -620,7 +620,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-117" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Abfrage Soll-Geschwindigkeit" vertex="1">
-          <mxGeometry height="60" width="120" x="-2120" y="717" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2120" y="820" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-124" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dBHuaJbyW-SO5eYqpF4W-123" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -639,29 +639,29 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-119" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="SOLL = IST" vertex="1">
-          <mxGeometry height="60" width="120" x="-1960" y="717" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1960" y="820" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-133" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="dBHuaJbyW-SO5eYqpF4W-117">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-1640" y="747" />
-              <mxPoint x="-1640" y="697" />
-              <mxPoint x="-2140" y="697" />
-              <mxPoint x="-2140" y="747" />
+              <mxPoint x="-1640" y="850" />
+              <mxPoint x="-1640" y="800" />
+              <mxPoint x="-2140" y="800" />
+              <mxPoint x="-2140" y="850" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-123" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Warten 1 s" vertex="1">
-          <mxGeometry height="60" width="120" x="-1800" y="717" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1800" y="820" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-127" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Anzeige der Soll-Geschwindigkeit" vertex="1">
-          <mxGeometry height="60" width="120" x="-2120" y="817" as="geometry" />
+          <mxGeometry height="60" width="120" x="-2120" y="920" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-132" edge="1" parent="1" source="dBHuaJbyW-SO5eYqpF4W-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="dBHuaJbyW-SO5eYqpF4W-123">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBHuaJbyW-SO5eYqpF4W-129" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Bandgeschwindigkeit anpassen" vertex="1">
-          <mxGeometry height="60" width="120" x="-1960" y="817" as="geometry" />
+          <mxGeometry height="60" width="120" x="-1960" y="920" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
