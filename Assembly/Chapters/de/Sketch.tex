@@ -102,14 +102,21 @@ Technische Übersicht des Tischförderbands
 		\node[rotate=90, fill=white] at (22,5.5) {L | A | R};
 	
 	% Reset-Taster	
-		\draw[dashed] (25,-3.375) -- (26.875,-3.375);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (26.875,-3.375) {\textbf{Reset-Taster}};
-		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (27.575,-1.59) {Quittierung von Fehlermeldungen};
+		\draw[dashed] (25,-3.475) -- (26.875,-7.375);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (26.875,-6.375) {\textbf{Reset-Taster}};
+		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (27.575,-4.89) {Abbruch des aktuellen Befehls};
 	
-	% Hauptschalter
+	% Quittierungstaster
+		\draw[line width=1.3pt] (24.375,-1.375) circle (0.375cm);
+		\draw (24.375,-1.375) circle (0.5cm);
+		\draw[dashed] (24.975,-1.375) -- (30.7,0.5);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (31,3) {\textbf{Quittierungstaster}};
+		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (31.7,5.2) {Bestätigen von Anweisungen auf der Anzeige};
+		
+	% Hauptschalter / Not-Aus
 		\draw[dashed] (24.875,5.375) -- (26.75,5.375);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (27.125,6) {\textbf{Hauptschalter}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (27.625,7.475) {Einschalten des Tischförderbands};
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (27.125,7.53) {\textbf{Hauptschalter / Not-Aus}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (27.8,7.5) {Einschalten des Tischförderbands};
 	
 	% Modusschalter	
 		\draw[dashed] (20.875,5.5) -- (16,0.375);
@@ -118,12 +125,12 @@ Technische Übersicht des Tischförderbands
 		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.85,3) {Förderrichtung des Transportbandes};
 	
 	% Klappbare Stützbeine
-		\draw[dashed] (28.75,18.5) -- (30,18.5);
-		\draw[dashed] (30,18.5) -- (30,-11.5);
-		\draw[dashed] (30,-11.5) -- (28.75,-11.5);
-		\draw[dashed] (30,-7.75) -- (31.25,-7.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (31.25,-4.45) {\textbf{Klappbare Stützbeine}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.875,-4.85) {Für Transport einklappen};
+		\draw[dashed] (28.75,18.5) -- (35,18.5);
+		\draw[dashed] (35,18.5) -- (35,-11.5);
+		\draw[dashed] (35,-11.5) -- (28.75,-11.5);
+		\draw[dashed] (35,-7.75) -- (36.25,-7.75);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (36.25,-4.45) {\textbf{Klappbare Stützbeine}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (36.875,-4.85) {Für Transport einklappen};
 	
 	% Lichtschranke 1
 		\draw[dashed] (17.5,-14.75) -- (13.25,-14.75);
@@ -141,12 +148,171 @@ Technische Übersicht des Tischförderbands
 		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17,-6.225) {Anzeige von Fehlermeldungen};
 	
 	% Drehregler
-		\draw[dashed] (21.125,10.875) -- (16.25,12.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (15.995,14.35) {\textbf{Drehregler}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.625,15.125) {Stufenlose Einstellung};
+		\draw[dashed] (21.125,10.875) -- (17.25,12.75);
+		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (15.895,13.9) {\textbf{Drehregler}};
+		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.625,15.125) {Stufenlose Einstellung der}; \node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17.325,15.725) {Transportband-Geschwindigkeit};
 		
 	\end{tikzpicture}
 }
-	\caption{Übersicht der Bedienerelemente}
+	\caption{Übersicht der Bedienerelemente, Vorderansicht}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\resizebox{0.7\textwidth}{!}{%
+			\begin{tikzpicture}[
+				line width=0.8pt,
+				rotate=90,
+				transform shape
+				]
+				
+				% ------------------ GEOMETRIE ------------------
+				
+				\draw (5,3.5) rectangle (20,-2.75);
+				\draw (5,3.25) -- (4.625,3.25);
+				\draw (4.625,-2.5) -- (5,-2.5);
+				\draw (20,3.25) -- (20.375,3.25);
+				\draw (20,-2.5) -- (20.375,-2.5);
+				
+				\draw (20.625,3.5) -- (22.5,3.5);
+				\draw (22.5,3.5) -- (22.5,-2.75);
+				\draw (22.5,-2.75) -- (20.625,-2.75);
+				
+				\draw (4.375,3.5) -- (2.5,3.5);
+				\draw (2.5,3.5) -- (2.5,-2.75);
+				\draw (2.5,-2.75) -- (4.375,-2.75);
+				
+				\draw (20.375,3.25) -- (20.375,1);
+				\draw (20.375,-2.5) -- (20.375,-0.25);
+				\draw (20.375,1) rectangle (20.625,-0.25);
+				
+				\draw (20.625,3.5) -- (20.625,1);
+				\draw (20.625,-0.25) -- (20.625,-9);
+				
+				\draw (4.625,3.25) -- (4.625,1);
+				\draw (4.625,-2.5) -- (4.625,-0.25);
+				\draw (4.625,1) rectangle (4.375,-0.25);
+				
+				\draw (4.375,3.5) -- (4.375,0.875);
+				\draw (4.375,-0.25) -- (4.375,-9);
+				
+				\draw (2.125,2.875) -- (1.5,2.875);
+				\draw (1.5,2.875) -- (-1.25,-2.75);
+				\draw (-1.25,-3.375) -- (2.125,-3.375);
+				
+				\draw (20.625,-9) -- (22.875,-9);
+				\draw (22.875,-9) -- (22.875,3.125);
+				\draw (22.5,3.125) -- (22.875,3.125);
+				
+				\draw (2.125,-9) -- (2.125,3.125);
+				\draw (2.125,-9) -- (4.375,-9);
+				\draw (2.125,3.125) -- (2.5,3.125);
+				
+				\draw (22.875,1.5) -- (25.75,1);
+				\draw (25.75,1) arc[start angle=79.84, end angle=-79.84, radius=0.6350];
+				\draw (25.75,-0.25) -- (22.875,-0.75);
+				
+				\draw (20.625,3.5) -- (20.625,4.75);
+				\draw (20.625,4.75) -- (20.5,4.75);
+				\draw (20.5,4.75) -- (20.5,7.25);
+				\draw (20.5,7.25) -- (22.25,7.25);
+				\draw (22.25,7.25) -- (22.25,3.5);
+				
+				\draw (-1.25,-2.75) -- (-1.25,-3.375);
+				\draw (-0.625,-1.375) -- (-0.625,-1);
+				\draw (-0.625,-1) -- (0.875,2);
+				\draw (0.875,2) -- (1.125,2.125);
+				
+				\draw (-0.25,-1.375) rectangle (0.25,-2.75);
+				
+				\draw[fill=black] (-0.125,-1.5) rectangle (0,-2.625);
+				\draw[fill=black] (0.125,0.5) -- (-0.625,0.5) -- (-0.125,1.5) -- (0.625,1.5) -- cycle;
+				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,0.6875)}]
+				(-1,1.125) rectangle (0.5,0.25);
+				
+				\draw[fill=black] (1.25,-2.375) circle (0.125cm);
+				\draw[line width=1.3pt] (1.25,-2.375) circle (0.25cm);
+				
+				% ------------------ GESTRICHELTE LINIEN ------------------
+				
+				\draw[dashed] (4.75,-2.5) -- (5.875,-6.625);
+				\draw[dashed] (20.125,-2.5) -- (20.125,-5.375);
+				\draw[dashed] (20.125,-5.375) -- (5.5,-5.375);
+				\draw[dashed] (0,-2.75) -- (-5.5,0.75);
+				\draw[dashed] (1.25,-2.625) -- (-3,-5.25);
+				\draw[dashed] (-0.625,1.25) -- (-4.875,4.75);
+				\draw[dashed] (3,-9) -- (3,-10.25);
+				\draw[dashed] (3,-10.25) -- (21.875,-10.25);
+				\draw[dashed] (21.875,-10.25) -- (21.875,-9);
+				\draw[dashed] (3.75,-10.375) -- (3.75,-12.375);
+				\draw[dashed] (21.625,7.25) -- (24.75,8.25);
+				\draw[dashed] (26,0.875) -- (26.25,3.5);
+				
+				% ------------------ BESCHRIFTUNGEN ------------------
+		% Laufrolle
+				
+			\node[fill=white, rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (7.25,-6.5) {\textbf{Laufrolle}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (10.35,-7.3) {Führung und Antrieb für Transportband};
+		
+		% USB-Anschluss
+			
+			\node[
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (-7.625,0.75) {\textbf{USB-Anschluss}};
+		
+		% Netzkabel-Anschluss
+			
+			\node[
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (-3.65,-5.825) {\textbf{Netzkabel-Anschluss}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-2.5,-6.5) {Stromversorgung des Tischförderbands};
+			
+		% Drehregler
+			
+			\node[
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (-5.5,5.9) {\textbf{Drehregler}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-4.2,5.2) {Stufenlose Einstellung der};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-3.6,4.5) {Transportband-Geschwindigkeit};
+			
+		% Klappbare Stützbeine
+			
+			\node[fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (6.625,-12.25) {\textbf{Klappbare Stützbeine}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (6.25,-13) {Für Transport einklappen};
+		
+		% Lichtschranke 2
+			
+			\node[
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (27,8.125) {\textbf{Lichtschranke 2}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (28.4,7.3) {Transportboxen korrekt platzieren};
+		
+		% Transportgriff
+			
+			\node[
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] at (28.55,3.5) {\textbf{Transportgriff}};
+			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.8,2.8) {Einhändiges Transportieren des Tischförderbands};
+			
+				
+			\end{tikzpicture}
+		}
+		\caption{Übersicht der Bedienerelemente, Seitenansicht}
 	\end{center}
 \end{figure}
