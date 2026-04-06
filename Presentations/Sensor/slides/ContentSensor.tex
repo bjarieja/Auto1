@@ -656,7 +656,7 @@ at (10.625,12) {N};
 		
 	\end{itemize} 
 } 
-\STANDARD{Motortreiber und H-Brücke} 
+\STANDARD{Motortreiber übliche H-Brücke} 
 {
 	\begin{center}
 	\begin{figure}
@@ -737,19 +737,7 @@ at (10.625,12) {N};
 	\item \textbf{Kühlung und Bauraum}
 \end{itemize}
 }
-\STANDARD{Funktionsprinzip einer Motorregelung}
-{ 
-\textbf{Grundlegend:} Ein Motortreiber kann sowohl als binärer als auch analoger Verstärker betrachtet werden. 
-\cite{Roddeck:2023}
-Integriert in einer \textbf{Regelstrecke} gilt folgender Ablauf:
- \begin{itemize}
- 	\item Sensor nimmt \textbf{IST-Wert} auf.
- 	\item  Mikrokontroller vergleicht \textbf{IST} gegen \textbf{SOLL} (\textbf{Rückkopplung})
- 	\item Mikrokontroller regelt mittels \textbf{Model} (z.B. \textbf{PID}) zum \textbf{SOLL-Wert} nach. 
- 	\item Motortreiber \textbf{interpretiert} Signal von Mikrokontroller und passt Ausgangssignal an.
- \end{itemize} 
- Der Motortreiber ist Teil der Streck eund nicht des Reglers somit ist er nur ein Aktor
-}
+
 
 \STANDARD{Funktionsprinzip einer Motorregelung}
 { 
