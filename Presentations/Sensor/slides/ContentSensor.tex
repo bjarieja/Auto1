@@ -15,10 +15,9 @@
 
 \Mysection{Einleitung}
 
-\STANDARD{Sensoren}
+\STANDARD{Allgemeines}
 { 
 	
-  \framesubtitle{Einleitung}	
   \textbf{Grundsätzlich:} Sensor (lat: \glqq Fühler" ) dienen zur \textbf{qualitativen} und \textbf{quantitaiven Auffassung} von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen. \cite{Hering:2023} \\ 
   Jedes Sensorsystem besteht aus folgenden Komponenten: 
   \begin{itemize}
@@ -26,9 +25,8 @@
   	\item \textbf{Auswerte-Elektronik} z.B. Mikrokontroller
   \end{itemize}
 }
-\Mysection{Sensoren}
-\STANDARD{Funktionsprinzip}
-{ 
+\section{Specific Sensor/Actor}
+\STANDARD{Funktionsprinzip}{ 
 	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
 \begin{center}
 \begin{figure}
@@ -40,10 +38,8 @@
 	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
 	arrow/.style={->, thick}
 	]
-	
 	% Outer box
 	\node[outer] (system) {};
-	
 	% Inner blocks
 	\node[block] (sensor) at (-3,0) {Sensor-Element};
 	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
@@ -74,7 +70,7 @@
 
 
 
-\STANDARD{Optische Näherungssenoren}
+\STANDARD{Optische Näherungssensoren}
 { 
 Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. Hierbei sind \textbf{Strahlenquellen} beispielsweise der \textbf{Sender} und \textbf{Fotodioden} die \textbf{Empfänger}. 
 \begin{itemize}
@@ -84,7 +80,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \end{itemize}
 }
 
-\STANDARD{Optische Näherungssenoren}
+\STANDARD{Optische Näherungssensoren}
 { 
 	\begin{center}
 	\begin{figure} 
@@ -243,7 +239,8 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 
 
 \STANDARD{Funktionsprinzip Fotodiode}
-{\begin{center}
+{
+	\begin{center}
 		\begin{figure}
 			\begin{tikzpicture}[scale=0.7]
 				
@@ -287,7 +284,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 }
 
 
-\STANDARD{ Sensor Funktionsprinzip } 
+\STANDARD{Sensor Funktionsprinzip } 
 {
 \textbf{Fazit:} 
 \begin{itemize}
@@ -297,8 +294,11 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	\end{itemize}
 
 }
-\STANDARD{\textbf{Der SENSOR VON UNS HIER }}
+\section{Reflex-Lichtschranke E18-D80N}
+\STANDARD{\textbf{Spezifikation Reflex-Lichtschranke E18-D80N }}
 {
+\subsection{Übersicht} 
+
 \begin{table}
 	\caption{Lichtschranke Sezifikation}
 \begin{center}
@@ -327,7 +327,9 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \end{center}
 \end{table}
 
-
+} 
+\subsection{Technische Darstellung der Lichtschranke}
+\STANDARD{Technische Darstellung der Lichtschranke }{
 \begin{center}
 \begin{figure}
 	\centering
@@ -518,292 +520,368 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	\caption{Mechanische Darstellung (vollständig)}
 	\label{fig:mechanik_full}
 \end{figure}
-	
 	\end{center}
+	
 }
-\Mysection{Aktoren}
-\STANDARD{Aktoren}
-{ 
-\textbf{Grundsätzlich:} Aktoren dienen der \textbf{Erzeugung} von \textbf{Bewegungen} oder der Aufbringung von \textbf{Kräften} und \textbf{Momenten}. Hierbei fasst der Begriff alle Ausgabeelemente die sowohl analog (z.B. Stellmotoren)  als auch binär (z.B. Relais ) wirken können zusammen \cite{Roddeck:2023} 
-}
-
-\STANDARD{Motoren}
-{ 
-\textbf{Grundsätzlich:} Durch das \textbf{Bestromen} einer \textbf{Spule} wird gegenüber einem \textbf{bestehenden Magnetfeld (Permanent- oder Elektromagnet)} eine Kraft aufgebracht, welche dann in einem \textbf{Moment} resultiert. \cite{Feynman:2020} 
-\begin{itemize}
-	\item \textbf{Moment $\propto$ Stromstärke} 
-	\item \textbf{Drehzahl $\propto$ Spannung }
-\end{itemize}
-
-
-\begin{center}
-	\begin{figure}
-\begin{tikzpicture}[>=latex] % kein Stealth verwendet
-
-% --- Kreisformen ---
-\draw (11,12.5) circle (0.875cm); % innerer Kreis
-\draw (11,12.5) circle (1.625cm); % äußerer Kreis
-
-% --- Drehbarer Rotor (geometrische Nachbildung, vereinfachte Kurve) ---
-\begin{scope}[rotate around={-24.75:(10.125,12.875)}]
-	\draw[smooth]
-	(10.1250,12.6106) .. controls (10.1425,12.5817) and (10.1950,12.6322) ..
-	(10.2300,12.7629) .. controls (10.2737,12.9685) and (10.3350,13.1638) ..
-	(10.3875,13.1282) .. controls (10.4400,12.9242) and (10.4750,12.7595) ..
-	(10.5275,12.5917) .. controls (10.5800,12.6124) and (10.6325,12.8077) ..
-	(10.6850,13.0478) .. controls (10.7375,13.1729) and (10.7725,13.1460) ..
-	(10.8250,12.9602) .. controls (10.8775,12.7176) and (10.9125,12.6060) ..
-	(10.9650,12.5966) .. controls (11.0175,12.7723) and (11.0612,12.9780) ..
-	(11.1137,13.1536) .. controls (11.1662,13.1438) and (11.2100,12.9949) ..
-	(11.2625,12.7502) .. controls (11.3150,12.5886) and (11.3675,12.6174) ..
-	(11.4200,12.8176) .. controls (11.4725,13.0559) and (11.5250,13.1740) ..
-	(11.5775,13.0932) .. controls (11.6300,12.8673) and (11.6738,12.6759) ..
-	(11.7263,12.5750) .. controls (11.7788,12.6737) and (11.8225,12.8643) ..
-	(11.8750,13.0911);
-\end{scope}
-
-% --- Magnetbegrenzungen ---
-\draw (10.875,15) -- (10.875,14.125);
-\draw (10.875,10.875) -- (10.875,10);
-\draw (11.25,15) -- (11.25,14.125);
-\draw (11.25,10.875) -- (11.25,10);
-
-% --- Außenrahmen des Magnetbereichs ---
-\draw (10.875,15) -- (8.125,15) -- (8.125,10) -- (10.875,10);
-\draw (11.25,10) -- (13.875,10) -- (13.875,15) -- (11.25,15);
-
-% --- Pfeil für Magnetfluss (nun ohne Stealth) ---
-\draw[->] (11.375,13.625) -- (10.5,13.625);
-\node[font=\fontsize{10.2pt}{14.7pt}\selectfont,
-fill=white, inner sep=1pt, rounded corners=0.02cm] at (10.9,13.9) {F};
-% --- Magnetbeschriftung außen ---
-\node[font=\fontsize{18.2pt}{23.7pt}\selectfont,
-fill=white, inner sep=1pt, rounded corners=0.02cm] at (9.125,14.125) {N};
-\node[font=\fontsize{18.2pt}{23.7pt}\selectfont,
-fill=white, inner sep=1pt, rounded corners=0.02cm] at (13.375,14.125) {S};
-
-% --- Labels im Rotorbereich ---
-\node[font=\fontsize{6.3pt}{8.1pt}\selectfont,
-rotate=-30, fill=white, inner sep=1pt]
-at (11.25,13) {S};
-\node[font=\fontsize{6.3pt}{8.1pt}\selectfont,
-rotate=-30, fill=white, inner sep=1pt]
-at (10.625,12) {N};
-
-\end{tikzpicture}
-\caption{Schematischer Aufbau eines Gleichstrommotors}
-	\end{figure}
-\end{center}
-
-
-
-}
-
-
-
-
-%Durch \textbf{Rotation eines Magnetfeldes)} wird ein \textbf{Anzugsmoment} auf den rotierenden Körper (\textbf{\glqq Rotor"}) erzeugt. Hierbei \textbf{muss} das \textbf{äußere Magnetfeld schneller} rotieren als der \textbf{Rotor} selbst. \cite{Feynman:2020}
-\STANDARD{Unser Motor}
+\subsection{Anschluss}
+\STANDARD{Elektrischer Anschluss der Lichtschranke } 
 {
-\begin{table}
-	\caption{Motor Sezifikation}
-	\begin{center}
-		\begin{tabular}{|l|l|}
-			\hline
-			Parameter &Wert/Detail\\
-			\hline
-			Modell & Motraxx SR555SHP-3247S-75C \\
-			\hline
-			Betriebsspannung & 10V - 14V DC \\
-			\hline
-			Nennspannung & 12V DC \\
-			\hline
-			Leerlaufdrehzahl & 5887rpm \\
-			\hline
-			Leerlaufstrom & 0,25A \\
-			\hline
-			Haltestrom & 8,56A\\
-			\hline
-			Haltemoment & 172,5mNm\\
-			\hline
-			Maximale Ausgangsleistung & 24,21W\\
-			\hline
-			Bester Arbeitspunkt & 5028rpm \& 1,46A\\
-			\hline
-			Polzahl & 5\\
-			\hline
-			Bürstenart & Kohlebürsten\\
-			\hline
-			Entstörung & 2 x 47nF (Integriert)\\
-			\hline
-		\end{tabular}
-	\end{center}
-\end{table}
 
-
-
-
-
+AnSchlusszeichnung hier 
 }
-
-\STANDARD{Motortreiber}
-{ 
-	\textbf{Grundsätzlich:} Motortreiber dienen der \textbf{Versorgung von Motoren}. Sie dienen als \textbf{Verstärker} der Signale des Mikrokontrollers 
-	\begin{itemize}
-		\item Direkte \textbf{Ansteuerung} meist aufgrund zu geringer Stromstärke nicht möglich
-		%\item Direkte Umkehr der Ausgangspolarität (H-Brücke) mittels binärem Signal sorgt für Drehrichtungsumkehr. 
-		\item  \textbf{Schutzfunktion} vor Kurzschluss, Überstrom \& Überhitzung
-		
-	\end{itemize} 
-} 
-\STANDARD{Motortreiber übliche H-Brücke} 
-{
-	\begin{center}
-	\begin{figure}
-	\begin{tikzpicture}
-		\tikzstyle{every node}=[font=\fontsize{9.1pt}{11.8pt}\selectfont]
-		
-		% Leitungen
-		\draw (17.5,11.75) -- (17.5,8.375);
-		\draw (17.5,11.75) -- (14,11.75);
-		\draw (17.5,8.375) -- (11.5,8.375);
-		\draw (14,11.75) -- (11.5,11.75);
-		
-		% Schalterstrukturen
-		\draw (13.625,11.75) -- (13.625,11.25);
-		\draw (13.5,11.25) -- (13.625,10.75);
-		\draw (13.625,10.75) -- (13.625,10.25);
-		
-		\draw (11.5,10.25) -- (11.5,9.625);
-		\draw (11.5,8.375) -- (11.5,9);
-		\draw (11.5,9) -- (11.375,9.625);
-		
-		\draw (13.625,10.25) -- (13.625,8.375);
-		\draw (11.5,11.75) -- (11.5,10.25);
-		
-		% Motor links
-		\draw (12.5,10) circle (0.5);
-		\node at (12.5,10) {M};
-		\draw (13,10) -- (13.625,10);
-		\draw (12,10) -- (11.5,10);
-		
-		% Spannungsquelle rechts (Kreis)
-		\draw (17.5,10) circle (0.625);
-		
-		% Pfeil (ohne Stealth)
-		\draw[->] (18.375,10.5) -- (18.375,9.5);
-		\node at (18.625,10) {U};
-		
-		% Labels
-		\node at (11.75,10.875) {S1};
-		\node at (14,10.875) {S3};
-		\node at (14,9.125) {S4};
-		\node at (11.875,9.125) {S2};
-		
-		\node at (14.75,12.625) {H-Brücke und Gleichstrommotor};
-		
-		% Knotenpunkte
-		\fill (11.5,10.625) circle (2pt);
-		\fill (11.5,11.25) circle (2pt);
-		\fill (13.625,11.25) circle (2pt);
-		\fill (13.625,10.75) circle (2pt);
-		\fill (11.5,9.625) circle (2pt);
-		\fill (11.5,9) circle (2pt);
-		\fill (13.625,9.625) circle (2pt);
-		\fill (13.625,9.125) circle (2pt);
-		
-	\end{tikzpicture}
-	\caption{Schaltschema eies Gleichstrommotors mit einem H-Brücken Motortreiber}
-	\end{figure}
-	\end{center}
-	
-	Alternativ zur  Transistor Halbbrücke, welche klassische \textbf{stromgesteuerte} Transistoren verwendet, können auch \textbf{MOSFETS} (Metal-Oxide-Semiconductor Field-Effect Transistor) in Halbbrücken verwendet werden. Diese schalten \textbf{spannungsgesteuert} und sind weitaus \textbf{effizienter} \cite{Wallaschek:2025}.  
-	
-}
-\STANDARD{Alternativen zur H-Brücken Motortreiber} 
-{ Grundlegend kann ein Gleichstrommotor ebenfalls mittels: 
-	\begin{itemize}
-		\item Linearer Transistor (MOSFET im Analogbetrieb)
-		\item Relais Umpolung 
-		\item High-Side/Low-Side MOSFET + Umschalter
-		\item etc. 
-			\end{itemize} 
-			betrieben werden.\\ 
-			
-\textbf{Die Wahl der Technologie ist abhängig von:}
+\section{Bibliothek}
+\STANDARD{Beschreibung der Bibliothek}{
+\subsection{Description}
+Diese Bibliothek dient zur Entprellung von Signalen. Hierbei werden viele einzelne Signale in ein Gesamtsignal zusammengefasst. }
+\subsection{Installation}
+\STANDARD{Hinweise der Installation}{
+Zur isnatllation der Bibliothek kann diese einfach in dem reiter Erweiterungen der Arduino IDE gewählt werden. Wichtig ist zusätzlich das Richtige Board ausgewählt zu haben. 
 \begin{itemize}
-	\item benötigter \textbf{Stromstärke}
-	\item \textbf{Funktionsumfang} (Richtungswechsel, Reaktionsgeschwindigkeit) 
-	\item \textbf{Kühlung und Bauraum}
+	\item hier eine Lister der Installationen
 \end{itemize}
 }
-
-
-\STANDARD{Funktionsprinzip einer Motorregelung}
-{ 
-	\textbf{Grundlegend:} Ein Motortreiber kann als binärer (PWM) oder analoger Verstärker betrachtet werden \cite{Roddeck:2023}. 
-	Er ist Teil der \textbf{Strecke}, bestehend aus Motortreiber und Motor.
-} 
-\STANDARD{Funktionsprinzip einer Motorregelung} 
-{
-	Der Ablauf einer geschlossenen Regelung ist wie folgt:
-	\begin{itemize}
-		\item Ein Sensor erfasst den \textbf{Istwert} (z. B. Drehzahl).
-		
-		\item Der Mikrokontroller vergleicht \textbf{Istwert} und \textbf{Sollwert} und bildet die \textbf{Regeldifferenz}:
-		\[
-		e(t) = \text{Soll} - \text{Ist}
-		\]
-		
-		\item Ein \textbf{Regelalgorithmus} (z. B. PID) berechnet daraus die \textbf{Stellgröße} \(u(t)\).
-		
-		\item Die \textbf{Stellgröße}  wird über den Motortreiber umgesetzt 
-		(z. B. als PWM-Signal oder analoge Spannung).
-		
-		\item Der Motortreiber beeinflusst die \textbf{Strecke} (Motor), wodurch sich der \textbf{Istwert} ändert.
-		
-		\item Der neue \textbf{Istwert} wird erneut erfasst (\textbf{Rückkopplung}), wodurch ein kontinuierlicher Regelkreis entsteht.
-	\end{itemize} 
-	\cite{Roddeck:2023}
-}
-
-
-
-
-
-\STANDARD{Standard Regelungsverfahren - PID}{
-PID-Regelung (Proportional-Integral-Differanzial-Regelung) ist eine Methodik um die Differenz zwischen Soll- und Ist-Wert zu minimieren.  \cite{Roddeck:2023}
-\begin{figure}
-	$u(t)=K_P e(t)+K_I \int_0^t e(\tau)d\tau+K_D \frac{de(t)}{dt}$
-\end{figure}
-
-
-\begin{itemize}
-	\item Der Proportionalteil reagiert auf Fehler .
-	\item Der Integralteil korrigiert dauerhafte Abweichungen. 
-	\item Der Differenzialteil reagiert auf die Änderung des Fehlers.
-\end{itemize} 
-
-\begin{center}
-	\begin{figure}
-		\includegraphics[scale=0.75]{images/PID.png}
-		\caption{Darstellung der einzelnen und Kombinierten Regelkurven \cite{Radtke:2016}}
-	\end{figure}
-	
-\end{center}
+\subsection{Functions}
+\STANDARD{Funktionen der Bibliothekl}{
 
 }
+\section{Example}
+\STANDARD{Beispiel der Anwendung }{
+Schaltende Elemente unterliegen oft dem Effekt der \textbf{Prellung}. Hierbei kommt es zu keinem Suaberen Schaltkontakt sondern vielen einzelnen Kontakten. 
+Lichtschranken liefern saubere Signale (High/LOW)
+Dies komt dadurch zustande, das kein sauberer einzelner Kontakt entsteht. 
+So kann bei einer Lichtschranke ein Objekt den Lichtstrahl für einen kurzen Moment unterbrechen und anschließend zurückschwingen (Vibration). 
+Hierbei kommt es zu kurzeitigen Änderungen des Schaltsignales. }
 
 
-\begin{frame}[fragile]{Code}
+\subsection{Manual}
+dvs
+\subsection{Inside the Example}
+dsv
+\subsection{Code}
+svd
+\subsection{Files}
+svd
 
-%, numbers=left, caption={Konstruktion eines Keras-Sequential-Modells}, label={src:kerasmodel}]
 
- 
+\section{Calibration}
 
-\end{frame}
+cite method
 
-\begin{frame}[fragile]{Code}
+\section{Simple Code}
 
-  \lstinputlisting[language=Python, firstnumber=1]{Code/PDFExtractTable/PDFExtractTable.py}
-\end{frame}
+
+\section{Simple Application}
+
+
+
+\section{Tests}
+
+\subsection{einfacher Test } 
+\STANDARD{Test der LIchtschranken}
+
+Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. 
+Lichtschranke wird unterbrochen. 
+Arduino LED hört auf zu leuchten. 
+Lichtschranke wird freigegeben, Arduino LED leuchtet wieder. 
+
+
+\subsection{Test all Functions}
+
+
+
+\section{Further Readings}
+
+
+
+
+
+% ab hier Komentiere %%%% 
+%%%%%
+%%%%
+
+%\Mysection{Aktoren}
+%\STANDARD{Aktoren}
+%{ 
+%\textbf{Grundsätzlich:} Aktoren dienen der \textbf{Erzeugung} von \textbf{Bewegungen} oder der Aufbringung von \textbf{Kräften} und \textbf{Momenten}. Hierbei fasst der Begriff alle Ausgabeelemente die sowohl analog (z.B. Stellmotoren)  als auch binär (z.B. Relais ) wirken können zusammen \cite{Roddeck:2023} 
+%}
+%
+%\STANDARD{Motoren}
+%{ 
+%\textbf{Grundsätzlich:} Durch das \textbf{Bestromen} einer \textbf{Spule} wird gegenüber einem \textbf{bestehenden Magnetfeld (Permanent- oder Elektromagnet)} eine Kraft aufgebracht, welche dann in einem \textbf{Moment} resultiert. \cite{Feynman:2020} 
+%\begin{itemize}
+%	\item \textbf{Moment $\propto$ Stromstärke} 
+%	\item \textbf{Drehzahl $\propto$ Spannung }
+%\end{itemize}
+%
+%
+%\begin{center}
+%	\begin{figure}
+%\begin{tikzpicture}[>=latex] % kein Stealth verwendet
+%
+%% --- Kreisformen ---
+%\draw (11,12.5) circle (0.875cm); % innerer Kreis
+%\draw (11,12.5) circle (1.625cm); % äußerer Kreis
+%
+%% --- Drehbarer Rotor (geometrische Nachbildung, vereinfachte Kurve) ---
+%\begin{scope}[rotate around={-24.75:(10.125,12.875)}]
+%	\draw[smooth]
+%	(10.1250,12.6106) .. controls (10.1425,12.5817) and (10.1950,12.6322) ..
+%	(10.2300,12.7629) .. controls (10.2737,12.9685) and (10.3350,13.1638) ..
+%	(10.3875,13.1282) .. controls (10.4400,12.9242) and (10.4750,12.7595) ..
+%	(10.5275,12.5917) .. controls (10.5800,12.6124) and (10.6325,12.8077) ..
+%	(10.6850,13.0478) .. controls (10.7375,13.1729) and (10.7725,13.1460) ..
+%	(10.8250,12.9602) .. controls (10.8775,12.7176) and (10.9125,12.6060) ..
+%	(10.9650,12.5966) .. controls (11.0175,12.7723) and (11.0612,12.9780) ..
+%	(11.1137,13.1536) .. controls (11.1662,13.1438) and (11.2100,12.9949) ..
+%	(11.2625,12.7502) .. controls (11.3150,12.5886) and (11.3675,12.6174) ..
+%	(11.4200,12.8176) .. controls (11.4725,13.0559) and (11.5250,13.1740) ..
+%	(11.5775,13.0932) .. controls (11.6300,12.8673) and (11.6738,12.6759) ..
+%	(11.7263,12.5750) .. controls (11.7788,12.6737) and (11.8225,12.8643) ..
+%	(11.8750,13.0911);
+%\end{scope}
+%
+%% --- Magnetbegrenzungen ---
+%\draw (10.875,15) -- (10.875,14.125);
+%\draw (10.875,10.875) -- (10.875,10);
+%\draw (11.25,15) -- (11.25,14.125);
+%\draw (11.25,10.875) -- (11.25,10);
+%
+%% --- Außenrahmen des Magnetbereichs ---
+%\draw (10.875,15) -- (8.125,15) -- (8.125,10) -- (10.875,10);
+%\draw (11.25,10) -- (13.875,10) -- (13.875,15) -- (11.25,15);
+%
+%% --- Pfeil für Magnetfluss (nun ohne Stealth) ---
+%\draw[->] (11.375,13.625) -- (10.5,13.625);
+%\node[font=\fontsize{10.2pt}{14.7pt}\selectfont,
+%fill=white, inner sep=1pt, rounded corners=0.02cm] at (10.9,13.9) {F};
+%% --- Magnetbeschriftung außen ---
+%\node[font=\fontsize{18.2pt}{23.7pt}\selectfont,
+%fill=white, inner sep=1pt, rounded corners=0.02cm] at (9.125,14.125) {N};
+%\node[font=\fontsize{18.2pt}{23.7pt}\selectfont,
+%fill=white, inner sep=1pt, rounded corners=0.02cm] at (13.375,14.125) {S};
+%
+%% --- Labels im Rotorbereich ---
+%\node[font=\fontsize{6.3pt}{8.1pt}\selectfont,
+%rotate=-30, fill=white, inner sep=1pt]
+%at (11.25,13) {S};
+%\node[font=\fontsize{6.3pt}{8.1pt}\selectfont,
+%rotate=-30, fill=white, inner sep=1pt]
+%at (10.625,12) {N};
+%
+%\end{tikzpicture}
+%\caption{Schematischer Aufbau eines Gleichstrommotors}
+%	\end{figure}
+%\end{center}
+%
+%
+%
+%}
+%
+%
+%
+%
+%%Durch \textbf{Rotation eines Magnetfeldes)} wird ein \textbf{Anzugsmoment} auf den rotierenden Körper (\textbf{\glqq Rotor"}) erzeugt. Hierbei \textbf{muss} das \textbf{äußere Magnetfeld schneller} rotieren als der \textbf{Rotor} selbst. \cite{Feynman:2020}
+%\STANDARD{Unser Motor}
+%{
+%\begin{table}
+%	\caption{Motor Sezifikation}
+%	\begin{center}
+%		\begin{tabular}{|l|l|}
+%			\hline
+%			Parameter &Wert/Detail\\
+%			\hline
+%			Modell & Motraxx SR555SHP-3247S-75C \\
+%			\hline
+%			Betriebsspannung & 10V - 14V DC \\
+%			\hline
+%			Nennspannung & 12V DC \\
+%			\hline
+%			Leerlaufdrehzahl & 5887rpm \\
+%			\hline
+%			Leerlaufstrom & 0,25A \\
+%			\hline
+%			Haltestrom & 8,56A\\
+%			\hline
+%			Haltemoment & 172,5mNm\\
+%			\hline
+%			Maximale Ausgangsleistung & 24,21W\\
+%			\hline
+%			Bester Arbeitspunkt & 5028rpm \& 1,46A\\
+%			\hline
+%			Polzahl & 5\\
+%			\hline
+%			Bürstenart & Kohlebürsten\\
+%			\hline
+%			Entstörung & 2 x 47nF (Integriert)\\
+%			\hline
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+%
+%
+%
+%
+%
+%}
+%
+%\STANDARD{Motortreiber}
+%{ 
+%	\textbf{Grundsätzlich:} Motortreiber dienen der \textbf{Versorgung von Motoren}. Sie dienen als \textbf{Verstärker} der Signale des Mikrokontrollers 
+%	\begin{itemize}
+%		\item Direkte \textbf{Ansteuerung} meist aufgrund zu geringer Stromstärke nicht möglich
+%		%\item Direkte Umkehr der Ausgangspolarität (H-Brücke) mittels binärem Signal sorgt für Drehrichtungsumkehr. 
+%		\item  \textbf{Schutzfunktion} vor Kurzschluss, Überstrom \& Überhitzung
+%		
+%	\end{itemize} 
+%} 
+%\STANDARD{Motortreiber übliche H-Brücke} 
+%{
+%	\begin{center}
+%	\begin{figure}
+%	\begin{tikzpicture}
+%		\tikzstyle{every node}=[font=\fontsize{9.1pt}{11.8pt}\selectfont]
+%		
+%		% Leitungen
+%		\draw (17.5,11.75) -- (17.5,8.375);
+%		\draw (17.5,11.75) -- (14,11.75);
+%		\draw (17.5,8.375) -- (11.5,8.375);
+%		\draw (14,11.75) -- (11.5,11.75);
+%		
+%		% Schalterstrukturen
+%		\draw (13.625,11.75) -- (13.625,11.25);
+%		\draw (13.5,11.25) -- (13.625,10.75);
+%		\draw (13.625,10.75) -- (13.625,10.25);
+%		
+%		\draw (11.5,10.25) -- (11.5,9.625);
+%		\draw (11.5,8.375) -- (11.5,9);
+%		\draw (11.5,9) -- (11.375,9.625);
+%		
+%		\draw (13.625,10.25) -- (13.625,8.375);
+%		\draw (11.5,11.75) -- (11.5,10.25);
+%		
+%		% Motor links
+%		\draw (12.5,10) circle (0.5);
+%		\node at (12.5,10) {M};
+%		\draw (13,10) -- (13.625,10);
+%		\draw (12,10) -- (11.5,10);
+%		
+%		% Spannungsquelle rechts (Kreis)
+%		\draw (17.5,10) circle (0.625);
+%		
+%		% Pfeil (ohne Stealth)
+%		\draw[->] (18.375,10.5) -- (18.375,9.5);
+%		\node at (18.625,10) {U};
+%		
+%		% Labels
+%		\node at (11.75,10.875) {S1};
+%		\node at (14,10.875) {S3};
+%		\node at (14,9.125) {S4};
+%		\node at (11.875,9.125) {S2};
+%		
+%		\node at (14.75,12.625) {H-Brücke und Gleichstrommotor};
+%		
+%		% Knotenpunkte
+%		\fill (11.5,10.625) circle (2pt);
+%		\fill (11.5,11.25) circle (2pt);
+%		\fill (13.625,11.25) circle (2pt);
+%		\fill (13.625,10.75) circle (2pt);
+%		\fill (11.5,9.625) circle (2pt);
+%		\fill (11.5,9) circle (2pt);
+%		\fill (13.625,9.625) circle (2pt);
+%		\fill (13.625,9.125) circle (2pt);
+%		
+%	\end{tikzpicture}
+%	\caption{Schaltschema eies Gleichstrommotors mit einem H-Brücken Motortreiber}
+%	\end{figure}
+%	\end{center}
+%	
+%	Alternativ zur  Transistor Halbbrücke, welche klassische \textbf{stromgesteuerte} Transistoren verwendet, können auch \textbf{MOSFETS} (Metal-Oxide-Semiconductor Field-Effect Transistor) in Halbbrücken verwendet werden. Diese schalten \textbf{spannungsgesteuert} und sind weitaus \textbf{effizienter} \cite{Wallaschek:2025}.  
+%	
+%}
+%\STANDARD{Alternativen zur H-Brücken Motortreiber} 
+%{ Grundlegend kann ein Gleichstrommotor ebenfalls mittels: 
+%	\begin{itemize}
+%		\item Linearer Transistor (MOSFET im Analogbetrieb)
+%		\item Relais Umpolung 
+%		\item High-Side/Low-Side MOSFET + Umschalter
+%		\item etc. 
+%			\end{itemize} 
+%			betrieben werden.\\ 
+%			
+%\textbf{Die Wahl der Technologie ist abhängig von:}
+%\begin{itemize}
+%	\item benötigter \textbf{Stromstärke}
+%	\item \textbf{Funktionsumfang} (Richtungswechsel, Reaktionsgeschwindigkeit) 
+%	\item \textbf{Kühlung und Bauraum}
+%\end{itemize}
+%}
+%
+%
+%\STANDARD{Funktionsprinzip einer Motorregelung}
+%{ 
+%	\textbf{Grundlegend:} Ein Motortreiber kann als binärer (PWM) oder analoger Verstärker betrachtet werden \cite{Roddeck:2023}. 
+%	Er ist Teil der \textbf{Strecke}, bestehend aus Motortreiber und Motor.
+%} 
+%\STANDARD{Funktionsprinzip einer Motorregelung} 
+%{
+%	Der Ablauf einer geschlossenen Regelung ist wie folgt:
+%	\begin{itemize}
+%		\item Ein Sensor erfasst den \textbf{Istwert} (z. B. Drehzahl).
+%		
+%		\item Der Mikrokontroller vergleicht \textbf{Istwert} und \textbf{Sollwert} und bildet die \textbf{Regeldifferenz}:
+%		\[
+%		e(t) = \text{Soll} - \text{Ist}
+%		\]
+%		
+%		\item Ein \textbf{Regelalgorithmus} (z. B. PID) berechnet daraus die \textbf{Stellgröße} \(u(t)\).
+%		
+%		\item Die \textbf{Stellgröße}  wird über den Motortreiber umgesetzt 
+%		(z. B. als PWM-Signal oder analoge Spannung).
+%		
+%		\item Der Motortreiber beeinflusst die \textbf{Strecke} (Motor), wodurch sich der \textbf{Istwert} ändert.
+%		
+%		\item Der neue \textbf{Istwert} wird erneut erfasst (\textbf{Rückkopplung}), wodurch ein kontinuierlicher Regelkreis entsteht.
+%	\end{itemize} 
+%	\cite{Roddeck:2023}
+%}
+%
+%
+%
+%
+%
+%\STANDARD{Standard Regelungsverfahren - PID}{
+%PID-Regelung (Proportional-Integral-Differanzial-Regelung) ist eine Methodik um die Differenz zwischen Soll- und Ist-Wert zu minimieren.  \cite{Roddeck:2023}
+%\begin{figure}
+%	$u(t)=K_P e(t)+K_I \int_0^t e(\tau)d\tau+K_D \frac{de(t)}{dt}$
+%\end{figure}
+%
+%
+%\begin{itemize}
+%	\item Der Proportionalteil reagiert auf Fehler .
+%	\item Der Integralteil korrigiert dauerhafte Abweichungen. 
+%	\item Der Differenzialteil reagiert auf die Änderung des Fehlers.
+%\end{itemize} 
+%
+%\begin{center}
+%	\begin{figure}
+%		\includegraphics[scale=0.75]{images/PID.png}
+%		\caption{Darstellung der einzelnen und Kombinierten Regelkurven \cite{Radtke:2016}}
+%	\end{figure}
+%	
+%\end{center}
+%
+%}
+%
+%
+%\begin{frame}[fragile]{Code}
+%
+%%, numbers=left, caption={Konstruktion eines Keras-Sequential-Modells}, label={src:kerasmodel}]
+%
+% 
+%
+%\end{frame}
+%
+%\begin{frame}[fragile]{Code}
+%
+%  \lstinputlisting[language=Python, firstnumber=1]{Code/PDFExtractTable/PDFExtractTable.py}
+%\end{frame}
