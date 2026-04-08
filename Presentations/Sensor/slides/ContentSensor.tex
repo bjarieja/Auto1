@@ -527,38 +527,77 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \STANDARD{Elektrischer Anschluss der Lichtschranke } 
 {
 
-AnSchlusszeichnung hier 
-}
+AnSchlusszeichnung hier  
+
+
+} 
+
 \section{Bibliothek}
-\STANDARD{Beschreibung der Bibliothek}{
+\STANDARD{Beschreibung der Bibliothek Bounce2}{
 \subsection{Description}
-Diese Bibliothek dient zur Entprellung von Signalen. Hierbei werden viele einzelne Signale in ein Gesamtsignal zusammengefasst. }
+\textbf{Standard:} Arduino prüft Eingänge in der loop() (Polling)
+Problem:
+\begin{itemize}
+	\item Signale können verpasst werden 
+	\item Ungenau bei schnellen Ereignissen
+\end{itemize}
+Mithilfe von \textbf{Bounce2:} 
+	\textbf{Entprellen einzelner Signale} \\ 
+	Gleichzeitig können folgende Veränderungen detektiert werden: 
+
+ }
 \subsection{Installation}
 \STANDARD{Hinweise der Installation}{
-Zur isnatllation der Bibliothek kann diese einfach in dem reiter Erweiterungen der Arduino IDE gewählt werden. Wichtig ist zusätzlich das Richtige Board ausgewählt zu haben. 
+Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß Installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
 \begin{itemize}
-	\item hier eine Lister der Installationen
+	\item Installation  mittels \textbf{ArduinoIDE}
+	\item  Installation über \textbf{GitHub} 
+	\end{itemize}
+} 
+\STANDARD{Installation mittels ArduinoIDE} {
+\begin{itemize}
+	\item Öffnen der Arduino IDE  
+	\item  Öffnen Reiter \glqq Sketch"  
+	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
+	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
+	\item Im Suchfeld  \glqq Bounce2" eingeben  
+	\item Auf \glqq Installieren" klicken
 \end{itemize}
+Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
+} 
+
+\STANDARD{Installation mittels GitHub}{
+\begin{itemize}
+	\item Öffnen des Repositorys für \glqq Bounce2" von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{Repository}
+	\item Herunterladen der aktuellesten Version unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{aktuellste Version Herunterladen} 
+	\item Komprimierte Datei Entpacken 
+	\item Ablegen des Ordner: \glqq Bounce2 " in den Ordner \glqq libraries" im ArduinoIDE Installationsverzeichnis
+
+	
+\end{itemize}
+
 }
+
+
+
+
 \subsection{Functions}
 \STANDARD{Funktionen der Bibliothek}{
 
 }
 \section{Example}
 \STANDARD{Beispiel der Anwendung am Tischförderband }{
-Schaltende Elemente unterliegen oft dem Effekt der \textbf{Prellung}. Hierbei kommt es zu keinem Suaberen Schaltkontakt sondern vielen einzelnen Kontakten. 
-Lichtschranken liefern saubere Signale (High/LOW)
-Dies komt dadurch zustande, das kein sauberer einzelner Kontakt entsteht. 
-So kann bei einer Lichtschranke ein Objekt den Lichtstrahl für einen kurzen Moment unterbrechen und anschließend zurückschwingen (Vibration). 
-Hierbei kommt es zu kurzeitigen Änderungen des Schaltsignales. }
 
-
+ }
+ \STANDARD{Handbuch des Sensors}{
 \subsection{Manual}
-dvs
+Um den Sensor Ordnungsgemäß verwenden zu können ist es notwenig alle benötigten 
+\textbf{FÜR JANNNN} 
+}
 \subsection{Inside the Example}
-dsv
+\textbf{JAN}
 \subsection{Code}
-svd
+\textbf{JAN}
 \subsection{Files}
 svd
 
@@ -572,19 +611,16 @@ cite method
 
 \section{Simple Application}
 
-
-
 \section{Tests}
-
+\STANDARD{Test der Lichtschranke - Beschreibung}{
 \subsection{einfacher Test } 
-\STANDARD{Test der LIchtschranken}
 
-Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. 
-Lichtschranke wird unterbrochen. 
-Arduino LED hört auf zu leuchten. 
-Lichtschranke wird freigegeben, Arduino LED leuchtet wieder. 
-
-
+Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben. 
+\begin{itemize}
+	\item Anschließen des Mikrokontrollers an den Rechner per USB-Kabel 
+	\item 
+\end{itemize}
+}
 \subsection{Test all Functions}
 
 
