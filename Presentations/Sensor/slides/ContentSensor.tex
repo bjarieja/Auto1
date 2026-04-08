@@ -535,17 +535,21 @@ AnSchlusszeichnung hier
 \section{Bibliothek}
 \STANDARD{Beschreibung der Bibliothek Bounce2}{
 \subsection{Description}
-\textbf{Standard:} Arduino prüft Eingänge in der loop() (Polling)
-Problem:
-\begin{itemize}
-	\item Signale können verpasst werden 
-	\item Ungenau bei schnellen Ereignissen
-\end{itemize}
-Mithilfe von \textbf{Bounce2:} 
-	\textbf{Entprellen einzelner Signale} \\ 
-	Gleichzeitig können folgende Veränderungen detektiert werden: 
+Die Bounce2-Bibliothek dient zur \textbf{Entprellung (Debouncing)} von digitalen Eingängen, insbesondere von mechanischen Tastern und Schaltern.
 
+\textbf{Problemstellung}
+Mechanische Schalter erzeugen beim Betätigen \textbf{Prellsignale}, d.\,h. mehrere schnelle Zustandswechsel, die als mehrere Eingaben interpretiert werden können.
+
+\textbf{Lösung durch Bounce2}
+Bounce2 filtert diese Prellsignale und stellt sicher, dass:
+\begin{itemize}
+	\item nur stabile Zustandsänderungen erkannt werden
+	\item Fehlauslösungen vermieden werden
+\end{itemize}
  }
+ 
+ 
+ 
 \subsection{Installation}
 \STANDARD{Hinweise der Installation}{
 Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß Installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
@@ -556,26 +560,24 @@ Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß Installiert /
 } 
 \STANDARD{Installation mittels ArduinoIDE} {
 \begin{itemize}
-	\item Öffnen der Arduino IDE  
+	\item Öffnen der ArduinoIDE  
 	\item  Öffnen Reiter \glqq Sketch"  
 	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
 	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
-	\item Im Suchfeld  \glqq Bounce2" eingeben  
+	\item Im Suchfeld  \glqq Bounce2\grqq  eingeben  
 	\item Auf \glqq Installieren" klicken
 \end{itemize}
 Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
 } 
 
+
 \STANDARD{Installation mittels GitHub}{
 \begin{itemize}
-	\item Öffnen des Repositorys für \glqq Bounce2" von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{Repository}
-	\item Herunterladen der aktuellesten Version unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{aktuellste Version Herunterladen} 
+	\item Öffnen des Repositorys für \glqq Bounce2\grqq  von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{\textcolor{blue}{Repository}}
+	\item Herunterladen der aktuellesten Version unter folgendem Link:  \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{\textcolor{blue}{Herunterladen}}
 	\item Komprimierte Datei Entpacken 
-	\item Ablegen des Ordner: \glqq Bounce2 " in den Ordner \glqq libraries" im ArduinoIDE Installationsverzeichnis
-
-	
+	\item Ablegen des Ordner: \glqq Bounce2\grqq  in den Ordner \glqq libraries \grqq im ArduinoIDE Installationsverzeichnis
 \end{itemize}
-
 }
 
 
@@ -583,10 +585,43 @@ Nun ist die Bibliothek in das aktuelle Programm eingebunden.
 
 \subsection{Functions}
 \STANDARD{Funktionen der Bibliothek}{
-
+	
+\begin{itemize}
+	\item Überwachung des Eingangszustands über die Zeit
+	\item Verwendung eines \textbf{Zeitintervalls (Debounce-Delay)}
+	\item Zustandsänderung wird erst akzeptiert, wenn sie stabil bleibt
+\end{itemize} 
+}
+\STANDARD{Wichtigsten Methoden}{
+\begin{itemize}
+	\item \texttt{attach(pin)}: Verknüpft den Taster mit einem Pin
+	\item \texttt{interval(ms)}: Setzt die Entprellzeit
+	\item \texttt{update()}: Aktualisiert den Zustand (muss regelmäßig aufgerufen werden)
+	\item \texttt{read()}: Gibt den aktuellen stabilen Zustand zurück
+	\item \texttt{fell()} / \texttt{rose()}: Erkennen von Flanken (Taste gedrückt/losgelassen)
+\end{itemize}
 }
 \section{Example}
-\STANDARD{Beispiel der Anwendung am Tischförderband }{
+\STANDARD{Beispiel der Anwendung der Bibliothek am Tischförderband }{
+\subsection*{Ziel}
+Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert, um  einen Motor zu steuern. Die Lichtschranke soll zuverlässig erkennen, ob ein Objekt die Bahn unterbricht, ohne durch Störungen mehrfach ausgelöst zu werden.
+
+\textbf{Aufbau}
+\begin{itemize}
+	\item Tischförderband
+	\item Lichtschranke über das Band gespannt
+	\item Arduino zur Auswertung
+	\item \texttt{Bounce2}-Library zur Entprellung
+\end{itemize}
+}
+\STANDARD{Beispiel der Anwendung der Bibliothek am Tischförderband}{
+\textbf{Funktionsweise}
+\begin{enumerate}
+	\item Paket fährt unter die Lichtschranke.
+	\item Lichtstrahl wird unterbrochen, Arduino erkennt LOW.
+	\item Bounce2 verhindert, dass kleine Störungen fälschlicherweise als Paket registriert werden.
+	\item Arduino schaltet Logiksignal am Motortreiber, solange die Lichtschranke unterbrochen ist.
+\end{enumerate}
 
  }
  \STANDARD{Handbuch des Sensors}{
@@ -595,18 +630,16 @@ Um den Sensor Ordnungsgemäß verwenden zu können ist es notwenig alle benötig
 \textbf{FÜR JANNNN} 
 }
 \subsection{Inside the Example}
-\textbf{JAN}
+\
 \subsection{Code}
 \textbf{JAN}
 \subsection{Files}
 svd
 
-
+\STANDARD{Kalibrierung}{
 \section{Calibration}
-
-cite method
-
-\section{Simple Code}
+\textbf{Hier eine Methode zur Kalibrierung zitieren und erläutern}
+}
 
 
 \section{Simple Application}
@@ -614,13 +647,124 @@ cite method
 \section{Tests}
 \STANDARD{Test der Lichtschranke - Beschreibung}{
 \subsection{einfacher Test } 
-
 Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben. 
-\begin{itemize}
-	\item Anschließen des Mikrokontrollers an den Rechner per USB-Kabel 
-	\item 
-\end{itemize}
+\begin{enumerate}
+	\item Starten der ArduinoIDE
+	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrokontrollers  
+	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO Pin des Mikrokontrollers 
+	\item Verbinden des Mikrokontrolles mit dem Rechner per USB 
+	\item Öfnnen der ArduineIDE
+	\item Öffnen des Sketches zur Erprobung
+	\item Eintragen des mit der Signalleitung verbundenen GPIO Pins an der vorgesehenn Stelle 
+	\item Sketch auf den Mikrokontroller spielen
+\end{enumerate}
 }
+
+
+\STANDARD{Beispielcode}{
+	\section{Simple Code}
+	Nachfolgend ist der Code für den Test der Ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
+	}
+	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
+	#include <Bounce2.h>
+		
+	// Pins definieren
+	#define LICH_SCH_PIN 2 
+	//GPIO Pin fuer Signal LS
+	#define LED_PIN 13 
+	// GPIO Pin fuer Versorgung LED, R!
+		
+	// Bounce-Objekt fuer Entprellung
+	Bounce debouncer = Bounce();
+		
+	void setup() {
+	pinMode(LICH_SCH_PIN, INPUT_PULLUP); 
+	// Konfigurieren als Input Pin, Pullup NC 
+	pinMode(LED_PIN, OUTPUT); 
+	//Konfigurieren der LED als Output 
+			
+	debouncer.attach(LICH_SCH_PIN); 
+	//Zuweisung Debounce auf LS
+	debouncer.interval(50); //50 ms Entprellintervall 
+			
+	Serial.begin(9600); // Beginn der Kommunikation mit BAud Rate 9600 
+	}
+		
+	void loop() { // Funktionen sind hier 
+	debouncer.update();
+			
+	if (debouncer.read() == LOW) {     
+	// Wenn der LS LOW - LED HIGH 
+	digitalWrite(LED_PIN, HIGH);
+	Serial.println("Objekt erkannt!"); 
+	// Ausgabe im Command Window 
+	} else {
+	digitalWrite(LED_PIN, LOW); 
+	// Normalerweise LED aus 
+	}
+	}
+	\end{lstlisting}
+	
+	
+	
+
+%\begin{lstlisting}[language=C++]
+%	#include <Bounce2.h>
+%	
+%	/**
+%	* @file Tischfoerderband_Lichtschranke.ino
+%	* @brief Einfache Objekterkennung am Tischfoerderband mit entprellter Lichtschranke.
+%	* 
+%	* Der Code verwendet die Bounce2 Library, um Prellen der Lichtschranke zu verhindern.
+%	* Bei Unterbrechung der Lichtschranke wird eine LED eingeschaltet und eine Nachricht
+%	* auf den Serial-Monitor ausgegeben.
+%	*/
+%	
+%	// Pins definieren
+%	#define LICH_SCH_PIN 2   ///< Digitaler Pin, an dem die Lichtschranke angeschlossen ist
+%	#define LED_PIN 13       ///< LED-Pin zur Signalisierung
+%	
+%	/// Bounce-Objekt fuer Entprellung
+%	Bounce debouncer = Bounce();
+%	
+%	/**
+%	* @brief Setup-Funktion
+%	* 
+%	* Konfiguriert die Pins und initialisiert das Bounce-Objekt sowie den Serial-Monitor.
+%	*/
+%	void setup() {
+%		pinMode(LICH_SCH_PIN, INPUT_PULLUP); ///< LOW wenn Lichtschranke unterbrochen
+%		pinMode(LED_PIN, OUTPUT);            ///< LED als Ausgang
+%		
+%		debouncer.attach(LICH_SCH_PIN);      ///< Pin an Bounce2 anhaengen
+%		debouncer.interval(50);              ///< Entprellzeit in Millisekunden
+%		
+%		Serial.begin(9600);                  ///< Seriellen Monitor starten
+%	}
+%	
+%	/**
+%	* @brief Hauptloop
+%	* 
+%	* Ueberprueft kontinuierlich den Status der Lichtschranke. 
+%	* Wenn ein Objekt erkannt wird (LOW-Signal), schaltet die LED ein
+%	* und gibt eine Nachricht auf dem Serial-Monitor aus.
+%	*/
+%	void loop() {
+%		debouncer.update(); ///< Bounce2 aktualisieren
+%		
+%		if (debouncer.read() == LOW) {       ///< Objekt erkannt
+%			digitalWrite(LED_PIN, HIGH);       ///< LED einschalten
+%			Serial.println("Objekt erkannt!"); ///< Nachricht ausgeben
+%		} else {
+%			digitalWrite(LED_PIN, LOW);        ///< LED ausschalten
+%		}
+%	}
+%\end{lstlisting}
+
+
+
+
+
 \subsection{Test all Functions}
 
 
