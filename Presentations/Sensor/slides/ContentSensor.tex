@@ -685,7 +685,8 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 			
 	debouncer.attach(LICH_SCH_PIN); 
 	//Zuweisung Debounce auf LS
-	debouncer.interval(50); //50 ms Entprellintervall 
+	debouncer.interval(50); 
+	//50 ms Entprellintervall 
 			
 	Serial.begin(9600); // Beginn der Kommunikation mit BAud Rate 9600 
 	}
