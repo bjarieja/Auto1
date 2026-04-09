@@ -288,9 +288,8 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 {
 \textbf{Fazit:} 
 \begin{itemize}
-	\item \textbf{Sender (LED):} Durch \textbf{Stromfluss} werden Photonen emittiert. 
-	\item \textbf{Empfänger (Fotodiode):} Durch \textbf{Lichteinfall} wird ein Stromfluss erzeugt. 
-
+	\item \textbf{Sender (LED):} Durch \textbf{Stromfluss} werden Photonen emittiert. \cite{Loeffler-Mang:2012}
+	\item \textbf{Empfänger (Fotodiode):} Durch \textbf{Lichteinfall} wird ein Stromfluss erzeugt. \cite{Loeffler-Mang:2012}
 	\end{itemize}
 
 }
@@ -630,17 +629,28 @@ Um den Sensor Ordnungsgemäß verwenden zu können ist es notwenig alle benötig
 \textbf{FÜR JANNNN} 
 }
 \subsection{Inside the Example}
-\
+\STANDARD{Code zum Anschließe des Sensors}{
 \subsection{Code}
-\textbf{JAN}
+folgender Code zeigt den Anschluss und das Auslesen einer Lichtschranke an einem Arduino Mikrokontroller 
+
+
+}
 \subsection{Files}
 svd
 
 \STANDARD{Kalibrierung}{
 \section{Calibration}
-\textbf{Hier eine Methode zur Kalibrierung zitieren und erläutern} 
-
-
+Um eine Lichtschranke zu kalibireren ist folgendes vorgehen Empfehlenswert 
+\begin{enumerate}
+	\item Den Sensor gemäß der Herstellerangaben an einen Mikrokontroller anschließen
+	\item Die Lichtschranke montieren, Der Abstand zwischen Sender udn Empfägner bzw. Sender und Reflektor sollte kleiner als der maximale Abstand gewählt werden.
+	\item Die Lichtschranke ausrichten, sodass Sender \& Empfänger koaxial ausgerichtet sind. \\ 
+	Bei Reflex-Lichtschranken sollten Sender und Reflektor koaxial liegen. 
+	\item Ein Skript zum Schalten eines Aktors oder ausführen eines Befehls öffnen und auf den Mikrokontroller spielen. 
+	\item Prüfen ob das gelesenen Signal mit Realität einstimmt. \\
+	\textbf{in unserem Fall: NC also HIGH-Signal wenn kein unterbrocherner Lichtstrahl}
+	\item Bie falschem Signal: Neuausrichtung.
+\end{enumerate}
 
 
 }
@@ -670,17 +680,7 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 	Nachfolgend ist der Code für den Test der Ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
 	}
 	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
-	#include <Bounce2.h>	/**
-	* @file Tischfoerderband_Lichtschranke.ino
-	* @brief Einfache Objekterkennung am 
-	*Tischfoerderband mit entprellter Lichtschranke.
-	* 
-	* Der Code verwendet die Bounce2 Library,
-	* um Prellen der Lichtschranke zu verhindern.
-	* Bei Unterbrechung der Lichtschranke wird 
-	*eine LED eingeschaltet und eine Nachricht
-	* auf den Serial-Monitor ausgegeben.
-	*/
+	#include <Bounce2.h>	
 	// Pins definieren
 	#define LICH_SCH_PIN 2 
 	//GPIO Pin fuer Signal LS
@@ -689,7 +689,8 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 		
 	// Bounce-Objekt fuer Entprellung
 	Bounce debouncer = Bounce();
-		
+	as Bounce-Objekt sowie den Serial-Monitor.
+
 	void setup() {
 	pinMode(LICH_SCH_PIN, INPUT_PULLUP); 
 	// Konfigurieren als Input Pin, Pullup NC 
@@ -703,7 +704,6 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 			
 	Serial.begin(9600); // Beginn der Kommunikation mit BAud Rate 9600 
 	}
-		
 	void loop() { // Funktionen sind hier 
 	debouncer.update();
 			
@@ -786,8 +786,8 @@ Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es
 	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
 	\item Beobachten der Reaktion
 \end{enumerate}
-\textbf{Diesen Vorgangn kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefäh 50 ms } 
-Durch diesen Vorgang ist es möglich festzustellen, ob die eingebunden Bibliothek die Signale wirklich entprellt. Die Gleiche vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen }
+\textbf{Diesen Vorgangn kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefäh 50 ms.} 
+Durch diesen Vorgang ist es möglich festzustellen, ob die eingebundene Bibliothek die Signale wirklich entprellt. Die gleiche Vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen.}
 \section{Further Readings}
 
 
