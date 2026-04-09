@@ -638,7 +638,11 @@ svd
 
 \STANDARD{Kalibrierung}{
 \section{Calibration}
-\textbf{Hier eine Methode zur Kalibrierung zitieren und erläutern}
+\textbf{Hier eine Methode zur Kalibrierung zitieren und erläutern} 
+
+
+
+
 }
 
 
@@ -666,8 +670,17 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 	Nachfolgend ist der Code für den Test der Ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
 	}
 	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
-	#include <Bounce2.h>
-		
+	#include <Bounce2.h>	/**
+	* @file Tischfoerderband_Lichtschranke.ino
+	* @brief Einfache Objekterkennung am 
+	*Tischfoerderband mit entprellter Lichtschranke.
+	* 
+	* Der Code verwendet die Bounce2 Library,
+	* um Prellen der Lichtschranke zu verhindern.
+	* Bei Unterbrechung der Lichtschranke wird 
+	*eine LED eingeschaltet und eine Nachricht
+	* auf den Serial-Monitor ausgegeben.
+	*/
 	// Pins definieren
 	#define LICH_SCH_PIN 2 
 	//GPIO Pin fuer Signal LS
@@ -764,12 +777,17 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 
 
 
-
-
+\STANDARD{Test der Bibliothek}{
 \subsection{Test all Functions}
-
-
-
+Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es nun sinnvoll weitere Tests durchzuführen. Im Beispiel der Anwendung zum testen des Sensor wurde ebenfalls eine Bibliothek zum entprellen des Signals verwendet. Um Ihre ordnungsgemäße Einbindung und Funktion auf seiten der Hardware zu prüfen kann folgendes unternommen werden: 
+\begin{enumerate}
+	\item Erhöhen der Entprellzeit
+	\item Aufspielen des Skriptes auf den Mikrokontroller 
+	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
+	\item Beobachten der Reaktion
+\end{enumerate}
+\textbf{Diesen Vorgangn kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefäh 50 ms } 
+Durch diesen Vorgang ist es möglich festzustellen, ob die eingebunden Bibliothek die Signale wirklich entprellt. Die Gleiche vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen }
 \section{Further Readings}
 
 
