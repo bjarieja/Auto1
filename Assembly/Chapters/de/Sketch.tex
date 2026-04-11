@@ -68,7 +68,7 @@ Technische Übersicht des Tischförderbands
 		\draw (17.875,-14.375) rectangle (18.75,-15.125);
 	% Lichtschranke 2	
 		\draw (20,22.25) rectangle (17.75,21.25);
-		\draw (17.875,22.125) rectangle (18.75,21.375);
+		%\draw (17.875,22.125) rectangle (18.75,21.375);
 		
 	
 	% Hauptschalter	
@@ -158,161 +158,281 @@ Technische Übersicht des Tischförderbands
 	\end{center}
 \end{figure}
 
-\begin{figure}[h!]
+% Skizze 2
+
+\begin{figure}[!ht]
+	
 	\begin{center}
 		\resizebox{0.7\textwidth}{!}{%
-			\begin{tikzpicture}[
-				line width=0.8pt,
-				rotate=90,
-				transform shape
-				]
+			\begin{tikzpicture}[line width=0.8pt, rotate=90,
+								transform shape]
 				
-				% ------------------ GEOMETRIE ------------------
+				\draw  (5,7.375) rectangle (20,1.125);
+				\draw  (5,7.125) -- (4.625,7.125);
+				\draw  (4.625,1.375) -- (5,1.375);
+				\draw  (20,7.125) -- (20.375,7.125);
+				\draw  (20,1.375) -- (20.375,1.375);
+				\draw  (20.625,7.375) -- (22.5,7.375);
+				\draw  (22.5,7.375) -- (22.5,1.125);
+				\draw  (22.5,1.125) -- (20.625,1.125);
+				\draw  (4.375,7.375) -- (2.5,7.375);
+				\draw  (2.5,7.375) -- (2.5,1.125);
+				\draw  (2.5,1.125) -- (4.375,1.125);
+				\draw  (20.375,7.125) -- (20.375,4.875);
+				\draw  (20.375,1.375) -- (20.375,3.625);
+				\draw  (20.375,4.875) rectangle (20.625,3.625);
+				\draw  (20.625,7.375) -- (20.625,4.875);
+				\draw  (20.625,3.625) -- (20.625,-5.125);
+				\draw  (4.625,7.125) -- (4.625,4.875);
+				\draw  (4.625,1.375) -- (4.625,3.625);
+				\draw  (4.625,4.875) rectangle (4.375,3.625);
+				\draw  (4.375,7.375) -- (4.375,4.75);
+				\draw  (4.375,3.625) -- (4.375,-5.125);
+				\draw  (2.125,6.75) -- (1.5,6.75);
+				\draw  (1.5,6.75) -- (-1.25,1.125);
+				\draw  (-1.25,0.5) -- (2.125,0.5);
+				\draw  (20.625,-5.125) -- (22.875,-5.125);
+				\draw  (22.875,-5.125) -- (22.875,7);
+				\draw  (22.5,7) -- (22.875,7);
+				\draw  (2.125,-5.125) -- (2.125,7);
+				\draw  (2.125,-5.125) -- (4.375,-5.125);
+				\draw  (2.125,7) -- (2.5,7);
+				\draw  (22.875,5.375) -- (25.75,4.875);
+				\draw  (25.75,4.875) arc[start angle=79.84, end angle=-79.84, radius=0.6350];
+				\draw  (25.75,3.625) -- (22.875,3.125);
+				\draw  (20.625,7.375) -- (20.625,8.625);
+				\draw  (20.625,8.625) -- (20.5,8.625);
+				\draw  (20.5,8.625) -- (20.5,11.125);
+				\draw  (20.5,11.125) -- (22.25,11.125);
+				\draw  (22.25,11.125) -- (22.25,7.375);
+				\draw  (-1.25,1.125) -- (-1.25,0.5);
+				\draw  (-0.625,2.5) -- (-0.625,2.875);
+				\draw  (-0.625,2.875) -- (0.875,5.875);
+				\draw  (0.875,5.875) -- (1.125,6);
 				
-				\draw (5,3.5) rectangle (20,-2.75);
-				\draw (5,3.25) -- (4.625,3.25);
-				\draw (4.625,-2.5) -- (5,-2.5);
-				\draw (20,3.25) -- (20.375,3.25);
-				\draw (20,-2.5) -- (20.375,-2.5);
+				\draw[fill=black] (0.125,4.375) -- (-0.625,4.375) -- (-0.125,5.375) -- (0.625,5.375) -- cycle;
+				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,4.5625)}] 
+				(-1,5) rectangle (0.5,4.125);
 				
-				\draw (20.625,3.5) -- (22.5,3.5);
-				\draw (22.5,3.5) -- (22.5,-2.75);
-				\draw (22.5,-2.75) -- (20.625,-2.75);
+				\draw[dashed] (4.75,1.375) -- (5.875,-2.75);
+				\draw[dashed] (20.125,1.375) -- (20.125,-1.5);
+				\draw[dashed] (20.125,-1.5) -- (5.5,-1.5);
+				\draw[dashed] (1,2.125) -- (-5.25,4.625);
+				\draw[dashed] (1.125,4.75) -- (-2.375,11.5);
+				\draw[dashed] (-0.625,5.125) -- (-4.875,8.625);
+				\draw[dashed] (3,-5.125) -- (3,-6.375);
+				\draw[dashed] (3,-6.375) -- (21.875,-6.375);
+				\draw[dashed] (21.875,-6.375) -- (21.875,-5.125);
+				\draw[dashed] (3.75,-6.5) -- (3.75,-8.5);
+				\draw[dashed] (21.625,11.125) -- (22.75,13.625);
+				\draw[dashed] (26,4.75) -- (26.25,7.375);
+				\draw[dashed] (3.75,11.125) -- (3.75,12.375);
+				\draw[dashed] (3.75,12.375) -- (22.125,12.375);
 				
-				\draw (4.375,3.5) -- (2.5,3.5);
-				\draw (2.5,3.5) -- (2.5,-2.75);
-				\draw (2.5,-2.75) -- (4.375,-2.75);
+				\draw[line width=1.3pt] (1.5,4.75) circle (0.25cm);
+				\draw[fill=black] (1.5,4.75) circle (0.125cm);
+				\draw[line width=0.8pt, rounded corners=6pt] (1.125,2.75) rectangle (1.625,1.5);
+				\draw[line width=0.6pt] (1.25,2.625) rectangle (1.5,1.625);
+				\draw[line width=0.6pt] (1.375,2.5) -- (1.375,1.75);
 				
-				\draw (20.375,3.25) -- (20.375,1);
-				\draw (20.375,-2.5) -- (20.375,-0.25);
-				\draw (20.375,1) rectangle (20.625,-0.25);
+			% Lichtschranke Reflektor
+			\draw (2.75,11.125) -- (4.5,11.125);
+			\draw (2.75,11.125) -- (2.75,7.375);
+			\draw (4.5,8.625) -- (4.5,11.125);
+			\draw (4.5,8.625) -- (4.375,8.625);
+			\draw (4.375,7.375) -- (4.375,8.625);	
 				
-				\draw (20.625,3.5) -- (20.625,1);
-				\draw (20.625,-0.25) -- (20.625,-9);
+				% ------------------ TEXTFELDER ------------------
 				
-				\draw (4.625,3.25) -- (4.625,1);
-				\draw (4.625,-2.5) -- (4.625,-0.25);
-				\draw (4.625,1) rectangle (4.375,-0.25);
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (7.25,-2.625) {\textbf{Laufrolle}};
 				
-				\draw (4.375,3.5) -- (4.375,0.875);
-				\draw (4.375,-0.25) -- (4.375,-9);
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (-7.625,4.625) {\textbf{USB-C - Anschluss}};
+			% Netzkabel Anschluss	
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (-2,13) {\textbf{Netzkabel-Anschluss}};
 				
-				\draw (2.125,2.875) -- (1.5,2.875);
-				\draw (1.5,2.875) -- (-1.25,-2.75);
-				\draw (-1.25,-3.375) -- (2.125,-3.375);
+			% Drehregler
 				
-				\draw (20.625,-9) -- (22.875,-9);
-				\draw (22.875,-9) -- (22.875,3.125);
-				\draw (22.5,3.125) -- (22.875,3.125);
+				\node[
+				fill=white,
+				rounded corners=2pt,
+				font=\fontsize{16pt}{18pt}\selectfont
+				] at (-8.83,10.5) {\textbf{Drehregler}};
+				\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-7.57,9.8) {Stufenlose Einstellung der};
+				\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-7,9.1) {Transportband-Geschwindigkeit};
 				
-				\draw (2.125,-9) -- (2.125,3.125);
-				\draw (2.125,-9) -- (4.375,-9);
-				\draw (2.125,3.125) -- (2.5,3.125);
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (5.125,-8.25) {\textbf{Stützbeine}};
 				
-				\draw (22.875,1.5) -- (25.75,1);
-				\draw (25.75,1) arc[start angle=79.84, end angle=-79.84, radius=0.6350];
-				\draw (25.75,-0.25) -- (22.875,-0.75);
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (24.75,13.5) {\textbf{Lichtschranke 2}};
 				
-				\draw (20.625,3.5) -- (20.625,4.75);
-				\draw (20.625,4.75) -- (20.5,4.75);
-				\draw (20.5,4.75) -- (20.5,7.25);
-				\draw (20.5,7.25) -- (22.25,7.25);
-				\draw (22.25,7.25) -- (22.25,3.5);
-				
-				\draw (-1.25,-2.75) -- (-1.25,-3.375);
-				\draw (-0.625,-1.375) -- (-0.625,-1);
-				\draw (-0.625,-1) -- (0.875,2);
-				\draw (0.875,2) -- (1.125,2.125);
-				
-				\draw (-0.25,-1.375) rectangle (0.25,-2.75);
-				
-				\draw[fill=black] (-0.125,-1.5) rectangle (0,-2.625);
-				\draw[fill=black] (0.125,0.5) -- (-0.625,0.5) -- (-0.125,1.5) -- (0.625,1.5) -- cycle;
-				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,0.6875)}]
-				(-1,1.125) rectangle (0.5,0.25);
-				
-				\draw[fill=black] (1.25,-2.375) circle (0.125cm);
-				\draw[line width=1.3pt] (1.25,-2.375) circle (0.25cm);
-				
-				% ------------------ GESTRICHELTE LINIEN ------------------
-				
-				\draw[dashed] (4.75,-2.5) -- (5.875,-6.625);
-				\draw[dashed] (20.125,-2.5) -- (20.125,-5.375);
-				\draw[dashed] (20.125,-5.375) -- (5.5,-5.375);
-				\draw[dashed] (0,-2.75) -- (-5.5,0.75);
-				\draw[dashed] (1.25,-2.625) -- (-3,-5.25);
-				\draw[dashed] (-0.625,1.25) -- (-4.875,4.75);
-				\draw[dashed] (3,-9) -- (3,-10.25);
-				\draw[dashed] (3,-10.25) -- (21.875,-10.25);
-				\draw[dashed] (21.875,-10.25) -- (21.875,-9);
-				\draw[dashed] (3.75,-10.375) -- (3.75,-12.375);
-				\draw[dashed] (21.625,7.25) -- (24.75,8.25);
-				\draw[dashed] (26,0.875) -- (26.25,3.5);
-				
-				% ------------------ BESCHRIFTUNGEN ------------------
-		% Laufrolle
-				
-			\node[fill=white, rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (7.25,-6.5) {\textbf{Laufrolle}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (10.35,-7.3) {Führung und Antrieb für Transportband};
+				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
+				at (28.25,7.375) {\textbf{Transportgriff}};
+		\end{tikzpicture}	
+			} % resizebox
+		\end{center}
 		
-		% USB-Anschluss
-			
-			\node[
-			fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (-7.625,0.75) {\textbf{USB-Anschluss}};
-		
-		% Netzkabel-Anschluss
-			
-			\node[
-			fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (-3.65,-5.825) {\textbf{Netzkabel-Anschluss}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-2.5,-6.5) {Stromversorgung des Tischförderbands};
-			
-		% Drehregler
-			
-			\node[
-			fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (-5.5,5.9) {\textbf{Drehregler}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-4.2,5.2) {Stufenlose Einstellung der};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-3.6,4.5) {Transportband-Geschwindigkeit};
-			
-		% Klappbare Stützbeine
-			
-			\node[fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (6.625,-12.25) {\textbf{Klappbare Stützbeine}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (6.25,-13) {Für Transport einklappen};
-		
-		% Lichtschranke 2
-			
-			\node[
-			fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (27,8.125) {\textbf{Lichtschranke 2}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (28.4,7.3) {Transportboxen korrekt platzieren};
-		
-		% Transportgriff
-			
-			\node[
-			fill=white,
-			rounded corners=2pt,
-			font=\fontsize{16pt}{18pt}\selectfont
-			] at (28.55,3.5) {\textbf{Transportgriff}};
-			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.8,2.8) {Einhändiges Transportieren des Tischförderbands};
-			
-				
-			\end{tikzpicture}
-		}
 		\caption{Übersicht der Bedienerelemente, Seitenansicht}
-	\end{center}
-\end{figure}
+		
+	\end{figure}
+%\begin{figure}[h!]
+%	\begin{center}
+%		\resizebox{0.7\textwidth}{!}{%
+%			\begin{tikzpicture}[
+%				line width=0.8pt,
+%				rotate=90,
+%				transform shape
+%				]
+%				
+%				% ------------------ GEOMETRIE ------------------
+%				
+%				\draw (5,3.5) rectangle (20,-2.75);
+%				\draw (5,3.25) -- (4.625,3.25);
+%				\draw (4.625,-2.5) -- (5,-2.5);
+%				\draw (20,3.25) -- (20.375,3.25);
+%				\draw (20,-2.5) -- (20.375,-2.5);
+%				
+%				\draw (20.625,3.5) -- (22.5,3.5);
+%				\draw (22.5,3.5) -- (22.5,-2.75);
+%				\draw (22.5,-2.75) -- (20.625,-2.75);
+%				
+%				\draw (4.375,3.5) -- (2.5,3.5);
+%				\draw (2.5,3.5) -- (2.5,-2.75);
+%				\draw (2.5,-2.75) -- (4.375,-2.75);
+%				
+%				\draw (20.375,3.25) -- (20.375,1);
+%				\draw (20.375,-2.5) -- (20.375,-0.25);
+%				\draw (20.375,1) rectangle (20.625,-0.25);
+%				
+%				\draw (20.625,3.5) -- (20.625,1);
+%				\draw (20.625,-0.25) -- (20.625,-9);
+%				
+%				\draw (4.625,3.25) -- (4.625,1);
+%				\draw (4.625,-2.5) -- (4.625,-0.25);
+%				\draw (4.625,1) rectangle (4.375,-0.25);
+%				
+%				\draw (4.375,3.5) -- (4.375,0.875);
+%				\draw (4.375,-0.25) -- (4.375,-9);
+%				
+%				\draw (2.125,2.875) -- (1.5,2.875);
+%				\draw (1.5,2.875) -- (-1.25,-2.75);
+%				\draw (-1.25,-3.375) -- (2.125,-3.375);
+%				
+%				\draw (20.625,-9) -- (22.875,-9);
+%				\draw (22.875,-9) -- (22.875,3.125);
+%				\draw (22.5,3.125) -- (22.875,3.125);
+%				
+%				\draw (2.125,-9) -- (2.125,3.125);
+%				\draw (2.125,-9) -- (4.375,-9);
+%				\draw (2.125,3.125) -- (2.5,3.125);
+%				
+%				\draw (22.875,1.5) -- (25.75,1);
+%				\draw (25.75,1) arc[start angle=79.84, end angle=-79.84, radius=0.6350];
+%				\draw (25.75,-0.25) -- (22.875,-0.75);
+%				
+%				\draw (20.625,3.5) -- (20.625,4.75);
+%				\draw (20.625,4.75) -- (20.5,4.75);
+%				\draw (20.5,4.75) -- (20.5,7.25);
+%				\draw (20.5,7.25) -- (22.25,7.25);
+%				\draw (22.25,7.25) -- (22.25,3.5);
+%				
+%				\draw (-1.25,-2.75) -- (-1.25,-3.375);
+%				\draw (-0.625,-1.375) -- (-0.625,-1);
+%				\draw (-0.625,-1) -- (0.875,2);
+%				\draw (0.875,2) -- (1.125,2.125);
+%				
+%				\draw (-0.25,-1.375) rectangle (0.25,-2.75);
+%				
+%				\draw[fill=black] (-0.125,-1.5) rectangle (0,-2.625);
+%				\draw[fill=black] (0.125,0.5) -- (-0.625,0.5) -- (-0.125,1.5) -- (0.625,1.5) -- cycle;
+%				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,0.6875)}]
+%				(-1,1.125) rectangle (0.5,0.25);
+%				
+%				\draw[fill=black] (1.25,-2.375) circle (0.125cm);
+%				\draw[line width=1.3pt] (1.25,-2.375) circle (0.25cm);
+%				
+%				% ------------------ GESTRICHELTE LINIEN ------------------
+%				
+%				\draw[dashed] (4.75,-2.5) -- (5.875,-6.625);
+%				\draw[dashed] (20.125,-2.5) -- (20.125,-5.375);
+%				\draw[dashed] (20.125,-5.375) -- (5.5,-5.375);
+%				\draw[dashed] (0,-2.75) -- (-5.5,0.75);
+%				\draw[dashed] (1.25,-2.625) -- (-3,-5.25);
+%				\draw[dashed] (-0.625,1.25) -- (-4.875,4.75);
+%				\draw[dashed] (3,-9) -- (3,-10.25);
+%				\draw[dashed] (3,-10.25) -- (21.875,-10.25);
+%				\draw[dashed] (21.875,-10.25) -- (21.875,-9);
+%				\draw[dashed] (3.75,-10.375) -- (3.75,-12.375);
+%				\draw[dashed] (21.625,7.25) -- (24.75,8.25);
+%				\draw[dashed] (26,0.875) -- (26.25,3.5);
+%				
+%				% ------------------ BESCHRIFTUNGEN ------------------
+%		% Laufrolle
+%				
+%			\node[fill=white, rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (7.25,-6.5) {\textbf{Laufrolle}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (10.35,-7.3) {Führung und Antrieb für Transportband};
+%		
+%		% USB-Anschluss
+%			
+%			\node[
+%			fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (-7.625,0.75) {\textbf{USB-Anschluss}};
+%		
+%		% Netzkabel-Anschluss
+%			
+%			\node[
+%			fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (-3.65,-5.825) {\textbf{Netzkabel-Anschluss}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-2.5,-6.5) {Stromversorgung des Tischförderbands};
+%			
+%		% Drehregler
+%			
+%			\node[
+%			fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (-5.5,5.9) {\textbf{Drehregler}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-4.2,5.2) {Stufenlose Einstellung der};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-3.6,4.5) {Transportband-Geschwindigkeit};
+%			
+%		% Stützbeine
+%			
+%			\node[fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (6.625,-12.25) {\textbf{Stützbeine}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (6.25,-13) {Für Transport einklappen};
+%		
+%		% Lichtschranke 2
+%			
+%			\node[
+%			fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (27,8.125) {\textbf{Lichtschranke 2}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (28.4,7.3) {Transportboxen korrekt platzieren};
+%		
+%		% Transportgriff
+%			
+%			\node[
+%			fill=white,
+%			rounded corners=2pt,
+%			font=\fontsize{16pt}{18pt}\selectfont
+%			] at (28.55,3.5) {\textbf{Transportgriff}};
+%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.8,2.8) {Einhändiges Transportieren des Tischförderbands};
+%			
+%				
+%			\end{tikzpicture}
+%		}
+%		\caption{Übersicht der Bedienerelemente, Seitenansicht}
+%	\end{center}
+%\end{figure}
