@@ -528,8 +528,14 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \STANDARD{Elektrischer Anschluss der Lichtschranke } 
 {
 
-\textbf{AnSchlusszeichnung hier}  
-
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=8cm]
+		{images/Steckplatine.png}
+		\caption [Anschlussplan der Lichtschranke]{Der hier abgebildete Anschlussplan veranschaulichtt den Anschluss der Lichtschranke, E18D80NK an dem Arduino Uno rev 4.}
+		\label{fig:Anschlussplan}
+	\end{center}
+\end{figure}
 
 } 
 
@@ -627,8 +633,96 @@ Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert,
  }
  \STANDARD{Handbuch des Sensors}{
 \subsection{Manual}
-Um den Sensor Ordnungsgemäß verwenden zu können ist es notwenig alle benötigten 
-\textbf{FÜR JANNNN} 
+\textbf{Hauptfunktionen}\\
+Der E18-D80NK fungiert als optische \textbf{Lichtschranke} zur berührungslosen Objekterkennung. Die Hauptmerkmale sind die digitale Signalausgabe, die Unempfindlichkeit gegenüber sichtbarem Licht und die kompakte Bauweise für die Integration in Steuerungssysteme mit einem \textbf{Arduino}.
+
+\medskip
+\textbf{Anschlussplan}\\
+Die Verdrahtung erfolgt direkt an den Pins des \textbf{Arduino}:
+\begin{enumerate}
+	\item \textbf{Sensor E18-D80NK}:
+	\begin{itemize}
+		\item \textbf{Braune Ader}: Anschluss an 5V (\textbf{Arduino}).
+		\item \textbf{Blaue Ader}: Anschluss an GND (\textbf{Arduino}).
+		\item \textbf{Schwarze Ader (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
+	\end{itemize}
+	\item \textbf{Anzeige-Einheit}:
+	\begin{itemize}
+		\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
+		\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
+	\end{itemize}
+\end{enumerate}
+
+\medskip
+\begin{center}
+	\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
+	\smallskip
+	\small Abbildung: Anschlussplan des Sensors mit LED\\
+\end{center}
+%\label{fig:Sensor mit LED}
+\medskip
+
+\textbf{Funktion}\\
+Ablauf des Funktionstests:
+\begin{enumerate}
+	\item Upload des Programmcodes via \textbf{Arduino IDE}.
+	\item Ruhezustand: Signalpin auf \glqq HIGH".
+	\item Objekterkennung: Sensor-Ausgang schaltet auf \glqq LOW".
+	\item Der \textbf{Arduino} aktiviert die externe \textbf{LED} an Pin 13.
+	\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
+\end{enumerate}
+
+\medskip
+\begin{center}
+	\includegraphics[width=6cm]{images/ScreenshotCode.png}\\
+	\smallskip
+	\small Abbildung: Minimalcode Sensor Test\\
+\end{center}
+%\label{fig:Minimalcode}
+\medskip
+
+
+\textbf{Sicherheitshinweise}\\
+\begin{itemize}
+	\item Betrieb nur mit stabilen 5V DC.
+	\item Signalausgang nicht für hohe induktive Lasten nutzen.
+	\item Optik sauber halten, um Fehlmessungen der \textbf{Lichtschranke} zu vermeiden.
+\end{itemize}
+
+\medskip
+\textbf{Fehlerbehebung}\\
+\begin{itemize}
+	\item \textbf{Dauersignal}: Reichweite am Potentiometer reduzieren.
+	\item \textbf{Kein Signal}: Pin-Zuweisung in der \textbf{Arduino IDE} prüfen.
+	\item \textbf{Instabilität}: GND-Verbindung zum \textbf{Arduino} sicherstellen.
+\end{itemize}
+
+\medskip
+\textbf{Zusatzartikel}\\
+Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
+
+\medskip
+\textbf{Spezifikationen}\\
+\smallskip
+Tabelle: Sensordaten des E18-D80NK \\
+\smallskip
+\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{HSELhellblau} \textbf{Merkmal} & \textbf{Detail} & \textbf{Einheit} & \textbf{Info} \\
+		\hline
+		Sensortyp & Infrarot-Reflexion & - & \textbf{Lichtschranke} \\
+		\hline
+		Spannung & 5 & V DC & Stabil \\
+		\hline
+		Erfassungsbereich & 3 -- 80 & cm & Einstellbar \\
+		\hline
+		Ausgangslogik & NPN & - & Normally Open \\
+		\hline
+		Anzeige & Status-\textbf{LED} & - & Integriert \\
+		\hline
+	\end{tabular}
+	
 }
 \subsection{Inside the Example}
 \STANDARD{Code zum Anschließen des Sensors}{
