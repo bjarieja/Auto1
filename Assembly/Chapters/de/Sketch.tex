@@ -98,60 +98,204 @@ Technische Übersicht des Tischförderbands
 		\draw (21.25,5.375) arc[start angle=135, end angle=45, radius=0.1768];
 		\draw (21.25,5.25) arc[start angle=-129.73, end angle=-410.27, radius=0.1956];
 		
-		% Beschriftungen (ohne lokale Fontdefinition)
+	% Beschriftungen (ohne lokale Fontdefinition)
 		\node[rotate=90, fill=white] at (22,5.5) {L | A | R};
 	
 	% Reset-Taster	
-		\draw[dashed] (25,-3.475) -- (26.875,-7.375);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (26.875,-6.375) {\textbf{Reset-Taster}};
-		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (27.575,-4.89) {Abbruch des aktuellen Befehls};
+		\draw[dashed] (25,-3.475) -- (30.5,-7);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (resettaster) at (31,-8)
+		{\textbf{Reset-Taster}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=6cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (resettaster.south west)
+		{Abbruch des aktuellen \\ Befehls};
 	
 	% Quittierungstaster
 		\draw[line width=1.3pt] (24.375,-1.375) circle (0.375cm);
 		\draw (24.375,-1.375) circle (0.5cm);
 		\draw[dashed] (24.975,-1.375) -- (30.7,0.5);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (31,3) {\textbf{Quittierungstaster}};
-		\node[rotate=90, fill=white,font=\fontsize{14pt}{14pt}\selectfont] at (31.7,5.2) {Bestätigen von Anweisungen auf der Anzeige};
 		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (quittierung) at (31,0)
+		{\textbf{Quittierungstaster}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=7cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (quittierung.south west)
+		{Bestätigen von Anweisungen \\ auf der Anzeige};
+	
 	% Hauptschalter / Not-Aus
-		\draw[dashed] (24.875,5.375) -- (26.75,5.375);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (27.125,7.53) {\textbf{Hauptschalter / Not-Aus}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (27.8,7.5) {Einschalten des Tischförderbands};
-	
-	% Modusschalter	
-		\draw[dashed] (20.875,5.5) -- (16,0.375);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (16.125,1.275) {\textbf{Modusschalter}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17.35,5.15) {Modus wählen (Linkslauf / Automatiklauf / Rechtslauf)};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.85,3) {Förderrichtung des Transportbandes};
-	
-	% Klappbare Stützbeine
+		\draw[dashed] (24.875,5.4) -- (27.3,5.4);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (hauptschalter) at (28,5)
+		{\textbf{Hauptschalter / Not-Aus}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=7cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (hauptschalter.south west)
+		{Einschalten und Ausschaleten des Tischförderbands};
+		
+	% Stützbeine
 		\draw[dashed] (28.75,18.5) -- (35,18.5);
 		\draw[dashed] (35,18.5) -- (35,-11.5);
 		\draw[dashed] (35,-11.5) -- (28.75,-11.5);
 		\draw[dashed] (35,-7.75) -- (36.25,-7.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (36.25,-4.45) {\textbf{Klappbare Stützbeine}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (36.875,-4.85) {Für Transport einklappen};
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (stuetzbeine) at (36.5,-8)
+		{\textbf{Stützbeine}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=8cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (stuetzbeine.south west)
+		{Für Transport einklappen, bei \\ Benutzung ausklappen und \\  arretieren.};
 	
 	% Lichtschranke 1
 		\draw[dashed] (17.5,-14.75) -- (13.25,-14.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (13.025,-12.25) {\textbf{Lichtschranke 1}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (13.75,-10.85) {Transportboxen korrekt platzieren};
-	
-	%Lichtschranke 2
-		\draw[dashed] (14.25,21.75) -- (17.5,21.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (13.025,21.25) {\textbf{Lichtschranke 2}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (13.75,22.65) {Transportboxen korrekt platzieren};
 		
-	%Anzeige 
-		\draw[dashed] (20.75,-1.5) -- (17.35,-8.5);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (16.4,-8.325) {\textbf{Anzeige}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17,-6.225) {Anzeige von Fehlermeldungen};
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (licht1) at (12.5,-15.5)
+		{\textbf{Lichtschranke 1}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=5cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (licht1.south west)
+		{Transportboxen korrekt \\ platzieren.};
 	
+	% Lichtschranke 2
+		\draw[dashed] (14.25,21.75) -- (17.5,21.75);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (licht2) at (13.025,21.25)
+		{\textbf{Lichtschranke 2}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=5cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (licht2.south west)
+		{Transportboxen korrekt \\ platzieren.};
+	
+	% Anzeige 
+		\draw[dashed] (20.75,-1.5) -- (17.35,-8.5);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (anzeige) at (15,-9)
+		{\textbf{Anzeige}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=8cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (anzeige.south west)
+		{Informationen zum Betriebsmodus, Förderrichtung, Bandgeschwindigkeit, Hinweise und Fehlermeldungen.};
+			
 	% Drehregler
 		\draw[dashed] (21.125,10.875) -- (17.25,12.75);
-		\node[rotate=90, fill=white, font=\fontsize{16pt}{14pt}\selectfont] at (15.895,13.9) {\textbf{Drehregler}};
-		\node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (16.625,15.125) {Stufenlose Einstellung der}; \node[rotate=90, fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (17.325,15.725) {Transportband-Geschwindigkeit};
 		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (drehregler) at (16,11.5)
+		{\textbf{Drehregler}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=7cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (drehregler.south west)
+		{Stufenlose Einstellung der \\ Band-Geschwindigkeit.};
+
+	% Modusschalter	
+		\draw[dashed] (20.875,5.5) -- (17.7,2);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (modusschalter) at (15,1)
+		{\textbf{Modusschalter}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=9cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (modusschalter.south west)
+		{Förderrichtung des Transportbandes, \\ Modus wählen\\
+			(Linkslauf / Automatiklauf / Rechtslauf)};
+			
 	\end{tikzpicture}
 }
 	\caption{Übersicht der Bedienerelemente, Vorderansicht}
@@ -209,68 +353,202 @@ Technische Übersicht des Tischförderbands
 				\draw  (-0.625,2.5) -- (-0.625,2.875);
 				\draw  (-0.625,2.875) -- (0.875,5.875);
 				\draw  (0.875,5.875) -- (1.125,6);
-				
+			
+			% Drehregler
 				\draw[fill=black] (0.125,4.375) -- (-0.625,4.375) -- (-0.125,5.375) -- (0.625,5.375) -- cycle;
 				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,4.5625)}] 
 				(-1,5) rectangle (0.5,4.125);
-				
-				\draw[dashed] (4.75,1.375) -- (5.875,-2.75);
-				\draw[dashed] (20.125,1.375) -- (20.125,-1.5);
-				\draw[dashed] (20.125,-1.5) -- (5.5,-1.5);
-				\draw[dashed] (1,2.125) -- (-5.25,4.625);
-				\draw[dashed] (1.125,4.75) -- (-2.375,11.5);
-				\draw[dashed] (-0.625,5.125) -- (-4.875,8.625);
-				\draw[dashed] (3,-5.125) -- (3,-6.375);
-				\draw[dashed] (3,-6.375) -- (21.875,-6.375);
-				\draw[dashed] (21.875,-6.375) -- (21.875,-5.125);
-				\draw[dashed] (3.75,-6.5) -- (3.75,-8.5);
-				\draw[dashed] (21.625,11.125) -- (22.75,13.625);
-				\draw[dashed] (26,4.75) -- (26.25,7.375);
-				\draw[dashed] (3.75,11.125) -- (3.75,12.375);
-				\draw[dashed] (3.75,12.375) -- (22.125,12.375);
-				
+			
+			% Netzkabel Anschluss			
 				\draw[line width=1.3pt] (1.5,4.75) circle (0.25cm);
 				\draw[fill=black] (1.5,4.75) circle (0.125cm);
+			
+			% USB-C Anschluss		
 				\draw[line width=0.8pt, rounded corners=6pt] (1.125,2.75) rectangle (1.625,1.5);
 				\draw[line width=0.6pt] (1.25,2.625) rectangle (1.5,1.625);
 				\draw[line width=0.6pt] (1.375,2.5) -- (1.375,1.75);
 				
 			% Lichtschranke Reflektor
-			\draw (2.75,11.125) -- (4.5,11.125);
-			\draw (2.75,11.125) -- (2.75,7.375);
-			\draw (4.5,8.625) -- (4.5,11.125);
-			\draw (4.5,8.625) -- (4.375,8.625);
-			\draw (4.375,7.375) -- (4.375,8.625);	
-				
-				% ------------------ TEXTFELDER ------------------
-				
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (7.25,-2.625) {\textbf{Laufrolle}};
-				
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (-7.625,4.625) {\textbf{USB-C - Anschluss}};
-			% Netzkabel Anschluss	
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (-2,13) {\textbf{Netzkabel-Anschluss}};
-				
-			% Drehregler
-				
-				\node[
-				fill=white,
-				rounded corners=2pt,
-				font=\fontsize{16pt}{18pt}\selectfont
-				] at (-8.83,10.5) {\textbf{Drehregler}};
-				\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-7.57,9.8) {Stufenlose Einstellung der};
-				\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-7,9.1) {Transportband-Geschwindigkeit};
-				
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (5.125,-8.25) {\textbf{Stützbeine}};
-				
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (24.75,13.5) {\textbf{Lichtschranke 2}};
-				
-				\node[fill=white, font=\fontsize{16pt}{14pt}\selectfont] 
-				at (28.25,7.375) {\textbf{Transportgriff}};
+				\draw (2.75,11.125) -- (4.5,11.125);
+				\draw (2.75,11.125) -- (2.75,7.375);
+				\draw (4.5,8.625) -- (4.5,11.125);
+				\draw (4.5,8.625) -- (4.375,8.625);
+				\draw (4.375,7.375) -- (4.375,8.625);	
+
+	% ---------------- gestrichelte Linien ------------	
+		
+		% Transportband
+			\draw[dashed] (8,7.5) -- (8,10);
+			
+		% Laufrolle	
+			\draw[dashed] (4.75,1.375) -- (5.875,-2.75);                 
+			\draw[dashed] (20.125,1.375) -- (20.125,-1.5);               
+			\draw[dashed] (20.125,-1.5) -- (5.5,-1.5);                  
+		
+		% USB-C - Anschluss
+			\draw[dashed] (1,2.125) -- (-5.25,-2);                    
+		
+		% Netzkabel-Anschluss
+			\draw[dashed] (1.125,4.75) -- (-2.375,13);                
+		
+		% Drehregler
+			\draw[dashed] (-0.625,5.125) -- (-4.875,8.625);              
+		
+		% Stützbeine
+			\draw[dashed] (3,-5.125) -- (3,-6.375);                      
+			\draw[dashed] (3,-6.375) -- (21.875,-6.375);                 
+			\draw[dashed] (21.875,-6.375) -- (21.875,-5.125);            
+			\draw[dashed] (3.75,-6.5) -- (3.75,-8.5);                    
+		 % Lichtschranke 2
+			\draw[dashed] (21.625,11.125) -- (22.75,15.625);            
+			\draw[dashed] (3.75,14.375) -- (22.125,14.375);  
+			\draw[dashed] (3.75,11.125) -- (3.75,14.375);
+			
+		 % Transportgriff
+			\draw[dashed] (26,4.75) -- (28,7.375);                   
+					
+	% ------------------ TEXTFELDER ------------------
+		
+		% Transportband
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (transportband) at (8,11.5)
+			{\textbf{Transportband}};
+			
+			\node[
+			anchor=north west,
+			text width=6.5cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (transportband.south west)
+			{Transportboxen auf Tranportband legen};
+		
+		% Laufrolle
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (laufrolle) at (6,-2.625)
+			{\textbf{Laufrolle}};
+			
+			\node[
+			anchor=north west,
+			text width=6.5cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (laufrolle.south west)
+			{Führung und Antrieb \\ des Transportband};
+			
+			
+			
+		% USB-C - Anschluss
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (usbc) at (-7.625,-3)
+			{\textbf{USB-C - Anschluss}};
+			
+			
+			
+		% Netzkabel Anschluss
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (netzkabel) at (-4,15)
+			{\textbf{Netzkabel-Anschluss}};
+			
+			\node[
+			anchor=north west,
+			text width=7cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (netzkabel.south west)
+			{Stromversorgung des \\ Tischförderbands};
+			
+			
+			
+		% Drehregler
+			\node[
+			anchor=west,
+			fill=white,
+			rounded corners=2pt,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (drehregler2) at (-8.83,10.5)
+			{\textbf{Drehregler}};
+			
+			\node[
+			anchor=north west,
+			text width=7cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (drehregler2.south west)
+			{Stufenlose Einstellung der \\ Bandgeschwindigkeit};
+			
+			
+			
+		% Stützbeine
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (stuetzbeine2) at (4,-8.25)
+			{\textbf{Stützbeine}};
+			
+			\node[
+			anchor=north west,
+			text width=8cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (stuetzbeine2.south west)
+			{Für Transport einklappen, bei \\ Benutzung ausklappen und \\  arretieren.};
+			
+			
+			
+		% Lichtschranke 2
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (lichtschranke2b) at (23,16)
+			{\textbf{Lichtschranke 2}};
+			
+			\node[
+			anchor=north west,
+			text width=7cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (lichtschranke2b.south west)
+			{Transportboxen vor der Lichtschranke platzieren};
+			
+			
+			
+		% Transportgriff
+			\node[
+			anchor=west,
+			fill=white,
+			font=\fontsize{16pt}{18pt}\selectfont
+			] (transportgriff) at (28,8)
+			{\textbf{Transportgriff}};
+			
+			\node[
+			anchor=north west,
+			text width=8cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (transportgriff.south west)
+			{Einhändiges Transportieren \\ des Tischförderbands};
+			
 		\end{tikzpicture}	
 			} % resizebox
 		\end{center}
@@ -278,161 +556,3 @@ Technische Übersicht des Tischförderbands
 		\caption{Übersicht der Bedienerelemente, Seitenansicht}
 		
 	\end{figure}
-%\begin{figure}[h!]
-%	\begin{center}
-%		\resizebox{0.7\textwidth}{!}{%
-%			\begin{tikzpicture}[
-%				line width=0.8pt,
-%				rotate=90,
-%				transform shape
-%				]
-%				
-%				% ------------------ GEOMETRIE ------------------
-%				
-%				\draw (5,3.5) rectangle (20,-2.75);
-%				\draw (5,3.25) -- (4.625,3.25);
-%				\draw (4.625,-2.5) -- (5,-2.5);
-%				\draw (20,3.25) -- (20.375,3.25);
-%				\draw (20,-2.5) -- (20.375,-2.5);
-%				
-%				\draw (20.625,3.5) -- (22.5,3.5);
-%				\draw (22.5,3.5) -- (22.5,-2.75);
-%				\draw (22.5,-2.75) -- (20.625,-2.75);
-%				
-%				\draw (4.375,3.5) -- (2.5,3.5);
-%				\draw (2.5,3.5) -- (2.5,-2.75);
-%				\draw (2.5,-2.75) -- (4.375,-2.75);
-%				
-%				\draw (20.375,3.25) -- (20.375,1);
-%				\draw (20.375,-2.5) -- (20.375,-0.25);
-%				\draw (20.375,1) rectangle (20.625,-0.25);
-%				
-%				\draw (20.625,3.5) -- (20.625,1);
-%				\draw (20.625,-0.25) -- (20.625,-9);
-%				
-%				\draw (4.625,3.25) -- (4.625,1);
-%				\draw (4.625,-2.5) -- (4.625,-0.25);
-%				\draw (4.625,1) rectangle (4.375,-0.25);
-%				
-%				\draw (4.375,3.5) -- (4.375,0.875);
-%				\draw (4.375,-0.25) -- (4.375,-9);
-%				
-%				\draw (2.125,2.875) -- (1.5,2.875);
-%				\draw (1.5,2.875) -- (-1.25,-2.75);
-%				\draw (-1.25,-3.375) -- (2.125,-3.375);
-%				
-%				\draw (20.625,-9) -- (22.875,-9);
-%				\draw (22.875,-9) -- (22.875,3.125);
-%				\draw (22.5,3.125) -- (22.875,3.125);
-%				
-%				\draw (2.125,-9) -- (2.125,3.125);
-%				\draw (2.125,-9) -- (4.375,-9);
-%				\draw (2.125,3.125) -- (2.5,3.125);
-%				
-%				\draw (22.875,1.5) -- (25.75,1);
-%				\draw (25.75,1) arc[start angle=79.84, end angle=-79.84, radius=0.6350];
-%				\draw (25.75,-0.25) -- (22.875,-0.75);
-%				
-%				\draw (20.625,3.5) -- (20.625,4.75);
-%				\draw (20.625,4.75) -- (20.5,4.75);
-%				\draw (20.5,4.75) -- (20.5,7.25);
-%				\draw (20.5,7.25) -- (22.25,7.25);
-%				\draw (22.25,7.25) -- (22.25,3.5);
-%				
-%				\draw (-1.25,-2.75) -- (-1.25,-3.375);
-%				\draw (-0.625,-1.375) -- (-0.625,-1);
-%				\draw (-0.625,-1) -- (0.875,2);
-%				\draw (0.875,2) -- (1.125,2.125);
-%				
-%				\draw (-0.25,-1.375) rectangle (0.25,-2.75);
-%				
-%				\draw[fill=black] (-0.125,-1.5) rectangle (0,-2.625);
-%				\draw[fill=black] (0.125,0.5) -- (-0.625,0.5) -- (-0.125,1.5) -- (0.625,1.5) -- cycle;
-%				\draw[fill=black, rounded corners=3pt, rotate around={-117:(-0.25,0.6875)}]
-%				(-1,1.125) rectangle (0.5,0.25);
-%				
-%				\draw[fill=black] (1.25,-2.375) circle (0.125cm);
-%				\draw[line width=1.3pt] (1.25,-2.375) circle (0.25cm);
-%				
-%				% ------------------ GESTRICHELTE LINIEN ------------------
-%				
-%				\draw[dashed] (4.75,-2.5) -- (5.875,-6.625);
-%				\draw[dashed] (20.125,-2.5) -- (20.125,-5.375);
-%				\draw[dashed] (20.125,-5.375) -- (5.5,-5.375);
-%				\draw[dashed] (0,-2.75) -- (-5.5,0.75);
-%				\draw[dashed] (1.25,-2.625) -- (-3,-5.25);
-%				\draw[dashed] (-0.625,1.25) -- (-4.875,4.75);
-%				\draw[dashed] (3,-9) -- (3,-10.25);
-%				\draw[dashed] (3,-10.25) -- (21.875,-10.25);
-%				\draw[dashed] (21.875,-10.25) -- (21.875,-9);
-%				\draw[dashed] (3.75,-10.375) -- (3.75,-12.375);
-%				\draw[dashed] (21.625,7.25) -- (24.75,8.25);
-%				\draw[dashed] (26,0.875) -- (26.25,3.5);
-%				
-%				% ------------------ BESCHRIFTUNGEN ------------------
-%		% Laufrolle
-%				
-%			\node[fill=white, rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (7.25,-6.5) {\textbf{Laufrolle}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (10.35,-7.3) {Führung und Antrieb für Transportband};
-%		
-%		% USB-Anschluss
-%			
-%			\node[
-%			fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (-7.625,0.75) {\textbf{USB-Anschluss}};
-%		
-%		% Netzkabel-Anschluss
-%			
-%			\node[
-%			fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (-3.65,-5.825) {\textbf{Netzkabel-Anschluss}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-2.5,-6.5) {Stromversorgung des Tischförderbands};
-%			
-%		% Drehregler
-%			
-%			\node[
-%			fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (-5.5,5.9) {\textbf{Drehregler}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-4.2,5.2) {Stufenlose Einstellung der};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (-3.6,4.5) {Transportband-Geschwindigkeit};
-%			
-%		% Stützbeine
-%			
-%			\node[fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (6.625,-12.25) {\textbf{Stützbeine}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (6.25,-13) {Für Transport einklappen};
-%		
-%		% Lichtschranke 2
-%			
-%			\node[
-%			fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (27,8.125) {\textbf{Lichtschranke 2}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (28.4,7.3) {Transportboxen korrekt platzieren};
-%		
-%		% Transportgriff
-%			
-%			\node[
-%			fill=white,
-%			rounded corners=2pt,
-%			font=\fontsize{16pt}{18pt}\selectfont
-%			] at (28.55,3.5) {\textbf{Transportgriff}};
-%			\node[fill=white, font=\fontsize{14pt}{14pt}\selectfont] at (31.8,2.8) {Einhändiges Transportieren des Tischförderbands};
-%			
-%				
-%			\end{tikzpicture}
-%		}
-%		\caption{Übersicht der Bedienerelemente, Seitenansicht}
-%	\end{center}
-%\end{figure}
