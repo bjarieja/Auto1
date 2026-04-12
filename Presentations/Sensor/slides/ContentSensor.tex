@@ -531,17 +531,103 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 \STANDARD{Elektrischer Anschluss der Lichtschranke } 
 {
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=8cm]
-		{images/Steckplatine.png}
-		\caption [Anschlussplan der Lichtschranke]{Der hier abgebildete Anschlussplan veranschaulichtt den Anschluss der Lichtschranke, E18D80NK an dem Arduino Uno rev 4.}
-		\label{fig:Anschlussplan}
-	\end{center}
-\end{figure}
-
 } 
-
+ \STANDARD{Hinweise über den Sensor}{
+	\subsection{Hinweise über den Sensor }
+	\textbf{Hauptfunktionen}\\
+	Der E18-D80NK fungiert als optische \textbf{Lichtschranke} zur berührungslosen Objekterkennung. Die Hauptmerkmale sind die digitale Signalausgabe, die Unempfindlichkeit gegenüber sichtbarem Licht und die kompakte Bauweise für die Integration in Steuerungssysteme mit einem \textbf{Arduino}.
+	
+	\medskip
+	\textbf{Anschlussplan}\\
+	Die Verdrahtung erfolgt direkt an den Pins des \textbf{Arduino}:
+	\begin{enumerate}
+		\item \textbf{Sensor E18-D80NK}:
+		\begin{itemize}
+			\item \textbf{Braune Ader}: Anschluss an 5V (\textbf{Arduino}).
+			\item \textbf{Blaue Ader}: Anschluss an GND (\textbf{Arduino}).
+			\item \textbf{Schwarze Ader (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
+		\end{itemize}
+		\item \textbf{Anzeige-Einheit}:
+		\begin{itemize}
+			\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
+			\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
+		\end{itemize}
+	\end{enumerate}
+	
+	
+	
+\begin{figure}
+		\begin{center}
+			\includegraphics[width=8cm]
+			{images/Steckplatine.png}
+			\caption [Anschlussplan der Lichtschranke]{Der hier abgebildete Anschlussplan veranschaulichtt den Anschluss der Lichtschranke, E18D80NK an dem Arduino Uno rev 4.}
+			\label{fig:Anschlussplan}
+		\end{center}
+\end{figure}
+	
+	%\label{fig:Sensor mit LED}
+	\medskip
+	
+	\begin{figure}[!ht]
+		\begin{center}
+			\resizebox{0.6\textwidth}{!}{%
+				\begin{tikzpicture}[line width=1.2pt]
+					
+					\tikzset{every node/.style={font=\fontsize{18pt}{22pt}\selectfont}}
+					
+					\draw (19.125,18.75) -- (22,18.75);
+					\draw (19.125,15.375) -- (22,15.375);
+					\draw (24,18.75) -- (27.75,18.75);
+					\draw (26.875,16.375) -- (28.875,16.375);
+					\draw (26.875,12.75) -- (28.875,12.75);
+					
+					\draw (21.125,19.5) rectangle (27.25,12.125);
+					
+					\draw (26.875,16.375) -- (26.875,15.625);
+					\draw (26.875,13.5) -- (26.875,12.75);
+					\draw (26.875,15.625) -- (26.125,14.875);
+					
+					\draw[->] (26.125,14.375) -- (26.875,13.5);
+					
+					\draw (25.75,15.875) rectangle (26.125,13.25);
+					
+					\draw (24,18.75) -- (24,14.625);
+					\draw (24,14.625) -- (25.75,14.625);
+					
+					\draw (28.25,18.75) circle (0.5cm);
+					
+					\draw (21.5,17.125) -- (22.5,17.125);
+					\draw (22,17.125) -- (22,15.375);
+					
+					\draw[->] (22,18.75) -- (22,17.25);
+					\draw[->] (23,17.125) -- (23.625,16.625);
+					\draw[->] (22.75,16.875) -- (23.375,16.375);
+					
+					\node at (20,15.875) {2};
+					\node at (29.375,18.75) {NC};
+					\node at (28.25,19.625) {6};
+					\node at (28.25,16.875) {5};
+					\node at (28.25,13.125) {4};
+					\node at (20,19.25) {1};
+					\node at (24.375,11.625) {E18-D80NK};
+					
+				\end{tikzpicture}
+			}
+			\caption{Schaltplan des Sensors E18-D80NK}
+		\end{center}
+	\end{figure}
+	
+	\textbf{Funktion}\\
+	Ablauf des Funktionstests:
+	\begin{enumerate}
+		\item Upload des Programmcodes via \textbf{Arduino IDE}.
+		\item Ruhezustand: Signalpin auf \glqq HIGH".
+		\item Objekterkennung: Sensor-Ausgang schaltet auf \glqq LOW".
+		\item Der \textbf{Arduino} aktiviert die externe \textbf{LED} an Pin 13.
+		\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
+	\end{enumerate}
+	
+}
 \section{Bibliothek}
 \STANDARD{Beschreibung der Bibliothek Bounce2}{
 \subsection{Description}
@@ -593,7 +679,7 @@ Nun ist die Bibliothek in das aktuelle Programm eingebunden.
 
 
 
-\subsection{Functions}
+\subsection{Funktionen der Bibliotek}
 \STANDARD{Funktionen der Bibliothek}{
 	
 \begin{itemize}
@@ -611,7 +697,7 @@ Nun ist die Bibliothek in das aktuelle Programm eingebunden.
 	\item \texttt{fell()} / \texttt{rose()}: Erkennen von Flanken (Taste gedrückt/losgelassen)
 \end{itemize}
 }
-\section{Example}
+\section{Beispiel}
 \STANDARD{Beispiel der Anwendung der Bibliothek am Tischförderband }{
 \subsection*{Ziel}
 Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert, um  einen Motor zu steuern. Die Lichtschranke soll zuverlässig erkennen, ob ein Objekt die Bahn unterbricht, ohne durch Störungen mehrfach ausgelöst zu werden.
@@ -634,116 +720,26 @@ Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert,
 \end{enumerate}
 
  }
- \STANDARD{Handbuch des Sensors}{
-\subsection{Manual}
-\textbf{Hauptfunktionen}\\
-Der E18-D80NK fungiert als optische \textbf{Lichtschranke} zur berührungslosen Objekterkennung. Die Hauptmerkmale sind die digitale Signalausgabe, die Unempfindlichkeit gegenüber sichtbarem Licht und die kompakte Bauweise für die Integration in Steuerungssysteme mit einem \textbf{Arduino}.
-
-\medskip
-\textbf{Anschlussplan}\\
-Die Verdrahtung erfolgt direkt an den Pins des \textbf{Arduino}:
-\begin{enumerate}
-	\item \textbf{Sensor E18-D80NK}:
-	\begin{itemize}
-		\item \textbf{Braune Ader}: Anschluss an 5V (\textbf{Arduino}).
-		\item \textbf{Blaue Ader}: Anschluss an GND (\textbf{Arduino}).
-		\item \textbf{Schwarze Ader (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
-	\end{itemize}
-	\item \textbf{Anzeige-Einheit}:
-	\begin{itemize}
-		\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
-		\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
-	\end{itemize}
-\end{enumerate}
-
-\medskip
-\begin{center}
-	\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
-	\smallskip
-	\small Abbildung: Anschlussplan des Sensors mit LED\\
-\end{center}
-%\label{fig:Sensor mit LED}
-\medskip
-
-\begin{figure}[!ht]
-	\begin{center}
-		\resizebox{0.6\textwidth}{!}{%
-			\begin{tikzpicture}[line width=1.2pt]
-				
-				\tikzset{every node/.style={font=\fontsize{18pt}{22pt}\selectfont}}
-				
-				\draw (19.125,18.75) -- (22,18.75);
-				\draw (19.125,15.375) -- (22,15.375);
-				\draw (24,18.75) -- (27.75,18.75);
-				\draw (26.875,16.375) -- (28.875,16.375);
-				\draw (26.875,12.75) -- (28.875,12.75);
-				
-				\draw (21.125,19.5) rectangle (27.25,12.125);
-				
-				\draw (26.875,16.375) -- (26.875,15.625);
-				\draw (26.875,13.5) -- (26.875,12.75);
-				\draw (26.875,15.625) -- (26.125,14.875);
-				
-				\draw[->] (26.125,14.375) -- (26.875,13.5);
-				
-				\draw (25.75,15.875) rectangle (26.125,13.25);
-				
-				\draw (24,18.75) -- (24,14.625);
-				\draw (24,14.625) -- (25.75,14.625);
-				
-				\draw (28.25,18.75) circle (0.5cm);
-				
-				\draw (21.5,17.125) -- (22.5,17.125);
-				\draw (22,17.125) -- (22,15.375);
-				
-				\draw[->] (22,18.75) -- (22,17.25);
-				\draw[->] (23,17.125) -- (23.625,16.625);
-				\draw[->] (22.75,16.875) -- (23.375,16.375);
-				
-				\node at (20,15.875) {2};
-				\node at (29.375,18.75) {NC};
-				\node at (28.25,19.625) {6};
-				\node at (28.25,16.875) {5};
-				\node at (28.25,13.125) {4};
-				\node at (20,19.25) {1};
-				\node at (24.375,11.625) {E18-D80NK};
-				
-			\end{tikzpicture}
-		}
-		\caption{Schaltplan des Sensors E18-D80NK}
-	\end{center}
-\end{figure}
-
-\textbf{Funktion}\\
-Ablauf des Funktionstests:
-\begin{enumerate}
-	\item Upload des Programmcodes via \textbf{Arduino IDE}.
-	\item Ruhezustand: Signalpin auf \glqq HIGH".
-	\item Objekterkennung: Sensor-Ausgang schaltet auf \glqq LOW".
-	\item Der \textbf{Arduino} aktiviert die externe \textbf{LED} an Pin 13.
-	\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
-\end{enumerate}
-
-}
 
 
-\begin{lstlisting}[language=C++]
-	const int sensorPin = 2;
-	const int ledPin = 13;
-	
-	void setup() {
-		pinMode(sensorPin, INPUT);
-		pinMode(ledPin, OUTPUT);
-	}
-	
-	void loop() {
-		if (digitalRead(sensorPin) == LOW) {
-			digitalWrite(ledPin, HIGH);
-		} else {
-			digitalWrite(ledPin, LOW);
-		}
-	}
-\end{lstlisting}
+
+%\begin{lstlisting}[language=C++]
+%	const int sensorPin = 2;
+%	const int ledPin = 13;
+%	
+%	void setup() {
+%		pinMode(sensorPin, INPUT);
+%		pinMode(ledPin, OUTPUT);
+%	}
+%	
+%	void loop() {
+%		if (digitalRead(sensorPin) == LOW) {
+%			digitalWrite(ledPin, HIGH);
+%		} else {
+%			digitalWrite(ledPin, LOW);
+%		}
+%	}
+%\end{lstlisting}
 
 
 
@@ -795,11 +791,11 @@ Tabelle: Sensordaten des E18-D80NK \\
 
 
 
-\subsection{Files}
+%\subsection{Files}
 
 
 \STANDARD{Kalibrierung}{
-\section{Calibration}
+\section{Kalibrierung }
 Um eine Lichtschranke zu kalibireren ist folgendes vorgehen Empfehlenswert 
 \begin{enumerate}
 	\item Den Sensor gemäß der Herstellerangaben an einen Mikrokontroller anschließen
@@ -813,12 +809,23 @@ Um eine Lichtschranke zu kalibireren ist folgendes vorgehen Empfehlenswert
 \end{enumerate}
 }
 
-\section{Simple Application}
+\section{Einfache Anwendung }
 
-\section{Tests}
+\section{Test}
 \STANDARD{Test der Lichtschranke - Beschreibung}{
 \subsection{einfacher Test } 
-Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben. 
+Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben.  
+\medskip 
+
+\begin{center}
+	\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
+	\smallskip
+	\small Abbildung: Anschlussplan des Sensors mit LED\\
+\end{center}
+
+
+
+
 \begin{enumerate}
 	\item Starten der ArduinoIDE
 	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrokontrollers  
@@ -833,7 +840,7 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 
 
 \STANDARD{Beispielcode}{
-	\section{Simple Code}
+	\section{Beispielcode }
 	Nachfolgend ist der Code für den Test der Ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
 	}
 	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
