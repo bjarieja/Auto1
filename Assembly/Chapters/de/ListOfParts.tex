@@ -13,51 +13,75 @@
 
 \chapter{Liste der Teile}
 
-In diesem Kapitel werden die Bestandteile des Tischförderbands aufgeführt, welche für die Inbetriebnahme benötigt werden. Falls Komponenten beschädigt sein sollten oder fehlen, kontaktieren Sie uns bitte umgehend
+In diesem Kapitel werden die Bestandteile des Tischförderbands aufgeführt, welche für die Inbetriebnahme benötigt werden. Falls Komponenten beschädigt sein sollten oder fehlen, kontaktieren Sie uns bitte umgehend.
 
 \bigskip
 \bigskip
 
-	\begin{table}
-		\caption{Liste der Teile}
-		\begin{center}
-		\begin{tabular}{|l|l|c|l|}
+% Feste Höhe der Bildzelle
+\newlength{\BildZellenHoehe}
+\setlength{\BildZellenHoehe}{3cm}
 
-	\hline
-	Nr. & Bezeichnung & Bild & Anzahl \\
-	\hline  
-
-	1 
-	& Förderband-Gehäuse
-	& \includegraphics[width=4cm, height=3cm, keepaspectratio]{NewFiles/images/Bild_Förderband_Handbuch.png}
-	
-	& 1 \\
-	\hline
-	
-	2
-	& Netzkabel mit Netzteil
-	&\includegraphics[width=4cm, height=2cm, keepaspectratio]{NewFiles/images/Bild_Netzkabel_mit_Netzteil_Handbuch.jpg}
-	& 1 \\
-	\hline
-	
-	3
-	& Benutzerhandbuch
-	&\includegraphics[width=4cm, height=2cm, keepaspectratio]{NewFiles/images/Bild_Benutzerhandbuch_Handbuch.png}
-	& 1 \\
-	\hline
-	
-	4
-	& Transport-Boxen
-	&\includegraphics[width=4cm, height=2cm, keepaspectratio]{NewFiles/images/Bild_Transportboxen_Handbuch.jpg}
-	& 3 \\
-	\hline
-	
-	5
-	& Hilfswerkzeug
-	&\includegraphics[width=4cm, height=2cm, keepaspectratio]{NewFiles/images/Bild_Hilfswerkzeug_Handbuch.jpg}
-	& 1 \\
-	\hline
-	
+\begin{table}
+	\caption{Liste der im Lieferumfang enthaltenen Teile}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		
+		\begin{tabular}{|l|l|>{\centering\arraybackslash}m{6cm}|c|}
+			\hline
+			Nr. & Bezeichnung & Bild & Anzahl \\
+			\hline  
+			
+			1 
+			& Tischförderband
+			& \parbox[c][\BildZellenHoehe][c]{\linewidth}{\centering
+				\includegraphics[
+				height=0.9\BildZellenHoehe,
+				keepaspectratio
+				]{NewFiles/images/Bild_Förderband_Handbuch.png}}
+			& 1 \\
+			\hline
+			
+			2
+			& Netzkabel mit Netzteil
+			& \parbox[c][\BildZellenHoehe][c]{\linewidth}{\centering
+				\includegraphics[
+				height=0.9\BildZellenHoehe,
+				keepaspectratio
+				]{NewFiles/images/Bild_Netzkabel_mit_Netzteil_Handbuch.jpg}}
+			& 1 \\
+			\hline
+			
+			3
+			& Benutzerhandbuch
+			& \parbox[c][\BildZellenHoehe][c]{\linewidth}{\centering
+				\includegraphics[
+				height=0.9\BildZellenHoehe,
+				keepaspectratio
+				]{NewFiles/images/Bild_Benutzerhandbuch_Handbuch.png}}
+			& 1 \\
+			\hline
+			
+			4
+			& Transportboxen
+			& \parbox[c][\BildZellenHoehe][c]{\linewidth}{\centering
+				\includegraphics[
+				height=0.9\BildZellenHoehe,
+				keepaspectratio
+				]{NewFiles/images/Bild_Transportboxen_Handbuch.jpg}}
+			& 3 \\
+			\hline
+			
+			5
+			& Hilfswerkzeug
+			& \parbox[c][\BildZellenHoehe][c]{\linewidth}{\centering
+				\includegraphics[
+				height=0.9\BildZellenHoehe,
+				keepaspectratio
+				]{NewFiles/images/Bild_Hilfswerkzeug_Handbuch.jpg}}
+			& 1 \\
+			\hline
+			
 		\end{tabular}
-\end{center}
-	\end{table}
+	\end{center}
+\end{table}
