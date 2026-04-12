@@ -662,6 +662,55 @@ Die Verdrahtung erfolgt direkt an den Pins des \textbf{Arduino}:
 %\label{fig:Sensor mit LED}
 \medskip
 
+\begin{figure}[!ht]
+	\begin{center}
+		\resizebox{0.6\textwidth}{!}{%
+			\begin{tikzpicture}[line width=1.2pt]
+				
+				\tikzset{every node/.style={font=\fontsize{18pt}{22pt}\selectfont}}
+				
+				\draw (19.125,18.75) -- (22,18.75);
+				\draw (19.125,15.375) -- (22,15.375);
+				\draw (24,18.75) -- (27.75,18.75);
+				\draw (26.875,16.375) -- (28.875,16.375);
+				\draw (26.875,12.75) -- (28.875,12.75);
+				
+				\draw (21.125,19.5) rectangle (27.25,12.125);
+				
+				\draw (26.875,16.375) -- (26.875,15.625);
+				\draw (26.875,13.5) -- (26.875,12.75);
+				\draw (26.875,15.625) -- (26.125,14.875);
+				
+				\draw[->] (26.125,14.375) -- (26.875,13.5);
+				
+				\draw (25.75,15.875) rectangle (26.125,13.25);
+				
+				\draw (24,18.75) -- (24,14.625);
+				\draw (24,14.625) -- (25.75,14.625);
+				
+				\draw (28.25,18.75) circle (0.5cm);
+				
+				\draw (21.5,17.125) -- (22.5,17.125);
+				\draw (22,17.125) -- (22,15.375);
+				
+				\draw[->] (22,18.75) -- (22,17.25);
+				\draw[->] (23,17.125) -- (23.625,16.625);
+				\draw[->] (22.75,16.875) -- (23.375,16.375);
+				
+				\node at (20,15.875) {2};
+				\node at (29.375,18.75) {NC};
+				\node at (28.25,19.625) {6};
+				\node at (28.25,16.875) {5};
+				\node at (28.25,13.125) {4};
+				\node at (20,19.25) {1};
+				\node at (24.375,11.625) {E18-D80NK};
+				
+			\end{tikzpicture}
+		}
+		\caption{Schaltplan des E18-D80NK}
+	\end{center}
+\end{figure}
+
 \textbf{Funktion}\\
 Ablauf des Funktionstests:
 \begin{enumerate}
