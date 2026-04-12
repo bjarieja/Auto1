@@ -721,33 +721,48 @@ Ablauf des Funktionstests:
 	\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
 \end{enumerate}
 
-\medskip
-\begin{center}
-	\includegraphics[width=6cm]{images/ScreenshotCode.png}\\
-	\smallskip
-	\small Abbildung: Minimalcode Sensor Test\\
-\end{center}
-%\label{fig:Minimalcode}
-\medskip
+}
 
 
-\textbf{Sicherheitshinweise}\\
+\begin{lstlisting}[language=C++]
+	const int sensorPin = 2;
+	const int ledPin = 13;
+	
+	void setup() {
+		pinMode(sensorPin, INPUT);
+		pinMode(ledPin, OUTPUT);
+	}
+	
+	void loop() {
+		if (digitalRead(sensorPin) == LOW) {
+			digitalWrite(ledPin, HIGH);
+		} else {
+			digitalWrite(ledPin, LOW);
+		}
+	}
+\end{lstlisting}
+
+
+
+
+
+\STANDARD{Sicherheitshinweise}{
 \begin{itemize}
 	\item Betrieb nur mit stabilen 5V DC.
 	\item Signalausgang nicht für hohe induktive Lasten nutzen.
 	\item Optik sauber halten, um Fehlmessungen der \textbf{Lichtschranke} zu vermeiden.
 \end{itemize}
+}
+\STANDARD{Fehlerbehebung}{
 
-\medskip
-\textbf{Fehlerbehebung}\\
 \begin{itemize}
 	\item \textbf{Dauersignal}: Reichweite am Potentiometer reduzieren.
 	\item \textbf{Kein Signal}: Pin-Zuweisung in der \textbf{Arduino IDE} prüfen.
 	\item \textbf{Instabilität}: GND-Verbindung zum \textbf{Arduino} sicherstellen.
-\end{itemize}
+\end{itemize}}
 
-\medskip
-\textbf{Zusatzartikel}\\
+
+\STANDARD{Zusatz}{
 Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
 
 \medskip
@@ -773,13 +788,10 @@ Tabelle: Sensordaten des E18-D80NK \\
 	\end{tabular}
 	
 }
-%\subsection{Inside the Example}
-%\STANDARD{Code zum Anschließen des Sensors}{
-%\subsection{Code}
-%D
-%
-%
-%}
+
+
+
+
 \subsection{Files}
 
 
