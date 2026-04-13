@@ -20,14 +20,95 @@ Der Begriff Sensor stammt aus dem Lateinischen und bedeutet sinngemäß \glqq F�
 Sensoren dienen zur qualitativen und quantitaiven Auffassung von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen . 
 Hierbei bestehen Sensoren immer aus einem Sensorelement, welches sich mit Veränderung der physikalischen Gegebenheiten ebenfalls verändert. 
 Besonders die Veränderung der elektrischen Eigenschaften des Sensorelementes ist hierbei von Interesse. Ein Beispiel sind Materialien, welche Ihren Widerstand bei Erwärmung verändern.
-Zu jedem Sensorelement wird zudem eine Auswerteelektronik benötigt. Die Auswerteelektronik wandelt dann die beispielhafte Veränderung der elektrischen Eigenschaften in ein eindeutiges analoges oder digitales Signal. Dieses Signal kann dann das Verabreitende System, beispielweise ein Mikrocontroller übergeben werden \cite{Hering:2023}. 
+Zu jedem Sensorelement wird zudem eine Auswerteelektronik benötigt. Die Auswerteelektronik wandelt dann die beispielhafte Veränderung der elektrischen Eigenschaften in ein eindeutiges analoges oder digitales Signal. Dieses Signal kann dann das verarbeitende System, beispielweise ein Mikrocontroller übergeben werden \cite{Hering:2023}. 
 
 
-cite books
+\section{Optische Näherungssensoren}
+Optische Näherungssensoren basieren auf den grundlegenden physikalischen Prinzipien der Elektrodynamik. \cite{Roddeck:2023}. Mithilfe von elektromagnetischer Strahlung können diese Sensoren physikalische Messgrößen aufnehmnen und messen. Im Grundlegenden bestehen diese Sensoren ebenfalls aus Sensorelement und Auswerteelektronik, jedoch sind die Sensorelemente in ihrem Komplexitätsgrad als deutlich höher einzustufen. Oftmals werden Halbleitermaterialien und -Komponenten für diese Sensorelemente verwendet \cite{Roddeck:2023}.
+ Die in Halbleitermaterialien auftretenden physikalischen Effekte bei der Zufuhr von Energie sind entscheidend für die Funktionsweise vieler optischer Sensoren. Dabei werden insbesondere Prozesse wie die Absorption und Emission von Photonen sowie die daraus resultierende Erzeugung und Trennung von Ladungsträgern genutzt \cite{Feynman:2020}.
+Optische Näherungssensoren gehören zu den berührungslos arbeitenden Sensoren und werden zur Erfassung von Objekten oder Abständen eingesetzt, ohne dass ein mechanischer Kontakt erforderlich ist. Um diese Eigenschaft zu ernöglichen,  bestehen Optische Näherungssensoren zwangsläufig aus einem Sender und einem Empfänger \
+Der Sender dienst als Strahlenquelle der Elektromagnetischen Strahlung und emmitiert diese, wohinggegen der Empfänger die Strahlung empfängt und auswertet. Charakteristisch ist hierbei, dass Sender und Empfänger nicht zwangsläufig Koaxial gegenüberliegend sondern ebenfalls nebeneinanderliegend aufzufinden sind. Der erste Fall ist charakteristisch für die Bauweise der \glqq Einweg-Lichtschranke\grqq, welche in Industrie häufig bei hochpräzisen Anwendungen aufzufinden ist. 
+In letzterem Fall wird ein Reflektor für das herstellen eines Lichtstrahls zwischen Sender und Empfänger genutzt.  Um dies zu ermöglichen muss somit ein kleiner Winkel zwischen den optischen Achsen beider Komponenten vorhanden sein. Diese Bauart wird gängig als \glqq Reflex-Lichtschranke\grqq \space bezeichnet \cite{Loeffler-Mang:2012}. Nachfolgende Grafik zeigt die Wirkprinzipien beider Bauarten auf \ref{WirkprinzipLS}.  
 
-\section{Specific Sensor/Actor}
+\begin{figure} 
+	\usetikzlibrary{arrows.meta, positioning}
+	
+	\usetikzlibrary{arrows.meta, positioning}
+	
+	\begin{tikzpicture}[
+		scale=0.50,
+		transform shape,
+		block/.style={draw, rectangle, minimum width=2.5cm, minimum height=3cm, align=center},
+		smallblock/.style={draw, rectangle, minimum width=0.6cm, minimum height=3cm},
+		arrow/.style={->, thick},
+		label/.style={font=\normalsize}
+		]
+		
+		% ======================
+		% a) Einweglichtschranke
+		% ======================
+		\node[label] at (-8,6) {\textbf{a)}};
+		
+		% EIN (oben)
+		\node[label] at (-8,4.5) {Ein};
+		
+		\node[block] (S1) at (-10,2) {Sender};
+		\node[block] (E1) at (-6,2) {Empfänger};
+		
+		\draw[arrow] (S1.east) -- (E1.west);
+		
+		% AUS (unten)
+		\node[label] at (-8,-0.5) {Aus};
+		
+		\node[block] (S2) at (-10,-3) {Sender};
+		\node[smallblock] (O) at (-8,-3) {};
+		\node[block] (E2) at (-6,-3) {Empfänger};
+		
+		\draw[arrow] (S2.east) -- (O.west);
+		
+		\node at (O.center) {O};
+		
+		% ======================
+		% b) Reflektorlichtschranke
+		% ======================
+		\node[label] at (6,6) {\textbf{b)}};
+		
+		% EIN (oben)
+		\node[label] at (6,4.5) {Ein};
+		
+		\node[block] (SE1) at (3,2) {};
+		\node[smallblock] (R1) at (9,2) {};
+		
+		% Beschriftungen exakt ausgerichtet
+		\node[label] at (3,3) {Empfänger};
+		\node[label] at (3,1) {Sender};
+		\node[label] at (9,4) {Reflektor};
+		
+		% Hin- und Rückstrahl symmetrisch
+		\draw[arrow] ([yshift=0.4cm]SE1.east) -- ([yshift=0.4cm]R1.west);
+		\draw[arrow] ([yshift=-0.4cm]R1.west) -- ([yshift=-0.4cm]SE1.east);
+		
+		% AUS (unten)
+		\node[label] at (6,-0.5) {Aus};
+		
+		\node[block] (SE2) at (3,-3) {};
+		\node[smallblock] (OBJ) at (6,-3) {};
+		\node[smallblock] (R2) at (9,-3) {};
+		
+		\node[label] at (3,-2) {Empfänger};
+		\node[label] at (3,-4) {Sender};
+		\node[label, yshift=15pt] at (6,-1.5) {Objekt};
+		\node[label, yshift=15pt] at (9,-1.5) {Reflektor};
+		
+		\draw[arrow] (SE2.east) -- (OBJ.west);
+		
+	\end{tikzpicture}
 
-cite board
+	\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke}
+	\label{WirkprinzipLS}
+\end{figure}
+
+
 
 \section{Specification}
 
