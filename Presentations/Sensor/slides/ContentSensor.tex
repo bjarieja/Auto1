@@ -534,22 +534,27 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	\subsection{Hinweise über den Sensor }
 	\textbf{Hauptfunktionen}\\
 	Der E18-D80NK fungiert als optische \textbf{Lichtschranke} zur berührungslosen Objekterkennung. Die Hauptmerkmale sind die digitale Signalausgabe, die Unempfindlichkeit gegenüber sichtbarem Licht und die kompakte Bauweise für die Integration in Steuerungssysteme mit einem \textbf{Arduino}.
-	
+	\medskip 
+		\begin{figure}[!ht]
+		\includegraphics[scale=0.6]{images/SchaltfunktionLS.png}
+		\caption{Schaltplan des Sensors E18-D80NK}
+		\end{figure}
+			
 	\medskip
 	\textbf{Anschlussplan}\\
 	Die Verdrahtung erfolgt direkt an den Pins des \textbf{Arduino}:
 	\begin{enumerate}
 		\item \textbf{Sensor E18-D80NK}:
 		\begin{itemize}
-			\item \textbf{Braune Ader}: Anschluss an 5V (\textbf{Arduino}).
-			\item \textbf{Blaue Ader}: Anschluss an GND (\textbf{Arduino}).
-			\item \textbf{Schwarze Ader (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
+			\item \textbf{Rote Leitung}: Anschluss an 5V (\textbf{Arduino}).
+			\item \textbf{Schwarze Leitung}: Anschluss an GND (\textbf{Arduino}).
+			\item \textbf{Blaue Leitung (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
 		\end{itemize}
 		\item \textbf{Anzeige-Einheit}:
-		\begin{itemize}
-			\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
-			\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
-		\end{itemize}
+%		\begin{itemize}
+%			\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
+%			\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
+%		\end{itemize}
 	\end{enumerate}
 	
 	
@@ -565,12 +570,8 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	
 	%\label{fig:Sensor mit LED}
 	\medskip
-	\medskip
-	\begin{figure}[!ht]
-					\includegraphics[scale=0.6]{images/SchaltfunktionLS.png}
-			\caption{Schaltplan des Sensors E18-D80NK}
-	\end{figure}
-		\medskip
+	
+\medskip
 	\textbf{Funktion}\\
 	Ablauf des Funktionstests:
 	\begin{enumerate}
