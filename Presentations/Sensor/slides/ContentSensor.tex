@@ -27,274 +27,322 @@
   Quellen: 
   \cite{Loeffler-Mang:2012}, \cite{Roddeck:2023}
 }
+\STANDARD{Literatur}{
+\textbf{Folgende Literatur wurde verwendet:} 
+\begin{enumerate}
+	\item Einführung in die Mechatronik, Werner Roddeck, Springer Fachmedien Wiesbaden. \\ \textbf{Beschreibung:} Dieses Fachbuch beschreibt die Funktionsweise unterschiedlicher Komponenten der Mechatronik, auch Optische Sensoren. 
+	\item Sensoren und Aktoren, Jörg Wallaschek, Springer Berlin Heidelberg. \\ \textbf{Beschreibung:} Dieses Buch geht insbesondere auf die Schnittstellen zwischen Snesoren und aktoren ein und Beleuchtet hauptsächlich die Ansteuerung udn Wirkprinzipien dieser Systeme. 
+	\item Datenblatt E18-D80NK, Roboter-Bausatz.de 
+	\item Bounce2 Repository von Thomas Fredericks  
+\end{enumerate} 
+Weitere verwendete Quellen finden sich im Quellenverzeichnis. 
+
+
+}
+
+
 \section{Specific Sensor/Actor}
-\STANDARD{Funktionsprinzip}{ 
-	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
-\begin{center}
-\begin{figure}
-\usetikzlibrary{arrows.meta, positioning}
-\begin{tikzpicture}[
-	scale=0.5,
-	transform shape,
-	block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
-	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
-	arrow/.style={->, thick}
-	]
-	% Outer box
-	\node[outer] (system) {};
-	% Inner blocks
-	\node[block] (sensor) at (-3,0) {Sensor-Element};
-	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
-	
-	% Input arrow
-	\draw[arrow] (-8,0) -- (sensor.west)
-	node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
-	node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
-	
-	% Between blocks
-	\draw[arrow] (sensor.east) -- (eval.west)
-	node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
-	
-	% Output arrow
-	\draw[arrow] (eval.east) -- (8,0)
-	node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
-	
-	% Disturbance arrow
-	\draw[arrow] (-3,-3) -- (sensor.south)
-	node[midway, right, xshift=10pt] {Störgrößen};
-	
-\end{tikzpicture}
-	\caption{Wirkprinzip eines Sensorsystems}
-\end{figure}	
-	\end{center}
-	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
-}
+%\STANDARD{Funktionsprinzip}{ 
+%	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
+%\begin{center}
+%\begin{figure}
+%\usetikzlibrary{arrows.meta, positioning}
+%\begin{tikzpicture}[
+%	scale=0.5,
+%	transform shape,
+%	block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
+%	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
+%	arrow/.style={->, thick}
+%	]
+%	% Outer box
+%	\node[outer] (system) {};
+%	% Inner blocks
+%	\node[block] (sensor) at (-3,0) {Sensor-Element};
+%	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
+%	
+%	% Input arrow
+%	\draw[arrow] (-8,0) -- (sensor.west)
+%	node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
+%	node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
+%	
+%	% Between blocks
+%	\draw[arrow] (sensor.east) -- (eval.west)
+%	node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
+%	
+%	% Output arrow
+%	\draw[arrow] (eval.east) -- (8,0)
+%	node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
+%	
+%	% Disturbance arrow
+%	\draw[arrow] (-3,-3) -- (sensor.south)
+%	node[midway, right, xshift=10pt] {Störgrößen};
+%	
+%\end{tikzpicture}
+%	\caption{Wirkprinzip eines Sensorsystems}
+%\end{figure}	
+%	\end{center}
+%	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
+%}
+
+
+\section{externer Code }
+\lstinputlisting[language=C++, xleftmargin=0pt, xrightmargin=0pt]{Code/TestCode/TestCode.ino}
+
+
+\section{Doxygen}
+\lstinputlisting[language=C++, xleftmargin=0pt, xrightmargin=0pt]{codeTest/codeTest.ino}
 
 
 
-\STANDARD{Optische Näherungssensoren}
-{ 
-Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. Hierbei sind \textbf{Strahlenquellen} beispielsweise der \textbf{Sender} und \textbf{Fotodioden} die \textbf{Empfänger}. 
-\begin{itemize}
+\section{Test}
+\STANDARD{Test der Lichtschranke - Beschreibung}{
+	\subsection{einfacher Test } 
+	Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben.  
+	\medskip 
 	
-	\item \textbf{Einweg-Lichtschranken:} Sender und Empfänger gegenüberliegend. Hohe Auflösung, bis zu 10m \cite{Hering:2023}
-	\item \textbf{Reflex-Lichtschranken:} Sender und Empfänger in einem Gehäuse, \textbf{Reflektor}. Einfache Einstellung, bis zu 5m Abstand \cite{Hering:2023}
-\end{itemize}
-}
-
-\STANDARD{Optische Näherungssensoren}
-{ 
 	\begin{center}
-	\begin{figure} 
-	\usetikzlibrary{arrows.meta, positioning}
-	
-\usetikzlibrary{arrows.meta, positioning}
-
-\begin{tikzpicture}[
-	scale=0.50,
-	transform shape,
-	block/.style={draw, rectangle, minimum width=2.5cm, minimum height=3cm, align=center},
-	smallblock/.style={draw, rectangle, minimum width=0.6cm, minimum height=3cm},
-	arrow/.style={->, thick},
-	label/.style={font=\normalsize}
-	]
-	
-	% ======================
-	% a) Einweglichtschranke
-	% ======================
-	\node[label] at (-8,6) {\textbf{a)}};
-	
-	% EIN (oben)
-	\node[label] at (-8,4.5) {Ein};
-	
-	\node[block] (S1) at (-10,2) {Sender};
-	\node[block] (E1) at (-6,2) {Empfänger};
-	
-	\draw[arrow] (S1.east) -- (E1.west);
-	
-	% AUS (unten)
-	\node[label] at (-8,-0.5) {Aus};
-	
-	\node[block] (S2) at (-10,-3) {Sender};
-	\node[smallblock] (O) at (-8,-3) {};
-	\node[block] (E2) at (-6,-3) {Empfänger};
-	
-	\draw[arrow] (S2.east) -- (O.west);
-	
-	\node at (O.center) {O};
-	
-	% ======================
-	% b) Reflektorlichtschranke
-	% ======================
-	\node[label] at (6,6) {\textbf{b)}};
-	
-	% EIN (oben)
-	\node[label] at (6,4.5) {Ein};
-	
-	\node[block] (SE1) at (3,2) {};
-	\node[smallblock] (R1) at (9,2) {};
-	
-	% Beschriftungen exakt ausgerichtet
-	\node[label] at (3,3) {Empfänger};
-	\node[label] at (3,1) {Sender};
-	\node[label] at (9,4) {Reflektor};
-	
-	% Hin- und Rückstrahl symmetrisch
-	\draw[arrow] ([yshift=0.4cm]SE1.east) -- ([yshift=0.4cm]R1.west);
-	\draw[arrow] ([yshift=-0.4cm]R1.west) -- ([yshift=-0.4cm]SE1.east);
-	
-	% AUS (unten)
-	\node[label] at (6,-0.5) {Aus};
-	
-	\node[block] (SE2) at (3,-3) {};
-	\node[smallblock] (OBJ) at (6,-3) {};
-	\node[smallblock] (R2) at (9,-3) {};
-	
-	\node[label] at (3,-2) {Empfänger};
-	\node[label] at (3,-4) {Sender};
-	\node[label, yshift=15pt] at (6,-1.5) {Objekt};
-	\node[label, yshift=15pt] at (9,-1.5) {Reflektor};
-	
-	\draw[arrow] (SE2.east) -- (OBJ.west);
-	
-\end{tikzpicture}
-
-\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke}
-	\end{figure}
+		\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
+		\smallskip
+		\small Abbildung: Anschlussplan des Sensors mit LED\\
 	\end{center}
-
-	
-\begin{table}
-	\caption{Gegenüberstellung der optischen Näherungssensoren}
-	\begin{center}
-			\begin{tabular}{|p{1,8cm}|p{3,8cm}|p{3,8cm}|}
-				
-				\hline
-				Merkmale & Einweg-Lichtschranke & Reflex-Lichtschranke \\
-				\hline  
-				
-				Komponenten
-				& Sender-LED + IR-Empfänger (Seperat)
-				& Modul mit LED \& Empfänger + Reflektor\\
-				\hline
-				Aufbau
-				& Zwei getrennte Gehäuse (Sender \& Empfänger)
-				& Ein Gehäuse (Sender \& Empfänger getrennt) + Reflektor\\
-				\hline
-				Lichtweg
-				& Einmalig vom Sender zum Empfänger
-				& Vom Sender zum Reflektor \& zurück zum Empfänger\\
-				\hline
-				Verkabelung 
-				& \textbf{Hoch:} Beide Seiten benötigen elektrischen Anschluss
-				& \textbf{Gering:} Eine Seite benötigt elektrischen Anschluss\\
-				\hline
-				Montage-Setup
-				& Optischer Inkremental-geber (am Elekromotor)
-				& Lichtschranken (auf dem Transportförderband)\\
-				\hline
-					
-				\end{tabular}
-		\end{center}
-	\end{table}
 }
 
-\STANDARD{LED}
-{
-	\begin{center}
-		\begin{figure}
-			
-			\begin{tikzpicture}[>=latex, font=\sffamily]
-				
-				% --- n-Schicht ---
-				\fill[red!20] (0,0) rectangle (3,2);
-				\draw[thick, red!70!black] (0,0) rectangle (3,2);
-				\node at (1.5,1) {\large n};
-				
-				% --- p-Schicht ---
-				\fill[blue!20] (0,2) rectangle (3,3);
-				\draw[thick, blue!70!black] (0,2) rectangle (3,3);
-				\node at (1.5,2.5) {\large p};
-				
-				% --- Lichteinfall (nun von unten nach oben gedreht) ---
-				\foreach \x in {0.6,1.2,1.8,2.4}{
-					\draw[->, ultra thick, yellow!80!black] (\x,3) -- (\x,4);
-				}
-				\node[yellow!80!black, right] at (2.4,3.5) {\large Licht};
-				
-				% --- Elektrischer Anschluss ---
-				% Pluspol oben
-				\draw[thick] (3,2.5) -- (4,2.5) node[right] {+};
-				\draw[thick] (3,0.5) -- (4,0.5) node[right] {-};
-				
-				% Verbindung und Spannungspfeil
-				\draw[thick] (4,2.5) -- (4,0.5);
-				\draw[->, thick] (4.2,2) -- (4.2,1) node[midway, right] {$U$};
-				
-			\end{tikzpicture}
-			\caption{Funktionsprinzip einer LED \cite{Walker:2014}}
-		\end{figure}
-	\end{center}
-
+\medskip
+\STANDARD{Test der Lichtschranke - Ablauf}{
+	\begin{enumerate}
+		\item Starten der ArduinoIDE
+		\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers  
+		\item Verbinden der Signalleitung der Lichtschranke an einen GPIO Pin des Mikrocontrollers 
+		\item Verbinden des Mikrocontrolles mit dem Rechner per USB 
+		\item Öfnen der ArduineIDE
+		\item Öffnen des Sketches zur Erprobung
+		\item Eintragen des mit der Signalleitung verbundenen GPIO Pins an der vorgesehenn Stelle 
+		\item Sketch auf den Mikrocontroller spielen
+	\end{enumerate}
 }
+%\STANDARD{Optische Näherungssensoren}
+%{ 
+%Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. Hierbei sind \textbf{Strahlenquellen} beispielsweise der \textbf{Sender} und \textbf{Fotodioden} die \textbf{Empfänger}. 
+%\begin{itemize}
+%	
+%	\item \textbf{Einweg-Lichtschranken:} Sender und Empfänger gegenüberliegend. Hohe Auflösung, bis zu 10m \cite{Hering:2023}
+%	\item \textbf{Reflex-Lichtschranken:} Sender und Empfänger in einem Gehäuse, \textbf{Reflektor}. Einfache Einstellung, bis zu 5m Abstand \cite{Hering:2023}
+%\end{itemize}
+%}
+
+%\STANDARD{Optische Näherungssensoren}
+%{ 
+%	\begin{center}
+%	\begin{figure} 
+%	\usetikzlibrary{arrows.meta, positioning}
+%	
+%\usetikzlibrary{arrows.meta, positioning}
+%
+%\begin{tikzpicture}[
+%	scale=0.50,
+%	transform shape,
+%	block/.style={draw, rectangle, minimum width=2.5cm, minimum height=3cm, align=center},
+%	smallblock/.style={draw, rectangle, minimum width=0.6cm, minimum height=3cm},
+%	arrow/.style={->, thick},
+%	label/.style={font=\normalsize}
+%	]
+%	
+%	% ======================
+%	% a) Einweglichtschranke
+%	% ======================
+%	\node[label] at (-8,6) {\textbf{a)}};
+%	
+%	% EIN (oben)
+%	\node[label] at (-8,4.5) {Ein};
+%	
+%	\node[block] (S1) at (-10,2) {Sender};
+%	\node[block] (E1) at (-6,2) {Empfänger};
+%	
+%	\draw[arrow] (S1.east) -- (E1.west);
+%	
+%	% AUS (unten)
+%	\node[label] at (-8,-0.5) {Aus};
+%	
+%	\node[block] (S2) at (-10,-3) {Sender};
+%	\node[smallblock] (O) at (-8,-3) {};
+%	\node[block] (E2) at (-6,-3) {Empfänger};
+%	
+%	\draw[arrow] (S2.east) -- (O.west);
+%	
+%	\node at (O.center) {O};
+%	
+%	% ======================
+%	% b) Reflektorlichtschranke
+%	% ======================
+%	\node[label] at (6,6) {\textbf{b)}};
+%	
+%	% EIN (oben)
+%	\node[label] at (6,4.5) {Ein};
+%	
+%	\node[block] (SE1) at (3,2) {};
+%	\node[smallblock] (R1) at (9,2) {};
+%	
+%	% Beschriftungen exakt ausgerichtet
+%	\node[label] at (3,3) {Empfänger};
+%	\node[label] at (3,1) {Sender};
+%	\node[label] at (9,4) {Reflektor};
+%	
+%	% Hin- und Rückstrahl symmetrisch
+%	\draw[arrow] ([yshift=0.4cm]SE1.east) -- ([yshift=0.4cm]R1.west);
+%	\draw[arrow] ([yshift=-0.4cm]R1.west) -- ([yshift=-0.4cm]SE1.east);
+%	
+%	% AUS (unten)
+%	\node[label] at (6,-0.5) {Aus};
+%	
+%	\node[block] (SE2) at (3,-3) {};
+%	\node[smallblock] (OBJ) at (6,-3) {};
+%	\node[smallblock] (R2) at (9,-3) {};
+%	
+%	\node[label] at (3,-2) {Empfänger};
+%	\node[label] at (3,-4) {Sender};
+%	\node[label, yshift=15pt] at (6,-1.5) {Objekt};
+%	\node[label, yshift=15pt] at (9,-1.5) {Reflektor};
+%	
+%	\draw[arrow] (SE2.east) -- (OBJ.west);
+%	
+%\end{tikzpicture}
+%
+%\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke}
+%	\end{figure}
+%	\end{center}
+%
+%	
+%\begin{table}
+%	\caption{Gegenüberstellung der optischen Näherungssensoren}
+%	\begin{center}
+%			\begin{tabular}{|p{1,8cm}|p{3,8cm}|p{3,8cm}|}
+%				
+%				\hline
+%				Merkmale & Einweg-Lichtschranke & Reflex-Lichtschranke \\
+%				\hline  
+%				
+%				Komponenten
+%				& Sender-LED + IR-Empfänger (Seperat)
+%				& Modul mit LED \& Empfänger + Reflektor\\
+%				\hline
+%				Aufbau
+%				& Zwei getrennte Gehäuse (Sender \& Empfänger)
+%				& Ein Gehäuse (Sender \& Empfänger getrennt) + Reflektor\\
+%				\hline
+%				Lichtweg
+%				& Einmalig vom Sender zum Empfänger
+%				& Vom Sender zum Reflektor \& zurück zum Empfänger\\
+%				\hline
+%				Verkabelung 
+%				& \textbf{Hoch:} Beide Seiten benötigen elektrischen Anschluss
+%				& \textbf{Gering:} Eine Seite benötigt elektrischen Anschluss\\
+%				\hline
+%				Montage-Setup
+%				& Optischer Inkremental-geber (am Elekromotor)
+%				& Lichtschranken (auf dem Transportförderband)\\
+%				\hline
+%					
+%				\end{tabular}
+%		\end{center}
+%	\end{table}
+%}
+
+%\STANDARD{LED}
+%{
+%	\begin{center}
+%		\begin{figure}
+%			
+%			\begin{tikzpicture}[>=latex, font=\sffamily]
+%				
+%				% --- n-Schicht ---
+%				\fill[red!20] (0,0) rectangle (3,2);
+%				\draw[thick, red!70!black] (0,0) rectangle (3,2);
+%				\node at (1.5,1) {\large n};
+%				
+%				% --- p-Schicht ---
+%				\fill[blue!20] (0,2) rectangle (3,3);
+%				\draw[thick, blue!70!black] (0,2) rectangle (3,3);
+%				\node at (1.5,2.5) {\large p};
+%				
+%				% --- Lichteinfall (nun von unten nach oben gedreht) ---
+%				\foreach \x in {0.6,1.2,1.8,2.4}{
+%					\draw[->, ultra thick, yellow!80!black] (\x,3) -- (\x,4);
+%				}
+%				\node[yellow!80!black, right] at (2.4,3.5) {\large Licht};
+%				
+%				% --- Elektrischer Anschluss ---
+%				% Pluspol oben
+%				\draw[thick] (3,2.5) -- (4,2.5) node[right] {+};
+%				\draw[thick] (3,0.5) -- (4,0.5) node[right] {-};
+%				
+%				% Verbindung und Spannungspfeil
+%				\draw[thick] (4,2.5) -- (4,0.5);
+%				\draw[->, thick] (4.2,2) -- (4.2,1) node[midway, right] {$U$};
+%				
+%			\end{tikzpicture}
+%			\caption{Funktionsprinzip einer LED \cite{Walker:2014}}
+%		\end{figure}
+%	\end{center}
+%
+%}
 
 
 
-\STANDARD{Funktionsprinzip Fotodiode}
-{
-	\begin{center}
-		\begin{figure}
-			\begin{tikzpicture}[scale=0.7]
-				
-				% Stil für alle Knoten
-				\tikzset{every node/.style={font=\fontsize{18.2pt}{23.7pt}\selectfont}}
-				
-				% Lichteinfall (gelb)
-				\foreach \x in {10.5,11,11.5} {
-					\draw[very thick, yellow!80!black] (\x,15.5) -- (\x,13.375);
-					% kleine Querstriche am Ende
-					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(-0.1,0.15);
-					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(0.1,0.15);
-				}
-				\node[text=yellow!80!black] at (15,15.25) {Lichteinfall};
-				
-				% n-Schicht (rot)
-				\filldraw[fill=red!20, draw=red!80!black, thick]
-				(6,10.375) rectangle (11,13.375);
-				\node[text=red!80!black] at (7.125,11.875) {n};
-				
-				% p-Schicht (blau)
-				\filldraw[fill=blue!20, draw=blue!80!black, thick]
-				(11,10.375) rectangle (15.5,13.375);
-				\node[text=blue!80!black] at (13.75,11.875) {p};
-				
-				% Sperrschicht
-				\draw[dashed, thick, black!70!black] (10,10.375) -- (10,13.375);
-				\draw[dashed, thick, black!70!black] (12,10.375) -- (12,13.375);
-				\draw[thick] (11,10.375) -- (11,13.375);
-				\node at (11,9.375) {Sperrschicht};
-				
-				% kleine Linien unten
-				\draw (10,9.875) -- (10,10.375);
-				\draw (12,9.875) -- (12,10.375);
-				
-			\end{tikzpicture}
-			\caption{Funktionsprinzip Fotodiode \cite{Walker:2014}}
-		\end{figure}
-	\end{center}
-	
-}
+%\STANDARD{Funktionsprinzip Fotodiode}
+%{
+%	\begin{center}
+%		\begin{figure}
+%			\begin{tikzpicture}[scale=0.7]
+%				
+%				% Stil für alle Knoten
+%				\tikzset{every node/.style={font=\fontsize{18.2pt}{23.7pt}\selectfont}}
+%				
+%				% Lichteinfall (gelb)
+%				\foreach \x in {10.5,11,11.5} {
+%					\draw[very thick, yellow!80!black] (\x,15.5) -- (\x,13.375);
+%					% kleine Querstriche am Ende
+%					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(-0.1,0.15);
+%					\draw[very thick, yellow!80!black] (\x,13.375) -- ++(0.1,0.15);
+%				}
+%				\node[text=yellow!80!black] at (15,15.25) {Lichteinfall};
+%				
+%				% n-Schicht (rot)
+%				\filldraw[fill=red!20, draw=red!80!black, thick]
+%				(6,10.375) rectangle (11,13.375);
+%				\node[text=red!80!black] at (7.125,11.875) {n};
+%				
+%				% p-Schicht (blau)
+%				\filldraw[fill=blue!20, draw=blue!80!black, thick]
+%				(11,10.375) rectangle (15.5,13.375);
+%				\node[text=blue!80!black] at (13.75,11.875) {p};
+%				
+%				% Sperrschicht
+%				\draw[dashed, thick, black!70!black] (10,10.375) -- (10,13.375);
+%				\draw[dashed, thick, black!70!black] (12,10.375) -- (12,13.375);
+%				\draw[thick] (11,10.375) -- (11,13.375);
+%				\node at (11,9.375) {Sperrschicht};
+%				
+%				% kleine Linien unten
+%				\draw (10,9.875) -- (10,10.375);
+%				\draw (12,9.875) -- (12,10.375);
+%				
+%			\end{tikzpicture}
+%			\caption{Funktionsprinzip Fotodiode \cite{Walker:2014}}
+%		\end{figure}
+%	\end{center}
+%	
+%}
 
 
-\STANDARD{Sensor Funktionsprinzip } 
-{
-\textbf{Fazit:} 
-\begin{itemize}
-	\item \textbf{Sender (LED):} Durch \textbf{Stromfluss} werden Photonen emittiert. \cite{Loeffler-Mang:2012}
-	\item \textbf{Empfänger (Fotodiode):} Durch \textbf{Lichteinfall} wird ein Stromfluss erzeugt. \cite{Loeffler-Mang:2012}
-	\end{itemize}
-
-}
+%\STANDARD{Sensor Funktionsprinzip } 
+%{
+%\textbf{Fazit:} 
+%\begin{itemize}
+%	\item \textbf{Sender (LED):} Durch \textbf{Stromfluss} werden Photonen emittiert. \cite{Loeffler-Mang:2012}
+%	\item \textbf{Empfänger (Fotodiode):} Durch \textbf{Lichteinfall} wird ein Stromfluss erzeugt. \cite{Loeffler-Mang:2012}
+%	\end{itemize}
+%
+%}
 \section{Reflex-Lichtschranke E18-D80N}
 \STANDARD{\textbf{Spezifikation Reflex-Lichtschranke E18-D80N }}
 {
@@ -550,7 +598,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 			\item \textbf{Schwarze Leitung}: Anschluss an GND (\textbf{Arduino}).
 			\item \textbf{Blaue Leitung (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
 		\end{itemize}
-		\item \textbf{Anzeige-Einheit}:
+	
 %		\begin{itemize}
 %			\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
 %			\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
@@ -576,8 +624,8 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	Ablauf des Funktionstests:
 	\begin{enumerate}
 		\item Upload des Programmcodes via \textbf{Arduino IDE}.
-		\item Ruhezustand: Signalpin auf \glqq HIGH".
-		\item Objekterkennung: Sensor-Ausgang schaltet auf \glqq LOW".
+		\item Ruhezustand: Sensorpin auf \glqq HIGH".
+		\item Objekt in Lichtschranke: Sensor-Ausgang schaltet auf \glqq LOW".
 		\item Der \textbf{Arduino} aktiviert die externe \textbf{LED} an Pin 13.
 		\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
 	\end{enumerate}
@@ -713,35 +761,32 @@ Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert,
 \end{itemize}}
 
 
-\STANDARD{Zusatz}{
-Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
-
-\medskip
-\textbf{Spezifikationen}\\
-\smallskip
-Tabelle: Sensordaten des E18-D80NK \\
-\smallskip
-\centering
-	\begin{tabular}{|l|l|l|l|}
-		\hline
-		 \textbf{Merkmal} & \textbf{Detail} & \textbf{Einheit} & \textbf{Bemerkung} \\
-		\hline
-		Sensortyp & Infrarot-Reflexion & - & -  \\
-		\hline
-		Spannung & 5 & V DC & Stabil \\
-		\hline
-		Erfassungsbereich & 3 -- 80 & cm & Einstellbar \\
-		\hline
-		Ausgangslogik & NPN & - & Normally Open \\
-		\hline
-		Anzeige & Status-\textbf{LED} & - & Integriert \\
-		\hline
-	\end{tabular}
-	
-}
-
-
-
+%\STANDARD{Zusatz}{
+%Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
+%
+%\medskip
+%\textbf{Spezifikationen}\\
+%\smallskip
+%Tabelle: Sensordaten des E18-D80NK \\
+%\smallskip
+%\centering
+%	\begin{tabular}{|l|l|l|l|}
+%		\hline
+%		 \textbf{Merkmal} & \textbf{Detail} & \textbf{Einheit} & \textbf{Bemerkung} \\
+%		\hline
+%		Sensortyp & Infrarot-Reflexion & - & -  \\
+%		\hline
+%		Spannung & 5 & V DC & Stabil \\
+%		\hline
+%		Erfassungsbereich & 3 -- 80 & cm & Einstellbar \\
+%		\hline
+%		Ausgangslogik & NPN & - & Normally Open \\
+%		\hline
+%		Anzeige & Status-\textbf{LED} & - & Integriert \\
+%		\hline
+%	\end{tabular}
+%	
+%}
 
 %\subsection{Files}
 
@@ -763,77 +808,14 @@ Um eine Lichtschranke zu kalibireren ist folgendes Vorgehen empfehlenswert
 
 \section{Einfache Anwendung }
 
-\section{Test}
-\STANDARD{Test der Lichtschranke - Beschreibung}{
-\subsection{einfacher Test } 
-Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben.  
-\medskip 
-
-\begin{center}
-	\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
-	\smallskip
-	\small Abbildung: Anschlussplan des Sensors mit LED\\
-\end{center}
-}
-
-\medskip
-\STANDARD{Test der Lichtschranke - Ablauf}{
-\begin{enumerate}
-	\item Starten der ArduinoIDE
-	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers  
-	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO Pin des Mikrocontrollers 
-	\item Verbinden des Mikrocontrolles mit dem Rechner per USB 
-	\item Öfnen der ArduineIDE
-	\item Öffnen des Sketches zur Erprobung
-	\item Eintragen des mit der Signalleitung verbundenen GPIO Pins an der vorgesehenn Stelle 
-	\item Sketch auf den Mikrocontroller spielen
-\end{enumerate}
-}
 
 
-\STANDARD{Beispielcode}{
-	\section{Beispielcode }
-	Nachfolgend ist der Code für den Test der ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
-	}
-	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
-	#include <Bounce2.h>	
-	// Pins definieren
-	#define LICH_SCH_PIN 2 
-	//GPIO Pin fuer Signal LS
-	#define LED_PIN 13 
-	// GPIO Pin fuer Versorgung LED, R!
-		
-	// Bounce-Objekt fuer Entprellung
-	Bounce debouncer = Bounce();
-	as Bounce-Objekt sowie den Serial-Monitor.
+%
+%\STANDARD{Beispielcode}{
+%	\section{Beispielcode }
+%	Nachfolgend ist der Code für den Test der ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
+%	}
 
-	void setup() {
-	pinMode(LICH_SCH_PIN, INPUT_PULLUP); 
-	// Konfigurieren als Input Pin, Pullup NC 
-	pinMode(LED_PIN, OUTPUT); 
-	//Konfigurieren der LED als Output 
-			
-	debouncer.attach(LICH_SCH_PIN); 
-	//Zuweisung Debounce auf LS
-	debouncer.interval(50); 
-	//50 ms Entprellintervall 
-			
-	Serial.begin(9600); // Beginn der Kommunikation mit BAud Rate 9600 
-	}
-	void loop() { // Funktionen sind hier 
-	debouncer.update();
-			
-	if (debouncer.read() == LOW) {     
-	// Wenn der LS LOW - LED HIGH 
-	digitalWrite(LED_PIN, HIGH);
-	Serial.println("Objekt erkannt!"); 
-	// Ausgabe im Command Window 
-	} else {
-	digitalWrite(LED_PIN, LOW); 
-	// Normalerweise LED aus 
-	}
-	}
-	\end{lstlisting}
 	
 	
 	
@@ -893,18 +875,18 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 
 
 
-\STANDARD{Test der Bibliothek}{
-\subsection{Test aller Funktionen}
-Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es nun sinnvoll weitere Tests durchzuführen. Im Beispiel der Anwendung zum Testen des Sensor wurde ebenfalls eine Bibliothek zum Entprellen des Signals verwendet. Um Ihre ordnungsgemäße Einbindung und Funktion auf Seiten der Hardware zu prüfen kann folgendes unternommen werden: 
-\begin{enumerate}
-	\item Erhöhen der Entprellzeit
-	\item Aufspielen des Skriptes auf den Mikrokontroller 
-	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
-	\item Beobachten der Reaktion
-\end{enumerate}
-\textbf{Diesen Vorgang kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefähr 50 ms.} 
-Durch diesen Vorgang ist es möglich festzustellen, ob die eingebundene Bibliothek die Signale wirklich entprellt. Die gleiche Vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen.}
-\section{Further Readings}
+%\STANDARD{Test der Bibliothek}{
+%\subsection{Test aller Funktionen}
+%Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es nun sinnvoll weitere Tests durchzuführen. Im Beispiel der Anwendung zum Testen des Sensor wurde ebenfalls eine Bibliothek zum Entprellen des Signals verwendet. Um Ihre ordnungsgemäße Einbindung und Funktion auf Seiten der Hardware zu prüfen kann folgendes unternommen werden: 
+%\begin{enumerate}
+%	\item Erhöhen der Entprellzeit
+%	\item Aufspielen des Skriptes auf den Mikrokontroller 
+%	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
+%	\item Beobachten der Reaktion
+%\end{enumerate}
+%\textbf{Diesen Vorgang kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefähr 50 ms.} 
+%Durch diesen Vorgang ist es möglich festzustellen, ob die eingebundene Bibliothek die Signale wirklich entprellt. Die gleiche Vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen.}
+%\section{Further Readings}
 
 
 
