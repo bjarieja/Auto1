@@ -19,50 +19,6 @@ Introduction
 
 \subsection{General}
 
-\STANDARD{Funktionsprinzip}
-{ 
-	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
-	\begin{center}
-		\begin{figure}
-			\usetikzlibrary{arrows.meta, positioning}
-			\begin{tikzpicture}[
-				scale=0.5,
-				transform shape,
-				block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
-				outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
-				arrow/.style={->, thick}
-				]
-				
-				% Outer box
-				\node[outer] (system) {};
-				
-				% Inner blocks
-				\node[block] (sensor) at (-3,0) {Sensor-Element};
-				\node[block] (eval) at (3,0) {Auswerte-Elektronik};
-				
-				% Input arrow
-				\draw[arrow] (-8,0) -- (sensor.west)
-				node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
-				node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
-				
-				% Between blocks
-				\draw[arrow] (sensor.east) -- (eval.west)
-				node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
-				
-				% Output arrow
-				\draw[arrow] (eval.east) -- (8,0)
-				node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
-				
-				% Disturbance arrow
-				\draw[arrow] (-3,-3) -- (sensor.south)
-				node[midway, right, xshift=10pt] {Störgrößen};
-				
-			\end{tikzpicture}
-			\caption{Wirkprinzip eines Sensorsystemes}
-		\end{figure}	
-	\end{center}
-	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
-}
 
 \section{Specific Sensor/Actor}
 
