@@ -27,51 +27,99 @@
   Quellen: 
   \cite{Loeffler-Mang:2012}, \cite{Roddeck:2023}
 }
-\section{Specific Sensor/Actor}
-\STANDARD{Funktionsprinzip}{ 
-	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
-\begin{center}
-\begin{figure}
-\usetikzlibrary{arrows.meta, positioning}
-\begin{tikzpicture}[
-	scale=0.5,
-	transform shape,
-	block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
-	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
-	arrow/.style={->, thick}
-	]
-	% Outer box
-	\node[outer] (system) {};
-	% Inner blocks
-	\node[block] (sensor) at (-3,0) {Sensor-Element};
-	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
-	
-	% Input arrow
-	\draw[arrow] (-8,0) -- (sensor.west)
-	node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
-	node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
-	
-	% Between blocks
-	\draw[arrow] (sensor.east) -- (eval.west)
-	node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
-	
-	% Output arrow
-	\draw[arrow] (eval.east) -- (8,0)
-	node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
-	
-	% Disturbance arrow
-	\draw[arrow] (-3,-3) -- (sensor.south)
-	node[midway, right, xshift=10pt] {Störgrößen};
-	
-\end{tikzpicture}
-	\caption{Wirkprinzip eines Sensorsystems}
-\end{figure}	
-	\end{center}
-	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
+\STANDARD{Literatur}{
+\textbf{Folgende Literatur wurde verwendet:} 
+\begin{enumerate}
+	\item Einführung in die Mechatronik, Werner Roddeck, Springer Fachmedien Wiesbaden. \\ \textbf{Beschreibung:} Dieses Fachbuch beschreibt die Funktionsweise unterschiedlicher Komponenten der Mechatronik, auch Optische Sensoren. 
+	\item Sensoren und Aktoren, Jörg Wallaschek, Springer Berlin Heidelberg. \\ \textbf{Beschreibung:} Dieses Buch geht insbesondere auf die Schnittstellen zwischen Snesoren und aktoren ein und Beleuchtet hauptsächlich die Ansteuerung udn Wirkprinzipien dieser Systeme. 
+	\item Datenblatt E18-D80NK, Roboter-Bausatz.de 
+	\item Bounce2 Repository von Thomas Fredericks  
+\end{enumerate} 
+Weitere verwendete Quellen finden sich im Quellenverzeichnis. 
+
+
 }
 
 
+\section{Specific Sensor/Actor}
+%\STANDARD{Funktionsprinzip}{ 
+%	\textbf{Grundsätzlich:} Wandlung einer \textbf{nicht elektrischen Eingangsgröße} in ein \textbf{elektrisches Ausgangssignal}. \cite{Hering:2023}
+%\begin{center}
+%\begin{figure}
+%\usetikzlibrary{arrows.meta, positioning}
+%\begin{tikzpicture}[
+%	scale=0.5,
+%	transform shape,
+%	block/.style={draw, rectangle, minimum width=5cm, minimum height=2cm, align=center},
+%	outer/.style={draw, rectangle, minimum width=12cm, minimum height=5cm},
+%	arrow/.style={->, thick}
+%	]
+%	% Outer box
+%	\node[outer] (system) {};
+%	% Inner blocks
+%	\node[block] (sensor) at (-3,0) {Sensor-Element};
+%	\node[block] (eval) at (3,0) {Auswerte-Elektronik};
+%	
+%	% Input arrow
+%	\draw[arrow] (-8,0) -- (sensor.west)
+%	node[midway, above, xshift=-20pt, yshift=10pt] {Eingangsgrößen}
+%	node[midway, below, xshift=-20pt, yshift=-10pt] {Nicht elektrisch};
+%	
+%	% Between blocks
+%	\draw[arrow] (sensor.east) -- (eval.west)
+%	node[midway, above, yshift=30pt] {Elektrisches Ausgangssignal};
+%	
+%	% Output arrow
+%	\draw[arrow] (eval.east) -- (8,0)
+%	node[midway, above, xshift=30pt, yshift=10pt] {Sensor-Ausgangssignal};
+%	
+%	% Disturbance arrow
+%	\draw[arrow] (-3,-3) -- (sensor.south)
+%	node[midway, right, xshift=10pt] {Störgrößen};
+%	
+%\end{tikzpicture}
+%	\caption{Wirkprinzip eines Sensorsystems}
+%\end{figure}	
+%	\end{center}
+%	\textbf{Achtung:} äußere Störgrößen können Einfluss nehmen und müssen daher berücksichtigt werden (z.B. Berücksichtigung der Temperaturabhängigkeit)
+%}
 
+
+\section{externer Code }
+\lstinputlisting[language=C++, xleftmargin=0pt, xrightmargin=0pt]{Code/TestCode/TestCode.ino}
+
+
+\section{Doxygen}
+%\lstinputlisting[language=C++, xleftmargin=0pt, xrightmargin=0pt]{codeTest/codeTest.ino}
+
+%\includepdf[pages=-]{Code/TestCode/latext/refman.pdf}
+
+\section{Test}
+\STANDARD{Test der Lichtschranke - Beschreibung}{
+	\subsection{einfacher Test } 
+	Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben.  
+	\medskip 
+	
+	\begin{center}
+		\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
+		\smallskip
+		\small Abbildung: Anschlussplan des Sensors mit LED\\
+	\end{center}
+}
+
+\medskip
+\STANDARD{Test der Lichtschranke - Ablauf}{
+	\begin{enumerate}
+		\item Starten der ArduinoIDE
+		\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers  
+		\item Verbinden der Signalleitung der Lichtschranke an einen GPIO Pin des Mikrocontrollers 
+		\item Verbinden des Mikrocontrolles mit dem Rechner per USB 
+		\item Öfnen der ArduineIDE
+		\item Öffnen des Sketches zur Erprobung
+		\item Eintragen des mit der Signalleitung verbundenen GPIO Pins an der vorgesehenn Stelle 
+		\item Sketch auf den Mikrocontroller spielen
+	\end{enumerate}
+}
 \STANDARD{Optische Näherungssensoren}
 { 
 Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Transmitter} als auch aus \textbf{Receiver} bestehen. Hierbei sind \textbf{Strahlenquellen} beispielsweise der \textbf{Sender} und \textbf{Fotodioden} die \textbf{Empfänger}. 
@@ -550,7 +598,7 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 			\item \textbf{Schwarze Leitung}: Anschluss an GND (\textbf{Arduino}).
 			\item \textbf{Blaue Leitung (Signal)}: Anschluss an Digital Pin 2 (\textbf{Arduino}).
 		\end{itemize}
-		\item \textbf{Anzeige-Einheit}:
+	
 %		\begin{itemize}
 %			\item \textbf{LED} (Anode): Über Vorwiderstand (220 Ohm) an Digital Pin 13.
 %			\item \textbf{LED} (Kathode): An GND (\textbf{Arduino}).
@@ -576,8 +624,8 @@ Optische Näherungssensoren nutzen Sensorelemente, welche sowohl aus \textbf{Tra
 	Ablauf des Funktionstests:
 	\begin{enumerate}
 		\item Upload des Programmcodes via \textbf{Arduino IDE}.
-		\item Ruhezustand: Signalpin auf \glqq HIGH".
-		\item Objekterkennung: Sensor-Ausgang schaltet auf \glqq LOW".
+		\item Ruhezustand: Sensorpin auf \glqq HIGH".
+		\item Objekt in Lichtschranke: Sensor-Ausgang schaltet auf \glqq LOW".
 		\item Der \textbf{Arduino} aktiviert die externe \textbf{LED} an Pin 13.
 		\item Objekt entfernt: Mikrocontroller deaktiviert die \textbf{LED}.
 	\end{enumerate}
@@ -601,35 +649,38 @@ Bounce2 filtert diese Prellsignale und stellt sicher, dass:
  
  
  
-\subsection{Installation}
-\STANDARD{Hinweise zur Installation}{
-Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
-\begin{itemize}
-	\item Installation  mittels \textbf{ArduinoIDE}
-	\item  Installation über \textbf{GitHub} 
-	\end{itemize}
-} 
-\STANDARD{Installation mittels ArduinoIDE} {
-\begin{itemize}
-	\item Öffnen der ArduinoIDE  
-	\item  Öffnen Reiter \glqq Sketch"  
-	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
-	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
-	\item Im Suchfeld  \glqq Bounce2\grqq  eingeben  
-	\item Auf \glqq Installieren" klicken
-\end{itemize}
-Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
-} 
+%\subsection{Installation}
+%\STANDARD{Hinweise zur Installation}{
+%Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
+%\begin{itemize}
+%	\item Installation  mittels \textbf{ArduinoIDE}
+%	\item  Installation über \textbf{GitHub} 
+%	\end{itemize}
+%} 
 
 
-\STANDARD{Installation mittels GitHub}{
-\begin{itemize}
-	\item Öffnen des Repositorys für \glqq Bounce2\grqq  von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{\textcolor{blue}{Repository}}
-	\item Herunterladen der aktuellesten Version unter folgendem Link:  \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{\textcolor{blue}{Herunterladen}}
-	\item Komprimierte Datei entpacken 
-	\item Ablegen des Ordner: \glqq Bounce2\grqq  \space in den Ordner  \glqq libraries\grqq \space  im ArduinoIDE Installationsverzeichnis
-\end{itemize}
-}
+
+%\STANDARD{Installation mittels ArduinoIDE} {
+%\begin{itemize}
+%	\item Öffnen der ArduinoIDE  
+%	\item  Öffnen Reiter \glqq Sketch"  
+%	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
+%	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
+%	\item Im Suchfeld  \glqq Bounce2\grqq  eingeben  
+%	\item Auf \glqq Installieren" klicken
+%\end{itemize}
+%Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
+%} 
+
+
+%\STANDARD{Installation mittels GitHub}{
+%\begin{itemize}
+%	\item Öffnen des Repositorys für \glqq Bounce2\grqq  von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{\textcolor{blue}{Repository}}
+%	\item Herunterladen der aktuellesten Version unter folgendem Link:  \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{\textcolor{blue}{Herunterladen}}
+%	\item Komprimierte Datei entpacken 
+%	\item Ablegen des Ordner: \glqq Bounce2\grqq  \space in den Ordner  \glqq libraries\grqq \space  im ArduinoIDE Installationsverzeichnis
+%\end{itemize}
+%}
 
 
 
@@ -652,7 +703,12 @@ Nun ist die Bibliothek in das aktuelle Programm eingebunden.
 	\item \texttt{fell()} / \texttt{rose()}: Erkennen von Flanken (Taste gedrückt/losgelassen)
 \end{itemize}
 }
-\section{Beispiel}
+
+
+
+
+
+\section{Applikation}
 \STANDARD{Beispiel der Anwendung der Bibliothek am Tischförderband }{
 \subsection*{Ziel}
 Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert, um  einen Motor zu steuern. Die Lichtschranke soll zuverlässig erkennen, ob ein Objekt die Bahn unterbricht, ohne durch Störungen mehrfach ausgelöst zu werden.
@@ -713,35 +769,32 @@ Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert,
 \end{itemize}}
 
 
-\STANDARD{Zusatz}{
-Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
-
-\medskip
-\textbf{Spezifikationen}\\
-\smallskip
-Tabelle: Sensordaten des E18-D80NK \\
-\smallskip
-\centering
-	\begin{tabular}{|l|l|l|l|}
-		\hline
-		 \textbf{Merkmal} & \textbf{Detail} & \textbf{Einheit} & \textbf{Bemerkung} \\
-		\hline
-		Sensortyp & Infrarot-Reflexion & - & -  \\
-		\hline
-		Spannung & 5 & V DC & Stabil \\
-		\hline
-		Erfassungsbereich & 3 -- 80 & cm & Einstellbar \\
-		\hline
-		Ausgangslogik & NPN & - & Normally Open \\
-		\hline
-		Anzeige & Status-\textbf{LED} & - & Integriert \\
-		\hline
-	\end{tabular}
-	
-}
-
-
-
+%\STANDARD{Zusatz}{
+%Als \textbf{Zusatzartikel} für Simulationen dient ein \textbf{Tischförderband}. Die \textbf{Lichtschranke} steuert hierbei Bandstart, Stopp oder Förderrichtung.
+%
+%\medskip
+%\textbf{Spezifikationen}\\
+%\smallskip
+%Tabelle: Sensordaten des E18-D80NK \\
+%\smallskip
+%\centering
+%	\begin{tabular}{|l|l|l|l|}
+%		\hline
+%		 \textbf{Merkmal} & \textbf{Detail} & \textbf{Einheit} & \textbf{Bemerkung} \\
+%		\hline
+%		Sensortyp & Infrarot-Reflexion & - & -  \\
+%		\hline
+%		Spannung & 5 & V DC & Stabil \\
+%		\hline
+%		Erfassungsbereich & 3 -- 80 & cm & Einstellbar \\
+%		\hline
+%		Ausgangslogik & NPN & - & Normally Open \\
+%		\hline
+%		Anzeige & Status-\textbf{LED} & - & Integriert \\
+%		\hline
+%	\end{tabular}
+%	
+%}
 
 %\subsection{Files}
 
@@ -763,77 +816,14 @@ Um eine Lichtschranke zu kalibireren ist folgendes Vorgehen empfehlenswert
 
 \section{Einfache Anwendung }
 
-\section{Test}
-\STANDARD{Test der Lichtschranke - Beschreibung}{
-\subsection{einfacher Test } 
-Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Folgendes Vorgehen wird nachgehend beschrieben.  
-\medskip 
-
-\begin{center}
-	\includegraphics[width=6cm]{images/SteckplatinemitLED.png}\\
-	\smallskip
-	\small Abbildung: Anschlussplan des Sensors mit LED\\
-\end{center}
-}
-
-\medskip
-\STANDARD{Test der Lichtschranke - Ablauf}{
-\begin{enumerate}
-	\item Starten der ArduinoIDE
-	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers  
-	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO Pin des Mikrocontrollers 
-	\item Verbinden des Mikrocontrolles mit dem Rechner per USB 
-	\item Öfnen der ArduineIDE
-	\item Öffnen des Sketches zur Erprobung
-	\item Eintragen des mit der Signalleitung verbundenen GPIO Pins an der vorgesehenn Stelle 
-	\item Sketch auf den Mikrocontroller spielen
-\end{enumerate}
-}
 
 
-\STANDARD{Beispielcode}{
-	\section{Beispielcode }
-	Nachfolgend ist der Code für den Test der ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
-	}
-	\begin{lstlisting}[language=C++, , xleftmargin=0pt, xrightmargin=0pt]
-	#include <Bounce2.h>	
-	// Pins definieren
-	#define LICH_SCH_PIN 2 
-	//GPIO Pin fuer Signal LS
-	#define LED_PIN 13 
-	// GPIO Pin fuer Versorgung LED, R!
-		
-	// Bounce-Objekt fuer Entprellung
-	Bounce debouncer = Bounce();
-	as Bounce-Objekt sowie den Serial-Monitor.
+%
+%\STANDARD{Beispielcode}{
+%	\section{Beispielcode }
+%	Nachfolgend ist der Code für den Test der ordnungsgemäßen Funktion der Lichtschranken aufgeführt.
+%	}
 
-	void setup() {
-	pinMode(LICH_SCH_PIN, INPUT_PULLUP); 
-	// Konfigurieren als Input Pin, Pullup NC 
-	pinMode(LED_PIN, OUTPUT); 
-	//Konfigurieren der LED als Output 
-			
-	debouncer.attach(LICH_SCH_PIN); 
-	//Zuweisung Debounce auf LS
-	debouncer.interval(50); 
-	//50 ms Entprellintervall 
-			
-	Serial.begin(9600); // Beginn der Kommunikation mit BAud Rate 9600 
-	}
-	void loop() { // Funktionen sind hier 
-	debouncer.update();
-			
-	if (debouncer.read() == LOW) {     
-	// Wenn der LS LOW - LED HIGH 
-	digitalWrite(LED_PIN, HIGH);
-	Serial.println("Objekt erkannt!"); 
-	// Ausgabe im Command Window 
-	} else {
-	digitalWrite(LED_PIN, LOW); 
-	// Normalerweise LED aus 
-	}
-	}
-	\end{lstlisting}
 	
 	
 	
@@ -893,18 +883,18 @@ Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wi
 
 
 
-\STANDARD{Test der Bibliothek}{
-\subsection{Test aller Funktionen}
-Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es nun sinnvoll weitere Tests durchzuführen. Im Beispiel der Anwendung zum Testen des Sensor wurde ebenfalls eine Bibliothek zum Entprellen des Signals verwendet. Um Ihre ordnungsgemäße Einbindung und Funktion auf Seiten der Hardware zu prüfen kann folgendes unternommen werden: 
-\begin{enumerate}
-	\item Erhöhen der Entprellzeit
-	\item Aufspielen des Skriptes auf den Mikrokontroller 
-	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
-	\item Beobachten der Reaktion
-\end{enumerate}
-\textbf{Diesen Vorgang kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefähr 50 ms.} 
-Durch diesen Vorgang ist es möglich festzustellen, ob die eingebundene Bibliothek die Signale wirklich entprellt. Die gleiche Vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen.}
-\section{Further Readings}
+%\STANDARD{Test der Bibliothek}{
+%\subsection{Test aller Funktionen}
+%Nachdem nun der Sensor auf seine grundlegenden Funktionen getestet wurde, ist es nun sinnvoll weitere Tests durchzuführen. Im Beispiel der Anwendung zum Testen des Sensor wurde ebenfalls eine Bibliothek zum Entprellen des Signals verwendet. Um Ihre ordnungsgemäße Einbindung und Funktion auf Seiten der Hardware zu prüfen kann folgendes unternommen werden: 
+%\begin{enumerate}
+%	\item Erhöhen der Entprellzeit
+%	\item Aufspielen des Skriptes auf den Mikrokontroller 
+%	\item Bewegen eines Gegenstandes durch die Lichtschranke mit hoher Geschwindigkeit 
+%	\item Beobachten der Reaktion
+%\end{enumerate}
+%\textbf{Diesen Vorgang kann man nun mehrmals durchführen. Die Entprellzeit sollte hierbei bei jeder Iteration verringert werden. Die Geschwindigkeit mit der das Objekt durch die Lichtschranke geführt wird sollte hierbei immer konstant sein. Das Ganze solange wiederholen bis die Lichtschranke nicht mehr schaltet. Empfohlen werden Intervalle der Entprellzeit von ungefähr 50 ms.} 
+%Durch diesen Vorgang ist es möglich festzustellen, ob die eingebundene Bibliothek die Signale wirklich entprellt. Die gleiche Vorgehensweise mit einer Erhöhung der Entprellzeit kann ebenfalls diese Erkenntnis hervorbringen.}
+%\section{Further Readings}
 
 
 
