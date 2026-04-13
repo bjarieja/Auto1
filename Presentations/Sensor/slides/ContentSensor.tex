@@ -649,35 +649,38 @@ Bounce2 filtert diese Prellsignale und stellt sicher, dass:
  
  
  
-\subsection{Installation}
-\STANDARD{Hinweise zur Installation}{
-Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
-\begin{itemize}
-	\item Installation  mittels \textbf{ArduinoIDE}
-	\item  Installation über \textbf{GitHub} 
-	\end{itemize}
-} 
-\STANDARD{Installation mittels ArduinoIDE} {
-\begin{itemize}
-	\item Öffnen der ArduinoIDE  
-	\item  Öffnen Reiter \glqq Sketch"  
-	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
-	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
-	\item Im Suchfeld  \glqq Bounce2\grqq  eingeben  
-	\item Auf \glqq Installieren" klicken
-\end{itemize}
-Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
-} 
+%\subsection{Installation}
+%\STANDARD{Hinweise zur Installation}{
+%Um die Bilbiothek verwenden zu können, sollte sie ordnungsgemäß installiert / hinzugefügt werden. Hierfür gibt es zwei Optionen: 
+%\begin{itemize}
+%	\item Installation  mittels \textbf{ArduinoIDE}
+%	\item  Installation über \textbf{GitHub} 
+%	\end{itemize}
+%} 
 
 
-\STANDARD{Installation mittels GitHub}{
-\begin{itemize}
-	\item Öffnen des Repositorys für \glqq Bounce2\grqq  von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{\textcolor{blue}{Repository}}
-	\item Herunterladen der aktuellesten Version unter folgendem Link:  \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{\textcolor{blue}{Herunterladen}}
-	\item Komprimierte Datei entpacken 
-	\item Ablegen des Ordner: \glqq Bounce2\grqq  \space in den Ordner  \glqq libraries\grqq \space  im ArduinoIDE Installationsverzeichnis
-\end{itemize}
-}
+
+%\STANDARD{Installation mittels ArduinoIDE} {
+%\begin{itemize}
+%	\item Öffnen der ArduinoIDE  
+%	\item  Öffnen Reiter \glqq Sketch"  
+%	\item Öffnen Reiter \glqq Bibliotheken einbinden" 
+%	\item Öffnen Reiter \glqq Bibliotheken verwalten" 
+%	\item Im Suchfeld  \glqq Bounce2\grqq  eingeben  
+%	\item Auf \glqq Installieren" klicken
+%\end{itemize}
+%Nun ist die Bibliothek in das aktuelle Programm eingebunden. 
+%} 
+
+
+%\STANDARD{Installation mittels GitHub}{
+%\begin{itemize}
+%	\item Öffnen des Repositorys für \glqq Bounce2\grqq  von Thomas Fredericks unter folgendem Link: \href{https://github.com/thomasfredericks/Bounce2}{\textcolor{blue}{Repository}}
+%	\item Herunterladen der aktuellesten Version unter folgendem Link:  \href{https://github.com/thomasfredericks/Bounce2/archive/master.zip}{\textcolor{blue}{Herunterladen}}
+%	\item Komprimierte Datei entpacken 
+%	\item Ablegen des Ordner: \glqq Bounce2\grqq  \space in den Ordner  \glqq libraries\grqq \space  im ArduinoIDE Installationsverzeichnis
+%\end{itemize}
+%}
 
 
 
@@ -700,7 +703,12 @@ Nun ist die Bibliothek in das aktuelle Programm eingebunden.
 	\item \texttt{fell()} / \texttt{rose()}: Erkennen von Flanken (Taste gedrückt/losgelassen)
 \end{itemize}
 }
-\section{Beispiel}
+
+
+
+
+
+\section{Applikation}
 \STANDARD{Beispiel der Anwendung der Bibliothek am Tischförderband }{
 \subsection*{Ziel}
 Wir möchten feststellen, ob ein Paket oder Werkstück das Förderband passiert, um  einen Motor zu steuern. Die Lichtschranke soll zuverlässig erkennen, ob ein Objekt die Bahn unterbricht, ohne durch Störungen mehrfach ausgelöst zu werden.
