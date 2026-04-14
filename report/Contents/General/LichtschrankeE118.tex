@@ -408,7 +408,7 @@ Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Ref
 
 \begin{figure}
 	\includegraphics[scale=0.8]{../Images/General/LSSimple260414.png}
-	\caption{Anschluss der Lichtschranke an einen Mikokontroller mit einem Pull-up-Widerstand  ( $R=10K \Omega$)} 
+	\caption{Anschluss der Lichtschranke an einen Mikocontroller mit einem Pull-up-Widerstand  ($R=10K \Omega$)} 
 	\label{AnschlussLS}
 \end{figure}
 .
@@ -458,8 +458,22 @@ Der Aufbau besteht aus einem Tischförderband, einer über dem Band montierten L
 Im Betrieb fährt das Paket unter die Lichtschranke und unterbricht den Lichtstrahl, wodurch am Arduino ein LOW-Signal erkannt wird. Solange die Lichtschranke unterbrochen ist, wird ein stabiles Logiksignal erzeugt, welches vom Arduino zur Ansteuerung eines Motortreibers verwendet wird.
 
 \section{Tests}
-
+Um sicherrzustellen, dass ein System ordnungsgemäß funktionstüchtig ist  es sinnvoll alle Komponenten des Systemes zu testen. Hierzu können einzelne Komponnenten für sich oder im Verbudn getestet werden. 
 \subsection{Simple Function Test}
+Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Das Vorgehen wird nachfolgend beschrieben.
+Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen. Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der ArduinoIDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen.
+\begin{enumerate}
+	\item Starten der ArduinoIDE
+	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers
+	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO-Pin des Mikrocontrollers
+	\item Verbinden des Mikrocontrollers mit dem Rechner per USB
+	\item Öffnen der ArduinoIDE
+	\item Öffnen des Sketches zur Erprobung
+	\item Eintragen des mit der Signalleitung verbundenen GPIO-Pins an der vorgesehenen Stelle im Sketch
+	\item Sketch auf den Mikrocontroller spielen
+	\item Überprüfen der ordnungsgemäßen Funktion der Lichtschranke anhand der eingebauten LED
+\end{enumerate}
+
 
 \subsection{Test all Functions}
 
