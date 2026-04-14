@@ -20,14 +20,14 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 
 \begin{itemize}
 	\item \textbf{Ein- und Ausschalten} \\
-	Das \textbf{Tischförderband} ist stehts über den \textbf{Hauptschalter} ein- und auszuschalten. Ziehen Sie niemals das \textbf{Netzteil} im laufenden Betrieb aus der Steckdose oder die \textbf{DC-Buchse} aus dem \textbf{Bedienelement}.
-	Im Notfall ist der \textbf{Hauptschalter} als Not-Aus zu verwenden.\\
+	Das Tischförderband ist stehts über den Hauptschalter ein- und auszuschalten. Ziehen Sie niemals das Netzteil im laufenden Betrieb aus der Steckdose oder die DC-Buchse aus dem Bedienelement.
+	Im Notfall ist der Hauptschalter als Not-Aus zu verwenden.\\
 	\\
-	Hinweise zur Inbetriebnahme nach Einschalten des \textbf{Hauptschalters} finden Sie im Abschnitt \ref{sec:Inbetriebnahme}  \textbf{Inbetriebnahme}.
+	Hinweise zur Inbetriebnahme nach Einschalten des Hauptschalters finden Sie im Abschnitt \ref{sec:Inbetriebnahme}  \textbf{Inbetriebnahme}.
 	
 	\item \textbf{Anzeige} \\
-	Auf der integrierten \textbf{Anzeige} werden dem Benutzer wichtige Meldungen und Betriebsinformationen angezeigt. 
-	Bei jedem Einschaltvorgang zeigt die \textbf{Anzeige} kurz den Startbildschirm mit der \textbf{Firmware-Version} und wechselt nach der \textbf{Freigabe der Lichtschranken} in das Hauptmenü (siehe Kapitel \ref{sec:Inbetriebnahme}). 
+	Auf der integrierten Anzeige werden dem Benutzer wichtige Meldungen und Betriebsinformationen angezeigt. 
+	Bei jedem Einschaltvorgang zeigt die Anzeige kurz den Startbildschirm mit der Firmware-Version und wechselt nach der Freigabe der Lichtschranken in das Hauptmenü (siehe Kapitel \ref{sec:Inbetriebnahme}). 
 	
 %	\textbf{Elemente im Hauptmenü:}
 %	\begin{enumerate}
@@ -37,146 +37,146 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 %		\item Systemmeldungen / Fehlercodes
 %		
 %	\end{enumerate}
-
-
-\begin{figure}[!ht]
-	\begin{center}
-	\resizebox{0.7\textwidth}{!}{%
-		\begin{tikzpicture}
+	
+	
+	\begin{figure}[!ht]
+		\begin{center}
+		\resizebox{0.7\textwidth}{!}{%
+			\begin{tikzpicture}
+				
+				% Weißer Hintergrund des Displays
+				\draw[fill=white] (-17.875,17.125) rectangle (2.875,11.375);
+				
+				% Rahmen des Displays
+				\draw (-17.5,16.75) rectangle (2.5,11.75);
+				
+			% Display-Inhalte
+				% linksseitig
+				
+				\node at (-15.75,16)      {\fontsize{27.9pt}{36.2pt}\selectfont LS 1 : 0};
+				\node at (-15.375,14.75)  {\fontsize{27.9pt}{36.2pt}\selectfont MODUS :};
+				\node at (-15.25,13.5)    {\fontsize{27.9pt}{36.2pt}\selectfont vBAND :};
+				\node at (-15.25,12.375)  {\fontsize{27.9pt}{36.2pt}\selectfont FEHLER :};
+				
+				% rechtsseitig
+				\node at (1,15.875)       {\fontsize{27.9pt}{36.2pt}\selectfont LS2 : 1};
+				\node at (0.625,14.75)    {\fontsize{27.9pt}{36.2pt}\selectfont L / A / R};
+				\node at (0.375,13.5)     {\fontsize{27.9pt}{36.2pt}\selectfont 8,0 cm / s};
+				\node at (1.625,12.25)    {\fontsize{27.9pt}{36.2pt}\selectfont E03};
+				
+				% Nummerierte Markierungen links oben
+				% Nummer 1
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-20.625,16.125)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
+				
+				% Nummer 2
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-20.625,14.875)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
+				
+				% Nummer 3
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-20.625,13.625)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
+				
+				% Nummer 4
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-20.625,12.375)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
+				
+				% ---- KORRIGIERTE PFEILE (ohne Stealth) ----
+				\draw[line width=1.6pt, ->] (-20,16.125) -- (-18.125,16.125);
+				\draw[line width=1.6pt, ->] (-20,14.875) -- (-18.125,14.875);
+				\draw[line width=1.6pt, ->] (-20,13.625) -- (-18.125,13.625);
+				\draw[line width=1.6pt, ->] (-20,12.375) -- (-18.125,12.375);
+				
+				% Nummerierte Erläuterungen unten
+				% Nummer 1
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-16,9.15)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
+				
+				% Nummer 2
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-16,7.65)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
+				
+				% Nummer 3
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-16,6.15)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
+				
+				% Nummer 4
+				\node[
+				draw,
+				line width=0.04cm,
+				fill=white
+				] at (-16,4.65)
+				{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
+				
+				% Beschreibungstexte
+			% Beschreibungstexte linksbündig ausgerichtet
 			
-			% Weißer Hintergrund des Displays
-			\draw[fill=white] (-17.875,17.125) rectangle (2.875,11.375);
-			
-			% Rahmen des Displays
-			\draw (-17.5,16.75) rectangle (2.5,11.75);
-			
-		% Display-Inhalte
-			% linksseitig
-			
-			\node at (-15.75,16)      {\fontsize{27.9pt}{36.2pt}\selectfont LS 1 : 0};
-			\node at (-15.375,14.75)  {\fontsize{27.9pt}{36.2pt}\selectfont MODUS :};
-			\node at (-15.25,13.5)    {\fontsize{27.9pt}{36.2pt}\selectfont V-BAND :};
-			\node at (-15.25,12.375)  {\fontsize{27.9pt}{36.2pt}\selectfont FEHLER :};
-			
-			% rechtsseitig
-			\node at (1,15.875)       {\fontsize{27.9pt}{36.2pt}\selectfont LS2 : 1};
-			\node at (0.625,14.75)    {\fontsize{27.9pt}{36.2pt}\selectfont L / A / R};
-			\node at (0.375,13.5)     {\fontsize{27.9pt}{36.2pt}\selectfont 8,0 cm / s};
-			\node at (1.625,12.25)    {\fontsize{27.9pt}{36.2pt}\selectfont E03};
-			
-			% Nummerierte Markierungen links oben
-			% Nummer 1
 			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-20.625,16.125)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
+			anchor=west,
+			align=left
+			] at (-14.5,9.1)
+			{\fontsize{23.9pt}{31.1pt}\selectfont Status der Lichtschranken};
 			
-			% Nummer 2
 			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-20.625,14.875)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
+			anchor=west,
+			align=left
+			] at (-14.5,7.6)
+			{\fontsize{23.9pt}{31.1pt}\selectfont Modus (Förderrichtung)};
 			
-			% Nummer 3
 			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-20.625,13.625)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
+			anchor=west,
+			align=left
+			] at (-14.5,6.1)
+			{\fontsize{23.9pt}{31.1pt}\selectfont Bandgeschwindigkeit};
 			
-			% Nummer 4
 			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-20.625,12.375)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
-			
-			% ---- KORRIGIERTE PFEILE (ohne Stealth) ----
-			\draw[line width=1.6pt, ->] (-20,16.125) -- (-18.125,16.125);
-			\draw[line width=1.6pt, ->] (-20,14.875) -- (-18.125,14.875);
-			\draw[line width=1.6pt, ->] (-20,13.625) -- (-18.125,13.625);
-			\draw[line width=1.6pt, ->] (-20,12.375) -- (-18.125,12.375);
-			
-			% Nummerierte Erläuterungen unten
-			% Nummer 1
-			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-16,9.15)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
-			
-			% Nummer 2
-			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-16,7.65)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
-			
-			% Nummer 3
-			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-16,6.15)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
-			
-			% Nummer 4
-			\node[
-			draw,
-			line width=0.04cm,
-			fill=white
-			] at (-16,4.65)
-			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
-			
-			% Beschreibungstexte
-		% Beschreibungstexte linksbündig ausgerichtet
-		
-		\node[
-		anchor=west,
-		align=left
-		] at (-14.5,9.1)
-		{\fontsize{23.9pt}{31.1pt}\selectfont Status der Lichtschranken};
-		
-		\node[
-		anchor=west,
-		align=left
-		] at (-14.5,7.6)
-		{\fontsize{23.9pt}{31.1pt}\selectfont Modus (Förderrichtung)};
-		
-		\node[
-		anchor=west,
-		align=left
-		] at (-14.5,6.1)
-		{\fontsize{23.9pt}{31.1pt}\selectfont Bandgeschwindigkeit};
-		
-		\node[
-		anchor=west,
-		align=left
-		] at (-14.5,4.6)
-		{\fontsize{23.9pt}{31.1pt}\selectfont Systemmeldungen / Fehlercodes};
-			
-		\end{tikzpicture}
-	}%
-	\caption{Your Caption}
-	\label{fig:my_label}
-	\end{center}
-\end{figure}
+			anchor=west,
+			align=left
+			] at (-14.5,4.6)
+			{\fontsize{23.9pt}{31.1pt}\selectfont Systemmeldungen / Fehlercodes};
+				
+			\end{tikzpicture}
+		}%
+		\caption{Beispiel Anzeige im Hauptmenü}
+		\label{fig:ViewportMain}
+		\end{center}
+	\end{figure}
 
 %	%Hier Bild von Anzeige
 %	\begin{center}
 %		\includegraphics[width=10cm]{NewFiles/Images/Bild_Platzhalter_Anzeige}
 %	\end{center}
 	
-	Wird der \textbf{Modus} gewechselt, so wird auf der \textbf{Anzeige} der gewählte Modus für einige Sekunden eingeblendet.
-	Anschließend wechselt die \textbf{Anzeige} wieder in das Hauptmenü.
+	Wird der Modus gewechselt, so wird auf der Anzeige der gewählte Modus für einige Sekunden eingeblendet.
+	Anschließend wechselt die Anzeige wieder in das Hauptmenü.
 	%{wichtig im Programm ergänzen}
 	  
 	\item \textbf{Modus / Förderrichtung wählen} \\  
@@ -189,45 +189,48 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		
 		\textbf{Bewegungsablauf:}
 		Stellen Sie zunächst den Modusschalter auf \fbox{L}.
-		Wählen Sie mithilfe des Drehreglers die gewünschte Bandgeschwindigkeit.
-		Das System wartet nun darauf, dass eine Transportbox in eine die Lichtschranke 2 gestellt wird, auf der Anzeige erscheint die Meldung \fbox{Warten auf T-Box}.
+		Wählen Sie mithilfe des Drehreglers auf der Anzeige die gewünschte Bandgeschwindigkeit.
+		Das System wartet nun darauf, dass eine Transportbox in Lichtschranke 2 gestellt wird, auf der Anzeige erscheint die Meldung \fbox{Warten auf T-Box}.
 		Wird eine Transportbox erkannt, wartet das System 2 Sekunden und beschleunigt dann auf die eingestellte Bandgeschwindigkeit.
 		Das Transportband fährt solange, bis die Transportbox die Lichtschranke 1 passiert hat und dadurch erkennt, dass Sie das Transportband verlassen hat.
 		
 		Sollte das Objekt die  Lichtschranke 1 innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{XXX}.
 		
-		
-		
-		
 		\item \textbf{Rechtslauf:}
-		Im Modus Rechtslauf verhält sich das Tischförderband umgekehrt zum Modus Linkslauf. Die grundlegenden Funktionen und Bewegungsabläufe sind jedoch identisch.
+		Im Modus Rechtslauf verhält sich das Tischförderband umgekehrt zum Modus Linkslauf, die Transportbox beginnt bei Lichtschranke 1 und verlässt bei Lichtschranke 2 das Transportband. 
+		Die grundlegenden Funktionen und Bewegungsabläufe sind jedoch identisch.
 		
 		\item \textbf{Automatiklauf:}
 		In diesem Modus erkennt das System, ob an einem Ende des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis zum anderen Ende des Transportbandes und verweilt dort.
 		
 		\textbf{Verwendung:}
 		Dieser Modus kann zum automatischen Weitertransport von Objekten in zwei Richtungen verwendet werden. Eine einfache Sortierstraße mit mehreren Pick-And-Place Robotern ist ebenfalls realisierbar.
-			
-
 		
-		Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen. Auf der Anzeige erscheint die Meldung \fbox{T-Box entfernen}.\\
+		\textbf{Bewegungsablauf:}
+		Stellen Sie zunächst den Modusschalter auf \fbox{A}.
+		Wählen Sie mithilfe des Drehreglers auf der Anzeige die gewünschte Bandgeschwindigkeit.
+		Das System wartet nun darauf, dass eine Transportbox in eine die Lichtschranke 2 gestellt wird, auf der Anzeige erscheint die Meldung \fbox{Warten auf T-Box}.
+		Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. 
+		Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen. Auf der Anzeige erscheint die Meldung \fbox{T-Box entfernen}.\\
 		
-		Das System setzt sich nach 5 Sekunden Ruhezeit automatisch zurück. Nach Ablauf dieser Ruhezeit kann erneut eine Transportbox zwischen eine der beiden Lichtschranken gelegt werden.\\
+		Das System setzt sich nach 5 Sekunden Ruhezeit automatisch zurück. Nach Ablauf dieser Ruhezeit kann erneut eine Transportbox zwischen eine der beiden Lichtschranken gelegt werden.
+		Wird die Transportbox in dieser Zeit nicht entfernt, so fährt das Transportband diese wieder zurück zur anderen Seite des Tischförderbands.\\
 		
 		Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{Fehler: XXX}.
 		\end{itemize}
 	
 	\item \textbf{Bandgeschwindigkeit einstellen} \\  
-	Mithilfe des \textbf{Drehreglers} kann die gewünschte \textbf{Bandgeschwindigkeit} eingestellt werden.
-	Im Hauptmenü wird auf der \textbf{Anzeige} die eingestellte \textbf{Bandgeschwindigkeit} \fbox{vBand} angezeigt.
+	Mithilfe des Drehreglers kann die gewünschte Bandgeschwindigkeit eingestellt werden.
+	Im Hauptmenü wird auf der Anzeige die eingestellte Bandgeschwindigkeit \fbox{vBand} angezeigt.
 	Die Bandgeschwindigeit kann jederzeit geändert werden und beschreibt die maximale Geschwindigkeit, die das Transportband im Betrieb erreichen kann.
-	Einstellbare \textbf{Bandgeschwindigkeiten} finden Sie im Kapitel \ref{sec:Spezifikationen} \textbf{Spezifikationen}.
+	Einstellbare Bandgeschwindigkeiten finden Sie im Kapitel \ref{sec:Spezifikationen} \textbf{Spezifikationen}.\\
+	Sollte das Transportband die eingestellte Bandgeschwindigkeit nicht erreichen, kommt es zum stehen und zeigt aud der Anzeige die Fehlermeldung \fbox{YYY}.
 
 	\item \textbf{Moduswechsel}\\
 	Um den Modus zu wechseln, stellen Sie  den Modusschalter auf eine der drei Positionen \fbox{L}, \fbox{A} oder \fbox{R}.
 	Nun wird die jeweils andere Lichtschranke zum aktivieren der Bewegung verwendet.
 	Sollte das Transportband bei Änderung des Modus in Betrieb sein, so bremst es langsam bis zum Stillstand ab.
-	Die Anzeige bittet Sie nun eventuell noch auf dem Transportband liegende Transportboxen zu entfernen. Wenn das Transportband frei ist können Sie diese Meldung mit dem Quittiertaster bestätigen. 
+	Die Anzeige bittet Sie nun auf dem Transportband liegende Transportboxen zu entfernen. Wenn das Transportband frei ist können Sie diese Meldung mit dem Quittiertaster bestätigen. 
 	Abhängig vom gewählten Modus, kann erneut eine Transportbox in eine der Lichtschranken gestellt werden. Der Betrieb des Tischförderbands wird mit dem gewählten Modus fortgesetzt.
 	
 \end{itemize}
@@ -240,4 +243,6 @@ Weitere Informationen dazu finden Sie in der Entwickler-Dokumentation.
 
 \section{Reset}
 Wird der Reset-Taster für mehr als 5 Sekunden betätigt, so wird das Transportband umgehend zum Stehen gebracht. Die Steuerung des Systems wird neu gestartet und kehrt zurück in das Startmenü.\\
-Um das Tischförderband wieder in Betrieb zu nehmen, konfigurieren Sie das System erneut wie im Abschnitt \ref{sec:Inbetriebnahme} Inbetriebnahme.
+Um das Tischförderband wieder in Betrieb zu nehmen, konfigurieren Sie das System erneut wie im Abschnitt \ref{sec:Inbetriebnahme} \textbf{Inbetriebnahme}.
+
+
