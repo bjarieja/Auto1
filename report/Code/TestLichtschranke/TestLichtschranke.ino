@@ -1,61 +1,29 @@
 /**
- * @file lichtschranke_test.ino
- * @brief Testsketch zur Erprobung einer Lichtschranke mit einem Mikrocontroller.
- *
- * Dieser Sketch liest den Zustand einer an einen GPIO-Pin angeschlossenen
- * Lichtschranke aus und signalisiert das Ergebnis ueber die eingebaute LED
- * des Mikrocontrollers sowie ueber den seriellen Monitor.
- *
- * @par Verkabelung
- * - Lichtschranke VCC  -> 5V des Mikrocontrollers
- * - Lichtschranke GND  -> GND des Mikrocontrollers
- * - Lichtschranke Signal -> GPIO-Pin (siehe @ref LICHTSCHRANKE_PIN)
- *
- * @par Testablauf
- * -# Starten der ArduinoIDE
- * -# Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers
- * -# Verbinden der Signalleitung der Lichtschranke an einen GPIO-Pin des Mikrocontrollers
- * -# Verbinden des Mikrocontrollers mit dem Rechner per USB
- * -# Oeffnen der ArduinoIDE
- * -# Oeffnen dieses Sketches zur Erprobung
- * -# Eintragen des mit der Signalleitung verbundenen GPIO-Pins bei @ref LICHTSCHRANKE_PIN
- * -# Sketch auf den Mikrocontroller spielen
- * -# Ueberpruefen der ordnungsgemaessen Funktion der Lichtschranke anhand der eingebauten LED
- *
- * @author Autor
- * @date 2025
- * @version 1.0
- */
-
-/**
- * @brief GPIO-Pin, an dem die Signalleitung der Lichtschranke angeschlossen ist.
- *
- * Diesen Wert entsprechend der tatsaechlichen Verkabelung anpassen.
+ * @brief GPIO pin for the light barrier signal.
  */
 #define LICHTSCHRANKE_PIN 2
 
 /**
- * @brief Pin der eingebauten LED des Mikrocontrollers.
- *
- * Wird zur optischen Signalisierung des Lichtschrankenzustands verwendet.
+ * @brief Built-in LED pin of the Arduino UNO R4.
  */
 #define LED_PIN LED_BUILTIN
 
 /**
- * @brief Baudrate fuer die serielle Kommunikation.
+ * @brief Baud rate for serial communication.
  */
-#define SERIELLE_BAUDRATE 9600
+#define SERIELLE_BAUDRATE 115200
 
 /**
- * @brief Abtastintervall in Millisekunden fuer die Zustandsabfrage.
+ * @brief Sampling interval in milliseconds.
  */
 #define ABTASTINTERVALL_MS 200
 
 /**
- * @brief Initialisierung des Mikrocontrollers.
+ * @brief Initializes hardware components.
  *
- * Konfiguriert den Lichtschranken-Pin als Eingang mit internem Pull-up-Widerstand,
- * den LED-Pin als Ausgang und initialisiert die serielle Schnittstelle.
+ * @details
+ * Configures the light barrier input with internal pull-up,
+ * sets the LED as output, and starts serial communication.
  */
 void setup()
 {
@@ -65,25 +33,24 @@ void setup()
     Serial.begin(SERIELLE_BAUDRATE);
     while (!Serial)
     {
-        /* Warten bis die serielle Verbindung steht (relevant fuer Arduino Leonardo / Micro) */
     }
-
-    Serial.println(F("=== Lichtschranke Testsketch ==="));
-    Serial.print(F("Signalpin: "));
+    Serial.print(F("Signal pin:       "));
     Serial.println(LICHTSCHRANKE_PIN);
-    Serial.println(F("Starte Messung..."));
+    Serial.print(F("LED pin:          "));
+    Serial.println(LED_PIN);
+    Serial.print(F("Sampling interval: "));
+    Serial.print(ABTASTINTERVALL_MS);
+    Serial.println(F(" ms"));
+    Serial.println();
+    Serial.println(F("Starting measurement..."));
     Serial.println();
 }
 
 /**
- * @brief Liest den aktuellen Zustand der Lichtschranke ein.
+ * @brief Reads the current state of the light barrier.
  *
- * @return @c true wenn die Lichtschranke unterbrochen (ausgeloest) ist,
- *         @c false wenn der Lichtweg frei ist.
- *
- * @note Bei den meisten Lichtschrankenmodulen liegt der Ausgang im
- *       ausgeloesten Zustand auf LOW. Falls das verwendete Modul invertiert
- *       arbeitet, muss die Logik hier angepasst werden.
+ * @return true  if beam is interrupted (LOW)
+ * @return false if beam is clear (HIGH)
  */
 bool lichtschrankeAusgeloest()
 {
@@ -91,9 +58,9 @@ bool lichtschrankeAusgeloest()
 }
 
 /**
- * @brief Setzt die eingebaute LED entsprechend des uebergebenen Zustands.
+ * @brief Controls the built-in LED.
  *
- * @param[in] aktiv @c true schaltet die LED ein, @c false schaltet sie aus.
+ * @param aktiv true = LED ON, false = LED OFF
  */
 void setLED(bool aktiv)
 {
@@ -101,36 +68,42 @@ void setLED(bool aktiv)
 }
 
 /**
- * @brief Gibt den aktuellen Zustand der Lichtschranke auf dem seriellen Monitor aus.
+ * @brief Outputs the sensor state to the serial monitor.
  *
- * @param[in] ausgeloest Aktueller Zustand der Lichtschranke.
- * @param[in] zustandGeaendert @c true wenn sich der Zustand seit der letzten Abfrage geaendert hat.
+ * @param ausgeloest       Current sensor state
+ * @param zustandGeaendert True if state has changed
  */
 void zustandAusgeben(bool ausgeloest, bool zustandGeaendert)
 {
     if (zustandGeaendert)
     {
+        unsigned long zeitstempel = millis();
+
+        Serial.print(F("["));
+        Serial.print(zeitstempel);
+        Serial.print(F(" ms] "));
+
         if (ausgeloest)
         {
-            Serial.println(F("[AUSGELOEST] Lichtschranke unterbrochen – LED AN"));
+            Serial.println("Triggered");
         }
         else
         {
-            Serial.println(F("[FREI]       Lichtweg frei            – LED AUS"));
+            Serial.println("not triggered");
         }
     }
 }
 
 /**
- * @brief Hauptschleife des Programms.
+ * @brief Main loop for cyclic sensor polling.
  *
- * Fragt zyklisch den Zustand der Lichtschranke ab, aktualisiert die eingebaute
- * LED und gibt Zustandsaenderungen ueber die serielle Schnittstelle aus.
+ * @details
+ * Reads sensor state, updates LED, and prints changes.
  */
 void loop()
 {
-    static bool letzterZustand = false; /**< Gespeicherter vorheriger Zustand. */
-    static bool ersterDurchlauf = true; /**< Flag fuer den ersten Schleifendurchlauf. */
+    static bool letzterZustand = false;
+    static bool ersterDurchlauf = true;
 
     bool aktuellerZustand = lichtschrankeAusgeloest();
     bool geaendert = (aktuellerZustand != letzterZustand) || ersterDurchlauf;
