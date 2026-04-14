@@ -147,7 +147,7 @@ Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optisch
 	\subsection{Technische Daten der Lichtschranke } 
 	Nachfolgende Tabelle \ref{TabelleSpezifikationLS} 
 	zeigt die dem Datenblatt \cite{Roboter-Bausatz:2026} entnommenen technischen Eigenschaften der Reflex-Lichtschranke.
-	Die Grafik  \ref{TZLSEN118} zeigt die technischen Abmaße der Lichtschranke  
+	Die Grafik  \ref{TZLSEN118} zeigt die technischen Abmaße der Lichtschranke.  
 \begin{table}[h!]
 	\caption{Spezifikationen der Lichtschranke}
 	\begin{center}
@@ -381,7 +381,7 @@ Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optisch
  \begin{enumerate}
  	\item Anschlussleitungen für die Spannungversorgung 
  	\item Infrarot-Leuchtdiode 
- 	\item NPN Fototransistor  
+ 	\item NPN-Fototransistor  
  	\item Potentiometer 
  	\item Kondensatoren 
  	\item Widerstände 
@@ -424,9 +424,9 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden. 
 
 
-\subsection{Inside the Example}
+\subsection{Anschlussbeispiel}
 Um die Lichtschranke ordnungsgemäß an einen Mikrokontroller anzuschließen kann folgende Grafik \ref{AnschlussLS} als Referenz verwendet werden. Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschranke wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
-Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023}. Die Lichtschranke verwendet eine Dupont-Buchse und kann so direkt mittels Jumper-Wires mit dem Arduino verbunden werden \cite{Roboter-Bausatz:2026}.
+Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023}. Die Lichtschranke verwendet eine Dupont-Buchse und kann so direkt mittels \grqq Jumper-Wires\glqq \space mit dem Arduino verbunden werden \cite{Roboter-Bausatz:2026}.
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.8]{../Images/General/LSSimple260414.png}
@@ -460,7 +460,7 @@ Vor der Inbetriebnahme muss die gewünschte Abstandserkennung des Sensors einges
 		\item Blau: GND
 	\end{itemize}
 	
-	\item Sensorkopf und optische Achse  senkrecht auf eine Referenzfläche (Boden oder Wand) ausrichten, vorzugsweise mithilfe eines Messmittels.
+	\item Sensorkopf und optische Achse  senkrecht auf eine Referenzfläche (Boden oder Wand) ausrichten, vorzugsweise mithilfe eines rechtwinkligen Winkelanschlages.
 	\item Gewünschten Abstand zwischen Sensor und Reflektorfläche messen und Sensor in dieser Position feststellen. 
 	\item Potentiometer (Einstellschraube am Sensor) einstellen:
 	\begin{itemize}
@@ -486,7 +486,7 @@ Sollte der Abstand zwischen Sensor und Reflektorfläche verändert worden sein, 
 
 Im Rahmen einer Anwendung wird die Lichtschranke an einem Tischförderband eingesetzt, um das Passieren eines Objektes zu erkennen und darauf basierend einen Motor zu steuern. Ziel ist es, eine zuverlässige Objekterkennung zu gewährleisten, sodass die Lichtschranke eindeutig erkennt, wenn ein Objekt den Lichtstrahl  unterbricht, ohne durch kurze Störungen oder Signalflanken mehrfach ausgelöst zu werden.
 Der Aufbau besteht aus einem Tischförderband, einer über dem Band montierten Lichtschranke sowie einem Arduino zur Signalauswertung. 
-Im Betrieb fährt das Objekt in  die Lichtschranke und unterbricht den Lichtstrahl, wodurch am Arduino ein LOW-Signal erkannt wird. Solange der Lichtstrahl nicht unterbrochen ist, wird ein stabiles Logiksignal erzeugt, welches vom Arduino zur Ansteuerung eines Motortreibers verwendet wird.
+Im Betrieb fährt das Objekt in  die Lichtschranke und unterbricht den Lichtstrahl, wodurch am Arduino ein LOW-Signal erkannt wird. Solange der Lichtstrahl nicht unterbrochen ist, wird ein konstantes Logiksignal erzeugt, welches vom Arduino zur Ansteuerung eines Motortreibers verwendet wird.
 
 \section{Tests}
 Um sicherzustellen, dass ein System ordnungsgemäß funktionstüchtig ist, ist es sinnvoll alle Komponenten des Systemes zu testen. 
@@ -494,23 +494,23 @@ Hierzu können einzelne Komponenten für sich oder im Verbund getestet werden. D
 \subsection{Einfacher Funktionstest}
 Auf dem Arduino soll die eingebaute LED dauerhaft leuchten, hierfür wird diese ordnungsgemäß angeschlossen. Das Vorgehen zur Prüfung der ordnungsgemäßen Funktion wird nachfolgend erläutert.
 Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen, welcher bereits mit einem Pull-Up Widerstand verbunden ist. Das Anschlussschema ist identisch mit dem Anschlussschema in Abbildung \ref{AnschlussLS}.
- Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der ArduinoIDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss die Ausgabe ein \glqq HIGH\grqq \space sein. \cite{tinkbox:2026}
+ Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der Arduino IDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss die Ausgabe ein \glqq HIGH\grqq \space sein. \cite{tinkbox:2026}
  \paragraph{Vorgehen zur Funktionsprüfung der Lichtschranke}
 \begin{center}
 \begin{enumerate}
 	\item Überprüfen aller Kabel auf festen Sitz
-	\item Starten der ArduinoIDE
+	\item Starten der Arduino IDE
 	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers
 	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO-Pin des Mikrocontrollers
 	\item Verbinden des Mikrocontrollers mit dem Rechner per USB
-	\item Öffnen der ArduinoIDE
+	\item Öffnen der Arduino IDE
 	\item Öffnen des Sketches zur Erprobung
 	\item Eintragen des mit der Signalleitung verbundenen GPIO-Pins an der vorgesehenen Stelle im Sketch
-	\item Sketch auf den Mikrocontroller spielen
+	\item Sketch auf den Mikrocontroller laden
 	\item Überprüfen der ordnungsgemäßen Funktion der Lichtschranke anhand der eingebauten LED
 \end{enumerate} 
 \end{center}
-Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. Dieser sollte dann in der ArduinoIDE eingefügt und auf den Mikrocontroller geladen werden. Der Code liest das Signal der Lichtschranke ein und lässt eine LED aufleuchten, sobald sich das Signal in ein \glqq LOW\grqq \space ändert. Hierzu wird Ebenfalls der Ausgang für die LED definiert. Die verwendete LED ist die auf dem Arduino verbaute LED. Auch wird die serielle Schnittstelle und das Abfrageintervall definiert. Diese werden zudem im seriellen Monitor der Arduino IDE als Ausgaben dargestellt. Sollte sich das Signal in ein  \glqq LOW\grqq \space  wird zusätzlich im seriellen Monitor ein  \glqq Triggered\grqq \space ausgegeben. 
+Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. Dieser sollte dann in der Arduino IDE eingefügt und auf den Mikrocontroller geladen werden. Der Code liest das Signal der Lichtschranke ein und lässt eine LED aufleuchten, sobald sich das Signal in ein \glqq LOW\grqq \space ändert. Hierzu wird Ebenfalls der Ausgang für die LED definiert. Die verwendete LED ist die auf dem Arduino verbaute LED. Auch wird die serielle Schnittstelle und das Abfrageintervall definiert. Diese werden zudem im seriellen Monitor der Arduino IDE als Ausgaben dargestellt. Sollte sich das Signal in ein  \glqq LOW\grqq \space  wird zusätzlich im seriellen Monitor ein  \glqq Triggered\grqq \space ausgegeben. 
 
 \begin{center}
 	\captionof{figure}{Dieser Code liest den digitalen Eingang 8 des Mikrocontrollers ein und erkennt anhand des Signals der Lichtschranke, ob ein Objekt den Lichtstrahl unterbricht. Der Zustand wird anschließend über die serielle Schnittstelle ausgegeben.} 
@@ -518,9 +518,7 @@ Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. D
 \end{center}
 
 
-\subsection{Test all Functions}
-
-
-
-\section{Further Readings}
+%\subsection{Test all Functions}
+%
+%\section{Further Readings}
 
