@@ -154,8 +154,10 @@ Für den zuverlässigen Betrieb einer Reflexlichtschranke ist neben dem optische
 			\hline
 			\textbf{Parameter} &\textbf{Wert/Detail}\\
 			\hline
-			Modell & Funduino E18-D80NK\\
+			Modell &  E18-D80NK\\
 			\hline
+			Sensormodul & TRCT5000 IR \\
+			\hline 
 			Betriebsspannung & 5V DC\\
 			\hline
 			Stromaufnahme & ca. 100mA\\
@@ -373,27 +375,28 @@ Die Grafik  \ref{TZLSEN118} zeigt die Technischen Abmaße der Lichtschranke
 	\end{figure}
 \end{center}
  Nachfolgend wird der Aufbau udn Die Schaltlogik der Reflex-Lichtschrnake E18-D80N erläutert.
- Die Lichtschranke selbst besteht im elektrischen aus folgenden Komponenten \cite{tinkbox:2026}: 
+ Die Lichtschranke  selbst besteht aus folgenden elektrischen  Komponenten \cite{tinkbox:2026}: 
  \begin{enumerate}
  	\item Anschlussleitungen für die Spannungversorgung 
  	\item infrarot Leuchtdiode 
  	\item NPN Fototransistor  
+ 	\item Potentiometer 
+ 	\item Kondensatoren 
+ 	\item Widerstände 
  	\item Verstärkerstufe (Operationsverstärker / Transistorverstärker) 
  	\item Ausgangsleitung für das Signal 
  \end{enumerate}
 
 Als Sender dient eine Infrarot-LED, die elektromagnetische Strahlung im nicht sichtbaren Bereich erzeugt. Diese wird von einem Objekt reflektiert oder im Strahlengang beeinflusst.
-Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist ein Modul vom Typ TCRT5000 IR. 
+Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist ein Modul  änlich dem Modul vom Typ TCRT5000 IR \cite{bibid}. Jedoch gibt es keinen analogen Ausgang und die Signalverstärkung ist deutlich erhöht. 
 Ein Filter reduziert Störungen durch Fremdlicht. Ein Komparator vergleicht das Signal mit einem eingestellten Schwellwert. Dieser wird über ein Potentiometer eingestellt und bestimmt die Schaltschwelle.
 Der Ausgang ist als NPN-Open-Collector-Schaltung ausgeführt und liefert ein digitales Schaltsignal gegen Masse. So wird dauerhaft ein \glqq HIGH \grqq \space  auf der Signanlleitung ausgegeben, solamge der Sensor nicht auslöst und auf die Photodiote ein Lichtstrahl trifft. 
-Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. umd die Reichweite zu Erhöhen udn die Empfindlichkeit gegenüber Fremdlicht zu reduzieren. \cite{Roboter-Bausatz:2026}
-
-
+Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen udn die Empfindlichkeit gegenüber Fremdlicht zu reduzieren. \cite{Roboter-Bausatz:2026}
 
 \begin{center}
 	\begin{figure}[h!]
 		\includegraphics{../Images/General/TCRT5000IR} 
-		\caption{Vereinfachte Darstellung der Schaltung innerhalb der Lichtschranke E18-D80N}
+		\caption{Darstellung der Schaltung des Moduls TCRT5000 IR \cite{Hochschule-Hamm-Lippstadt:2018} }
 		\label{SchaltplanLS}
 	\end{figure}
 \end{center}
