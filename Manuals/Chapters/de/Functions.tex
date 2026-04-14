@@ -51,12 +51,18 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		\begin{itemize}
 		\item \textbf{Linkslauf:}
 		In diesem Modus erkennt das System, ob in Lichtschranke 2 eine Transportbox abgelegt wurde und transportiert diese zur linken Seite des Tischförderbands bis sie das Transportband verlässt.
-			
+		
+		\textbf{Verwendung:}
 		Dieser Modus kann zum automatischen Weitertransport einer Transportbox in einen Behälter oder auf ein zweites Tischförderband verwendet werden. Wenn kein weiteres Transportband oder ein Behälter am Ende des Transportbands steht sollte im Abwurfbereich eine weiche Unterlage platziert werden, um die Transportbox nicht zu beschädigen. 
 		
 		\textbf{Bewegungsablauf:}
 		Stellen Sie zunächst den Modusschalter auf \fbox{L}.
+		Wählen Sie mithilfe des Drehreglers die gewünschte Bandgeschwindigkeit.
+		Das System wartet nun darauf, dass eine Transportbox in eine die Lichtschranke 2 gestellt wird, auf der Anzeige erscheint die Meldung \fbox{Warten auf T-Box}.
+		Wird eine Transportbox erkannt, wartet das System 2 Sekunden und beschleunigt dann auf die eingestellte Bandgeschwindigkeit.
+		Das Transportband fährt solange, bis die Transportbox die Lichtschranke 1 passiert hat und dadurch erkennt, dass Sie das Transportband verlassen hat.
 		
+		Sollte das Objekt die  Lichtschranke 1 innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{XXX}.
 		
 		
 		
@@ -66,16 +72,17 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		
 		\item \textbf{Automatiklauf:}
 		In diesem Modus erkennt das System, ob an einem Ende des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis zum anderen Ende des Transportbandes und verweilt dort.
-			
-		Dieser Modus kann zum automatischen Weitertransport von Objekten in zwei Richtungen verwendet werden. Eine einfache Sortierstraße ist ebenfalls realisierbar.
+		
+		\textbf{Verwendung:}
+		Dieser Modus kann zum automatischen Weitertransport von Objekten in zwei Richtungen verwendet werden. Eine einfache Sortierstraße mit mehreren Pick-And-Place Robotern ist ebenfalls realisierbar.
 			
 
 		
-		Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen.\\
+		Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen. Auf der Anzeige erscheint die Meldung \fbox{T-Box entfernen}.\\
 		
 		Das System setzt sich nach 5 Sekunden Ruhezeit automatisch zurück. Nach Ablauf dieser Ruhezeit kann erneut eine Transportbox zwischen eine der beiden Lichtschranken gelegt werden.\\
 		
-		Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{XXX}.
+		Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{Fehler: XXX}.
 		\end{itemize}
 	
 	
@@ -98,15 +105,11 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	
 \end{itemize}
 
-\section{Erweiterte Funktionen}
+\section{Erweiterte Funktionen}	
+\textbf{Betrieb mit programmiertem Bewegungsablauf} \\ 
+Sollte für eine Anwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung des verbauten Microcontrollers angepasst werden. 
+Weitere Informationen dazu finden Sie in der Dokumentation.
 
-\begin{itemize}
-	
-	\item \textbf{Betrieb mit programmiertem Bewegungsablauf} \\ 
-	Sollte für eine Anwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung des verbauten Microcontrollers angepasst werden. 
-	Weitere Informationen dazu finden Sie in der Dokumentation.
-	
-\end{itemize}
 
 \section{Reset}
 Wird der Reset-Taster für mehr als 5 Sekunden betätigt, so wird das Transportband umgehend zum Stehen gebracht. Die Steuerung des Systems wird neu gestartet und kehrt zurück in das Startmenü.\\
