@@ -401,34 +401,31 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 	\end{figure}
 \end{center}
  
-\section{Library}
-\subsection{Description}
-	Für die Verwendung von dieser Lichtschranke wird keine Bibliothek zwangsläufig benötigtö Zwar können Lichtschranke wie Bounce2 \cite{Fredericks:2015} sinnvoll sein. 
-	Ihr Nutzungsgrad hängt jedoch vom spezifischen Anwendungsfall ab. 
-\subsection{Installation}
+%\section{Library}
+%\subsection{Description}
+%	Für die Verwendung von dieser Lichtschranke wird keine Bibliothek zwangsläufig benötigtö Zwar können Lichtschranke wie Bounce2 \cite{Fredericks:2015} sinnvoll sein. 
+%	Ihr Nutzungsgrad hängt jedoch vom spezifischen Anwendungsfall ab. 
+%\subsection{Installation}
+%
+%\begin{itemize}
+%    \item data types
+%    \item data structure
+%    \item data quantity
+%    \item data quality
+%\end{itemize}
+%
+%\subsection{Functions}
+%
+%\section{Example}
 
-\begin{itemize}
-    \item data types
-    \item data structure
-    \item data quantity
-    \item data quality
-\end{itemize}
-
-\subsection{Functions}
-
-\section{Example}
-
-In this section, a simple example is described in detail, which demonstrates how the library supports the sensor/actor.
-
-
-\subsection{Manual}
+\subsection{Handbuch und Inbetriebnahme des Sensorsl}
 Folgende Vorgehensweise kann zum Anschluss udn Inbetriebnahme der Lichtschranke verwendet werden. 
 
 
 \subsection{Inside the Example}
 Um die Lichtschranke Ordnungsgemäß an einen Mikrokontroller anzuschließen kann sich an folgenden Grafik \ref{AnschlussLS} genutzt werden. 
-Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschrnake wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
-Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023}
+Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschranke wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
+Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023}. Die Lichtschranke verwendet eine Dupont-Buchse und kann so direkt mittels Jumper Wires mit dem Arduino verbunden werden. \cite{Roboter-Bausatz:2026}
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.8]{../Images/General/LSSimple260414.png}
@@ -439,19 +436,49 @@ Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Ref
 
 
 \subsection{Code}
+Der um die Signale der Lichtschranke verabeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussLS} zeigt dieses gut auf. Es wird ein Eingangssignal und seine Schnittstelle definiert um anschließend ausgewertet zu werden. Da der Sensor digitale Signale liefert, muss das Programm auch nur digitale Signale auswerten. 
 \begin{center}
 	\captionof{figure}{Dieser Code liest den digitalen Eingang 8 des Mikrocontrollers ein und erkennt anhand des Signals der Lichtschranke, ob ein Objekt den Lichtstrahl unterbricht. Der Zustand wird anschließend über die serielle Schnittstelle ausgegeben.} 
+	\label{CodeAnschlussLS}
 	\ArduinoExternal{}{../../Code/AnschlussLS/AnschlussLS.ino}
 \end{center}
-\subsection{Files}
+%\subsection{Files}
 
 
 
-\section{Calibration}
+\section{Kalibirerung und Justierung}
 
-cite method
+%\subsection{Einrichtung der Abstandserkennung}
 
-\section{Simple Code}
+Vor der Inbetriebnahme muss die gewünschte Abstandserkennung des Sensors eingestellt werden:
+
+\begin{enumerate}
+	\item Sensor mit der Versorgung verbinden:
+	\begin{itemize}
+		\item Braun: +5\,V
+		\item Blau: GND
+	\end{itemize}
+	
+	\item Sensorkopf senkrecht auf eine Referenzflaeche (Boden oder Wand) ausrichten, vorzugsweise mithilfe eines Messmittels.
+	\item Gewünschten Abstand zwischen Sensor und Reflektorflaeche messen und Sensor in dieser Position feststellen. 
+	\item Potentiometer (VR) einstellen:
+	\begin{itemize}
+		\item LED AUS (Output = 1): VR im Uhrzeigersinn drehen, bis LED EIN (Output = 0) → Schaltpunkt erreicht
+		\item LED EIN (Output = 0): VR gegen Uhrzeigersinn drehen, bis LED AUS (Output = 1) → Schaltpunkt erreicht
+	\end{itemize}
+
+	\item Funktion testen:
+	\begin{itemize}
+		\item Abstand $\leq$ Schaltabstand → LED  am Sensor EIN, Output = 0
+		\item Abstand $>$ Schaltabstand → LED am Sensor AUS, Output = 1
+	\end{itemize}
+\end{enumerate}
+
+\paragraph{Hinweis}
+Der Abstand zwischen Sensor und Reflektorfläche sollte so klein wie möglich gewählt werden. 
+Sollte der Abstand zwischen Sensor und Reflektorfläche verändert worden sein, so ist eine neue Kalibrierung des Sensors notwendig.
+
+%\section{Simple Code}
 
 
 \section{Anwendungsbeschreibung der Lichtschranke E19-D80NK}
