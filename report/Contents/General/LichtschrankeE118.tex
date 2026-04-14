@@ -401,15 +401,23 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 	\end{figure}
 \end{center}
 
-Um die Lichtschranke Ordnungsgemäß an einen Mikrokontroller anzuschließen aknn sich an folgenden Grafik \ref{AnschlussLED} genutzt werden. 
+Um die Lichtschranke Ordnungsgemäß an einen Mikrokontroller anzuschließen aknn sich an folgenden Grafik \ref{AnschlussLS} genutzt werden. 
 Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschrnake wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
 Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-ip-Widerstands sinnvoll \cite{Bartlett:2023}
+\begin{center}
 
+\begin{figure}
+	\includegraphics[scale=0.8]{../Images/General/LSSimple260414.png}
+	\caption{Anschluss der Lichtschranke an einen Mikokontroller mit einem Pull-up-Widerstand  ( $R=10K \Omega$)} 
+	\label{AnschlussLS}
+\end{figure}
+.
+\end{center}
 \textbf{Schaltbild mit PULL UP und Schaltplan überarbeiten !!!!!}
 \section{Library}
 
 \subsection{Description}
-	Für die Verwendung von dieswer Lichtschranke wird keine Bibliothek zwangsläufig benötigt
+	Für die Verwendung von dieser Lichtschranke wird keine Bibliothek zwangsläufig benötigt
 \subsection{Installation}
 
 \begin{itemize}
