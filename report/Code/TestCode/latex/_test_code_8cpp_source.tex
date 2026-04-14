@@ -1,0 +1,41 @@
+\doxysection{Test\+Code.\+cpp}
+\label{_test_code_8cpp_source}\index{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestCode/TestCode.cpp@{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestCode/TestCode.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <Bounce2.h>}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Pins\ definieren}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ LICH\_SCH\_PIN\ 2\ }}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ LED\_PIN\ 13\ }}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Bounce-\/objekt\ zur\ Entprellung\ des\ Eingangssignals}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Die\ Klasse\ Bounce\ aus\ der\ Bibliothek\ Bounce2\ sorgt\ dafuer,}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ dass\ Stoerungen\ (Prellen)\ am\ Eingangssignal\ gefiltert\ werden.}}
+\DoxyCodeLine{00010\ Bounce\ debouncer\ =\ Bounce();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Initialisierung\ der\ Hardware\ und\ seriellen\ Kommunikation}}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ setup()\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ pinMode(LICH\_SCH\_PIN,\ INPUT\_PULLUP);\ \ \textcolor{comment}{//\ Eingang\ mit\ Pullup}}
+\DoxyCodeLine{00015\ \ \ \ \ pinMode(LED\_PIN,\ OUTPUT);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LED\ als\ Ausgang}}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ debouncer.attach(LICH\_SCH\_PIN);\ \ \ \ \ \ \ \textcolor{comment}{//\ Pin\ dem\ Debouncer\ zuweisen}}
+\DoxyCodeLine{00018\ \ \ \ \ debouncer.interval(50);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 50\ ms\ Entprellzeit}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ Serial.begin(9600);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Start\ Serial-\/Monitor}}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Hauptprogrammschleife}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Prueft\ kontinuierlich\ den\ Zustand\ der\ Lichtschranke}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ und\ steuert\ die\ LED\ sowie\ die\ serielle\ Ausgabe.}}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ loop()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ debouncer.update();\ \ \textcolor{comment}{//\ Entprellung\ aktualisieren}}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (debouncer.read()\ ==\ LOW)\ \{\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ digitalWrite(LED\_PIN,\ HIGH);\ \ \ \textcolor{comment}{//\ LED\ an}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Objekt\ erkannt!"{}});\ \ \textcolor{comment}{//\ Ausgabe\ im\ Serial-\/Monitor}}
+\DoxyCodeLine{00032\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ digitalWrite(LED\_PIN,\ LOW);\ \ \ \ \textcolor{comment}{//\ LED\ aus}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
