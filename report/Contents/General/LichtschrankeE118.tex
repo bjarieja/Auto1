@@ -373,20 +373,17 @@ Die Grafik  \ref{TZLSEN118} zeigt die Technischen Abmaße der Lichtschranke
 	\end{figure}
 \end{center}
  Nachfolgend wird der Aufbau udn Die Schaltlogik der Reflex-Lichtschrnake E18-D80N erläutert.
- Die Lichtschranke selbst besteht im elektrischen aus folgenden Komponenten: 
+ Die Lichtschranke selbst besteht im elektrischen aus folgenden Komponenten \cite{tinkbox:2026}: 
  \begin{enumerate}
  	\item Anschlussleitungen für die Spannungversorgung 
  	\item infrarot Leuchtdiode 
  	\item NPN Fototransistor  
  	\item Verstärkerstufe (Operationsverstärker / Transistorverstärker) 
- 	\item RC Filter 
- 	\item Potentiometer 
  	\item Ausgangsleitung für das Signal 
- 	\ 
  \end{enumerate}
 
 Als Sender dient eine Infrarot-LED, die elektromagnetische Strahlung im nicht sichtbaren Bereich erzeugt. Diese wird von einem Objekt reflektiert oder im Strahlengang beeinflusst.
-Der Empfänger besteht aus einer Photodiode oder einem Phototransistor. 
+Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist ein Modul vom Typ TCRT5000 IR. 
 Ein Filter reduziert Störungen durch Fremdlicht. Ein Komparator vergleicht das Signal mit einem eingestellten Schwellwert. Dieser wird über ein Potentiometer eingestellt und bestimmt die Schaltschwelle.
 Der Ausgang ist als NPN-Open-Collector-Schaltung ausgeführt und liefert ein digitales Schaltsignal gegen Masse. So wird dauerhaft ein \glqq HIGH \grqq \space  auf der Signanlleitung ausgegeben, solamge der Sensor nicht auslöst und auf die Photodiote ein Lichtstrahl trifft. 
 Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. umd die Reichweite zu Erhöhen udn die Empfindlichkeit gegenüber Fremdlicht zu reduzieren. \cite{Roboter-Bausatz:2026}
@@ -395,13 +392,13 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 
 \begin{center}
 	\begin{figure}[h!]
-		\includegraphics{../Images/General/SchaltfunktionLS.png} 
+		\includegraphics{../Images/General/TCRT5000IR} 
 		\caption{Vereinfachte Darstellung der Schaltung innerhalb der Lichtschranke E18-D80N}
 		\label{SchaltplanLS}
 	\end{figure}
 \end{center}
 
-Um die Lichtschranke Ordnungsgemäß an einen Mikrokontroller anzuschließen aknn sich an folgenden Grafik \ref{AnschlussLS} genutzt werden. 
+Um die Lichtschranke Ordnungsgemäß an einen Mikrokontroller anzuschließen kann sich an folgenden Grafik \ref{AnschlussLS} genutzt werden. 
 Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschrnake wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
 Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-ip-Widerstands sinnvoll \cite{Bartlett:2023}
 \begin{center}
@@ -414,8 +411,19 @@ Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Ref
 .
 \end{center}
 \textbf{Schaltbild mit PULL UP und Schaltplan überarbeiten !!!!!}
-\section{Library}
 
+
+
+
+
+
+
+
+
+
+
+
+\section{Library}
 \subsection{Description}
 	Für die Verwendung von dieser Lichtschranke wird keine Bibliothek zwangsläufig benötigt
 \subsection{Installation}
@@ -461,8 +469,10 @@ Im Betrieb fährt das Paket unter die Lichtschranke und unterbricht den Lichtstr
 Um sicherrzustellen, dass ein System ordnungsgemäß funktionstüchtig ist  es sinnvoll alle Komponenten des Systemes zu testen. Hierzu können einzelne Komponnenten für sich oder im Verbudn getestet werden. 
 \subsection{Simple Function Test}
 Auf dem Arduino soll die eingebaute LED dauerhaft leuchten. Die Lichtschranke wird ebenfalls ordnungsgemäß angeschlossen. Nun soll die ordnungsgemäße Funktion der Lichtschranke geprüft werden. Das Vorgehen wird nachfolgend beschrieben.
-Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen. Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der ArduinoIDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen.
+Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen, welcher Bereits mit einem Pull-Up Widerstand verbunden ist. Das Anschlussschema ist identisch mit dem Anschlussschema Abbildung \ref{AnschlussLS}.
+ Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der ArduinoIDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss der ein \glqq HIGH\grqq \space sein. \cite{tinkbox:2026}
 \begin{enumerate}
+	\item Überprüfen aller Kabel auf festen Sitz
 	\item Starten der ArduinoIDE
 	\item Verbinden der Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers
 	\item Verbinden der Signalleitung der Lichtschranke an einen GPIO-Pin des Mikrocontrollers
@@ -473,8 +483,9 @@ Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an
 	\item Sketch auf den Mikrocontroller spielen
 	\item Überprüfen der ordnungsgemäßen Funktion der Lichtschranke anhand der eingebauten LED
 \end{enumerate}
-
-
+Zusätzlich sollte folgende Vorgehensweise zum 
+Nachfolgend wird der benötigte Code zum Testen der Lichtschranke verwendet. Dieser sollte dann in der ArduinIDE eingefügt und auf den Mikrocontroller geladen werden. 
+\textbf{Hier den CODE einbinden mit Doxygen}
 \subsection{Test all Functions}
 
 
