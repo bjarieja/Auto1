@@ -29,19 +29,150 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	Auf der integrierten \textbf{Anzeige} werden dem Benutzer wichtige Meldungen und Betriebsinformationen angezeigt. 
 	Bei jedem Einschaltvorgang zeigt die \textbf{Anzeige} kurz den Startbildschirm mit der \textbf{Firmware-Version} und wechselt nach der \textbf{Freigabe der Lichtschranken} in das Hauptmenü (siehe Kapitel \ref{sec:Inbetriebnahme}). 
 	
-	\textbf{Elemente im Hauptmenü:}
-	\begin{enumerate}
-		\item Modus
-		\item Status der Lichtschranken
-		\item Bandgeschwindigkeit
-		\item Systemmeldungen / Fehlercodes
-		
-	\end{enumerate}
-	
-	%Hier Bild von Anzeige
+%	\textbf{Elemente im Hauptmenü:}
+%	\begin{enumerate}
+%		\item Modus
+%		\item Status der Lichtschranken
+%		\item Bandgeschwindigkeit
+%		\item Systemmeldungen / Fehlercodes
+%		
+%	\end{enumerate}
+
+
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=10cm]{NewFiles/Images/Bild_Platzhalter_Anzeige}
+	\resizebox{0.7\textwidth}{!}{%
+		\begin{tikzpicture}
+			
+			% Weißer Hintergrund des Displays
+			\draw[fill=white] (-17.875,17.125) rectangle (2.875,11.375);
+			
+			% Rahmen des Displays
+			\draw (-17.5,16.75) rectangle (2.5,11.75);
+			
+		% Display-Inhalte
+			% linksseitig
+			
+			\node at (-15.75,16)      {\fontsize{27.9pt}{36.2pt}\selectfont LS 1 : 0};
+			\node at (-15.375,14.75)  {\fontsize{27.9pt}{36.2pt}\selectfont MODUS :};
+			\node at (-15.25,13.5)    {\fontsize{27.9pt}{36.2pt}\selectfont V-BAND :};
+			\node at (-15.25,12.375)  {\fontsize{27.9pt}{36.2pt}\selectfont FEHLER :};
+			
+			% rechtsseitig
+			\node at (1,15.875)       {\fontsize{27.9pt}{36.2pt}\selectfont LS2 : 1};
+			\node at (0.625,14.75)    {\fontsize{27.9pt}{36.2pt}\selectfont L / A / R};
+			\node at (0.375,13.5)     {\fontsize{27.9pt}{36.2pt}\selectfont 8,0 cm / s};
+			\node at (1.625,12.25)    {\fontsize{27.9pt}{36.2pt}\selectfont E03};
+			
+			% Nummerierte Markierungen links oben
+			% Nummer 1
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-20.625,16.125)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
+			
+			% Nummer 2
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-20.625,14.875)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
+			
+			% Nummer 3
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-20.625,13.625)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
+			
+			% Nummer 4
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-20.625,12.375)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
+			
+			% ---- KORRIGIERTE PFEILE (ohne Stealth) ----
+			\draw[line width=1.6pt, ->] (-20,16.125) -- (-18.125,16.125);
+			\draw[line width=1.6pt, ->] (-20,14.875) -- (-18.125,14.875);
+			\draw[line width=1.6pt, ->] (-20,13.625) -- (-18.125,13.625);
+			\draw[line width=1.6pt, ->] (-20,12.375) -- (-18.125,12.375);
+			
+			% Nummerierte Erläuterungen unten
+			% Nummer 1
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-16,9.15)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{1}};
+			
+			% Nummer 2
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-16,7.65)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{2}};
+			
+			% Nummer 3
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-16,6.15)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{3}};
+			
+			% Nummer 4
+			\node[
+			draw,
+			line width=0.04cm,
+			fill=white
+			] at (-16,4.65)
+			{\fontsize{23.9pt}{31.1pt}\selectfont \textbf{4}};
+			
+			% Beschreibungstexte
+		% Beschreibungstexte linksbündig ausgerichtet
+		
+		\node[
+		anchor=west,
+		align=left
+		] at (-14.5,9.1)
+		{\fontsize{23.9pt}{31.1pt}\selectfont Status der Lichtschranken};
+		
+		\node[
+		anchor=west,
+		align=left
+		] at (-14.5,7.6)
+		{\fontsize{23.9pt}{31.1pt}\selectfont Modus (Förderrichtung)};
+		
+		\node[
+		anchor=west,
+		align=left
+		] at (-14.5,6.1)
+		{\fontsize{23.9pt}{31.1pt}\selectfont Bandgeschwindigkeit};
+		
+		\node[
+		anchor=west,
+		align=left
+		] at (-14.5,4.6)
+		{\fontsize{23.9pt}{31.1pt}\selectfont Systemmeldungen / Fehlercodes};
+			
+		\end{tikzpicture}
+	}%
+	\caption{Your Caption}
+	\label{fig:my_label}
 	\end{center}
+\end{figure}
+%	%Hier Bild von Anzeige
+%	\begin{center}
+%		\includegraphics[width=10cm]{NewFiles/Images/Bild_Platzhalter_Anzeige}
+%	\end{center}
 	
 	Wird der \textbf{Modus} gewechselt, so wird auf der \textbf{Anzeige} der gewählte Modus für einige Sekunden eingeblendet.
 	Anschließend wechselt die \textbf{Anzeige} wieder in das Hauptmenü.
