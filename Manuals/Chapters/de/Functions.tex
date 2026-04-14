@@ -31,40 +31,51 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	
 	\textbf{Elemente im Hauptmenü:}
 	\begin{enumerate}
-		\item Bandgeschwindigkeit
 		\item Modus
 		\item Status der Lichtschranken
+		\item Bandgeschwindigkeit
 		\item Systemmeldungen / Fehlercodes
 		
 	\end{enumerate}
+	
+	%Hier Bild von Anzeige
+	\begin{center}
+		\includegraphics[width=10cm]{NewFiles/Images/Bild_Platzhalter_Anzeige}
+	\end{center}
 	
 	Wird der \textbf{Modus} gewechselt, so wird auf der \textbf{Anzeige} der gewählte Modus für einige Sekunden eingeblendet.
 	Anschließend wechselt die \textbf{Anzeige} wieder in das Hauptmenü.
 	%{wichtig im Programm ergänzen}
 	  
-	  
-	  
-	  
 	\item \textbf{Modus / Förderrichtung wählen} \\  
+		\begin{itemize}
+		\item \textbf{Linkslauf:}
+		In diesem Modus erkennt das System, ob in Lichtschranke 2 eine Transportbox abgelegt wurde und transportiert diese zur linken Seite des Tischförderbands bis sie das Transportband verlässt.
+			
+		Dieser Modus kann zum automatischen Weitertransport einer Transportbox in einen Behälter oder auf ein zweites Tischförderband verwendet werden. Wenn kein weiteres Transportband oder ein Behälter am Ende des Transportbands steht sollte im Abwurfbereich eine weiche Unterlage platziert werden, um die Transportbox nicht zu beschädigen. 
 		
-		\textbf{Linkslauf:}
-		In diesem Modus erkennt das System, ob am Anfang des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis es das Transportband am anderen Ende verlässt.
-			
-		Dieser Modus kann zum automatischen Weitertransport eines Objektes in einen Behälter oder auf ein weiteres Transportband verwendet werden.
-			
+		\textbf{Bewegungsablauf:}
+		Stellen Sie zunächst den Modusschalter auf \fbox{L}.
+		
+		
+		
+		
+		
 		Wird die Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen, sobald diese wieder freigegeben wird und das Objekt das Transportband verlassen hat.\\
 			
-		\textbf{Rechtslauf:}
-			
-		\textbf{Automatiklauf:}
+		\item \textbf{Rechtslauf:}
+		Im Modus Rechtslauf verhält sich das Tischförderband umgekehrt zum Modus Linkslauf. Die grundlegenden Funktionen und Bewegungsabläufe sind jedoch identisch.
+		
+		
+		
+		
+		
+		\item \textbf{Automatiklauf:}
 		In diesem Modus erkennt das System, ob an einem Ende des Transportbandes ein Objekt abgelegt wurde und transportiert dieses bis zum anderen Ende des Transportbandes und verweilt dort.
 			
 		Dieser Modus kann zum automatischen Weitertransport von Objekten in zwei Richtungen verwendet werden. Eine einfache Sortierstraße ist ebenfalls realisierbar.
 			
-		Stellen Sie sicher, dass die Lichtschranken nicht beschädigt und korrekt auf einander ausgerichtet sind.\\
-		Schalten Sie das System über den Hauptschalter [TeilNr01] ein und stellen Sie den Modusschalter [TeilNr03] auf Automatikbetrieb [A].
-		Mithilfe des Drehreglers [TeilNr02] kann die gewünschte Bandgeschwindigkeit eingestellt werden.
-		Es können Bandgeschwindigkeiten zwischen 1,8 und 7,6 cm/s eingestellt werden.
+
 		
 		Wird die erste Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit an. Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum stehen.\\
 		
@@ -72,18 +83,26 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		
 		Das Transportband versucht die Bandgeschwindigkeit unabhängig von der Belastung beizubehalten.\\
 		
-		Timeout: Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes nicht erreichen hält das Transportband selbstständig an.
-		
+		Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{XXX}.
+		\end{itemize}
+	
+	
+	
+	
+	
+	
 	\item \textbf{Bandgeschwindigkeit einstellen} \\  
 	Mithilfe des \textbf{Drehreglers} kann die gewünschte \textbf{Bandgeschwindigkeit} eingestellt werden.
-	Im Hauptmenü wird auf der \textbf{Anzeige} die eingestellte SOLL-\textbf{Bandgeschwindigkeit} angezeigt.
+	Im Hauptmenü wird auf der \textbf{Anzeige} die eingestellte \textbf{Bandgeschwindigkeit} \fbox{vBand} angezeigt.
+	Die Bandgeschwindigeit kann jederzeit geändert werden und beschreibt die maximale Geschwindigkeit, die das Transportband im Betrieb erreichen kann.
 	Einstellbare \textbf{Bandgeschwindigkeiten} finden Sie im Kapitel \ref{sec:Spezifikationen} \textbf{Spezifikationen}.
 
 	\item \textbf{Moduswechsel}\\
-	Das Transportband kann in zwei Laufrichtungen betrieben werden.\\
-	Stellen Sie dazu den \textbf{Modusschalter}  von [L] auf [R] bzw. von [R] auf [L].
+	Um den Modus zu wechseln, stellen Sie  den Modusschalter auf eine der drei Positionen \fbox{L}, \fbox{A} oder \fbox{R}.
 	Nun wird die jeweils andere Lichtschranke zum aktivieren der Bewegung verwendet.
-	Sollte das Transportband bei Änderung der Förderrichtung im Betrieb sein, so bremst es langsam ab.
+	Sollte das Transportband bei Änderung des Modus in Betrieb sein, so bremst es langsam bis zum Stillstand ab.
+	Die Anzeige bittet Sie nun eventuell noch auf dem Transportband liegende Transportboxen zu entfernen. Wenn das Transportband frei ist können Sie diese Meldung mit dem Quittiertaster bestätigen. 
+	Abhängig vom gewählten Modus, kann erneut eine Transportbox in eine der Lichtschranken gestellt werden. Der Betrieb des Tischförderbands wird mit dem gewählten Modus fortgesetzt.
 	
 \end{itemize}
 
