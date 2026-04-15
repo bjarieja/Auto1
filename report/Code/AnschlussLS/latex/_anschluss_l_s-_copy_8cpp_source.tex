@@ -1,0 +1,37 @@
+\doxysection{Anschluss\+LS-\/\+Copy.cpp}
+\label{_anschluss_l_s-_copy_8cpp_source}\index{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/AnschlussLS/AnschlussLS-\/Copy.cpp@{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/AnschlussLS/AnschlussLS-\/Copy.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ sensorPin\ =\ 8;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ setup()\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Initialize\ serial\ communication\ at\ 9600\ baud}}
+\DoxyCodeLine{00041\ \ \ Serial.begin(9600);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Set\ sensor\ pin\ as\ input\ with\ internal\ pull-\/up\ resistor}}
+\DoxyCodeLine{00044\ \ \ pinMode(sensorPin,\ INPUT\_PULLUP);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Startup\ message}}
+\DoxyCodeLine{00047\ \ \ Serial.println(\textcolor{stringliteral}{"{}Light\ barrier\ initialized"{}});}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ loop()\ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ Read\ current\ sensor\ state}}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{int}\ sensorState\ =\ digitalRead(sensorPin);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Check\ if\ an\ object\ is\ detected}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordflow}{if}\ (sensorState\ ==\ LOW)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Light\ beam\ interrupted\ -\/>\ object\ detected}}
+\DoxyCodeLine{00064\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Object\ detected"{}});}
+\DoxyCodeLine{00065\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Light\ beam\ free\ -\/>\ no\ object}}
+\DoxyCodeLine{00067\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}No\ object"{}});}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ Small\ delay\ to\ stabilize\ output}}
+\DoxyCodeLine{00071\ \ \ delay(100);}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}

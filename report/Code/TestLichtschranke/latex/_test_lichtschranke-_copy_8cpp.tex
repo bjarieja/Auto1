@@ -1,0 +1,177 @@
+\doxysection{C:\+/\+\+Users/\+jenik/\+\+Documents/\+\+Git\+Hub/\+\+Auto1/\+report/\+\+Code/\+\+Test\+Lichtschranke/\+\+Test\+Lichtschranke-\/\+Copy.cpp File Reference}
+\label{_test_lichtschranke-_copy_8cpp}\index{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestLichtschranke/TestLichtschranke-\/Copy.cpp@{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestLichtschranke/TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \textbf{ LICHTSCHRANKE\+\_\+\+PIN}~2
+\begin{DoxyCompactList}\small\item\em GPIO pin for the light barrier signal. \end{DoxyCompactList}\item 
+\+\#define \textbf{ LED\+\_\+\+PIN}~LED\+\_\+\+BUILTIN
+\begin{DoxyCompactList}\small\item\em Built-\/in LED pin of the Arduino UNO R4. \end{DoxyCompactList}\item 
+\+\#define \textbf{ SERIELLE\+\_\+\+BAUDRATE}~115200
+\begin{DoxyCompactList}\small\item\em Baud rate for serial communication. \end{DoxyCompactList}\item 
+\+\#define \textbf{ ABTASTINTERVALL\+\_\+\+MS}~200
+\begin{DoxyCompactList}\small\item\em Sampling interval in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ setup} ()
+\begin{DoxyCompactList}\small\item\em Initializes hardware components. \end{DoxyCompactList}\item 
+bool \textbf{ lichtschranke\+Ausgeloest} ()
+\begin{DoxyCompactList}\small\item\em Reads the current state of the light barrier. \end{DoxyCompactList}\item 
+void \textbf{ set\+LED} (bool aktiv)
+\begin{DoxyCompactList}\small\item\em Controls the built-\/in LED. \end{DoxyCompactList}\item 
+void \textbf{ zustand\+Ausgeben} (bool ausgeloest, bool zustand\+Geaendert)
+\begin{DoxyCompactList}\small\item\em Outputs the sensor state to the serial monitor. \end{DoxyCompactList}\item 
+void \textbf{ loop} ()
+\begin{DoxyCompactList}\small\item\em Main loop for cyclic sensor polling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!ABTASTINTERVALL\_MS@{ABTASTINTERVALL\_MS}}
+\index{ABTASTINTERVALL\_MS@{ABTASTINTERVALL\_MS}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{ABTASTINTERVALL\_MS}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_a37f29d30c4e10517b8165f98860b8fdc} 
+\+\#define ABTASTINTERVALL\+\_\+\+MS~200}
+
+
+
+Sampling interval in milliseconds. 
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!LED\_PIN@{LED\_PIN}}
+\index{LED\_PIN@{LED\_PIN}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{LED\_PIN}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_ab4553be4db9860d940f81d7447173b2f} 
+\+\#define LED\+\_\+\+PIN~LED\+\_\+\+BUILTIN}
+
+
+
+Built-\/in LED pin of the Arduino UNO R4. 
+
+
+
+Definition at line \textbf{ 9} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!LICHTSCHRANKE\_PIN@{LICHTSCHRANKE\_PIN}}
+\index{LICHTSCHRANKE\_PIN@{LICHTSCHRANKE\_PIN}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{LICHTSCHRANKE\_PIN}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_a4589451dc3c8ea6187ec2fa05d56a623} 
+\+\#define LICHTSCHRANKE\+\_\+\+PIN~2}
+
+
+
+GPIO pin for the light barrier signal. 
+
+
+
+Definition at line \textbf{ 4} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!SERIELLE\_BAUDRATE@{SERIELLE\_BAUDRATE}}
+\index{SERIELLE\_BAUDRATE@{SERIELLE\_BAUDRATE}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{SERIELLE\_BAUDRATE}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_ab1d2a6366cc31af10de5451ce9e9a4cf} 
+\+\#define SERIELLE\+\_\+\+BAUDRATE~115200}
+
+
+
+Baud rate for serial communication. 
+
+
+
+Definition at line \textbf{ 14} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+
+
+\label{doc-func-members}
+\doxysubsection{Function Documentation}
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!lichtschrankeAusgeloest@{lichtschrankeAusgeloest}}
+\index{lichtschrankeAusgeloest@{lichtschrankeAusgeloest}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{lichtschrankeAusgeloest()}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_a164543245f965b2a9631e1cc45bda0c0} 
+bool lichtschranke\+Ausgeloest (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reads the current state of the light barrier. 
+
+\begin{DoxyReturn}{Returns}
+true if beam is interrupted (LOW) 
+
+false if beam is clear (HIGH) 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 55} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!loop@{loop}}
+\index{loop@{loop}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{loop()}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main loop for cyclic sensor polling. 
+
+Reads sensor state, updates LED, and prints changes. 
+
+Definition at line \textbf{ 103} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!setLED@{setLED}}
+\index{setLED@{setLED}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{setLED()}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_a73c765f133776fa6a32422737c4cc0b6} 
+void set\+LED (\begin{DoxyParamCaption}\item[{bool}]{aktiv}{}\end{DoxyParamCaption})}
+
+
+
+Controls the built-\/in LED. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aktiv} & true = LED ON, false = LED OFF \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 65} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!setup@{setup}}
+\index{setup@{setup}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{setup()}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes hardware components. 
+
+Configures the light barrier input with internal pull-\/up, sets the LED as output, and starts serial communication. 
+
+Definition at line \textbf{ 28} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+
+\index{TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}!zustandAusgeben@{zustandAusgeben}}
+\index{zustandAusgeben@{zustandAusgeben}!TestLichtschranke-\/Copy.cpp@{TestLichtschranke-\/Copy.cpp}}
+\doxysubsubsection{zustandAusgeben()}
+{\footnotesize\ttfamily \label{_test_lichtschranke-_copy_8cpp_ae398b87c2ac70b942ba6c97478c5428e} 
+void zustand\+Ausgeben (\begin{DoxyParamCaption}\item[{bool}]{ausgeloest}{, }\item[{bool}]{zustand\+Geaendert}{}\end{DoxyParamCaption})}
+
+
+
+Outputs the sensor state to the serial monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ausgeloest} & Current sensor state \\
+\hline
+{\em zustand\+Geaendert} & True if state has changed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 76} of file \textbf{ Test\+Lichtschranke-\/\+Copy.\+cpp}.
+

@@ -1,0 +1,83 @@
+\doxysection{Test\+Lichtschranke-\/\+Copy.cpp}
+\label{_test_lichtschranke-_copy_8cpp_source}\index{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestLichtschranke/TestLichtschranke-\/Copy.cpp@{C:/Users/jenik/Documents/GitHub/Auto1/report/Code/TestLichtschranke/TestLichtschranke-\/Copy.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ LICHTSCHRANKE\_PIN\ 2}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LED\_PIN\ LED\_BUILTIN}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SERIELLE\_BAUDRATE\ 115200}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ ABTASTINTERVALL\_MS\ 200}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ setup()}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ pinMode(LICHTSCHRANKE\_PIN,\ INPUT\_PULLUP);}
+\DoxyCodeLine{00031\ \ \ \ \ pinMode(LED\_PIN,\ OUTPUT);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ Serial.begin(SERIELLE\_BAUDRATE);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{while}\ (!Serial)}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}Signal\ pin:\ \ \ \ \ \ \ "{}}));}
+\DoxyCodeLine{00038\ \ \ \ \ Serial.println(LICHTSCHRANKE\_PIN);}
+\DoxyCodeLine{00039\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}LED\ pin:\ \ \ \ \ \ \ \ \ \ "{}}));}
+\DoxyCodeLine{00040\ \ \ \ \ Serial.println(LED\_PIN);}
+\DoxyCodeLine{00041\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}Sampling\ interval:\ "{}}));}
+\DoxyCodeLine{00042\ \ \ \ \ Serial.print(ABTASTINTERVALL\_MS);}
+\DoxyCodeLine{00043\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ ms"{}}));}
+\DoxyCodeLine{00044\ \ \ \ \ Serial.println();}
+\DoxyCodeLine{00045\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Starting\ measurement..."{}}));}
+\DoxyCodeLine{00046\ \ \ \ \ Serial.println();}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{bool}\ lichtschrankeAusgeloest()}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (digitalRead(LICHTSCHRANKE\_PIN)\ ==\ LOW);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ setLED(\textcolor{keywordtype}{bool}\ aktiv)}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ digitalWrite(LED\_PIN,\ aktiv\ ?\ HIGH\ :\ LOW);}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ zustandAusgeben(\textcolor{keywordtype}{bool}\ ausgeloest,\ \textcolor{keywordtype}{bool}\ zustandGeaendert)}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}\ (zustandGeaendert)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ zeitstempel\ =\ millis();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}["{}}));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Serial.print(zeitstempel);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}\ ms]\ "{}}));}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ausgeloest)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}Triggered"{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}not\ triggered"{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ loop()}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ letzterZustand\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ ersterDurchlauf\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ aktuellerZustand\ =\ lichtschrankeAusgeloest();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ geaendert\ =\ (aktuellerZustand\ !=\ letzterZustand)\ ||\ ersterDurchlauf;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ setLED(aktuellerZustand);}
+\DoxyCodeLine{00112\ \ \ \ \ zustandAusgeben(aktuellerZustand,\ geaendert);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ letzterZustand\ =\ aktuellerZustand;}
+\DoxyCodeLine{00115\ \ \ \ \ ersterDurchlauf\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ delay(ABTASTINTERVALL\_MS);}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
