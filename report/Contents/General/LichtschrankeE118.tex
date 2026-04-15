@@ -142,7 +142,7 @@ Die Zuverlässigkeit der Messung hängt von verschiedenen Faktoren ab, darunter 
 
 
 
-\section{Reflex-Lichtschranke E18-D80N}
+\section{Reflex-Lichtschranke E18-D80NK}
 Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optischen Aufbau insbesondere deren korrekter elektrischer Anschluss von entscheidender Bedeutung. Die Integration in ein technisches System, beispielsweise eine speicherprogrammierbare Steuerung oder einen Mikrocontroller, erfordert die Berücksichtigung spezifischer elektrischer Kenngrößen sowie der verwendeten Ausgangsarten. Im Folgenden wird somit auf die elektrischen und technischen Eigenschaften sowie den korrekten  Anschluss der Reflex-Lichtschranke E18-D80NK eingegangen. 
 	\subsection{Technische Daten der Lichtschranke } 
 	Nachfolgende Tabelle \ref{TabelleSpezifikationLS} 
@@ -420,7 +420,7 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 %
 %\section{Example}
 
-\subsection{Handbuch und Inbetriebnahme des Sensorsl}
+\subsection{Handbuch und Inbetriebnahme des Sensors}
 Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden. 
 
 
@@ -464,8 +464,8 @@ Vor der Inbetriebnahme muss die gewünschte Abstandserkennung des Sensors einges
 	\item Gewünschten Abstand zwischen Sensor und Reflektorfläche messen und Sensor in dieser Position feststellen. 
 	\item Potentiometer (Einstellschraube am Sensor) einstellen:
 	\begin{itemize}
-		\item LED AUS (Output = 1): VR im Uhrzeigersinn drehen, bis LED EIN (Output = 0) → Schaltpunkt erreicht
-		\item LED EIN (Output = 0): VR gegen Uhrzeigersinn drehen, bis LED AUS (Output = 1) → Schaltpunkt erreicht
+		\item LED am Sensor AUS (Output = 1): VR im Uhrzeigersinn drehen, bis LED am Sensor EIN (Output = 0) → Schaltpunkt erreicht
+		\item LED am Sensor EIN (Output = 0): VR gegen Uhrzeigersinn drehen, bis LED AUS (Output = 1) → Schaltpunkt erreicht
 	\end{itemize}
 
 	\item Funktion testen:
@@ -492,8 +492,8 @@ Im Betrieb fährt das Objekt in  die Lichtschranke und unterbricht den Lichtstra
 Um sicherzustellen, dass ein System ordnungsgemäß funktionstüchtig ist, ist es sinnvoll alle Komponenten des Systemes zu testen. 
 Hierzu können einzelne Komponenten für sich oder im Verbund getestet werden. Das nachfolgende Kapitel beschreibt einen einfachen Test der Funktion der Lichtschranke.
 \subsection{Einfacher Funktionstest}
-Auf dem Arduino soll die eingebaute LED dauerhaft leuchten, hierfür wird diese ordnungsgemäß angeschlossen. Das Vorgehen zur Prüfung der ordnungsgemäßen Funktion wird nachfolgend erläutert.
-Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen, welcher bereits mit einem Pull-Up Widerstand verbunden ist. Das Anschlussschema ist identisch mit dem Anschlussschema in Abbildung \ref{AnschlussLS}.
+Auf dem Arduino soll die eingebaute LED dauerhaft leuchten, hierfür wird diese ordnungsgemäß konfiguriert. Das Vorgehen zur Prüfung der ordnungsgemäßen Funktion wird nachfolgend erläutert.
+Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen, welcher bereits mit einem Pull-Up Widerstand (10K$\Omega$) verbunden ist. Das Anschlussschema ist identisch mit dem Anschlussschema in Abbildung \ref{AnschlussLS}.
  Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der Arduino IDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss die Ausgabe ein \glqq HIGH\grqq \space sein. \cite{tinkbox:2026}
  \paragraph{Vorgehen zur Funktionsprüfung der Lichtschranke}
 \begin{center}
