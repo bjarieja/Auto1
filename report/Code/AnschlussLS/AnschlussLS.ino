@@ -3,30 +3,25 @@
  * @brief Simple example for connecting and reading a light barrier (E18-D80NK) with an Arduino Uno R4
  *
  * @details
- * This program demonstrates the basic integration of a light barrier with
- * an NPN open-collector output. The sensor is connected to a digital input pin
- * and is read cyclically.
- *
+ * NPN Light Barrier, Output and Test PRogramm 
  * The light barrier provides an inverted signal:
  * - HIGH  -> no object detected
  * - LOW   -> object detected (light beam interrupted)
- *
- * The internal pull-up resistor of the Arduino is used, so no external resistor is required.
- *
+ * External Pull Up Resistor(10K) is needed 
  * @hardware
  * - Arduino Uno R4
  * - Light barrier E18-D80NK
- *
+ * - Rsistor 10K 
  * @connection
  * - Brown (VCC)  -> 5V Arduino
  * - Blue  (GND)  -> GND Arduino
  * - Black (OUT)  -> Digital pin 2 Arduino
  *
  * @author
- * Own code
+ * Bjarne Janssen 
  *
  * @date
- * 2026
+ * 2026-13-04
  */
 
 /**
@@ -38,8 +33,8 @@ const int sensorPin = 8;
  * @brief Hardware initialization
  *
  * @details
- * The sensor pin is configured as an input with internal pull-up resistor.
- * Additionally, the serial interface is started for debug output.
+ * The sensor pin is configured as an input with extern pull-up resistor.
+ * Additionally, the serial interface is started f.
  */
 void setup() {
   // Initialize serial communication at 9600 baud
@@ -56,7 +51,7 @@ void setup() {
  * @brief Main program loop
  *
  * @details
- * The state of the light barrier is continuously read.
+ * The state of the light barrier is  read continiuosly
  * Depending on the signal state, it outputs whether an object is detected.
  */
 void loop() {
