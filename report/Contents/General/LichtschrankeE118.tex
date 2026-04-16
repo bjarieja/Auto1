@@ -136,7 +136,7 @@ Die Zuverlässigkeit der Messung hängt von verschiedenen Faktoren ab, darunter 
 		
 	\end{tikzpicture}
 
-	\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke}
+	\caption{a) Einweg-Lichtschranke, b) Reflex-Lichtschranke nach \cite{Roddeck:2023}}
 	\label{WirkprinzipLS}
 \end{figure}
 
@@ -149,7 +149,7 @@ Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optisch
 	zeigt die dem Datenblatt \cite{Roboter-Bausatz:2026} entnommenen technischen Eigenschaften der Reflex-Lichtschranke.
 	Die Grafik  \ref{TZLSEN118} zeigt die technischen Abmaße der Lichtschranke.  
 \begin{table}[h!]
-	\caption{Spezifikationen der Lichtschranke}
+	\caption{Spezifikationen der Lichtschranke \cite{Roboter-Bausatz:2026}}
 	\begin{center}
 		\begin{tabular}{|l|l|}
 			\hline
@@ -372,7 +372,7 @@ Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optisch
 			% (alle feinen Linien bewusst beibehalten – keine Kürzung mehr)
 			
 		\end{tikzpicture}
-		\caption{Technische Darstellung der Produktabmaße, Alle Maße in [mm]}
+		\caption{Technische Darstellung der Produktabmaße, Alle Maße in [mm], nach \cite{Roboter-Bausatz:2026}}
 		\label{TZLSEN118}
 	\end{figure}
 \end{center}
@@ -398,7 +398,7 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 \begin{center}
 	\begin{figure}[h!]
 		\includegraphics{../Images/General/TCRT5000IR} 
-		\caption{Beispielhafte Darstellung der Schaltung  einer  Infrarot-Lichtschranke anhand des  Moduls TCRT5000 IR \cite{Hochschule-Hamm-Lippstadt:2018}, ein Modul ähnlich dem der E18-D80NK }
+		\caption{Beispielhafte Darstellung der Schaltung  einer  Infrarot-Lichtschranke anhand des  Moduls TCRT5000 IR \cite{Hesse:2009}, ein Modul ähnlich dem der E18-D80NK }
 		\label{SchaltplanLS}
 	\end{figure}
 \end{center}
@@ -482,7 +482,7 @@ Sollte der Abstand zwischen Sensor und Reflektorfläche verändert worden sein, 
 %\section{Simple Code}
 
 
-\section{Anwendungsbeschreibung der Lichtschranke E19-D80NK}
+\section{Anwendungsbeschreibung der Lichtschranke E18-D80NK}
 
 Im Rahmen einer Anwendung wird die Lichtschranke an einem Tischförderband eingesetzt, um das Passieren eines Objektes zu erkennen und darauf basierend einen Motor zu steuern. Ziel ist es, eine zuverlässige Objekterkennung zu gewährleisten, sodass die Lichtschranke eindeutig erkennt, wenn ein Objekt den Lichtstrahl  unterbricht, ohne durch kurze Störungen oder Signalflanken mehrfach ausgelöst zu werden.
 Der Aufbau besteht aus einem Tischförderband, einer über dem Band montierten Lichtschranke sowie einem Arduino zur Signalauswertung. 
@@ -520,5 +520,12 @@ Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. D
 
 %\subsection{Test all Functions}
 %
-%\section{Further Readings}
+\section{Zusatzinformationen}
 
+Die Auswahl einer Lichtschranke ist ein kritischer Schritt, der maßgeblich von den spezifischen Anwendungsvoraussetzungen abhängt. Insbesondere in sicherheitstechnischen Anwendungen, wie beispielsweise in Rauchmeldern, spielt die Lichtschranke eine entscheidende Rolle bei der Erkennung von Veränderungen im Lichtweg. Hier wird ein Lichtstrahl innerhalb des Geräts erzeugt, dessen Unterbrechung oder Beeinflussung als Indikator für eine erhöhte Rauchkonzentration interpretiert wird \cite{Hesse:2009}. Die zugrundeliegende physikalische Wirkung beruht auf der Streuung des Lichtes an Rauchpartikeln, die den ursprünglichen Lichtstrahl beeinflusst und somit eine Detektion ermöglicht \cite{Hesse:2009}. Dieses Beispiel verdeutlicht, dass die optischen Eigenschaften der Objekte, die den Lichtstrahl passieren, einen entscheidenden Einfluss auf die Funktionalität der Lichtschranke ausüben.
+
+Insbesondere reflektierende Oberflächen können die Funktion der Lichtschranke beeinträchtigen, da sie den Lichtstrahl zurückwerfen oder umlenken können. Dies führt möglicherweise zu einer unerwünschten Signalübertragung oder einer Fehlalarmierung, da der Empfänger weiterhin Licht empfängt, obwohl der direkte Lichtweg unterbrochen ist. Solche Effekte sind besonders relevant in Umgebungen mit komplexen geometrischen Gegebenheiten oder reflektierenden Materialien, wo die Lichtausbreitung nicht mehr rein geradlinig erfolgt.
+
+Um solche systembedingten Störungen zu minimieren und die Zuverlässigkeit der Lichtschranke zu gewährleisten, ist eine sorgfältige Auswahl des Geräts erforderlich. Dabei sind mehrere Aspekte zu berücksichtigen: Der Aufbau der Lichtschranke insbesondere die Art der Lichtquelle (Laser oder LED) und die Empfängerempfindlichkeit beeinflusst die Robustheit gegenüber Umwelteinflüssen. Zudem sind die optischen Eigenschaften, wie die Wellenlänge des emittierten Lichts und die Strahlgeometrie, entscheidend für die Interaktion mit den zu detektierenden Objekten. Schließlich spielt auch die elektrische Logik der Schranke eine Rolle: Die Art der Ausgabe (logisch aktiv oder deaktiv) und die Implementierung von Filtermechanismen zur Unterdrückung von kurzzeitigen Störungen tragen zur Stabilität des Systems bei \cite{Roddeck:2023}.
+
+Zusammenfassend lässt sich festhalten, dass die Funktion einer Lichtschranke nicht allein durch ihre technische Ausführung bestimmt wird, sondern stark von der Wechselwirkung zwischen Lichtstrahl, detektierten Objekten und der Umgebung abhängt. Eine fundierte Auswahl unter Berücksichtigung der physikalischen Prinzipien, der spezifischen Anwendungssituation und der technischen Parameter ist daher unerlässlich, um eine zuverlässige und störungsfreie Funktionsweise zu gewährleisten.
