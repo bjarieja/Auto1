@@ -21,6 +21,8 @@ Technische Übersicht des Tischförderbands
 \resizebox{0.7\textwidth}{!}{%
 	\begin{tikzpicture}[line width=0.8pt]
 		
+		
+		
 		\draw (20,-15.25) -- (20,22.25);
 		\draw (25,22.25) -- (25,19.75);
 		\draw (20,22.25) arc[start angle=-179.61, end angle=-360.39, radius=2.5001];
@@ -101,8 +103,10 @@ Technische Übersicht des Tischförderbands
 	% Beschriftungen (ohne lokale Fontdefinition)
 		\node[rotate=90, fill=white] at (22,5.5) {L | A | R};
 	
+
+	
 	% Reset-Taster	
-		\draw[dashed] (25,-3.475) -- (30.5,-7);
+		\draw[line width=1.6pt, ->] (30.5,-7) -- (25,-3.475);
 		
 		\node[
 		rotate=90,
@@ -125,14 +129,14 @@ Technische Übersicht des Tischförderbands
 	% Quittierungstaster
 		\draw[line width=1.3pt] (24.375,-1.375) circle (0.375cm);
 		\draw (24.375,-1.375) circle (0.5cm);
-		\draw[dashed] (24.975,-1.375) -- (30.7,0.5);
+		\draw[line width=1.6pt, ->] (32.7,0.5) -- (24.975,-1.375);
 		
 		\node[
 		rotate=90,
 		anchor=west,
 		fill=white,
 		font=\fontsize{16pt}{18pt}\selectfont
-		] (quittierung) at (31,0)
+		] (quittierung) at (33,0)
 		{\textbf{Quittierungstaster}};
 		
 		\node[
@@ -146,14 +150,14 @@ Technische Übersicht des Tischförderbands
 		{Bestätigen von Anweisungen \\ auf der Anzeige};
 	
 	% Hauptschalter / Not-Aus
-		\draw[dashed] (24.875,5.4) -- (27.3,5.4);
+		\draw[line width=1.6pt, ->] (27.3,5.4) -- (24.875,5.4);
 		
 		\node[
 		rotate=90,
 		anchor=west,
 		fill=white,
 		font=\fontsize{16pt}{18pt}\selectfont
-		] (hauptschalter) at (28,5)
+		] (hauptschalter) at (28,3)
 		{\textbf{Hauptschalter / Not-Aus}};
 		
 		\node[
@@ -167,17 +171,17 @@ Technische Übersicht des Tischförderbands
 		{Einschalten und Ausschalten des Tischförderbands};
 		
 	% Stützbeine
-		\draw[dashed] (28.75,18.5) -- (35,18.5);
-		\draw[dashed] (35,18.5) -- (35,-11.5);
-		\draw[dashed] (35,-11.5) -- (28.75,-11.5);
-		\draw[dashed] (35,-7.75) -- (36.25,-7.75);
+		\draw[line width=1.6pt](28.75,18.5) -- (37,18.5);
+		\draw[line width=1.6pt](37,18.5) -- (37,-11.5);
+		\draw[line width=1.6pt] (37,-11.5) -- (28.75,-11.5);
+		\draw[line width=1.6pt, ->] (37,-7.75) -- (38,-7.75);
 		
 		\node[
 		rotate=90,
 		anchor=west,
 		fill=white,
 		font=\fontsize{16pt}{18pt}\selectfont
-		] (stuetzbeine) at (36.5,-8)
+		] (stuetzbeine) at (38.5,-8)
 		{\textbf{Stützbeine}};
 		
 		\node[
@@ -191,7 +195,7 @@ Technische Übersicht des Tischförderbands
 		{Für Transport einklappen, bei \\ Benutzung ausklappen und \\  arretieren.};
 	
 	% Lichtschranke 1
-		\draw[dashed] (17.5,-14.75) -- (13.25,-14.75);
+		\draw[line width=1.6pt, ->] (13.25,-14.75) -- (17.5,-14.75);
 		
 		\node[
 		rotate=90,
@@ -212,7 +216,7 @@ Technische Übersicht des Tischförderbands
 		{Transportboxen vor der \\ Lichtschranke platzieren.};
 	
 	% Lichtschranke 2
-		\draw[dashed] (14.25,21.75) -- (17.5,21.75);
+		\draw[line width=1.6pt, ->] (14.25,21.75) -- (17.5,21.75);
 		
 		\node[
 		rotate=90,
@@ -233,7 +237,7 @@ Technische Übersicht des Tischförderbands
 		{Transportboxen vor der \\ Lichtschranke platzieren.};
 	
 	% Anzeige 
-		\draw[dashed] (20.75,-1.5) -- (17.35,-8.5);
+		\draw[line width=1.6pt, ->] (17.35,-8.5) -- (20.9,-4.1);
 		
 		\node[
 		rotate=90,
@@ -254,20 +258,20 @@ Technische Übersicht des Tischförderbands
 		{Informationen zum Betriebsmodus, Förderrichtung, Bandgeschwindigkeit, Hinweise und Fehlermeldungen.};
 			
 	% Drehregler
-		\draw[dashed] (21.125,10.875) -- (17.25,12.75);
+		\draw[line width=1.6pt, ->] (17.25,14.75) -- (21.125,10.675);
 		
 		\node[
 		rotate=90,
 		anchor=west,
 		fill=white,
 		font=\fontsize{16pt}{18pt}\selectfont
-		] (drehregler) at (16,11.5)
+		] (drehregler) at (16,14.5)
 		{\textbf{Drehregler}};
 		
 		\node[
 		rotate=90,
 		anchor=north west,
-		text width=7cm,
+		text width=6cm,
 		align=left,
 		fill=white,
 		font=\fontsize{14pt}{16pt}\selectfont
@@ -275,7 +279,7 @@ Technische Übersicht des Tischförderbands
 		{Stufenlose Einstellung der \\ Bandgeschwindigkeit.};
 
 	% Modusschalter	
-		\draw[dashed] (20.875,5.5) -- (17.7,2);
+		\draw[line width=1.6pt, ->] (17.7,2) -- (20.875,5.5);
 		
 		\node[
 		rotate=90,
@@ -295,6 +299,28 @@ Technische Übersicht des Tischförderbands
 		] at (modusschalter.south west)
 		{Förderrichtung des Transportbandes, \\ Modus wählen\\
 			(Linkslauf / Automatiklauf / Rechtslauf)};
+			
+	% Bedienerpult 
+		\draw[dashed, line width=1.8pt](26,-5.2) rectangle (20.2,12.2);
+		\draw [dashed, line width=1.8pt] (26,12) -- (31,13);
+		
+		\node[
+		rotate=90,
+		anchor=west,
+		fill=white,
+		font=\fontsize{16pt}{18pt}\selectfont
+		] (bedienelement) at (31.5,10)
+		{\textbf{Bedienelement}};
+		
+		\node[
+		rotate=90,
+		anchor=north west,
+		text width=7cm,
+		align=left,
+		fill=white,
+		font=\fontsize{14pt}{16pt}\selectfont
+		] at (bedienelement.south west)
+		{Bedienung des Tischförderbands, alle Funktionen im laufenden Betrieb werden hier gesteuert};
 			
 	\end{tikzpicture}
 }
@@ -378,34 +404,34 @@ Technische Übersicht des Tischförderbands
 	% ---------------- gestrichelte Linien ------------	
 		
 		% Transportband
-			\draw[dashed] (8,7.5) -- (8,10);
+			\draw[line width=1.6pt, <-] (8,7.5) -- (8,10);
 			
 		% Laufrolle	
-			\draw[dashed] (4.75,1.375) -- (5.875,-2.75);                 
-			\draw[dashed] (20.125,1.375) -- (20.125,-1.5);               
-			\draw[dashed] (20.125,-1.5) -- (5.5,-1.5);                  
+			\draw[line width=1.6pt, <-] (4.75,1.275) -- (5.875,-2.75);                 
+			\draw[line width=1.6pt, <-] (20.225,1.275) -- (20.225,-1.5);               
+			\draw[line width=1.6pt] (20.225,-1.5) -- (5.5,-1.5);                  
 		
 		% USB-C - Anschluss
-			\draw[dashed] (1,2.125) -- (-5.25,-2);                    
+			\draw[line width=1.6pt, <-] (1,2.125) -- (-5.25,-2);                    
 		
 		% Netzkabel-Anschluss
-			\draw[dashed] (1.125,4.75) -- (-2.375,13);                
+			\draw[line width=1.6pt, <-] (1.4,5.1) -- (-2.375,13);                
 		
 		% Drehregler
-			\draw[dashed] (-0.625,5.125) -- (-4.875,8.625);              
+			\draw[line width=1.6pt, <-] (-0.625,5.125) -- (-4.875,8.625);              
 		
 		% Stützbeine
-			\draw[dashed] (3,-5.125) -- (3,-6.375);                      
-			\draw[dashed] (3,-6.375) -- (21.875,-6.375);                 
-			\draw[dashed] (21.875,-6.375) -- (21.875,-5.125);            
-			\draw[dashed] (3.75,-6.5) -- (3.75,-8.5);                    
+			\draw[line width=1.6pt, <-] (3,-5.2) -- (3,-6.375);                      
+			\draw[line width=1.6pt] (3,-6.375) -- (21.875,-6.375);                 
+			\draw[line width=1.6pt, ->] (21.875,-6.375) -- (21.875,-5.2);            
+			\draw[line width=1.6pt] (3.75,-6.375) -- (3.75,-8.5);                    
 		 % Lichtschranke 2
-			\draw[dashed] (21.625,11.125) -- (22.75,15.625);            
-			\draw[dashed] (3.75,14.375) -- (22.125,14.375);  
-			\draw[dashed] (3.75,11.125) -- (3.75,14.375);
+			\draw[line width=1.6pt, <-] (21.625,11.2) -- (22.75,15.625);            
+			\draw[line width=1.6pt] (3.75,14.375) -- (22.125,14.375);  
+			\draw[line width=1.6pt, <-] (3.75,11.2) -- (3.75,14.375);
 			
 		 % Transportgriff
-			\draw[dashed] (26,4.75) -- (28,7.375);                   
+			\draw[line width=1.6pt, <-] (26,5) -- (28,7.375);                   
 					
 	% ------------------ TEXTFELDER ------------------
 		
@@ -453,6 +479,14 @@ Technische Übersicht des Tischförderbands
 			] (usbc) at (-7.625,-3)
 			{\textbf{USB-C - Anschluss}};
 			
+			\node[
+			anchor=north west,
+			text width=7cm,
+			align=left,
+			fill=white,
+			font=\fontsize{14pt}{16pt}\selectfont
+			] at (usbc.south west)
+			{Programm zur Steuerung des Tischförderbands hier laden};
 			
 			
 		% Netzkabel Anschluss
