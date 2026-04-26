@@ -13,27 +13,23 @@
 
 \chapter{Troubleshooting}
 \section{Mechanische Fehler} 
-Dieses Kapitel dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems effizient wiederherzustellen.
+Dieses Kapitel dient dazu, Anwendern bei der schnellen Identifikation und Behebung von Problemen zu helfen. Es bietet eine strukturierte Übersicht über mögliche Fehlerursachen sowie konkrete Lösungsschritte, die leicht nachvollzogen werden können. Ziel ist es, Störungen im Betrieb zu minimieren und eine eigenständige Problemlösung zu ermöglichen. Die beschriebenen Hinweise und Maßnahmen basieren auf typischen Anwendungsszenarien und unterstützen dabei, die Funktionsfähigkeit des Systems wiederherzustellen.
 \begin{itemize}
 	\item \textbf{Das Tischförderband lässt sich nicht aufstellen} \\
-	\textbf{Mögliche Ursachen:} Die Stützbeine sind blockiert oder fehlen. \\
-	\textbf{Behebung:} Stützbeine auf Fremdkörper prüfen und diese entfernen. Die Vorspannung der Stützbeine durch leichtes Lösen der Schraube verringern.
+	\textbf{Mögliche Ursachen:} Die Stützbeine sind blockiert. \\
+	\textbf{Behebung:} Stützbeine auf Fremdkörper prüfen und diese entfernen. Die Vorspannung der Stützbeine durch leichtes Drehen der Schrauben am Drehpunkt verringern.
 	
 	\item \textbf{Das Transportband lässt sich nicht bewegen} \\
 	\textbf{Mögliche Ursachen:} Fremdkörper blockieren das Transportband. \\
-	\textbf{Behebung:} Das Tischförderband auf eingeklemmte Fremdkörper überprüfen und diese entfernen. 
-	
-	\item \textbf{Das Tischförderband steht schief} \\ 
-	\textbf{Mögliche Ursache:} Die Stützbeine des Tischförderbands sind nicht vollständig ausgeklappt und arretiert. \\
-	\textbf{Behebung:} Die Stützbeine erneut ein- und ausklappen und die Arretierung überprüfen.  
+	\textbf{Behebung:} Tischförderband vom Strom trennen. Das Transportband auf eingeklemmte Fremdkörper überprüfen und diese entfernen. 
 	
 	\item \textbf{Das Tischförderband wackelt} \\ 
-	\textbf{Mögliche Ursachen:} Das Tischförderband steht auf einem unebenen Untergrund oder ein Stützbein ist beschädigt. \\ 
-	\textbf{Behebung:} Die Stützbeine auf Beschädigungen überprüfen und ggf. austauschen. Bei keiner Beschädigung das Tischförderband an einem anderen Ort positionieren. 
+	\textbf{Mögliche Ursachen:} Das Tischförderband steht auf einem unebenen Untergrund, ein Stützbein ist beschädigt oder nicht vollständig ausgeklappt. \\ 
+	\textbf{Behebung:} Die Stützbeine auf Beschädigungen überprüfen und erneut ein- und ausklappen. Bei keiner Beschädigung das Tischförderband an einem anderen Ort positionieren. Wenn der Fehler weiterhin besteht, Stützbeine austauschen lassen.
 	
-	\item \textbf{Der Transportband des Tischförderbands bewegt sich nicht} \\ 
+	\item \textbf{Das Transportband des Tischförderbands bewegt sich nicht} \\ 
 	\textbf{Mögliche Ursachen:} Das Transportband ist nicht gespannt. \\ 
-	\textbf{Behebung:} Das Transportband mittels Einstellschrauben spannen. 
+	\textbf{Behebung:} Das Transportband mittels Einstellschrauben spannen (siehe.~\ref{sec:einstellen}). 
 	
 \end{itemize}
 
@@ -41,17 +37,17 @@ Dieses Kapitel dient dazu, Anwendern bei der schnellen Identifikation und Behebu
 Hier werden alle Fehler behandelt, die in direktem Zusammenhang mit der Strom- und Spannungsversorgung stehen. Zusätzlich wird Hilfestellung zu Fehlermeldungen auf der Anzeige gegeben.
 
 \begin{itemize}
-	\item \textbf{Das Tischförderband startet nicht} \
-	\textbf{Mögliche Ursachen:} Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor, falsche Pin-Konfiguration. \
-	\textbf{Behebung:} Spannungsversorgung prüfen und die korrekte Schaltposition des Hauptschalters kontrollieren.
+	\item \textbf{Das Tischförderband startet nicht} \\
+	\textbf{Mögliche Ursachen:} Keine Spannungsversorgung, fehlerhafte Verkabelung, defekter Motor. \\
+	\textbf{Behebung:} Spannungsversorgung prüfen und die korrekte Position des Hauptschalters kontrollieren.
 	
-	\item \textbf{Das Transportband läuft unregelmäßig schnell} \\
+	\item \textbf{Das Transportband läuft unregelmäßig} \\
 	\textbf{Mögliche Ursachen:} Instabile Spannungsversorgung, fehlerhaftes PWM-Signal, mechanische Blockade. \\
-	\textbf{Behebung:} Spannungsstabilität sicherstellen, ggf. den Hersteller kontaktieren. 
+	\textbf{Behebung:} Auf Verunreinigungen prüfen, Hersteller kontaktieren. 
 	
 	\item \textbf{Fehler: \glqq Sensor liefert keine Daten\grqq} \\
 	\textbf{Mögliche Ursachen:} Falsche Initialisierung, defekter Sensor, Kommunikationsfehler (I2C/SPI). \\
-	\textbf{Behebung:} Das Tischförderband aus- und wieder einschalten. Das System mittels Tastenkombination zurücksetzen. Gegebenenfalls den Sensor austauschen lassen. 
+	\textbf{Behebung:} Das Tischförderband aus- und wieder einschalten. Das System mittels Reset-Taster zurücksetzen. Gegebenenfalls den Sensor austauschen lassen. 
 	
 	\item \textbf{Anzeige reagiert nicht} \\
 	\textbf{Mögliche Ursachen:} Softwareabsturz, fehlerhafte Stromversorgung. \\
