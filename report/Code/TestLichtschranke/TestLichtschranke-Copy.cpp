@@ -11,7 +11,7 @@
 /**
  * @brief Baud rate for serial communication.
  */
-#define SERIELLE_BAUDRATE 115200
+#define SERIELLE_BAUDRATE 115200 // Only needed for initial upload to the microcontroller
 
 /**
  * @brief Sampling interval in milliseconds.
