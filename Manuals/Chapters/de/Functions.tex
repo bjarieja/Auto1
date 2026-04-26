@@ -27,7 +27,7 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	
 	\item \textbf{Anzeige} \\
 	Auf der integrierten Anzeige werden dem Benutzer wichtige Meldungen und Betriebsinformationen angezeigt. 
-	Bei jedem Einschaltvorgang zeigt die Anzeige kurz den Startbildschirm mit der Firmware-Version und wechselt nach der Freigabe der Lichtschranken in das Hauptmenü (siehe Kapitel \ref{sec:Inbetriebnahme}). 
+	Bei jedem Einschaltvorgang zeigt die Anzeige kurz die Firmware-Version und wechselt nach der Freigabe der Lichtschranken in das Hauptmenü (siehe Kapitel \ref{sec:Inbetriebnahme}). 
 	
 	%Startbildschirm
 	
@@ -233,7 +233,7 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		Wird eine Transportbox erkannt, wartet das System 2 Sekunden und beschleunigt dann auf die eingestellte Bandgeschwindigkeit.
 		Das Transportband fährt solange, bis die Transportbox die Lichtschranke 1 passiert hat und dadurch erkennt, dass Sie das Transportband verlassen hat.
 		
-		Sollte das Objekt die  Lichtschranke 1 innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{Fehler XXX}.
+		Sollte das Objekt die  Lichtschranke 1 innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{Fehler: XXX}.
 		
 		\item \textbf{Rechtslauf:}
 		Im Modus Rechtslauf verhält sich das Tischförderband umgekehrt zum Modus Linkslauf, die Transportbox beginnt bei Lichtschranke 1 und verlässt bei Lichtschranke 2 das Transportband. 
@@ -250,10 +250,10 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 		Wählen Sie mithilfe des Drehreglers auf der Anzeige die gewünschte Bandgeschwindigkeit.
 		Das System wartet nun darauf, dass eine Transportbox in eine der Lichtschranken gestellt wird, auf der Anzeige erscheint die Meldung \fbox{Warten auf T-Box}.
 		Wird die eine Lichtschranke durch ein Objekt unterbrochen, fährt das Transportband mit der voreingestellten Bandgeschwindigkeit in Richtung des anderen Transportbandendes. 
-		Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbochen wird und kommt zum Stehen. Auf der Anzeige erscheint die Meldung \fbox{T-Box entfernen}.\\
+		Das Transportband bewegt sich so lange bis die zweite Lichtschranke unterbrochen wird und kommt zum Stehen. Auf der Anzeige erscheint die Meldung \fbox{T-Box entfernen}.\\
 		
 		Das System setzt sich nach 5 Sekunden Ruhezeit automatisch zurück. Nach Ablauf dieser Ruhezeit kann erneut eine Transportbox zwischen eine der beiden Lichtschranken gelegt werden.
-		Wird die Transportbox in dieser Zeit nicht entfernt, so fährt das Transportband diese wieder zurück zur anderen Seite des Tischförderbands.\\
+		Wird die Transportbox in dieser Zeit nicht entfernt, so fährt das Transportband diese wieder zurück zum anderen Transportbandendes.\\
 		
 		Sollte das Objekt die zweite Lichtschranke innerhalb eines festgesetzten Zeitraumes von maximal 30 Sekunden nicht erreichen, hält das Transportband selbstständig an. Auf der Anzeige erscheint der Fehlercode \fbox{Fehler: XXX}.
 		\end{itemize}
@@ -263,7 +263,7 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	Im Hauptmenü wird auf der Anzeige die eingestellte Bandgeschwindigkeit \fbox{vBand} angezeigt.
 	Die Bandgeschwindigeit kann jederzeit geändert werden und beschreibt die maximale Geschwindigkeit, die das Transportband im Betrieb erreichen kann.
 	Einstellbare Bandgeschwindigkeiten finden Sie im Kapitel \ref{sec:Spezifikationen} \textbf{Spezifikationen}.\\
-	Sollte das Transportband die eingestellte Bandgeschwindigkeit nicht erreichen, kommt es zum Stehen und zeigt auf der Anzeige der Fehlercode \fbox{Fehler YYY}.
+	Sollte das Transportband die eingestellte Bandgeschwindigkeit nicht erreichen, kommt es zum Stehen und zeigt auf der Anzeige der Fehlercode \fbox{Fehler: YYY}.
 
 	\item \textbf{Moduswechsel}\\
 	Um den Modus zu wechseln, stellen Sie  den Modusschalter auf eine der drei Positionen \fbox{L}, \fbox{A} oder \fbox{R}.
@@ -273,7 +273,7 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 	Abhängig vom gewählten Modus, kann erneut eine Transportbox in eine der Lichtschranken gestellt werden. Der Betrieb des Tischförderbands wird mit dem gewählten Modus fortgesetzt.
 	
 	\item \textbf{Reset}\\
-	Wird der Reset-Taster für mehr als 5 Sekunden betätigt, so wird das Transportband umgehend zum Stehen gebracht. Die Steuerung des Systems wird neu gestartet und kehrt zurück in das Startmenü.\\
+	Wird der Reset-Taster für mehr als 5 Sekunden betätigt, so wird das Transportband umgehend zum Stehen gebracht. Die Steuerung des Systems wird neu gestartet und kehrt zurück in den Anfangszustand.\\
 	Um das Tischförderband wieder in Betrieb zu nehmen, konfigurieren Sie das System erneut wie im Abschnitt \ref{sec:Inbetriebnahme} \textbf{Inbetriebnahme}.
 	
 \end{itemize}
@@ -281,6 +281,4 @@ Weiterhin werden noch erweiterte Funktionen des Systems und ihre Verwendung darg
 \section{Erweiterte Funktionen}	
 \textbf{Betrieb mit programmiertem Bewegungsablauf:} \\ 
 Sollte für eine Anwendung ein gesonderter Bewegungsablauf gewünscht sein, so kann dieser über die Programmierung angepasst werden. 
-Weitere Informationen dazu finden Sie in der Entwickler-Dokumentation.
-
 
