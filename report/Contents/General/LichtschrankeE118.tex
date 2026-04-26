@@ -33,10 +33,10 @@
 \section{General}
 
 Der Begriff Sensor stammt aus dem Lateinischen und bedeutet sinngemäß \glqq Fühler \grqq. 
-Sensoren dienen zur qualitativen und quantitativen Auffassung von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen. \cite{Hering:2023}
+Sensoren dienen zur qualitativen und quantitativen Auffassung von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen. \cite{Hering:2023a}
 Hierbei bestehen Sensoren immer aus einem Sensorelement, welches sich mit Veränderung der physikalischen Gegebenheiten ebenfalls in seinen Eigenschaften verändert. 
 Besonders die Veränderung der elektrischen Eigenschaften des Sensorelementes ist hierbei von Interesse. Ein Beispiel sind Materialien, welche ihren Widerstand bei Erwärmung verändern \cite{Roddeck:2023}. 
-Zu jedem Sensorelement wird zudem eine Auswerteelektronik benötigt. Die Auswerteelektronik wandelt dann die beispielhafte Veränderung der elektrischen Eigenschaften in ein eindeutiges analoges oder digitales Signal. Dieses Signal kann dann an ein verarbeitendes System, beispielsweise einen Mikrocontroller, übergeben werden \cite{Hering:2023}. 
+Zu jedem Sensorelement wird zudem eine Auswerteelektronik benötigt. Die Auswerteelektronik wandelt dann die beispielhafte Veränderung der elektrischen Eigenschaften in ein eindeutiges analoges oder digitales Signal. Dieses Signal kann dann an ein verarbeitendes System, beispielsweise einen Mikrocontroller, übergeben werden \cite{Hering:2023a}. 
 
 
 \section{Optische Näherungssensoren}
@@ -377,7 +377,7 @@ Für den zuverlässigen Betrieb einer Reflex-Lichtschranke ist neben dem optisch
 	\end{figure}
 \end{center}
  Nachfolgend wird der Aufbau und die Schaltlogik der Reflex-Lichtschranke E18-D80NK erläutert.
- Die Lichtschranke selbst besteht zwangsläufig aus folgenden elektrischen  Komponenten \cite{Hochschule-Hamm-Lippstadt:2018}, \cite{Loeffler-Mang:2012}: 
+ Die Lichtschranke selbst besteht zwangsläufig aus folgenden elektrischen  Komponenten \cite{Loeffler-Mang:2012}: 
  \begin{enumerate}
  	\item Anschlussleitungen für die Spannungversorgung 
  	\item Infrarot-Leuchtdiode 
@@ -393,7 +393,7 @@ Als Sender dient eine Infrarot-LED, die elektromagnetische Strahlung im nicht si
 Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist zwangsläufig ein Modul \textit{ähnlich} dem Modul vom Typ TCRT5000 IR \cite{Roboter-Bausatz:2026}. Jedoch gibt es keinen analogen Ausgang und die Signalverstärkung ist deutlich erhöht. Der Grundsätzliche, elektrische Aufbau einer Infrarot Lichtschranke ist jedoch immer sehr ähnlich \cite{Loeffler-Mang:2012} 
 Ein Filter reduziert Störungen durch Fremdlicht. Ein Komparator vergleicht das Signal mit einem eingestellten Schwellwert. Dieser wird über ein Potentiometer eingestellt und bestimmt die Schaltschwelle.
 Der Ausgang ist als NPN-Open-Collector-Schaltung ausgeführt und liefert ein digitales Schaltsignal gegen Masse. So wird dauerhaft ein \glqq HIGH \grqq \space  auf der Signalleitung ausgegeben, solange der Sensor nicht auslöst und auf die Photodiote ein Lichtstrahl trifft. 
-Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR \cite{Hochschule-Hamm-Lippstadt:2018}.  
+Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR .  
 
 \begin{center}
 	\begin{figure}[h!]
@@ -426,7 +426,7 @@ Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke 
 
 \subsection{Anschlussbeispiel}
 Um die Lichtschranke ordnungsgemäß an einen Mikrokontroller anzuschließen kann folgende Grafik \ref{AnschlussLS} als Referenz verwendet werden. Grundsätzlich kann die benötigte Versorgungsspannung von 5V DC von einem Mikrocontoller wie beispielsweise dem Arduino UNO R4 geliefert werden. Der Ausgangspegel der Lichtschranke wird zudem die 5V ebenfalls nicht überschreiten, weshalb die Signalleitung der Lichtschranke direkt an die GPIO Pins des Arduinos geschaltet werden kann.  
-Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023}. Die Lichtschranke verwendet eine Dupont-Buchse und kann so direkt mittels \grqq Jumper-Wires\glqq \space mit dem Arduino verbunden werden \cite{Roboter-Bausatz:2026}.
+Zudem sollten sowohl der Mikrokontroller als auch die Lichtschranke dasselbe Referenzpotenzial nutzen, um eine eindeutige Interpretation des Signals zu ermöglichen. Besonders aufgrund der Tatsache, dass die Lichtschranke gegen Masse schaltet, ist eine Verwendung eines Pull-up-Widerstands sinnvoll \cite{Bartlett:2023a}. Die Lichtschranke verwendet eine Dupont-Buchse und kann so direkt mittels \grqq Jumper-Wires\glqq \space mit dem Arduino verbunden werden \cite{Roboter-Bausatz:2026}.
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.8]{../Images/General/LSSimple260414.png}
@@ -494,7 +494,7 @@ Hierzu können einzelne Komponenten für sich oder im Verbund getestet werden. D
 \subsection{Einfacher Funktionstest}
 Auf dem Arduino soll die eingebaute LED dauerhaft leuchten, hierfür wird diese ordnungsgemäß konfiguriert. Das Vorgehen zur Prüfung der ordnungsgemäßen Funktion wird nachfolgend erläutert.
 Zunächst wird die ArduinoIDE gestartet. Anschließend wird die Lichtschranke an die Versorgungspins (5V, GND) des Mikrocontrollers verbunden. Die Signalleitung der Lichtschranke wird daraufhin an einen GPIO-Pin des Mikrocontrollers angeschlossen, welcher bereits mit einem Pull-Up Widerstand (10K$\Omega$) verbunden ist. Das Anschlussschema ist identisch mit dem Anschlussschema in Abbildung \ref{AnschlussLS}.
- Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der Arduino IDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss die Ausgabe ein \glqq HIGH\grqq \space sein. \cite{tinkbox:2026}
+ Danach wird der Mikrocontroller per USB mit dem Rechner verbunden. In der Arduino IDE wird nun der Sketch zur Erprobung geöffnet. Der mit der Signalleitung verbundene GPIO-Pin wird an der vorgesehenen Stelle im Sketch eingetragen. Abschließend wird der Sketch auf den Mikrocontroller gespielt, um die Funktion der Lichtschranke zu überprüfen. Sollte sich kein Objekt vor der Lichtschranke befinden muss die Ausgabe ein \glqq HIGH\grqq \space sein. 
  \paragraph{Vorgehen zur Funktionsprüfung der Lichtschranke}
 \begin{center}
 \begin{enumerate}
