@@ -12,7 +12,7 @@
 %%%%%%%%%%%%
 
 % Structure
-\chapter{\textcolor{red}{Lichtschranke}}
+\chapter{Lichtschranke}
  
 %\section{General}
 %
@@ -30,7 +30,7 @@
 %Optische Näherungssensoren gehören zu den berührungslos arbeitenden Sensoren und werden zur Erfassung von Objekten oder Abständen eingesetzt, ohne dass ein mechanischer Kontakt erforderlich ist. Um diese Eigenschaft zu ernöglichen,  bestehen Optische Näherungssensoren zwangsläufig aus einem Sender und einem Empfänger.
 %Der Sender dienst als Strahlenquelle der Elektromagnetischen Strahlung und emmitiert diese, wohinggegen der Empfänger die Strahlung empfängt und auswertet. Charakteristisch ist hierbei, dass Sender und Empfänger nicht zwangsläufig Koaxial gegenüberliegend sondern ebenfalls nebeneinanderliegend aufzufinden sind. Der erste Fall ist charakteristisch für die Bauweise der \glqq Einweg-Lichtschranke\grqq, welche in Industrie häufig bei hochpräzisen Anwendungen aufzufinden ist. 
 %In letzterem Fall wird ein Reflektor für das herstellen eines Lichtstrahls zwischen Sender und Empfänger genutzt.  Um dies zu ermöglichen muss somit ein kleiner Winkel zwischen den optischen Achsen beider Komponenten vorhanden sein. Diese Bauart wird gängig als \glqq Reflex-Lichtschranke\grqq \space bezeichnet \cite{Loeffler-Mang:2012}. Nachfolgende Grafik zeigt die Wirkprinzipien beider Bauarten auf \ref{WirkprinzipLS}.  
-\section{General}
+\section{Allgemein}
 
 Der Begriff Sensor stammt aus dem Lateinischen und bedeutet sinngemäß \glqq Fühler \grqq. 
 Sensoren dienen zur qualitativen und quantitativen Auffassung von physikalischen, chemischen, biologischen, klimatischen und medizinischen Größen. \cite{Hering:2023a}
@@ -393,7 +393,7 @@ Als Sender dient eine Infrarot-LED, die elektromagnetische Strahlung im nicht si
 Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist zwangsläufig ein Modul \textit{ähnlich} dem Modul vom Typ TCRT5000 IR \cite{Roboter-Bausatz:2026}. Jedoch gibt es keinen analogen Ausgang und die Signalverstärkung ist deutlich erhöht. Der Grundsätzliche, elektrische Aufbau einer Infrarot Lichtschranke ist jedoch immer sehr ähnlich \cite{Loeffler-Mang:2012} 
 Ein Filter reduziert Störungen durch Fremdlicht. Ein Komparator vergleicht das Signal mit einem eingestellten Schwellwert. Dieser wird über ein Potentiometer eingestellt und bestimmt die Schaltschwelle.
 Der Ausgang ist als NPN-Open-Collector-Schaltung ausgeführt und liefert ein digitales Schaltsignal gegen Masse. So wird dauerhaft ein \glqq HIGH \grqq \space  auf der Signalleitung ausgegeben, solange der Sensor nicht auslöst und auf die Photodiote ein Lichtstrahl trifft. 
-Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR .  
+Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR\cite{AZ:2026}.  
 
 \begin{center}
 	\begin{figure}[h!]
@@ -520,12 +520,19 @@ Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. D
 
 %\subsection{Test all Functions}
 %
-\section{Zusatzinformationen}
+\section{Zusatzinformationen und weiterführende Literatur }
 
 Die Auswahl einer Lichtschranke ist ein kritischer Schritt, der maßgeblich von den spezifischen Anwendungsvoraussetzungen abhängt. Insbesondere in sicherheitstechnischen Anwendungen, wie beispielsweise in Rauchmeldern, spielt die Lichtschranke eine entscheidende Rolle bei der Erkennung von Veränderungen im Lichtweg. Hier wird ein Lichtstrahl innerhalb des Geräts erzeugt, dessen Unterbrechung oder Beeinflussung als Indikator für eine erhöhte Rauchkonzentration interpretiert wird \cite{Hesse:2009}. Die zugrundeliegende physikalische Wirkung beruht auf der Streuung des Lichtes an Rauchpartikeln, die den ursprünglichen Lichtstrahl beeinflusst und somit eine Detektion ermöglicht \cite{Hesse:2009}. Dieses Beispiel verdeutlicht, dass die optischen Eigenschaften der Objekte, die den Lichtstrahl passieren, einen entscheidenden Einfluss auf die Funktionalität der Lichtschranke ausüben.
-
-Insbesondere reflektierende Oberflächen können die Funktion der Lichtschranke beeinträchtigen, da sie den Lichtstrahl zurückwerfen oder umlenken können. Dies führt möglicherweise zu einer unerwünschten Signalübertragung oder einer Fehlalarmierung, da der Empfänger weiterhin Licht empfängt, obwohl der direkte Lichtweg unterbrochen ist. Solche Effekte sind besonders relevant in Umgebungen mit komplexen geometrischen Gegebenheiten oder reflektierenden Materialien, wo die Lichtausbreitung nicht mehr rein geradlinig erfolgt .
-
-Um solche systembedingten Störungen zu minimieren und die Zuverlässigkeit der Lichtschranke zu gewährleisten, ist eine sorgfältige Auswahl des Geräts erforderlich. Dabei sind mehrere Aspekte zu berücksichtigen: Der Aufbau der Lichtschranke insbesondere die Art der Lichtquelle (Laser oder LED) und die Empfängerempfindlichkeit beeinflusst die Robustheit gegenüber Umwelteinflüssen. Zudem sind die optischen Eigenschaften, wie die Wellenlänge des emittierten Lichts und die Strahlgeometrie, entscheidend für die Interaktion mit den zu detektierenden Objekten. Schließlich spielt auch die elektrische Logik der Schranke eine Rolle: Die Art der Ausgabe (logisch aktiv oder deaktiv) und die Implementierung von Filtermechanismen zur Unterdrückung von kurzzeitigen Störungen tragen zur Stabilität des Systems bei \cite{Roddeck:2023}.
-
+Insbesondere reflektierende Oberflächen können die Funktion der Lichtschranke beeinträchtigen, da sie den Lichtstrahl zurückwerfen oder umlenken können. Dies führt möglicherweise zu einem unerwünschten Signal, da der Empfänger weiterhin Licht empfängt, obwohl der direkte Lichtweg unterbrochen ist. Solche Effekte sind besonders relevant in Umgebungen mit komplexen geometrischen Gegebenheiten oder reflektierenden Materialien, wo die Lichtausbreitung nicht mehr rein geradlinig erfolgt .
+Um solche systembedingten Störungen zu minimieren und die Zuverlässigkeit der Lichtschranke zu gewährleisten, ist eine sorgfältige Auswahl des Gerätes erforderlich. Dabei sind mehrere Aspekte zu berücksichtigen: Der Aufbau der Lichtschranke insbesondere die Art der Lichtquelle (Laser oder LED) und die Empfängerempfindlichkeit beeinflusst die Robustheit gegenüber Umwelteinflüssen. Zudem sind die optischen Eigenschaften, wie die Wellenlänge des emittierten Lichts und die Strahlgeometrie, entscheidend für die Interaktion mit den zu detektierenden Objekten. Die Wellenlänge des emittierten Lichtes ist zudem entscheidend für die benötigten Sicherheitsvorkehrungen. So kann eine Laserlichtschranke eine Schutzvorrichtung zum Verhindern von einer direkten Sichtlinie in die Strahlachse benötigen. Wohingegen die Ausrichtung der Lichtschranke aufgrund der Sichtbarkeit des Fokuspunktes hier erleichtert werden kann. Bei einer Infrarotlichtschranke ist die Ausrichtung der Lichtschrnake erschwert, da es keinen sichtbaren Fokuspunkt gibt. Jedoch wird keine Schutzeinrichtung zum Schutz des Benutzers benötigt. 
+Schließlich spielt auch die elektrische Logik der Schranke eine Rolle: Die Art der Ausgabe (logisch aktiv oder deaktiv) und die Implementierung von Filtermechanismen zur Unterdrückung von kurzzeitigen Störungen tragen zur Stabilität des Systems bei \cite{Roddeck:2023}. 
+%Auch ist es notwendig, das Lichtschranken bei Ihrer Auswahl auf art und weise des emittierten Lichtes unterschieden werden. Lichtschranken mit Laserlicht können die Augen von Benutzenden schädigen, wohingegen Lichtschrankten mit Infrarotlicht für den Benutzer keine sichtbaren Lichtstrahl erzeugen. Dies jedoch erhöt den Aufwand bei der Ausrichtung der Lichtschranke \cite{Loeffler-Mang:2012}.  
 Zusammenfassend lässt sich festhalten, dass die Funktion einer Lichtschranke nicht allein durch ihre technische Ausführung bestimmt wird, sondern stark von der Wechselwirkung zwischen Lichtstrahl, detektierten Objekten und der Umgebung abhängt. Eine fundierte Auswahl unter Berücksichtigung der physikalischen Prinzipien, der spezifischen Anwendungssituation und der technischen Parameter ist daher unerlässlich, um eine zuverlässige und störungsfreie Funktionsweise zu gewährleisten.
+
+All diese und weiterführende Informationen finden sich in folgender Literatur: 
+\begin{center}
+	\begin{enumerate}
+		\item \cite{Loeffler-Mang:2012}, Dieses Buch befasst sich mit Optischen Sensoren und ihren physikalischen Wirkprinzipien. Besonders auf die Funktionsweise der Halbleiterkomponenten von Optischen Sensoren wird eingegangen.  
+		\item \cite{Roddeck:2023}, Dieses Buch behandelt jegliche mechatronischen Komponenten, sowohl Aktoren als auch Sensoren werden ausführlich beschrieben. Besonders Schnittstellen und Einbindungen werden hier wiedergegeben. 
+	\end{enumerate}
+\end{center}
