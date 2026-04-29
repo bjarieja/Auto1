@@ -38,7 +38,7 @@ const int sensorPin = 8;
  */
 void setup() {
   // Initialize serial communication at 9600 baud
-  Serial.begin(9600); // Only for uploading to the microcontroller needed 
+  Serial.begin(115200); // Only for uploading to the microcontroller needed 
 
   // Set sensor pin as input with internal pull-up resistor
   pinMode(sensorPin, INPUT_PULLUP);
