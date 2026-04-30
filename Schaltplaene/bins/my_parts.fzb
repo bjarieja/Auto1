@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="1.0.6.2025-10-07.CD-2239-0-04e5bb02" icon="Mine.png">
+    <title>My Parts</title>
+    <instances>
+        <instance moduleIdRef="E18-D80NK_1" modelIndex="9206" path="C:/Users/User/Documents/Fritzing/parts/user/E18-D80NK_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="arduino-UNO-R4-wifi_1" modelIndex="9208" path="C:/Users/User/Documents/Fritzing/parts/user/arduino-UNO-R4-wifi_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="Arduino-R4-Minima_1" modelIndex="9211" path="C:/Users/User/Documents/Fritzing/parts/user/Arduino-R4-Minima_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="drv-1012_1" modelIndex="10982" path="C:/Users/User/Documents/Fritzing/parts/user/drv-1012_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="LCD2004-I2C" modelIndex="85516795" path="C:/Users/User/Documents/Fritzing/parts/user/LCD2004-I2C.fzp" flippedSMD="true">
+            <property name="flippedSMD" value="true"/>
+            <views/>
+        </instance>
+        <instance moduleIdRef="Momentary-Switch-6mm-2pin_1" modelIndex="85516855" path="C:/Users/User/Documents/Fritzing/parts/user/Momentary-Switch-6mm-2pin_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="Rotary_Switch_3P3T_89361836e73e19d6fb46aaad7a9eb199_5" modelIndex="85517238" path="C:/Users/User/Documents/Fritzing/parts/user/Rotary_Switch_3P3T_89361836e73e19d6fb46aaad7a9eb199_5.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="NKK 3PDT Toggle Switch_25933df52f2a658ecd3ebf2f34a562aa_1" modelIndex="85517240" path="C:/Users/User/Documents/Fritzing/parts/user/NKK 3PDT Toggle Switch_25933df52f2a658ecd3ebf2f34a562aa_1.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="generic-3pdt-switch_1" modelIndex="85517247" path="C:/Users/User/Documents/Fritzing/parts/user/generic-3pdt-switch_1.fzp">
+            <views/>
+        </instance>
+    </instances>
+</module>

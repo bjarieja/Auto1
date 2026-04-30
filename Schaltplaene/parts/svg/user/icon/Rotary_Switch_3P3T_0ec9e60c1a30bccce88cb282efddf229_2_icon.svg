@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" gorn="0" width="26.669998mm" viewBox="0 0 94.499994 94.499993" id="svg4187"  height="26.669998mm" version="1.1">
+    <desc id="desc3" >
+        <referenceFile >Rotary_Switch_12x1.svg</referenceFile>
+    </desc>
+    <defs id="defs4189" >
+        <linearGradient id="linearGradient4161"  paint="solid">
+            <stop id="stop4163" style="stop-color:#000000;stop-opacity:1;"  offset="0"/>
+        </linearGradient>
+        <linearGradient id="linearGradient7590"  paint="solid">
+            <stop id="stop7592" style="stop-color:#ffffff;stop-opacity:1;"  offset="0"/>
+        </linearGradient>
+        <linearGradient id="linearGradient4783"  paint="solid">
+            <stop id="stop4785" style="stop-color:#ffffff;stop-opacity:1;"  offset="0"/>
+        </linearGradient>
+    </defs>
+    <metadata id="metadata4192" >
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work rdf:about="" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+                <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g gorn="0.3" id="g4285" >
+        <g  transform="matrix(8.9999993e-4,0,0,8.9999993e-4,0.45,0.45)">
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.0.0.0.0.0.0.0" id="g20" >
+                                        <g gorn="0.3.0.0.0.0.0.0.0.0.0" id="g22" >
+                                            <g gorn="0.3.0.0.0.0.0.0.0.0.0.0" id="g24" >
+                                                <g gorn="0.3.0.0.0.0.0.0.0.0.0.0.0" id="silkscreen"  stroke="#000000" stroke-width="1">
+                                                    <circle cx="52000" cy="52000" gorn="0.3.0.0.0.0.0.0.0.0.0.0.0.0" id="circle7" style="stroke-miterlimit:4;stroke-dasharray:none"  fill-opacity="1" fill="#0000ff" r="52000" stroke="#000000" stroke-width="1968.50402832"/>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <circle stroke-opacity="1" cx="47.391571" cy="34.225281" gorn="0.3.1" id="connector0pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="66.599976" cy="13.499999" gorn="0.3.2" id="connector3pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="58.773327" cy="53.923817" gorn="0.3.3" id="connector4pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="86.400024" cy="47.25" gorn="0.3.4" id="connector5pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="81" cy="66.600006" gorn="0.3.5" id="connector6pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="66.599976" cy="81" gorn="0.3.6" id="connector7pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="35.782734" cy="53.697056" gorn="0.3.7" id="connector8pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="27.449951" cy="81" gorn="0.3.8" id="connector9pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="13.5" cy="66.600006" gorn="0.3.9" id="connector10pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="8.2800293" cy="47.25" gorn="0.3.10" id="connector11pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="27.449951" cy="13.499999" gorn="0.3.11" id="connector1pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="47.25" cy="8.2799978" gorn="0.3.12" id="connector2pin" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#8c8c8c" r="2.6574748" stroke="#000000" stroke-width="0"/>
+        <circle stroke-opacity="1" cx="47.25" cy="47.25" gorn="0.3.13" id="path7598" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#000000" r="8.5231028" stroke="#000000" stroke-width="0.67032951"/>
+        <rect stroke-opacity="1" gorn="0.3.14" width="15.152288" id="rect7600" style="opacity:1;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.5;"  fill-opacity="1" fill="#0000ff" height="3.0304577" y="53.020599" stroke="#0000ff" x="39.522217" stroke-width="0.38622046"/>
+    </g>
+</svg>

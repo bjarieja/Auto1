@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" gorn="0" width="17.5mm" id="svg2" viewBox="0 0 62.007873 46.062988"  height="13mm" version="1.1">
+    <desc id="desc13922" >
+        <referenceFile >Taiway-100-SP-X-T1-X-X-B1-M1_SPDT_miniature_toggle_switch_pcb.svg</referenceFile>
+    </desc>
+    <title id="title24370" >Taiway 100-SP-X-T1-X-X-B1-M1 SPDT switch - pcb</title>
+    <defs id="defs4" />
+    <metadata id="metadata7" >
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work rdf:about="" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+                <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Taiway 100-SP-X-T1-X-X-B1-M1 SPDT switch - pcb</dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g gorn="0.4" id="silkscreen" >
+        <g transform="translate(-83.46201,-86.15609)" >
+            <g >
+                <g >
+                    <g gorn="0.4.0.0.0.0" id="g13939" >
+                        <path stroke="#000000" gorn="0.4.0.0.0.0.0" id="case" style="display:inline;stroke-miterlimit:4;stroke-dasharray:none;" fill="none" stroke-opacity="1" d="m 99.324435,131.49817 -15.141511,0 0,-44.621166 60.566046,0 0,44.621166 -15.14151,0" fill-opacity="1"  stroke-width="1.44182777"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path stroke="#000000" gorn="0.4.1" id="path4172" style="display:inline;stroke-miterlimit:4;stroke-dasharray:none;" fill="none" stroke-opacity="1" d="m 42.711791,6.3994656 a 20.34,20.34 0 0 1 8.631775,16.6322904 l 0,0 a 20.34,20.34 0 0 1 -8.625082,16.627576" fill-opacity="1"  stroke-width="0.89999998"/>
+        <path stroke="#000000" gorn="0.4.2" id="path4168" style="display:inline;stroke-miterlimit:4;stroke-dasharray:none;" fill="none" stroke-opacity="1" d="M 19.296612,39.664941 A 20.34,20.34 0 0 1 10.663566,23.031756 20.34,20.34 0 0 1 19.289787,6.4033767" fill-opacity="1"  stroke-width="0.89999998"/>
+    </g>
+    <g gorn="0.5" id="copper0" >
+        <g gorn="0.5.0" id="copper1" >
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.0.0.0.0" y="-8.1017504" width="7.6995606" id="connector5pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="27.116346" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.1.0.0.0" y="-24.755295" width="7.6995606" id="connector4pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="27.116346" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.2.0.0.0" y="-41.408836" width="7.6995606" id="connector3pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="27.116346" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.3.0.0.0" y="-8.1017504" width="7.6995606" id="connector2pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="10.108474" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.4.0.0.0" y="-24.755295" width="7.6995606" id="connector0pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="10.219703" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.5.0.0.0" y="-41.408836" width="7.6995606" id="connector1pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="10.219703" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.6.0.0.0" y="-8.1017504" width="7.6995606" id="connector8pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="44.124218" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.7.0.0.0" y="-24.755295" width="7.6995606" id="connector7pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="44.199829" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="scale(1,-1)" >
+                <g >
+                    <g >
+                        <rect stroke="#f7bd13" gorn="0.5.0.8.0.0.0" y="-41.408836" width="7.6995606" id="connector6pin" style="opacity:0.97000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="#ffffff" stroke-opacity="1" fill-opacity="1"  x="44.124218" height="3.4475923" stroke-width="1.89571476"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

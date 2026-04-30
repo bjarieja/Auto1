@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<module fritzingVersion="0.9.9" moduleId="generic-3pdt-switch_1" referenceFile="generic-3pdt-switch_1.fzp">
+  <version>4</version>
+  <author>Michael Richardson (modified by vanepp Jan 2022)</author>
+  <title>generic 3PDT Toggle Switch</title>
+  <label>S</label>
+  <date>Fri Nov 11 2016</date>
+  <tags>
+    <tag>switch</tag>
+    <tag>custom</tag>
+    <tag>3PDT</tag>
+  </tags>
+  <properties>
+    <property name="family">generic Toggle Switch</property>
+    <property name="variant">through hole</property>
+    <property name="switching circuit">3PDT</property>
+    <property name="part number">M2032SS1W03</property>
+    <property name="layer"/>
+    <property name="package">THT</property>
+  </properties>
+  <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;generic 3PDT Toggle Switch&lt;/p&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;This switch has three poles and two position (Jan 2022 replace pads in pcb with pads with holes)&lt;/p&gt;
+&lt;p style="-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+  <views>
+    <iconView>
+      <layers image="breadboard/generic-3pdt-switch_1_breadboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/generic-3pdt-switch_1_breadboard.svg">
+        <layer layerId="breadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView flipvertical="true" fliphorizontal="true">
+      <layers image="schematic/generic-3pdt-switch_1_schematic.svg">
+        <layer layerId="schematic"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="pcb/generic-3pdt-switch_1_pcb.svg">
+        <layer layerId="copper0"/>
+        <layer layerId="silkscreen"/>
+        <layer layerId="copper1"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors>
+    <connector name="C1" id="connector0" type="male">
+      <description>C1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector0terminal" svgId="connector0pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="copper0"/>
+          <p svgId="connector0pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L1-1" id="connector1" type="male">
+      <description>L1-1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector1pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector1terminal" svgId="connector1pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector1pin" layer="copper0"/>
+          <p svgId="connector1pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L1-2" id="connector2" type="male">
+      <description>L1-2</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector2pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector2terminal" svgId="connector2pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector2pin" layer="copper0"/>
+          <p svgId="connector2pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L2-1" id="connector3" type="male">
+      <description>L2-1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector3pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector3terminal" svgId="connector3pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector3pin" layer="copper0"/>
+          <p svgId="connector3pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="C2" id="connector4" type="male">
+      <description>C2</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector4pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector4terminal" svgId="connector4pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector4pin" layer="copper0"/>
+          <p svgId="connector4pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L2-2" id="connector5" type="male">
+      <description>L2-2</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector5pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector5terminal" svgId="connector5pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector5pin" layer="copper0"/>
+          <p svgId="connector5pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L3-1" id="connector6" type="male">
+      <description>L3-1</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector6pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector6terminal" svgId="connector6pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector6pin" layer="copper0"/>
+          <p svgId="connector6pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="C3" id="connector7" type="male">
+      <description>C3</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector7pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector7terminal" svgId="connector7pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector7pin" layer="copper0"/>
+          <p svgId="connector7pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+    <connector name="L3-2" id="connector8" type="male">
+      <description>L3-2</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector8pin" layer="breadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p terminalId="connector8terminal" svgId="connector8pin" layer="schematic"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="connector8pin" layer="copper0"/>
+          <p svgId="connector8pin" layer="copper1"/>
+        </pcbView>
+      </views>
+    </connector>
+  </connectors>
+</module>

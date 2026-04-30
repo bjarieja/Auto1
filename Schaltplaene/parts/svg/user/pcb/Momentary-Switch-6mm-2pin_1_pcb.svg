@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  height="0.23622046in"
+  version="1.2"
+  y="0in"
+  viewBox="0 0 259.18502 236.22047"
+  x="0in"
+  width="0.25918502in"
+  id="svg47">
+  <defs
+    id="defs51"
+  />
+  <desc
+    id="desc2">
+    <referenceFile>Momentary-Switch-6mm-2pin_1_pcb.svg</referenceFile>
+  </desc>
+  <g
+    id="silkscreen">
+    <rect
+      id="rect1546"
+      width="226.22047"
+      height="226.22047"
+      x="15.84375"
+      y="4.9999952"
+      fill="none"
+      stroke="#000000"
+      stroke-width="9.99999"
+    />
+  </g>
+  <g
+    id="copper1">
+    <g
+      id="copper0">
+      <path
+        stroke="none"
+        d="M 0,88.124999 H 59.37008 V 147.49508 H 0 Z m 10,29.685041 a 19.68504,19.68504 0 1 0 39.37008,0 19.68504,19.68504 0 1 0 -39.37008,0 z"
+        fill="#f7bd13"
+        stroke-width="0"
+        id="path5"
+      />
+      <path
+        stroke="none"
+        d="m 199.81495,88.124999 h 59.37008 v 59.370081 h -59.37008 z m 10,29.685041 a 19.68504,19.68504 0 1 0 39.37008,0 19.68504,19.68504 0 1 0 -39.37008,0 z"
+        fill="#f7bd13"
+        stroke-width="0"
+        id="path8"
+      />
+      <circle
+        r="24.685038"
+        stroke="#f7bd13"
+        gorn="0.0.0"
+        id="connector0pin"
+        fill="none"
+        connectorname="P$1"
+        cx="29.685043"
+        cy="117.81004"
+        stroke-width="10"
+      />
+      <circle
+        r="24.685038"
+        stroke="#f7bd13"
+        gorn="0.0.2"
+        id="connector1pin"
+        fill="none"
+        connectorname="P$2"
+        cx="229.49997"
+        cy="117.81004"
+        stroke-width="10"
+      />
+    </g>
+  </g>
+</svg>
