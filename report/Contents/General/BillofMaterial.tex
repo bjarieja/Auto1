@@ -20,11 +20,12 @@
 
 
 {\footnotesize
-	\begin{table}[htbp]
+	
+	\begin{sidewaystable}[htbp]
 		\centering
 		\caption{Hardware Bill of Materials}
-		\label{table:HardwareBOM}
-		\begin{tabular}{|m{2.4cm}|m{0.8cm}|m{3.6cm}|m{2.2cm}|m{1.4cm}|m{2.2cm}|m{2.2cm}|}
+		%\label{table:HardwareBOM}
+		\begin{tabular}{|m{1.0cm}|m{2.8cm}|m{8cm}|>{\centering\arraybackslash}m{3.6cm}|m{2.8cm}|m{2.8cm}|m{2.2cm}|}
 			\hline
 			\textbf{Menge} &
 			\textbf{Bezeichnung} &
@@ -32,27 +33,131 @@
 			\textbf{Bild} &
 			\textbf{Link} &
 			\textbf{Verfügbarkeit} &
-			\textbf{Kosten (pro Stück) in (€)} \\
+			\textbf{Kosten (pro Stück)} \\
 			\hline
-			
-			\rule{0pt}{2cm}
-			1 &
-			Motraxx SR555SHP-3247S-75 Universal Brushed Elektromotor &
-			\begin{itemize}
-				\item 12 V
-				\item 5000 rpm
-				\item 1.2 A
-			\end{itemize} &
-			
-			\includegraphics[height=1.8cm]{../../Images/BOM/Motraxx_SR555SHP-3247S-75_Universal_Brushed_Elektromotor.jpg} &
 		
-			
+		% Motor 	
+			\rule{0pt}{2.8cm}
+			1 
+			&
+			Motraxx SR555SHP-3247S-75 Universal Brushed Elektromotor
+			&
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item Abgabeleistung: 13 W
+				\item Betriebsspannung: 10 - 14 V/DC
+				\item Last-Drehzahl: 4800 U/min
+				\item Max. Drehmoment: 25.18 Nmm
+				\item Durchmesser: 37.5 mm
+				\item Wellen-Ø: 3.175 mm
+				\item Nennspannung (Details): 12 V/DC
+				\item Gewicht: 224 g
+				\item Abm.: (Ø x L) 37.5 mm x 57 mm
+				\item Länge: 57 mm
+				
+			\end{itemize} 
+			&
+			\includegraphics[height=2cm,keepaspectratio]
+			{../../Images/BOM/Motraxx_SR555SHP-3247S-75_Universal_Brushed_Elektromotor.jpg} 
+			&
 			\href{https://www.conrad.de/de/p/motraxx-sr555shp-3247s-75-universal-brushed-elektromotor-244478.html
-			}{conrad.de} &
-			gestellt von der Hochschule &
-			11,76 \\
+			}{conrad.de} 
+			&
+			gestellt von der Hochschule
+			&
+			11,76 € \\
 			\hline
 			
+		% Motortreiber
+			\rule{0pt}{2.8cm}
+			1 
+			&
+			DC Motortreiber H-Brücke BTS7960 5,5V bis 27V 43A PWM
+			&
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item Betriebsspannung: 5,5V – 27V
+				\item Steuerspannung: 3.3V – 5V
+				\item Eingangsfrequenz PWM: bis 25KHz
+				\item Arbeitsstrom (max): 43 A
+				\item 5V isolierte MCU-Spannungsversorgung
+				\item Status-LEDs
+				\item Unterspannungsabschaltung, Kurzschlussschutz, Überhitzungsschutz, Überspannungsschutz
+				\item Abmessungen: 50mm x 50mm x 43mm
+				\item Gewicht: 66g
+			\end{itemize} 
+			&
+			\includegraphics[height=2cm,keepaspectratio]{../../Images/BOM/DC_Motortreiber_H-Brücke_BTS7960_5,5V_bis_27V_43A_PWM.jpg} 
+			&
+			\href{https://www.roboter-bausatz.de/p/dc-motortreiber-h-bruecke-bts7960-5-5v-bis-27v-43a-pwm
+			}{roboter-bausatz.de} 
+			&
+			vorhanden
+			&
+			7,85 € \\
+			\hline
+			
+		% Schraubklemmen-Erweiterungsplatine
+			\rule{0pt}{2.8cm}
+			1 
+			&
+			GeeekPi Screw Terminal Hat für Arduino UNO
+			&
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item 40Pin 2x20 2,54mm Hornbuchsenanschluss onboard
+				\item Klemmenblockabstand 3,5 mm/0,138"
+				\item 1 x Schraubanschlusskappe für Arduino UNO
+				\item 4 x M2.5 Kupfersäule
+				\item 4 x M2.5x6 Schraube
+				\item 4 x M2,5 Mutter
+				\item Power-On-LED-Anzeige. roter Reset-Knopf an der Seite
+			\end{itemize} 
+			&
+			\includegraphics[height=2cm,keepaspectratio]{../../Images/BOM/GeeekPi_Screw_Terminal_Hat_für_Arduino_UNO.jpg} 
+			&
+			\href{https://www.amazon.de/GeeekPi-Schraubklemmenhut-Schraubklemmenblock-Hornbuchsenanschluss-Erweiterungsboard/dp/B097GY5FSN/ref=sr_1_4?crid=1K9WROYD98ULY&dib=eyJ2IjoiMSJ9.hXJnAuE4drccOSStWeHC_OAeMTHhP28K_jdXQyBUMzBKNeLD1shpTLYqklg1zGRyDbxKc55DN8QJGpA9eKXSkSDORAbw_KPQp4iL7zHk5y-cSJlFUTGyeo9PaCROWAVz4HrO1kf1L3wP0v-0hetIncek0ytFWhuizwCVTiRWcM1dcWH2R3xTxOHP8NFhhs_l7OkjVHMdGrZV6vYQeJ347QEzP54PHtEJttuI0wxpCakYv46QLRsBozMyj1_PiD_BYwGD3BgmxQ0nHYFLYF6btC3PUEDbZ77TKi9WeA9x_oY.i6xBJnzwyI-TNa8k38qKzCZU3OHeKL9ZB-IaalQDQxw&dib_tag=se&keywords=arduino+uno+screw+shield&qid=1777544675&sprefix=shield+arduino+uno+sc%2Caps%2C145&sr=8-4
+			}{amazon.de} 
+			&
+			vorhanden
+			&
+			21,99 € \\
+			\hline
+			
+		% LCD-Modul
+			\rule{0pt}{2.8cm}
+			1 
+			&
+			Joy-it Serielles I2C 20x4 2004 LCD Modul
+			&
+			\begin{itemize}
+				\setlength{\itemsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\setlength{\parsep}{0pt}
+				\item 20x4 Zeichen (4 Zeilen mit 20 Spalten)
+				\item mit aufgelöteten I2C-Kommunikations-Adapter.
+				\item sowohl 3,3 V als auch 5 V Logiklevel 
+				\item max. Spannung: 5 V
+				\item max. Strom: 40 mA
+				\item Maße (LxBxH): 9,8 x 6 x 2 cm
+				\item Hintergrundbeleuchtung: Farbe Blau
+			\end{itemize} 
+			&
+			\includegraphics[height=2cm,keepaspectratio]{../../Images/BOM/Joy-it_Serielles_I2C_20x4_2004_LCD_Modul.jpg} 
+			&
+			\href{https://www.reichelt.de/de/de/shop/produkt/entwicklerboards_-_display_20_x_4_zeichen_blau-192144?PROVID=2788&gad_source=1&gad_campaignid=18342381572
+			}{reichelt.de} 
+			&
+			zu bestellen
+			&
+			9,90 € \\
+			\hline
 %			\multicolumn{5}{|l|}{\textit{Included in TinyML Kit:}} \\
 %			\hline
 %			
@@ -116,5 +221,5 @@
 %			\hline
 			
 		\end{tabular}
-	\end{table}
+	\end{sidewaystable}
 }
