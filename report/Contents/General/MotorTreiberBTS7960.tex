@@ -13,21 +13,65 @@
 
 % Structure
 \chapter{Motortreiber BTS7960}
-
-Introduction
+Gleichstrommotoren funktionieren grundsätzlich über die Erzeugung eines Magnetfeldes, mithilfe dessen eine Welle in Rotation versetzt wird \cite{Roddeck:2023}.
+Aus den grundlegenden physikalischen Zusammenhängen der Elektrodynamik folgt zudem, dass die Stärke des Magnetfeldes direkt vom Strom im Leiter abhängt, der dieses Feld erzeugt.
+Dementsprechend lässt sich auch die Drehzahl eines Elektromotors über den fließenden Strom beeinflussen \cite{Feynman:2020}.
+Um die Stromstärke, die durch den Motor fließt, zu beeinflussen, ist es notwendig, eine steuernde Komponente vor dem Motor zu verbauen. Hierfür eignen sich Motortreiber. Motortreiber sind elektronische Komponenten, welche die Ansteuerung von Motoren erleichtern, indem sie kleine Signale der steuernden Einheit in geeignete Spannungs- und Stromsignale umwandeln \cite{Roddeck:2023}. Als steuernde Einheit dienen beispielsweise Mikrocontroller oder speicherprogrammierbare Steuerungen (SPS), die die erforderlichen Steuersignale zur Ansteuerung des Motortreibers erzeugen \cite{Bartlett:2023a}.
 \Mynote{cite books, applications, board}
 
 \section{Allgemeines}
 
-General description
-
-cite books
-
+Motortreiber bilden die zentrale Schnittstelle zwischen der Steuerlogik und den elektromechanischen Aktoren. Gerade in eingebetteten Systemen sorgen sie dafür, dass Elektromotoren gezielt in Bezug auf Drehrichtung, Drehzahl und Drehmoment angesteuert werden können. Dabei haben sich insbesondere MOSFET-basierte Treiber als Stand der Technik etabliert, da sie eine hohe Effizienz bei gleichzeitig geringen Schaltverlusten bieten.
+Im Kern übernimmt ein Motortreiber die Aufgabe, ein leistungsschwaches Steuersignal in ein entsprechend starkes Ausgangssignal umzuwandeln. Die Regelung der Drehzahl erfolgt in der Praxis meist über Pulsweitenmodulation, bei der die effektive Motorspannung direkt vom Tastverhältnis abhängt. Je nach Verhältnis zwischen Ein- und Ausschaltzeit ergibt sich so eine entsprechend angepasste mittlere Spannung am Motor \cite{Bartlett:2023a}.
+Für die Richtungsumkehr kommt häufig die H-Brücke zum Einsatz. Durch das gezielte Schalten von vier Transistoren lässt sich die Polarität der Motorspannung umkehren. Dabei ist besonders darauf zu achten, dass kein sogenannter Shoot-Through-Zustand entsteht, bei dem gleichzeitig leitende Transistoren einen Kurzschluss verursachen würden.
+MOSFETs selbst fungieren in diesem Zusammenhang als spannungsgesteuerte Schalter. Ob sie leitend sind, wird über die Gate-Source-Spannung bestimmt. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst niedriger Wert entscheidend für einen guten Wirkungsgrad ist.
+Moderne, integrierte Motortreiber – etwa in der Klasse von BTS7960-ähnlichen Bausteinen – gehen noch einen Schritt weiter und kombinieren Leistungsstufe, Ansteuerung und Schutzmechanismen in einem einzigen System. Typischerweise basieren sie auf einer Halbbrückenarchitektur mit jeweils einem High-Side- und einem Low-Side-MOSFET. Ergänzt wird das Ganze durch eine interne Gate-Treiberstufe sowie Schaltungen zur Strommessung und Diagnose. Für die Ansteuerung des High-Side-Transistors kommt häufig eine Ladungspumpe zum Einsatz, die eine ausreichend hohe Gate-Spannung erzeugt \cite{Bartlett:2023a}.
+Ein wichtiger Aspekt im Schaltverhalten ist das sogenannte Dead-Time-Management. Zwischen dem Abschalten eines Transistors und dem Einschalten seines Gegenstücks wird bewusst eine kurze Totzeit eingefügt, um Überlappungen zu vermeiden und damit Kurzschlüsse zu verhindern. Die PWM-Signale werden dabei direkt auf die MOSFETs gegeben, wodurch sich die mittlere Motorspannung wieder aus dem Tastverhältnis ergibt. Die Wahl der Schaltfrequenz ist dabei ein Kompromiss: Einerseits sollen Verluste gering gehalten werden, andererseits spielen auch akustische Effekte und elektromagnetische Verträglichkeit eine Rolle.
+Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über sogenannte Freilaufpfade realisiert, entweder durch die integrierten Body-Dioden der MOSFETs oder durch aktiv geschaltete Pfade. Zusätzlich verfügen solche Treiber über umfangreiche Schutzfunktionen. Dazu zählen unter anderem Überstromschutz, bei dem der Strom kontinuierlich überwacht wird, ein Übertemperaturschutz durch integrierte Sensoren sowie Schutzmechanismen gegen Kurzschlüsse sowohl zur Masse als auch zur Versorgungsspannung. Auch ein Unterspannungsschutz ist integriert, um Fehlfunktionen bei zu geringer Versorgung zu verhindern.
+Betrachtet man die Verluste insgesamt, setzen sie sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen dominieren die Leitverluste, während bei höheren Frequenzen die Schaltverluste zunehmend ins Gewicht fallen.
+Durch die hohe Integration dieser Treiber ergeben sich in der Praxis mehrere Vorteile: Die Bauweise bleibt kompakt, die externe Beschaltung wird reduziert und die Zuverlässigkeit steigt. Gleichzeitig wird auch die Einhaltung von EMV-Anforderungen erleichtert. In vielen Anwendungen werden zwei solcher Halbbrücken zu einer vollständigen H-Brücke kombiniert, um einen bidirektionalen Betrieb des Motors zu ermöglichen.
+Insgesamt stellen MOSFET-Motortreiber damit eine leistungsfähige und effiziente Lösung für die Motoransteuerung dar, wobei integrierte Varianten besonders durch ihre Kombination aus hoher Stromtragfähigkeit, Schutzfunktionen und einfacher Handhabung überzeugen.
 \section{Motortreiber BTS7960}
 
 cite board
 
 \section{Spezifikationen}
+
+\begin{table}[h!]
+	\caption{Spezifikationen des Motortreibers \cite{Infineon:2004}}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Parameter} &\textbf{Wert/Detail}\\
+			\hline
+			Modell &  BTS7960\\
+			\hline
+			Typ  & Halbbrücken Motortreiber  \\
+			\hline 
+			Betriebsspannung & -0,3 bis 45 $V$ DC\\
+			\hline 
+			Logikspannung & -0,3 bis 5,3 $V$ DC\\
+			\hline
+			maximaler Ausgangsstrom & 43 $A $\\
+			\hline
+			Einganststromgangsstrom & 30 bis 150 $\mu A$ \\
+			\hline
+			Frequenzbereich der PWM  & 25 $kHz$\\
+			\hline
+			Reaktionszeit & kleiner 2 $ms$\\
+			\hline
+			Erfassungswinkel & bis zu 15°\\
+			\hline
+			Temperaturbereich & -25°C bis +55°C\\
+			\hline
+			Maße & Ø 17,6 mm x 50 mm\\
+			\hline
+			Anschluss & Dupont Buchse\\ 
+			\hline
+		\end{tabular}
+		\label{TabelleSpezifikationLS}
+	\end{center}
+\end{table} 
 
 \begin{itemize}
   \item Cite the data sheet
