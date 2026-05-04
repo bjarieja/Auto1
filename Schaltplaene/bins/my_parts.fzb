@@ -30,5 +30,8 @@
         <instance moduleIdRef="generic-3pdt-switch_1" modelIndex="85517247" path="C:/Users/User/Documents/Fritzing/parts/user/generic-3pdt-switch_1.fzp">
             <views/>
         </instance>
+        <instance moduleIdRef="DIP-Switch-3-Position_1" modelIndex="85527646" path="C:/Users/User/Documents/Fritzing/parts/user/DIP-Switch-3-Position_1.fzp">
+            <views/>
+        </instance>
     </instances>
 </module>

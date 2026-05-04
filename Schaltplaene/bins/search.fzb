@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="1.0.6.2025-10-07.CD-2239-0-04e5bb02" icon="Search.png" search="Netz">
+<module fritzingVersion="1.0.6.2025-10-07.CD-2239-0-04e5bb02" icon="Search.png" search="pushbutton">
     <title>Search</title>
-    <instances/>
+    <instances>
+        <instance moduleIdRef="33b94ebdb1ef4e7cf0f8425956cfca60" modelIndex="85527197" path="C:/Program Files/Fritzing/fritzing-parts/core/Pushbutton.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-PTH_REED2" modelIndex="85527199" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-pth_reed2.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="20A9BBEE34_ST-2leadbutton-horizon" modelIndex="85527201" path="C:/Program Files/Fritzing/fritzing-parts/core/pushbutton_2_horizontal.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="20A9BBEE34_ST" modelIndex="85527202" path="C:/Program Files/Fritzing/fritzing-parts/core/pushbutton_4_horizontal.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-PTH" modelIndex="85527203" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-pth.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-12MM" modelIndex="85527205" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-12mm.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="Arduino_Esplora" modelIndex="85527207" path="C:/Program Files/Fritzing/fritzing-parts/core/Arduino_Esplora.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="ProtoShield-v25" modelIndex="85527209" path="C:/Program Files/Fritzing/fritzing-parts/core/ProtoShield-v25.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="20A9BBEE34_ST_pressed" modelIndex="85527211" path="C:/Program Files/Fritzing/fritzing-parts/core/pushbutton_4_horizontal_pressed.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-PTH_REED" modelIndex="85527213" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-pth_reed.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2--SMD-1101NE" modelIndex="85527215" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2--smd-1101ne.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+        <instance moduleIdRef="f75fce820d6290130b78084babcfe946" modelIndex="85527217" path="C:/Program Files/Fritzing/fritzing-parts/core/Round Pushbutton.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="4d1eb8f243c1aba7afe676122ea516cc_2" modelIndex="85527219" path="C:/Program Files/Fritzing/fritzing-parts/core/Textile Pushbutton.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="powerpushbutton_adafruit" modelIndex="85527220" path="C:/Program Files/Fritzing/fritzing-parts/core/powerbutton_adafruit.fzp">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-" modelIndex="85527222" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-SMD" modelIndex="85527224" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-smd.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+        <instance moduleIdRef="20A9BBasdfEEasdf34_ST" modelIndex="85527226" path="C:/Program Files/Fritzing/fritzing-parts/core/SMD_pushbutton.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+        <instance moduleIdRef="SparkFun-Electromechanical-SWITCH-MOMENTARY-2-SMD-2" modelIndex="85527228" path="C:/Program Files/Fritzing/fritzing-parts/core/sparkfun-electromechanical-switch-momentary-2-smd-2.fzp" flippedSMD="true">
+            <views/>
+        </instance>
+        <instance moduleIdRef="20A9BBEE34_ST-2leadbutton-horizon_pressed" modelIndex="85527230" path="C:/Program Files/Fritzing/fritzing-parts/core/pushbutton_2_horizontal_pressed.fzp">
+            <views/>
+        </instance>
+    </instances>
 </module>
