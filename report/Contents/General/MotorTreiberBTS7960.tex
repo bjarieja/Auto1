@@ -24,23 +24,102 @@ Um die Stromstärke, die durch den Motor fließt, zu beeinflussen, ist es notwen
 Motortreiber stellen die Schnittstelle zwischen der Steuerlogik und elektromechanischen Aktoren dar. Sie werden insbesondere in eingebetteten Systemen eingesetzt, um Elektromotoren gezielt hinsichtlich Drehrichtung, Drehzahl und Drehmoment anzusteuern. Dabei haben sich MOSFET-basierte Treiber als Stand der Technik etabliert, da sie eine hohe Effizienz bei gleichzeitig geringen Schaltverlusten aufweisen \cite{Bartlett:2023a}.
 Die grundlegende Aufgabe eines Motortreibers besteht darin, ein leistungsschwaches Steuersignal in ein leistungsstärkeres Ausgangssignal umzuwandeln. Die Drehzahlregelung erfolgt dabei meist über Pulsweitenmodulation. Hierbei wird die effektive Motorspannung durch das Tastverhältnis bestimmt, sodass sich je nach Ein- und Ausschaltzeit eine entsprechende mittlere Spannung am Motor ergibt \cite{Bartlett:2023a}.
 Zur Umkehr der Drehrichtung wird häufig eine sogenannte H-Brücke verwendet. Diese besteht aus vier Transistoren, durch deren gezielte Ansteuerung die Polarität der Motorspannung geändert werden kann. Dabei ist darauf zu achten, dass kein Shoot-Through-Zustand entsteht, da dies zu einem Kurzschluss führen würde.
-MOSFETs übernehmen in diesem Zusammenhang die Funktion von Schaltern. Sie werden über die Gate-Source-Spannung gesteuert und sind leitend, sobald diese eine bestimmte Schwelle überschreitet. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst geringer Widerstand für einen hohen Wirkungsgrad wichtig ist.
+Im Gegensatz zu klassichen Motortreibern, welche bipolare Transistoren verwenden, werden in moderen Schaltungen häufig FETs (Field-effect-Transistors) eingesetzt. FETs unterscheiden sich in Ihrer Funktionsweise zu klassischen bipolaren Transistoren.  Während ein Transistor stromgesteuert schaltet, schaltet ein FET spannungsgesteuert. 
+Auch in ihrem Aufbau zeichnen sich FETs aus. Grundlegend  hat jeder FET folgende Anschlüsse
+\begin{center}
+	\begin{enumerate}
+		\item \textbf{Source}: ist die  \glqq QUelle \grqq \space Dort fließen die Ladungsträger in
+		das Bauelement. 
+		\item \textbf{Drain}:  ist die Senke, an der die Ladungsträger den Transistor wieder
+		verlassen. 
+		\item \textbf{Gate}: steuert das elektrische Feld, welches den Stromfluss zwischen
+		Source und Drain reguliert.
+	\end{enumerate}
+\end{center} 
 
-textbf{Hier das BIld aus \cite{Bartlett:2023a} Seite 357 und die dazugehörige Erklärung} 
+Zudem gibt es zwei unterschiedliche Arten von FETs. 
+\begin{center}
+	\begin{enumerate}
+		\item  \textbf{ JFET (Junction Field Effect Transistor)}: Hier wird der Kanal von einem p-n-
+		Übergang kontrolliert. Es gibt n-Kanal- und p-Kanal-JFETs.
+		\item  \textbf{ MOSFET (Metal-Oxide-Semiconductor FET)}: Dies ist eine spezielle Art eines
+		FETs, der ein isoliertes Gate hat, das über eine dünne Oxidschicht vom Kanal
+		getrennt ist.
+	\end{enumerate}
+\end{center}
+
+Ein FET (Feldeffekttransistor) ist ein spannungsgesteuertes Bauelement. Im Gegensatz zu bipolaren Transistoren wird der Stromfluss nicht durch einen Steuerstrom, sondern durch ein elektrisches Feld am Gate geregelt. Dieses Feld verändert die Leitfähigkeit des Kanals zwischen Source und Drain.
+Ein MOSFET funktioniert ähnlich, besitzt jedoch ein isoliertes Gate (durch eine Oxidschicht). Dadurch fließt praktisch kein Gate-Strom, was ihn sehr effizient macht. Wird eine ausreichende Gate-Source-Spannung angelegt, bildet sich ein leitender Kanal und der Transistor schaltet durch,  ohne Spannung sperrt er. \cite{Bartlett:2023a}
+\begin{center}
+%\begin{figure}
+%	\includegraphics[scale=0.5]{../Images/BTS7960/MosfetHalbleiter}
+%	\caption{Prinzipieller Aufbau eines Mosfets nach \cite{Bartlett:2023a} }
+%\end{figure} 
+\begin{figure}[!ht]
+	\centering
+	\resizebox{1\textwidth}{!}{%
+		\begin{circuitikz}
+			\tikzstyle{every node}=[font=\fontsize{6.3pt}{8.1pt}\selectfont]
+			\draw [ fill={rgb,255:red,12; green,36; blue,242}, fill opacity=1] (11.625,9.75) rectangle (13,8.625);
+			\draw  (13,9.75) rectangle (14.25,9.375);
+			\draw [ fill={rgb,255:red,12; green,14; blue,242}, fill opacity=1] (14.25,9.75) rectangle (15.625,8.625);
+			\draw [short] (11.625,8.25) -- (15.625,8.25);
+			\draw [short] (11.625,9.375) -- (11.625,8.25);
+			\draw [short] (15.625,9.75) -- (15.625,8.25);
+			\draw [ fill={rgb,255:red,242; green,11; blue,11}, fill opacity=1] (12.75,9.75) rectangle (14.625,10);
+			\draw [ fill={rgb,255:red,0; green,0; blue,0}, fill opacity=1] (12.75,10) rectangle (14.625,10.125);
+			\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.000cm] at (12.125,9.125) {};
+			\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (12.125,9.125) {n};
+			\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (14.75,9.125) {n};
+			\draw [-{Stealth[scale=1.5]}, ] (13.25,8.75) -- (14.125,8.75);
+			\node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (13.625,9.125) {p};
+			\draw [short] (12,10.625) -- (12,9.75);
+			\draw [short] (15.25,10.5) -- (15.25,9.75);
+			\draw [short] (13.75,10.5) -- (13.75,10);
+			\draw (12.875,11.25) to[battery1] (12,11.25);
+			\draw (13,10.5) to[battery1] (12,10.5);
+			\draw [short] (13,10.5) -- (13.75,10.5);
+			\draw [short] (12,11.25) -- (12,10.5);
+			\draw [short] (12.875,11.25) -- (15.25,11.25);
+			\draw [short] (15.25,11.25) -- (15.25,10.5);
+			\node [font=\fontsize{9.1pt}{11.8pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (13.5,10.825) {Gate};
+			\node [font=\fontsize{6.3pt}{8.1pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.012cm] at (13.625,9.5) {e  e e e e };
+			\node [font=\fontsize{9.1pt}{11.8pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (11.375,10.125) {Source};
+			\node [font=\fontsize{9.1pt}{11.8pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.000cm] at (11.375,10.125) {};
+			\node [font=\fontsize{9.1pt}{11.8pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (15.875,10.125) {Drain};
+			\node [font=\fontsize{5.1pt}{6.7pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.000cm] at (12.625,11.125) {+};
+			\node [font=\fontsize{4.0pt}{5.2pt}\selectfont, color={rgb,255:red,2; green,2; blue,2}, text opacity=1, , inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.000cm] at (12.75,10.25) {+};
+		\end{circuitikz}
+	}
+	\caption{Prinzipieller Aufbau eines Mosfets nach \cite{Bartlett:2023a} }
+	\label{pic:AufbauMosfetHalbleiterEbene}
+\end{figure}
+\end{center}
+Wenn bei üblichen MOSFETs (selbstsperrender n-kanal MOSFET) keine 
+Spannung am Gate anliegt, ist der Kanal zwischen Source und Drain gesperrt, und
+es kann kein Strom fließen. Sobald jedoch eine positive Spannung an das Gate
+angelegt wird, entsteht ein elektrisches Feld, das die Ladungsträger 
+Elektronen (e)  im Kanal (vgl. \ref{pic:AufbauMosfetHalbleiterEbene}) beeinflusst. Dieses Feld erzeugt einen leitenden Kanal
+zwischen Source und Drain, der es dem Strom ermöglicht, zu fließen. Die Stärke
+des Stromflusses wird durch die Höhe der Spannung am Gate bestimmt. Je höher
+die Spannung, desto stärker ist das elektrische Feld, und desto leitfähiger wird der
+Kanal. Dadurch kann der MOSFET als Schalter oder Verstärker verwendet werden,
+indem die Spannung am Gate variiert wird, um den Stromfluss zwischen Source
+und Drain zu steuern. Üblicherweise werden zudem Zehnerdioden beim verschalten von MOSFETs verwendet um umgekehrte Stromflüsse zu verhindern. Auch kann das verwenden von Widerständen in diesem Kontext sinnvoll sein \ref{pic:MosfetAufbauSimpel}. 
+ 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.75]{../Images/BTS7960/MosfetSchaltplanSimpel}
 		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a}}
+		\label{pic:MosfetAufbauSimpel}
 	\end{figure}
 \end{center}
 
-
-
-
-
+MOSFETs schalten spannungssteuert und isoliert, somit verbauchen Sie keinen Strom wenn sie keinen Strom durchlassen.  
+Das macht sie besonders effizient im Vergleich zu herkömmlichen Transistoren \cite{Bartlett:2023a}. 
+MOSFETs übernehmen in diesem Zusammenhang die Funktion von Schaltern. Sie werden über die Gate-Source-Spannung gesteuert und sind leitend, sobald diese eine bestimmte Schwelle überschreitet. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst geringer Widerstand für einen hohen Wirkungsgrad wichtig ist.
 Moderne integrierte Motortreiber kombinieren mehrere Funktionen in einem Baustein. Dazu gehören die Leistungsstufe, die Ansteuerung sowie verschiedene Schutzmechanismen. Der Aufbau basiert häufig auf einer Halbbrücke mit einem High-Side- und einem Low-Side-MOSFET. Zusätzlich sind eine Gate-Treiberstufe sowie Schaltungen zur Strommessung und Diagnose integriert \cite{Bartlett:2023a}.
 Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über Freilaufpfade realisiert, beispielsweise durch die Body-Dioden der MOSFETs. Ergänzend verfügen solche Treiber über Schutzfunktionen wie Überstrom-, Übertemperatur- und Kurzschlussschutz sowie einen Unterspannungsschutz, um einen sicheren Betrieb zu gewährleisten.
-
 Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen.
 Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit. Zudem wird die Einhaltung von EMV-Anforderungen erleichtert. In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können.
 Insgesamt stellen MOSFET-Motortreiber eine effiziente und leistungsfähige Lösung zur Ansteuerung von Elektromotoren dar. Besonders integrierte Varianten bieten durch ihre Kombination aus Leistungsfähigkeit, Schutzfunktionen und einfacher Ansteuerung deutliche Vorteile.
