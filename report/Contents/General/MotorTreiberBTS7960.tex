@@ -25,13 +25,21 @@ Motortreiber stellen die Schnittstelle zwischen der Steuerlogik und elektromecha
 Die grundlegende Aufgabe eines Motortreibers besteht darin, ein leistungsschwaches Steuersignal in ein leistungsstärkeres Ausgangssignal umzuwandeln. Die Drehzahlregelung erfolgt dabei meist über Pulsweitenmodulation. Hierbei wird die effektive Motorspannung durch das Tastverhältnis bestimmt, sodass sich je nach Ein- und Ausschaltzeit eine entsprechende mittlere Spannung am Motor ergibt \cite{Bartlett:2023a}.
 Zur Umkehr der Drehrichtung wird häufig eine sogenannte H-Brücke verwendet. Diese besteht aus vier Transistoren, durch deren gezielte Ansteuerung die Polarität der Motorspannung geändert werden kann. Dabei ist darauf zu achten, dass kein Shoot-Through-Zustand entsteht, da dies zu einem Kurzschluss führen würde.
 MOSFETs übernehmen in diesem Zusammenhang die Funktion von Schaltern. Sie werden über die Gate-Source-Spannung gesteuert und sind leitend, sobald diese eine bestimmte Schwelle überschreitet. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst geringer Widerstand für einen hohen Wirkungsgrad wichtig ist.
+
+textbf{Hier das BIld aus \cite{Bartlett:2023a} Seite 357 und die dazugehörige Erklärung} 
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.75]{../Images/BTS7960/MosfetSchaltplanSimpel}
+		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a}}
+	\end{figure}
+\end{center}
+
+
+
+
+
 Moderne integrierte Motortreiber kombinieren mehrere Funktionen in einem Baustein. Dazu gehören die Leistungsstufe, die Ansteuerung sowie verschiedene Schutzmechanismen. Der Aufbau basiert häufig auf einer Halbbrücke mit einem High-Side- und einem Low-Side-MOSFET. Zusätzlich sind eine Gate-Treiberstufe sowie Schaltungen zur Strommessung und Diagnose integriert \cite{Bartlett:2023a}.
 Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über Freilaufpfade realisiert, beispielsweise durch die Body-Dioden der MOSFETs. Ergänzend verfügen solche Treiber über Schutzfunktionen wie Überstrom-, Übertemperatur- und Kurzschlussschutz sowie einen Unterspannungsschutz, um einen sicheren Betrieb zu gewährleisten.
-
-
-
-
-\textbf{Hier das BIld aus \cite{Bartlett:2023a} Seite 357 und die dazugehörige Erklärung} 
 
 Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen.
 Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit. Zudem wird die Einhaltung von EMV-Anforderungen erleichtert. In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können.
@@ -78,6 +86,9 @@ cite board
 	\end{center}
 \end{table} 
 
+ 
+ 
+ 
 \begin{itemize}
   \item Cite the data sheet
   \item Extract te information from the data sheet
