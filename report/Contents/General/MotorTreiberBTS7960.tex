@@ -16,7 +16,7 @@
 Gleichstrommotoren funktionieren grundsätzlich über die Erzeugung eines Magnetfeldes, mithilfe dessen eine Welle in Rotation versetzt wird \cite{Roddeck:2023}.
 Aus den grundlegenden physikalischen Zusammenhängen der Elektrodynamik folgt zudem, dass die Stärke des Magnetfeldes direkt vom Strom im Leiter abhängt, der dieses Feld erzeugt.
 Dementsprechend lässt sich auch die Drehzahl eines Elektromotors über den fließenden Strom beeinflussen \cite{Feynman:2020}.
-Um die Stromstärke, die durch den Motor fließt, zu beeinflussen, ist es notwendig, eine steuernde Komponente vor dem Motor zu verbauen. Hierfür eignen sich Motortreiber. Motortreiber sind elektronische Komponenten, welche die Ansteuerung von Motoren erleichtern, indem sie kleine Signale der steuernden Einheit in geeignete Spannungs- und Stromsignale umwandeln \cite{Roddeck:2023}. Als steuernde Einheit dienen beispielsweise Mikrocontroller oder speicherprogrammierbare Steuerungen (SPS), die die erforderlichen Steuersignale zur Ansteuerung des Motortreibers erzeugen \cite{Bartlett:2023a}.
+Um die Stromstärke, die durch den Motor fließt, zu beeinflussen, ist es notwendig, eine steuernde Komponente vor dem Motor zu verbauen. Hierfür eignen sich Motortreiber. Motortreiber sind elektronische Komponenten, welche die Ansteuerung von Motoren erleichtern, indem sie kleine Signale der steuernden Einheit in geeignete Spannungs- und Stromsignale umwandeln \cite{Roddeck:2023}. Als steuernde Einheit dienen beispielsweise Mikrocontroller oder speicherprogrammierbare Steuerungen (SPS), die die erforderlichen Steuersignale zur Ansteuerung des Motortreibers erzeugen \cite{Bartlett:2023a}. Häufig sind die Steuersignale in form einer Puls-Weiten-Modulation (PWM), welche durch das Staffeln von Rechtecksignalen, die ideale Steuerkurve nachbildet \cite{Bartlett:2023a}. 
 
 
 \section{Allgemeines}
@@ -120,12 +120,11 @@ Das macht sie besonders effizient im Vergleich zu herkömmlichen Transistoren \c
 MOSFETs übernehmen in diesem Zusammenhang die Funktion von Schaltern. Sie werden über die Gate-Source-Spannung gesteuert und sind leitend, sobald diese eine bestimmte Schwelle überschreitet. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst geringer Widerstand für einen hohen Wirkungsgrad wichtig ist.
 Moderne integrierte Motortreiber kombinieren mehrere Funktionen in einem Baustein. Dazu gehören die Leistungsstufe, die Ansteuerung sowie verschiedene Schutzmechanismen. Der Aufbau basiert häufig auf einer Halbbrücke mit einem High-Side- und einem Low-Side-MOSFET. Zusätzlich sind eine Gate-Treiberstufe sowie Schaltungen zur Strommessung und Diagnose integriert \cite{Bartlett:2023a}.
 Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über Freilaufpfade realisiert, beispielsweise durch die Body-Dioden der MOSFETs. Ergänzend verfügen solche Treiber über Schutzfunktionen wie Überstrom-, Übertemperatur- und Kurzschlussschutz sowie einen Unterspannungsschutz, um einen sicheren Betrieb zu gewährleisten.
-Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen.
-Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit. Zudem wird die Einhaltung von EMV-Anforderungen erleichtert. In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können.
+Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen \cite{Bartlett:2023a}.
+Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit.  In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können \cite{Bartlett:2023a}.
 Insgesamt stellen MOSFET-Motortreiber eine effiziente und leistungsfähige Lösung zur Ansteuerung von Elektromotoren dar. Besonders integrierte Varianten bieten durch ihre Kombination aus Leistungsfähigkeit, Schutzfunktionen und einfacher Ansteuerung deutliche Vorteile.
 \section{Motortreiber BTS7960}
-
-cite board
+Der BTS7960 Mototreiber in H Brücken Schaltung ist eine Komponenten welche sich durch Ihre Leistungseigenschaften asuzeichnet. Durch das Verwenden von MOSFETs anstelle herkömmlicher Bipolar-Transistoren kann die Verlustleistung minimiert werden. 
 
 \section{Spezifikationen}
 \begin{center}
@@ -162,62 +161,92 @@ cite board
 		\label{TabelleSpezifikationLS}
 	\end{center}
 \end{table} 
+Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
+\begin{enumerate}
+	\item \textbf{Leistungsanschlüsse}
+	\begin{itemize}
+		\item \textbf{B+}: Positiver Motorversorgungsanschluss (6--27V DC)
+		\item \textbf{B-}: Negativer Motorversorgungsanschluss (Masse)
+		\item \textbf{M+}: Positiver Motorausgang
+		\item \textbf{M-}: Negativer Motorausgang
+	\end{itemize}
+	\item \textbf{Steueranschlüsse}
+	\begin{itemize}
+		\item \textbf{RPWM}: PWM-Eingang für Vorwärtsrichtung
+		\item \textbf{LPWM}: PWM-Eingang für Rückwärtsrichtung
+		\item \textbf{R\_EN}: Enable-Eingang für Vorwärtsrichtung
+		\item \textbf{L\_EN}: Enable-Eingang für Rückwärtsrichtung
+		\item \textbf{R\_IS}: Stromsensor-Ausgang für Vorwärtsrichtung (optional)
+		\item \textbf{L\_IS}: Stromsensor-Ausgang für Rückwärtsrichtung (optional)
+		\item \textbf{VCC}: 5V Logikversorgung
+		\item \textbf{GND}: Masse für Logikversorgung
+	\end{itemize}
+\end{enumerate}
 
- Abbildung
+
+
+
  
  
-\begin{itemize}
-  \item Cite the data sheet
-  \item Extract te information from the data sheet
-  \item Circuit Diagram
-\end{itemize}
+%\begin{itemize}
+%  \item Cite the data sheet
+%  \item Extract te information from the data sheet
+%  \item Circuit Diagram
+%\end{itemize}
+%
+%\section{Bibliothek}
+%\subsection{Beschreibung}
+%\subsection{Installation}
+%\begin{itemize}
+%    \item data types
+%    \item data structure
+%    \item data quantity
+%    \item data quality
+%\end{itemize}
 
-\section{Bibliothek}
-
-\subsection{Beschreibung}
-
-\subsection{Installation}
-
-\begin{itemize}
-    \item data types
-    \item data structure
-    \item data quantity
-    \item data quality
-\end{itemize}
 
 \subsection{Funktionen}
 
 \section{Anwendungsbeispiel}
-
-In this section, a simple example is described in detail, which demonstrates how the library supports the sensor/actor.
-
-
-\subsection{HAndbuch}
-
-\subsection{Inside the Example}
+Der Motortreiber lässt sich mit kleinem Aufwand anschließen und verwenden. 
+Es muss sichergestellt sein, das sowohl eine Versorgungsspannung und ein angeschlossener Motor vorhanden sind. Hierfür können einfach zwei Kabel des Motors mittels Aderendhülsen in die Schraubklemmen auf dem Board angeschlossen werdne. Hierfür ist unabdingbar  den positiven Motorausgang \glqq M+ \grqq  sowie den negativen Motorausgang \glqq M- \grqq mit dem Motor zu verbinden. Anschließend kann ebenfalls ein Mikrocontroller mit dem Motortreiber verbunden werden \ref{pic:BTS7960Anschluss}. Die RPWM- und LPWM-Eingänge des Motortreibers werden für die PWM-Steuerung der Motorgeschwindigkeit und -richtung verwendet.
+Die R\_EN- und L\_EN-Pins müssen auf 5V gelegt werden, um den Treiber zu
+aktivieren (vgl. \ref{pic:BTS7960Anschluss}). VCC und GND des Motortreibes sollten ebenfalls mit dem Mikrokontroller verbunden werden, und dienen zur Versorgung der Treiberlogik mit 5V. Nun kann zusätzlich ein Potentiometer zur Erzeugung eines Eingangssignals am Microkontroller genutzt werden, mithilfe des Potentiometers kann dann eine Eingangsvariable erzeugt werden,welche das PWM-Ausgangssignal des Mikrocontrollers modifiziert. Hierfür kann das Potentiometer mit der Logikspannung versorgt werden, und der Fühlerabgriff kann auf einen Analogen Eingangspin des ikrokontrollers gelegt werden (vgl. \ref{pic:BTS7960Anschluss})
+Anschließend kann der Motortreiber mit einer externen Spannungsquelle verbunden werden. 
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.35]{../Images/BTS7960/BTS7960AnschlussSteckplatine}
+		\caption{Anschlussbeispiel des BTS7960 nach \cite{AZ:2026b}} 
+		\label{pic:BTS7960Anschluss}
+	\end{figure}
+\end{center}
 
 \subsection{Code}
+Nach Anschluss des Motortreibers kann nun der erste Code auf den Mikrokontroller aufgespielt werden. Hierfür sollten zunächst alle Pins konfiguriert und Variablen definiert werden. Anschließend kann die Auswerte Logik des Potentiometersignals definiert werden. Diese modifzierte Variable kann dann die PWM Ausgangssignale des Mikrokontorllers steuern. Der Motortreiber wandelt dann die Steuersignale in direkte Strom und Spannungsänderungen um, welche die Drehzahl und das Drehmoment des Motors verändern. 
 
-\subsection{Dateien}
+\begin{center}
+	\captionof{figure}{Der Code liest den Wert eines Potentiometers ein, wandelt ihn in ein PWM-Signal zur Drehzahlsteuerung um und steuert damit einen Motor über den BTS7960 abhängig von der Variable motorDirection entweder rechts- oder linksherum an.} 
+	\label{BTS7960Test}
+	\ArduinoExternal{}{../../Code/BTSTest/BTSTest.ino}
+\end{center}
 
 
 
-\section{Kalibrierung}
 
-cite method
+%\section{Kalibrierung}
+%
+%cite method
 
 \section{Simple Code}
 
-
-\section{Simple Application}
-
+\section{Einfache Anwendung}
 
 
-\section{Test}
+
+
 
 \subsection{einfacher Funktionstest }
 
-\subsection{Test all Functions}
 
 
 
