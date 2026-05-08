@@ -110,7 +110,7 @@ und Drain zu steuern. Üblicherweise werden zudem Zehnerdioden beim verschalten 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.75]{../Images/BTS7960/MosfetSchaltplanSimpel}
-		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a}}
+		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a} udn \cite{Specovius:2017}}
 		\label{pic:MosfetAufbauSimpel}
 	\end{figure}
 \end{center}
@@ -201,7 +201,7 @@ Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Ansc
 %\end{itemize}
 
 
-\subsection{Funktionen}
+%\subsection{Funktionen}
 
 \section{Anwendungsbeispiel}
 \label{sec:AnwendungBTS7960}
@@ -241,8 +241,14 @@ Um die Ordnungsgemäße Funktion des Motortreibers sicherzustellen, ist es sinnv
 		\item Prüfen ob die Drehzahl des Motors einer Veränderung unterliegt. 
 	\end{enumerate}  
 \end{center}
-Sollte es keine Drehzahlveränderung geben, so sollten Verbindungen auf korrekten Anschluss und festen Sitz kontrolliert werden. Ein Ausstausch der Steckverbindungsleitungen kann Kabelbrüche als Fehlerursache ausschließen. 
-Eine Kalibrierung des Motortreibers im klassischen Sinne ist nicht notwendig, jedoch aknn es sinnvoll sein die Auswertelogik den gewünschten Ergebnissen anzupassen. Hier
-
-\section{weiterführende Informationen}
-
+Sollte es zu keiner Drehzahlveränderung kommen, so sollten zunächst alle Verbindungen auf korrekten Anschluss sowie festen Sitz überprüft werden. Ein Austausch der Steckverbindungsleitungen kann zudem Kabelbrüche als mögliche Fehlerursache ausschließen.
+Eine Kalibrierung des Motortreibers im klassischen Sinne ist nicht notwendig. Dennoch kann es sinnvoll sein, die Auswertelogik an die gewünschten Ergebnisse anzupassen. Hierzu kann beispielsweise das Verhältnis zwischen Eingabe- und Ausgabewert verändert werden. Zusätzlich lässt sich der Wertebereich des digitalen Eingangssignals anpassen.
+So kann etwa definiert werden, dass die Motordrehzahl im Bereich von 0 bis 200 Umdrehungen pro Minute liegen soll. Der Eingangswert des Potentiometers variiert dabei zwischen 0 und 1023. Daraus ergibt sich theoretisch eine Auflösung von etwa 0,2 Umdrehungen pro Minute pro Schritt.
+\section{weiterführende Literatur} 
+\begin{center}
+	\begin{enumerate}
+		\item  In dem Buch \glqq Operationsverstärker und Transistoren \grqq \space von Albrech und Jochen Zwick  \cite{Zwick:2022} werden analoge Schaltungen von Transistoren und Operationsverstärkern ausführlich erklärt. Zudem werden Größen wie Klirrfaktor, Grenzfreunz oder Schwingneigung erläutert und ebenfalls in mathematische Anwendung aufgeschlüsselt. 
+		\item  In dem Buch \glqq  Grundkurs
+		Leistungselektronik   \grqq \space von Joachim Specovius \cite{Specovius:2017} werden nicht ausschließlich MOSFETs und Ihre funktionsweise erläutert, es wird zudem auf weitere Technische Apsekte der Leistungselektronik eingegangen. Beispielsweise wird auf  Wärme-Management, Netzrückwirkungen oder Stromrichter udn Maschinen eingegangen. Das Buch beschreibt Lösungsmögölichkeiten für Anwendugnen und zeigt die Herausforderungen einzelner Komponten verständlich auf. 
+			\end{enumerate}
+\end{center}

@@ -43,7 +43,7 @@ void setup()
  * @brief Controls motor speed and direction.
  *
  * The potentiometer value (0 to 1023) is mapped
- * to a PWM value (0 to 255).
+ * to a PWM value (0 to 255). Also the direction can be assigned
  */
 void loop()
 {
