@@ -184,10 +184,6 @@ Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Ansc
 \end{enumerate}
 
 
-
-
- 
- 
 %\begin{itemize}
 %  \item Cite the data sheet
 %  \item Extract te information from the data sheet
@@ -208,6 +204,7 @@ Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Ansc
 \subsection{Funktionen}
 
 \section{Anwendungsbeispiel}
+\label{sec:AnwendungBTS7960}
 Der Motortreiber lässt sich mit kleinem Aufwand anschließen und verwenden. 
 Es muss sichergestellt sein, das sowohl eine Versorgungsspannung und ein angeschlossener Motor vorhanden sind. Hierfür können einfach zwei Kabel des Motors mittels Aderendhülsen in die Schraubklemmen auf dem Board angeschlossen werdne. Hierfür ist unabdingbar  den positiven Motorausgang \glqq M+ \grqq  sowie den negativen Motorausgang \glqq M- \grqq mit dem Motor zu verbinden. Anschließend kann ebenfalls ein Mikrocontroller mit dem Motortreiber verbunden werden \ref{pic:BTS7960Anschluss}. Die RPWM- und LPWM-Eingänge des Motortreibers werden für die PWM-Steuerung der Motorgeschwindigkeit und -richtung verwendet.
 Die R\_EN- und L\_EN-Pins müssen auf 5V gelegt werden, um den Treiber zu
@@ -222,32 +219,29 @@ Anschließend kann der Motortreiber mit einer externen Spannungsquelle verbunden
 \end{center}
 
 \subsection{Code}
-Nach Anschluss des Motortreibers kann nun der erste Code auf den Mikrokontroller aufgespielt werden. Hierfür sollten zunächst alle Pins konfiguriert und Variablen definiert werden. Anschließend kann die Auswerte Logik des Potentiometersignals definiert werden. Diese modifzierte Variable kann dann die PWM Ausgangssignale des Mikrokontorllers steuern. Der Motortreiber wandelt dann die Steuersignale in direkte Strom und Spannungsänderungen um, welche die Drehzahl und das Drehmoment des Motors verändern. 
+Nach Anschluss des Motortreibers kann nun der erste Code  (vgl. \ref{code:BTS7960Test}) auf den Mikrokontroller aufgespielt werden. Hierfür sollten zunächst alle Pins konfiguriert und Variablen definiert werden. Anschließend kann die Auswertelogik des Potentiometersignals definiert werden. Diese modifzierte Variable kann dann die PWM Ausgangssignale des Mikrokontorllers steuern. Der Motortreiber wandelt dann die Steuersignale in direkte Strom und Spannungsänderungen um, welche die Drehzahl und das Drehmoment des Motors verändern. 
 
 \begin{center}
 	\captionof{figure}{Der Code liest den Wert eines Potentiometers ein, wandelt ihn in ein PWM-Signal zur Drehzahlsteuerung um und steuert damit einen Motor über den BTS7960 abhängig von der Variable motorDirection entweder rechts- oder linksherum an.} 
-	\label{BTS7960Test}
+	\label{code:BTS7960Test}
 	\ArduinoExternal{}{../../Code/BTSTest/BTSTest.ino}
 \end{center}
 
+\subsection{Funktionstest und Kalibirerung }
+Um die Ordnungsgemäße Funktion des Motortreibers sicherzustellen, ist es sinnvoll seine wichtigsten Funktionen vor der vollständigen Verwendung zu testen. Hierfür kann die in Kapitel \ref{sec:AnwendungBTS7960} Verschaltung der Komponenten erneut verwendet werden. Auch kann der Code wiederverwendet werden. Um die Ansteuerung des Motors zu prüfen kann folgendes Vorgehen befolgt werden. 
 
 
-
-%\section{Kalibrierung}
-%
-%cite method
-
-\section{Simple Code}
-
-\section{Einfache Anwendung}
-
-
-
-
-
-\subsection{einfacher Funktionstest }
-
-
+\begin{center}
+	Inhalt..\begin{enumerate}
+		\item Alle Anschlüsse und Verbindungen nach \ref{pic:BTS7960Anschluss} verbinden und auf festen Sitz prüfen. 
+		\item Den Code \ref{code:BTS7960Test} auf den Mikrokontroller spielen. 
+		\item das Potentiometer auf den Anschlag einer Seite drehen. 
+		\item Spannungsversorgung einschalten.  
+		\item Den Widerstand am Potentiometer durch Drehen verändern. 
+		\item Prüfen ob die Drehzahl des Motors einer Veränderung unterliegt. 
+	\end{enumerate} 
+	Sollte es keine Drehzahlveränderung geben, so sollten Verbindungen auf korrekten Anschluss und festen Sitz kontrolliert werden. Ein Ausstausch der Steckverbindungsleitungen kann Kabelbrüche als Fehlerursache ausschließen. 
+\end{center}
 
 
 \section{weiterführende Informationen}
