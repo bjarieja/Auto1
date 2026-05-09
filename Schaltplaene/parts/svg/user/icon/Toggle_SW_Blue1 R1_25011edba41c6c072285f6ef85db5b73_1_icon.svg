@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0.382496 0.51202518" width="0.382496in" height="0.51202518in"  id="SVGRoot" gorn="0" version="1.1">
+    <desc >
+        <referenceFile >toggle_sw_blueicon2_ink.svg</referenceFile>
+    </desc>
+    <defs  id="defs2"/>
+    <metadata  id="metadata5">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work rdf:about="" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g transform="translate(-0.49479184,-0.99388611)" >
+        <g >
+            <g >
+                <g >
+                    <g >
+                        <g  id="icon" gorn="0.3.0.0.0.0.0">
+                            <rect y="1.3259182" width="0.16740829" stroke="#000000" height="0.17408237"  id="rect819" stroke-opacity="1" gorn="0.3.0.0.0.0.0.0" stroke-width="0.015" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" fill="#0000ff" x="0.50000018"/>
+                            <path stroke="#000000"  id="path821" stroke-opacity="1" gorn="0.3.0.0.0.0.0.1" stroke-width="0.015" d="M 0.50000013,1.3259182 0.72747499,1.0999999 H 0.87208016 L 0.66740847,1.3259182" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" fill="#0000ff" fill-opacity="1"/>
+                            <rect y="1.4222778" width="0.010023585" stroke="#fabe00" height="0.07863348"  id="rect879" stroke-opacity="1" gorn="0.3.0.0.0.0.0.2" stroke-width="0.01" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;" fill="#0000ff" x="0.71076328"/>
+                            <rect y="1.3407701" width="0.0082011148" stroke="#fabe00" height="0.069661424"  id="rect932" stroke-opacity="1" gorn="0.3.0.0.0.0.0.3" stroke-width="0.01" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;" fill="#0000ff" x="0.78183961"/>
+                            <rect y="1.2599061" width="0.0094122393" stroke="#fabe00" height="0.07762672"  id="rect934" stroke-opacity="1" gorn="0.3.0.0.0.0.0.4" stroke-width="0.01" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;" fill="#0000ff" x="0.8380363"/>
+                            <path stroke="#000000"  id="path827" stroke-opacity="1" gorn="0.3.0.0.0.0.0.5" stroke-width="0.015" d="M 0.87208016,1.0999999 0.87205203,1.2482316 0.6674091,1.5000011 V 1.3259186 Z" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;" fill="#0000ff" fill-opacity="1"/>
+                            <ellipse rx="0.069253847" ry="0.022593113" stroke="#bfbfbf"  id="path875" stroke-opacity="1" gorn="0.3.0.0.0.0.0.6" cx="0.69982833" cy="1.1988373" stroke-width="0.000115741" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;" fill="#bfbfbf" fill-opacity="1"/>
+                            <path stroke="#bfbfbf"  id="path877" stroke-opacity="1" gorn="0.3.0.0.0.0.0.7" stroke-width="0.03" d="M 0.69527224,1.2123177 0.79004069,1" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;" fill="none"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

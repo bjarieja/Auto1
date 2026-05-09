@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.49600219726562 59.90700149536133" width="81.49600219726562" height="59.90700149536133" >
+    <desc >
+        <referenceFile >slide_switch_micro_spdt_SCHEM.svg</referenceFile>
+    </desc>
+    <g transform="translate(0,-3.093)" >
+        <g >
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g transform="matrix(0.09060800820589066, 0, 0, 0.09017500281333923, -18.34979438781739, -13.806500434875488)" >
+                                        <g >
+                                            <g >
+                                                <g >
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g  id="schematic" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0">
+                                                                    <rect y="313.074" width="899.437" stroke=" rgb(0, 0, 0)" height="437.49"  stroke-width=" 15.0359" fill=" rgb(255, 255, 255)" x="202.519"/>
+                                                                    <g transform="matrix(3.758809, 0, 0, 3.764575, -1863.833984, -4042.273437)" >
+                                                                        <g >
+                                                                            <g >
+                                                                                <g >
+                                                                                    <g >
+                                                                                        <g >
+                                                                                            <g >
+                                                                                                <text y="1145.73" font-size=" 24px" stroke=" rgb(100, 100, 100)"  stroke-width="1" fill=" none" style=" font-family:Droid Sans;Droid Sans&quot;;   white-space: pre;" x="584.851">Slide_SW_micro</text>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="752.96" y2="813.261" stroke-width=" 17.0407" x1="394.399" x2="394.399" fill=" none" style="  pointer-events: none; "/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  id="connector1pin" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3" y1="813.201" y2="851.744" stroke-width=" 17.0407" x1="394.399" x2="394.399" fill=" none" style="  pointer-events: none; "/>
+                                                                    <rect y="860.209" width="0.0340814" stroke="none" height="0.111167"  id="connector1terminal" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4" stroke-width="0" fill="none" x="394.382"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="752.96" y2="813.261" stroke-width=" 17.0407" x1="648.81" x2="648.81" fill=" none" style="  pointer-events: none; "/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  id="connector0pin" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6" y1="813.201" y2="851.744" stroke-width=" 17.0407" x1="648.81" x2="648.81" fill=" none" style="  pointer-events: none; "/>
+                                                                    <rect y="860.209" width="0.0340814" stroke="none" height="0.111167"  id="connector0terminal" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7" stroke-width="0" fill="none" x="648.793"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  id="connector3pin" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8" y1="752.96" y2="813.261" stroke-width=" 17.0407" x1="904.309" x2="904.309" fill=" none" style="  pointer-events: none; "/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  id="connector2pin" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9" y1="813.201" y2="851.744" stroke-width=" 17.0407" x1="904.309" x2="904.309" fill=" none" style="  pointer-events: none; "/>
+                                                                    <rect y="860.209" width="0.0340814" stroke="none" height="0.111167"  id="connector2terminal" gorn="0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.10" stroke-width="0" fill="none" x="904.292"/>
+                                                                    <text y="832.539"  style="fill: rgb(51, 51, 51); font-size: 40.2px; line-height: 40.1918px; white-space: pre;" x="679.554">1</text>
+                                                                    <text y="831.586"  style="fill: rgb(51, 51, 51); font-size: 40.2px; line-height: 40.1918px; white-space: pre;" x="413.433">2</text>
+                                                                    <text y="831.591"  style="fill: rgb(51, 51, 51); font-size: 40.2px; line-height: 40.1918px; white-space: pre;" x="923.793">3</text>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="747.264" y2="600.281" stroke-width=" 16.5945" x1="649.592" x2="651.274"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="747.264" y2="507.361" stroke-width=" 16.5945" x1="395.741" x2="397.425"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="747.264" y2="507.361" stroke-width=" 16.5945" x1="904.259" x2="905.943"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="600.2813110351562" y2="394.1676330566406" stroke-width=" 16.5945" x1="650.7105102539062" x2="396.82171630859375"/>
+                                                                    <line stroke=" rgb(0, 0, 0)"  y1="601.9707641601562" y2="392.4781799316406" stroke-width=" 16.5945" x1="652.3919067382812" x2="913.0062255859375"/>
+                                                                    <g transform="matrix(0.445565, 0, 0, 0.447705, 144.643661, 247.789261)" >
+                                                                        <g >
+                                                                            <g >
+                                                                                <g >
+                                                                                    <g >
+                                                                                        <g >
+                                                                                            <g >
+                                                                                                <circle  r="50" cx="578" cy="584.5"/>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                    <g transform="matrix(0.445565, 0, 0, 0.447705, 652.325256, 247.789261)" >
+                                                                        <g >
+                                                                            <g >
+                                                                                <g >
+                                                                                    <g >
+                                                                                        <g >
+                                                                                            <g >
+                                                                                                <circle  r="50" cx="578" cy="584.5"/>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

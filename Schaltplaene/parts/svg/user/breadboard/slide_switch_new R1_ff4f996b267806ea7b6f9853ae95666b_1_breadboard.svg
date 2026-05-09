@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0.3635417 0.5854167" width="0.34900004in" height="0.56200004in"  id="SVGRoot" gorn="0" version="1.1">
+    <desc >
+        <referenceFile >p_mySlide_newBREAD.svg</referenceFile>
+    </desc>
+    <defs  id="defs2"/>
+    <metadata  id="metadata5">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work rdf:about="" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g transform="translate(0.0078125,-1.5057284)" >
+        <g >
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g  id="copper0" gorn="0.3.0.0.0.0.0.0.0.0">
+                                        <g  id="copper1" gorn="0.3.0.0.0.0.0.0.0.0.0">
+                                            <circle stroke="#fabe00"  id="connector0pin" stroke-opacity="1" gorn="0.3.0.0.0.0.0.0.0.0.0.0" r="0.055" cx="0.25031251" cy="1.804243" stroke-width="0.04166667" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;" fill="none" fill-opacity="1"/>
+                                            <circle stroke="#fabe00"  id="connector1pin" stroke-opacity="1" gorn="0.3.0.0.0.0.0.0.0.0.0.1" r="0.055" cx="0.25031251" cy="1.5854167" stroke-width="0.04166667" style="fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;" fill="none" fill-opacity="1"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+    <g transform="translate(0.0078125,-1.5057284)" >
+        <g >
+            <g >
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g  id="breadboard" gorn="0.4.0.0.0.0.0.0.0.0">
+                                        <rect y="1.5135409" width="0.34791669" stroke="#000000" height="0.56979167"  id="rect817" stroke-opacity="1" gorn="0.4.0.0.0.0.0.0.0.0.0" stroke-width="0.015625" style="opacity:1;vector-effect:none;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="none" fill-opacity="1" x="0"/>
+                                        <rect y="1.5943635" width="0.21551715" stroke="#000000" height="0.41481259"  id="rect819" stroke-opacity="1" gorn="0.4.0.0.0.0.0.0.0.0.1" stroke-width="0.015625" style="opacity:1;vector-effect:none;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="none" fill-opacity="1" x="0.069521658"/>
+                                        <rect y="1.8749993" width="0.14379397" stroke="#000000" height="0.10416663"  id="rect821" stroke-opacity="1" gorn="0.4.0.0.0.0.0.0.0.0.2" stroke-width="0.015625" style="opacity:1;vector-effect:none;fill-rule:evenodd;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" fill="none" fill-opacity="1" x="0.10416663"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
