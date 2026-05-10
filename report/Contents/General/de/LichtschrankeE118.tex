@@ -598,7 +598,8 @@ Um schnelle Veränderungen von Signalen zuverlässig erfassen zu können, ist es
 \subsection{Handbuch und Inbetriebnahme des Sensors}
 Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden.  
 
-\subsection{Anschlussbeispiel}
+\subsection{Anschlussbeispiel} 
+\ref{sec:AnslussF249}
 Die F249 Gabellichtschranke wird in diesem Beispiel zur Drehzahlmessung mit einer Lochscheibe eingesetzt, die auf einer rotierenden Welle befestigt ist. Während sich die Scheibe dreht, unterbricht sie durch ihre Löcher den Lichtstrahl der Lichtschranke regelmäßig. Jede Unterbrechung erzeugt ein digitales Signal, das vom Arduino erfasst und gezählt wird. Über die Anzahl der Impulse innerhalb eines bestimmten Zeitraums kann anschließend die Drehzahl der Welle berechnet werden. Dieses Verfahren ermöglicht eine einfache und präzise berührungslose Messung der Rotationsgeschwindigkeit. 
 
 Hiefür wird die Lichtschranke mit der 5 $V$ Versorgung und der Masse des Mikrokontrolles (hier: Arduino UNO R4) verbunden. Anschließend wird das digitale Ausgang der Lichtschranke mit dem digitalen Eingang 4 des Arduinos verbunden (vgl. \ref{pic:F249Anschluss}) 
@@ -606,32 +607,52 @@ Hiefür wird die Lichtschranke mit der 5 $V$ Versorgung und der Masse des Mikrok
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.8]{../../Images/F249/F249Anschluss} 
-		\caption{Anschluss der Lichtschranke an einen Arduino Uno R4 zur Messung von Drehzahl} 
-		\caption{pic:F249Anschluss}
+		\caption{Anschluss der Lichtschranke an einen Arduino Uno R4 zur Messung von Drehzahlen } 
+		\label{pic:F249Anschluss}
 	\end{figure}
 \end{center}
 
-
-
-
 \subsection{Code}
 
-%\subsection{Files}
-\subsection{Kalibirerung und Justierung}
+\begin{center}
+		\captionof{figure}{Der Code zählt, wie oft die Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.}  
+		\label{code:F249}
+	\ArduinoExternal{}{../../Code/F249/F249Drehzahl/F249Drehzahl.ino}
+\end{center}
+Der Code  (vgl. \ref{code:F249}): zählt, wie oft die Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.
+Nachfolgend werden einzelne Bestandteile erneut 
+\begin{center}
+	\begin{enumerate}
+		\item \PYTHON{ pulseCount} (Variable): Speichert die Anzahl der erkannten Lichtunterbrechungen. 
+		\item \PYTHON{countPulse()} (Interrupt-Funktion): Wird jedes Mal automatisch aufgerufen, wenn die Lichtschranke ein Signal erkennt, und erhöht den Zähler um 1. 
+		\item \PYTHON{setup()}: Richtet den Sensor-Pin und den Interrupt ein und startet die serielle Ausgabe. 
+		\item \PYTHON{ loop()}: Liest jede Sekunde den aktuellen Zählerstand aus, gibt ihn am Monitor aus und setzt ihn wieder auf 0, damit die nächste Sekunde neu gemessen wird.
+	\end{enumerate}
+\end{center}
+
+\subsection{ Justierung}
+Zur sicherstellung der zuverlässigen Funktion der Lichtschranke für die Drehzahlmessung, muss die Rotierende Scheibe dauerhaft mit einem Teil im Lichtstrahl der Lichtstranke rotieren. Somit sollten die Rotationsachsen der rotierenden Welle und die Strahlachse der Lichtschranke achsparrallel sein. Auch sollte die Planebene der Lochscheibe während der Rotation orthogonal zum Lichtstrahl sein. 
+Dies sollte dauerhaft gewährleistet werden \textbf{Hier Grafik zur veraunschaulichung}.  
 %\section{Simple Code}
-\subsection{Anwendungsbeschreibung der Lichtschranke E18-D80NK}
-
-
-
-\subsection{Tests}
 
 \subsection{Einfacher Funktionstest}
-
-
+Um die Funktion der Lichtschranke zu testen, kann die in Kapitel \ref{sec:AnschlussF249} beschriebene Schaltung verwednet werden. 
+Nachfolgendes Vorgehen kann anschließend zum Testen verwendet werden.  
 \begin{center}
-	\captionof{figure}{Dieser Code liest den digitalen Eingang 8 des Mikrocontrollers ein und erkennt anhand des Signals der Lichtschranke, ob ein Objekt den Lichtstrahl unterbricht. Der Zustand wird anschließend über die serielle Schnittstelle ausgegeben.} 
-	\ArduinoExternal{}{../../Code/TestLichtschranke/TestLichtschranke.ino}
+	\begin{enumerate}
+		\item Herstellen aller Verbindungen wie in Abbildung  \ref{pic:F249Anschluss} gezeigt. 
+		\item Verbinden des Mikrokontrollers mit einem PC auf dem dies Arduino IDE installiert is. 
+		\item Aufspielen des Codes auf den Mikrokontroller 
+		\item Sicherstellen dass sich kein Objekt im Lichtstrahl befindet
+		\item Notieren des Ausgangssignales der Seriellen Schnittstelle 
+		\item  Zustand der Signal LED der F249 prüfen und Notieren
+		\item Lichtstrahl mittels Objekt unterbrechen 
+		\item Signalveränderung prüfen.  
+		\item Vorgehen mehrfach wiederholen 
+	\end{enumerate}
 \end{center}
+Dieses Vorgehen testet die Funktionsweise der Gabellichtschranke, sollten die Ergebnisse vom Soll (LED an wenn Lichtstrahl unterbrochen) abweichen, kann der Austausch aller Verbindungsleitungen und das Prüfen aller Steckverbindungen auf festen Sitz sinnvoll sein. Auch sollte sichergestellt werden das die Kommunikation zwischen Mikrocontroller udn Computer einwandfrei funktioniert. 
+
 
 
 %\subsection{Test all Functions}
