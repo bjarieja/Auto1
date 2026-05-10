@@ -529,8 +529,7 @@ All diese und weiterführende Informationen finden sich in folgender Literatur:
 
 
 \section{Einweg Lichtschranke F249}
-Die Einweg Lichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messung von Impulsen, Geschwindigkeiten und Drehzahlen \cite{Roboter-Bausatz:2026c}. Durch den Aufbau als Einweg Lichtschranke eignet sich der Sensor besonders gut zu Messung von Drehzahl und Geschwindigkeit (vgl. \ref{sec:OptischeSensoren}), da er unabhängig der Reflektion des Gegenstandes zwischen  Sender- und Empfängerdiode.  
-
+Die Einweg-Lichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messung von Impulsen, Geschwindigkeiten und Drehzahlen \cite{Roboter-Bausatz:2026c}. Durch den Aufbau als Einweg-Lichtschranke eignet sich der Sensor besonders gut zur Messung von Drehzahlen und Geschwindigkeiten (vgl. \ref{sec:OptischeSensoren}), da er unabhängig von der Reflexion des Gegenstandes zwischen Sender- und Empfängerdiode arbeitet.  
 \begin{center}
 	\begin{figure}
 		\includegraphics{../../Images/F249/F249Pic.png} 
@@ -577,10 +576,9 @@ Die Lichtschranke F249 lässt sich mittels 4 Pins an den Microkontroller anschli
 	\end{center}
 \end{table}
 
-m Grundlegenden besteht der Sensor aus mehreren einzelnen Komponenten (vgl. \ref{pic:SchaltplanF249}). Auf der Platine befinden sich neben einer 4-poligen Pin-Steckerleiste mehrere Widerstände, eine Infrarotdiode, ein Fototransistor, eine LED sowie ein Spannungswandler. Die LEDs signalisieren in diesem Fall sowohl eine korrekte Spannungsversorgung als auch das Schaltsignal der Lichtschranke. Der Spannungswandler sorgt dabei für die Verstärkung beziehungsweise Aufbereitung der Signale, damit diese vom Mikrocontroller ausgewertet werden können. Er nutzt die halbe Versorgungsspannung als Referenzspannung und somit als Schwellwert.
+Im Grundlegenden besteht der Sensor aus mehreren einzelnen Komponenten (vgl. \ref{pic:SchaltplanF249}). Auf der Platine befinden sich neben einer 4-poligen Pin-Steckerleiste mehrere Widerstände, eine Infrarotdiode, ein Fototransistor, eine LED sowie ein Spannungswandler. Die LEDs signalisieren in diesem Fall sowohl eine korrekte Spannungsversorgung als auch das Schaltsignal der Lichtschranke. Der Spannungswandler sorgt dabei für die Verstärkung beziehungsweise Aufbereitung der Signale, damit diese vom Mikrocontroller ausgewertet werden können. Er nutzt die halbe Versorgungsspannung als Referenzspannung und somit als Schwellwert.
 Wird der Lichtstrahl unterbrochen, fließt kein Strom mehr durch den Fototransistor und der Pull-up-Widerstand R3 zieht das Signal auf 5 $V$ nach oben. Der Spannungswandler vergleicht anschließend das Sensorsignal mit der Referenzspannung und gibt ein positives Signal aus, wenn die anliegende Spannung über der Referenzspannung liegt. Liegt die Spannung darunter, wird ein Signal von 0 $V$ ausgegeben.
 Hierbei können analoge Signale Werte zwischen 0 $V$ und der angelegten Versorgungsspannung (üblicherweise 3{,}3 $V$ oder 5 $V$) annehmen. Die vom Spannungswandler ausgegebenen digitalen Signale hingegen können lediglich die Zustände 0 oder 1 besitzen. Die LED 1 (vgl. \ref{pic:SchaltplanF249}) leuchtet zudem bei unterbrochenem Lichtstrahl \cite{Roboter-Bausatz:2026c}.  
-
 
 \begin{center}
 	\begin{figure}[h!]
@@ -593,10 +591,12 @@ Hierbei können analoge Signale Werte zwischen 0 $V$ und der angelegten Versorgu
 
 
 \subsection{Bibliothek \& Funktionen }
-Um schnelle Veränderungen von Signalen zuverlässig erfassen zu können, ist es sinnvoll Funktionen der Arduino IDE internen Bibliothek zu verwenden. Für schnelle Signalveränderungen, wie sie beispielsweise bei hohen Drehzahlen einer Lochscheibe vorkommen können, ist es sinnvoll die Funktion \PYTHON{attachInterrupt()} zu verwenden. 
-\PYTHON{attachInterrupt()} ist eine Arduino-Funktion, mit der ein Programm sofort auf ein Signal am Interrupt-Pin reagiert. Sobald sich das Signal ändert (z. B. von LOW auf HIGH), wird die aktuelle Programmausführung kurz unterbrochen und eine festgelegte Funktion ausgeführt. Danach läuft das Hauptprogramm weiter. Dadurch muss der Arduino das Signal nicht ständig abfragen und kann schneller und zuverlässiger auf Ereignisse reagieren, z. B. bei schnellen Sensoren wie einer Gabellichtschranke.
+
+Um schnelle Veränderungen von Signalen zuverlässig erfassen zu können, ist es sinnvoll, Funktionen der in der Arduino IDE integrierten Bibliothek zu verwenden. Für schnelle Signalveränderungen, wie sie beispielsweise bei hohen Drehzahlen einer Lochscheibe auftreten können, ist insbesondere die Funktion \PYTHON{attachInterrupt()} geeignet. 
+\PYTHON{attachInterrupt()} ist eine Arduino-Funktion, mit der ein Programm sofort auf ein Signal am Interrupt-Pin reagiert. Sobald sich das Signal ändert (z. B. von LOW auf HIGH), wird die aktuelle Programmausführung kurz unterbrochen und eine festgelegte Funktion ausgeführt. Danach läuft das Hauptprogramm weiter. Dadurch muss der Arduino das Signal nicht ständig abfragen und kann schneller und zuverlässiger auf Ereignisse reagieren, z. B. bei schnellen Sensoren wie einer Gabellichtschranke.   
+
 \subsection{Handbuch und Inbetriebnahme des Sensors}
-Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden.  
+Folgende Vorgehensweise kann zum Anschluss und zur Inbetriebnahme der Lichtschranke verwendet werden.  
 
 \subsection{Anschlussbeispiel} 
 \ref{sec:AnslussF249}
@@ -651,9 +651,7 @@ Nachfolgendes Vorgehen kann anschließend zum Testen verwendet werden.
 		\item Vorgehen mehrfach wiederholen 
 	\end{enumerate}
 \end{center}
-Dieses Vorgehen testet die Funktionsweise der Gabellichtschranke, sollten die Ergebnisse vom Soll (LED an wenn Lichtstrahl unterbrochen) abweichen, kann der Austausch aller Verbindungsleitungen und das Prüfen aller Steckverbindungen auf festen Sitz sinnvoll sein. Auch sollte sichergestellt werden das die Kommunikation zwischen Mikrocontroller udn Computer einwandfrei funktioniert. 
-
-
+Dieses Vorgehen testet die Funktionsweise der Gabellichtschranke, sollten die Ergebnisse vom Soll (LED an wenn Lichtstrahl unterbrochen) abweichen, kann der Austausch aller Verbindungsleitungen und das Prüfen aller Steckverbindungen auf festen Sitz sinnvoll sein. Auch sollte sichergestellt werden das die Kommunikation zwischen Mikrocontroller und Computer einwandfrei funktioniert. 
 
 %\subsection{Test all Functions}
 %
