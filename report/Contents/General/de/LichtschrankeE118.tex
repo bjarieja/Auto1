@@ -541,16 +541,7 @@ Die Einweg Lichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messu
 
 
 \subsection{Technische Daten der Lichtschranke} 
-Die Lichtschranke F249 lässt sich mittels 4 Pins an den Microkontroller anschließen. Hierzu werden die 5V Spannungsversorgung,  die Masse und die Ausgänge verbunden. Bei den Ausgängen können sowohl digitale als auch analoge Signale ausgegeben werden \cite{Roboter-Bausatz:2026c}. Abhängig vom Anwendungsfall muss lediglich ein Signalausgang mit dem Microkontroller verbunden werden. 
-
-\begin{center}
-	\begin{figure}[h!]
-		\includegraphics[scale=0.5]{../../Images/F249/F249SP.png} 
-		\caption{Schaltplan des Sensor nach \cite{SunFounder:2025}}
-		\label{pic:SchaltplanF249}
-	\end{figure}
-\end{center}
-
+Die Lichtschranke F249 lässt sich mittels 4 Pins an den Microkontroller anschließen. Hierzu werden die 5V Spannungsversorgung,  die Masse und die Ausgänge verbunden. Bei den Ausgängen können sowohl digitale als auch analoge Signale ausgegeben werden \cite{Roboter-Bausatz:2026c}. Abhängig vom Anwendungsfall muss lediglich ein Signalausgang mit dem Microkontroller verbunden werden.  
 
 \begin{table}[h!]
 	\caption{Spezifikationen des F249 Infrarot Geschwindigkeits-/Drehzahlsensors \cite{Roboter-Bausatz:2026c}}
@@ -585,11 +576,44 @@ Die Lichtschranke F249 lässt sich mittels 4 Pins an den Microkontroller anschli
 		\label{TabelleSpezifikationF249}
 	\end{center}
 \end{table}
-\subsection{Bibliothek}
-\subsubsection{Beschreibung}
+
+m Grundlegenden besteht der Sensor aus mehreren einzelnen Komponenten (vgl. \ref{pic:SchaltplanF249}). Auf der Platine befinden sich neben einer 4-poligen Pin-Steckerleiste mehrere Widerstände, eine Infrarotdiode, ein Fototransistor, eine LED sowie ein Spannungswandler. Die LEDs signalisieren in diesem Fall sowohl eine korrekte Spannungsversorgung als auch das Schaltsignal der Lichtschranke. Der Spannungswandler sorgt dabei für die Verstärkung beziehungsweise Aufbereitung der Signale, damit diese vom Mikrocontroller ausgewertet werden können. Er nutzt die halbe Versorgungsspannung als Referenzspannung und somit als Schwellwert.
+Wird der Lichtstrahl unterbrochen, fließt kein Strom mehr durch den Fototransistor und der Pull-up-Widerstand R3 zieht das Signal auf 5 $V$ nach oben. Der Spannungswandler vergleicht anschließend das Sensorsignal mit der Referenzspannung und gibt ein positives Signal aus, wenn die anliegende Spannung über der Referenzspannung liegt. Liegt die Spannung darunter, wird ein Signal von 0 $V$ ausgegeben.
+Hierbei können analoge Signale Werte zwischen 0 $V$ und der angelegten Versorgungsspannung (üblicherweise 3{,}3 $V$ oder 5 $V$) annehmen. Die vom Spannungswandler ausgegebenen digitalen Signale hingegen können lediglich die Zustände 0 oder 1 besitzen. Die LED 1 (vgl. \ref{pic:SchaltplanF249}) leuchtet zudem bei unterbrochenem Lichtstrahl \cite{Roboter-Bausatz:2026c}.  
+
+
+\begin{center}
+	\begin{figure}[h!]
+		\includegraphics[scale=0.5]{../../Images/F249/F249SP.png} 
+		\caption{Schaltplan des Sensor nach \cite{SunFounder:2025}}
+		\label{pic:SchaltplanF249}
+	\end{figure}
+\end{center}
+
+
+
+\subsection{Bibliothek \& Funktionen }
+Um schnelle Veränderungen von Signalen zuverlässig erfassen zu können, ist es sinnvoll Funktionen der Arduino IDE internen Bibliothek zu verwenden. Für schnelle Signalveränderungen, wie sie beispielsweise bei hohen Drehzahlen einer Lochscheibe vorkommen können, ist es sinnvoll die Funktion \PYTHON{attachInterrupt()} zu verwenden. 
+\PYTHON{attachInterrupt()} ist eine Arduino-Funktion, mit der ein Programm sofort auf ein Signal am Interrupt-Pin reagiert. Sobald sich das Signal ändert (z. B. von LOW auf HIGH), wird die aktuelle Programmausführung kurz unterbrochen und eine festgelegte Funktion ausgeführt. Danach läuft das Hauptprogramm weiter. Dadurch muss der Arduino das Signal nicht ständig abfragen und kann schneller und zuverlässiger auf Ereignisse reagieren, z. B. bei schnellen Sensoren wie einer Gabellichtschranke.
 \subsection{Handbuch und Inbetriebnahme des Sensors}
-Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden. 
+Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden.  
+
 \subsection{Anschlussbeispiel}
+Die F249 Gabellichtschranke wird in diesem Beispiel zur Drehzahlmessung mit einer Lochscheibe eingesetzt, die auf einer rotierenden Welle befestigt ist. Während sich die Scheibe dreht, unterbricht sie durch ihre Löcher den Lichtstrahl der Lichtschranke regelmäßig. Jede Unterbrechung erzeugt ein digitales Signal, das vom Arduino erfasst und gezählt wird. Über die Anzahl der Impulse innerhalb eines bestimmten Zeitraums kann anschließend die Drehzahl der Welle berechnet werden. Dieses Verfahren ermöglicht eine einfache und präzise berührungslose Messung der Rotationsgeschwindigkeit. 
+
+Hiefür wird die Lichtschranke mit der 5 $V$ Versorgung und der Masse des Mikrokontrolles (hier: Arduino UNO R4) verbunden. Anschließend wird das digitale Ausgang der Lichtschranke mit dem digitalen Eingang 4 des Arduinos verbunden (vgl. \ref{pic:F249Anschluss}) 
+
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.8]{../../Images/F249/F249Anschluss} 
+		\caption{Anschluss der Lichtschranke an einen Arduino Uno R4 zur Messung von Drehzahl} 
+		\caption{pic:F249Anschluss}
+	\end{figure}
+\end{center}
+
+
+
+
 \subsection{Code}
 
 %\subsection{Files}
