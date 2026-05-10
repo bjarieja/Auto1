@@ -1,0 +1,132 @@
+%%%%%%%%%%%%
+%
+% $Autor: Wings $
+% $Datum: 2019-03-05 08:03:15Z $
+% $Pfad: TemplateSensor $
+% $Version: 4250 $
+% !TeX spellcheck = en_GB/de_DE
+% !TeX encoding = utf8
+% !TeX root = filename 
+% !TeX TXS-program:bibliography = txs:///biber
+%
+%%%%%%%%%%%%
+
+% Structure
+\chapter{Drehpotentiometer}
+
+%Notizen:
+
+%Drehpotentiometer
+%Widerstand 10 kOhm, linear
+%Achse 6 mm 
+%Spannungsfestigkeit: 250 VDC	
+%Befestigung Gewinde M10
+%
+%{../../Images/BOM/Drehpotentiometer_10kOhm_linear_6mm.jpg} 
+%
+%https://www.reichelt.de/de/de/shop/produkt/drehpotentiometer_10_kohm_linear_6_mm-232554
+
+\section{Allgemeines}
+Der potentiometrische Wandler auf Basis eines gleitend-reibenden Kontaktelements auf
+einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. (Czechowicz, 2025)
+Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können.(Czechowicz, 2025)
+
+
+\section{PIHER Drehpotentiometer}
+
+cite board
+
+\section{Spezifikationen}
+
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.25]{../../Images/BOM/Drehpotentiometer_10kOhm_linear_6mm.jpg}
+		\caption{Drehpotentiometer PIHER PC16SH-10CP06-103A2020-TA nach (QUELLE)} 
+		\label{pic:POTI10k}
+	\end{figure}
+\end{center}
+
+\begin{table}[h!]
+	\caption{Spezifikationen des Drehpotentiometers (QUELLE)}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Parameter} &\textbf{Wert/Detail}\\
+			\hline
+			Modell & PC16SH-10CP06-103A2020-TA\\
+			\hline
+			Typ  & Drehpotentiometer\\
+			\hline 
+			Widerstand & 10 $k\omega$, linear\\
+			\hline 
+			Spannungsfestigkeit & 250 $V$ DC\\
+			\hline
+			Achse & 6 $mm$\\
+			\hline 
+			Befestigung & Gewinde M10\\
+			\hline 
+		\end{tabular}
+		\label{TabelleSpezifikationPOTI}
+	\end{center}
+\end{table} 
+
+
+Der Motortreiber besitzt wie in \ref{pic:POTI10k} erkenntlich drei Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
+\begin{enumerate}
+		\item \textbf{A}: Positiver Spannungsanschluss (10$-$14 $V$ DC)
+		\item \textbf{S}: Negativer Spannungsanschluss (Masse)
+		\item \textbf{E}: Negativer Spannungsanschluss (Masse)		
+\end{enumerate}
+
+
+\section{Library}
+
+\subsection{Description}
+
+\subsection{Installation}
+
+\begin{itemize}
+    \item data types
+    \item data structure
+    \item data quantity
+    \item data quality
+\end{itemize}
+
+\subsection{Functions}
+
+\section{Example}
+
+In this section, a simple example is described in detail, which demonstrates how the library supports the sensor/actor.
+
+
+\subsection{Manual}
+
+\subsection{Inside the Example}
+
+\subsection{Code}
+
+\subsection{Files}
+
+
+
+\section{Calibration}
+
+cite method
+
+\section{Simple Code}
+
+
+\section{Simple Application}
+
+
+
+\section{Tests}
+
+\subsection{Simple Function Test}
+
+\subsection{Test all Functions}
+
+
+
+\section{Further Readings}
+
