@@ -1,0 +1,148 @@
+%%%%%%%%%%%%
+%
+% $Autor: Wings $
+% $Datum: 2019-03-05 08:03:15Z $
+% $Pfad: TemplateSensor $
+% $Version: 4250 $
+% !TeX spellcheck = en_GB/de_DE
+% !TeX encoding = utf8
+% !TeX root = filename 
+% !TeX TXS-program:bibliography = txs:///biber
+%
+%%%%%%%%%%%%
+
+% Structure
+\chapter{Motortreiber BTS7960}
+Gleichstrommotoren funktionieren grundsätzlich über die Erzeugung eines Magnetfeldes, mithilfe dessen eine Welle in Rotation versetzt wird \cite{Roddeck:2023}.
+Aus den grundlegenden physikalischen Zusammenhängen der Elektrodynamik folgt zudem, dass die Stärke des Magnetfeldes direkt vom Strom im Leiter abhängt, der dieses Feld erzeugt.
+Dementsprechend lässt sich auch die Drehzahl eines Elektromotors über den fließenden Strom beeinflussen \cite{Feynman:2020}.
+Um die Stromstärke, die durch den Motor fließt, zu beeinflussen, ist es notwendig, eine steuernde Komponente vor dem Motor zu verbauen. Hierfür eignen sich Motortreiber. Motortreiber sind elektronische Komponenten, welche die Ansteuerung von Motoren erleichtern, indem sie kleine Signale der steuernden Einheit in geeignete Spannungs- und Stromsignale umwandeln \cite{Roddeck:2023}. Als steuernde Einheit dienen beispielsweise Mikrocontroller oder speicherprogrammierbare Steuerungen (SPS), die die erforderlichen Steuersignale zur Ansteuerung des Motortreibers erzeugen \cite{Bartlett:2023a}.
+
+
+\section{Allgemeines}
+
+Motortreiber stellen die Schnittstelle zwischen der Steuerlogik und elektromechanischen Aktoren dar. Sie werden insbesondere in eingebetteten Systemen eingesetzt, um Elektromotoren gezielt hinsichtlich Drehrichtung, Drehzahl und Drehmoment anzusteuern. Dabei haben sich MOSFET-basierte Treiber als Stand der Technik etabliert, da sie eine hohe Effizienz bei gleichzeitig geringen Schaltverlusten aufweisen \cite{Bartlett:2023a}.
+Die grundlegende Aufgabe eines Motortreibers besteht darin, ein leistungsschwaches Steuersignal in ein leistungsstärkeres Ausgangssignal umzuwandeln. Die Drehzahlregelung erfolgt dabei meist über Pulsweitenmodulation. Hierbei wird die effektive Motorspannung durch das Tastverhältnis bestimmt, sodass sich je nach Ein- und Ausschaltzeit eine entsprechende mittlere Spannung am Motor ergibt \cite{Bartlett:2023a}.
+Zur Umkehr der Drehrichtung wird häufig eine sogenannte H-Brücke verwendet. Diese besteht aus vier Transistoren, durch deren gezielte Ansteuerung die Polarität der Motorspannung geändert werden kann. Dabei ist darauf zu achten, dass kein Shoot-Through-Zustand entsteht, da dies zu einem Kurzschluss führen würde.
+MOSFETs übernehmen in diesem Zusammenhang die Funktion von Schaltern. Sie werden über die Gate-Source-Spannung gesteuert und sind leitend, sobald diese eine bestimmte Schwelle überschreitet. Im eingeschalteten Zustand entstehen Verluste hauptsächlich durch den Durchlasswiderstand, weshalb ein möglichst geringer Widerstand für einen hohen Wirkungsgrad wichtig ist.
+
+textbf{Hier das BIld aus \cite{Bartlett:2023a} Seite 357 und die dazugehörige Erklärung} 
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.75]{../Images/BTS7960/MosfetSchaltplanSimpel}
+		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a}}
+	\end{figure}
+\end{center}
+
+
+
+
+
+Moderne integrierte Motortreiber kombinieren mehrere Funktionen in einem Baustein. Dazu gehören die Leistungsstufe, die Ansteuerung sowie verschiedene Schutzmechanismen. Der Aufbau basiert häufig auf einer Halbbrücke mit einem High-Side- und einem Low-Side-MOSFET. Zusätzlich sind eine Gate-Treiberstufe sowie Schaltungen zur Strommessung und Diagnose integriert \cite{Bartlett:2023a}.
+Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über Freilaufpfade realisiert, beispielsweise durch die Body-Dioden der MOSFETs. Ergänzend verfügen solche Treiber über Schutzfunktionen wie Überstrom-, Übertemperatur- und Kurzschlussschutz sowie einen Unterspannungsschutz, um einen sicheren Betrieb zu gewährleisten.
+
+Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen.
+Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit. Zudem wird die Einhaltung von EMV-Anforderungen erleichtert. In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können.
+Insgesamt stellen MOSFET-Motortreiber eine effiziente und leistungsfähige Lösung zur Ansteuerung von Elektromotoren dar. Besonders integrierte Varianten bieten durch ihre Kombination aus Leistungsfähigkeit, Schutzfunktionen und einfacher Ansteuerung deutliche Vorteile.
+\section{Motortreiber BTS7960}
+
+cite board
+
+\section{Spezifikationen}
+
+\begin{table}[h!]
+	\caption{Spezifikationen des Motortreibers \cite{Infineon:2004}}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Parameter} &\textbf{Wert/Detail}\\
+			\hline
+			Modell &  BTS7960\\
+			\hline
+			Typ  & Halbbrücken Motortreiber  \\
+			\hline 
+			Betriebsspannung & -0,3 bis 45 $V$ DC\\
+			\hline 
+			Logikspannung & -0,3 bis 5,3 $V$ DC\\
+			\hline
+			maximaler Ausgangsstrom & 43 $A $\\
+			\hline
+			Einganststromgangsstrom & 30 bis 150 $\mu A$ \\
+			\hline
+			Frequenzbereich der PWM  & 25 $kHz$\\
+			\hline
+			Reaktionszeit & kleiner 2 $ms$\\
+			\hline
+			Erfassungswinkel & bis zu 15°\\
+			\hline
+			Temperaturbereich & -25°C bis +55°C\\
+			\hline
+			Maße & Ø 17,6 mm x 50 mm\\
+			\hline
+			Anschluss & Dupont Buchse\\ 
+			\hline
+		\end{tabular}
+		\label{TabelleSpezifikationLS}
+	\end{center}
+\end{table} 
+
+ 
+ 
+ 
+\begin{itemize}
+  \item Cite the data sheet
+  \item Extract te information from the data sheet
+  \item Circuit Diagram
+\end{itemize}
+
+\section{Bibliothek}
+
+\subsection{Beschreibung}
+
+\subsection{Installation}
+
+\begin{itemize}
+    \item data types
+    \item data structure
+    \item data quantity
+    \item data quality
+\end{itemize}
+
+\subsection{Funktionen}
+
+\section{Anwendungsbeispiel}
+
+In this section, a simple example is described in detail, which demonstrates how the library supports the sensor/actor.
+
+
+\subsection{HAndbuch}
+
+\subsection{Inside the Example}
+
+\subsection{Code}
+
+\subsection{Dateien}
+
+
+
+\section{Kalibrierung}
+
+cite method
+
+\section{Simple Code}
+
+
+\section{Simple Application}
+
+
+
+\section{Test}
+
+\subsection{einfacher Funktionstest }
+
+\subsection{Test all Functions}
+
+
+
+\section{weiterführende Informationen}
+
