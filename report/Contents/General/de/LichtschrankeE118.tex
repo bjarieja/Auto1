@@ -40,6 +40,7 @@ Zu jedem Sensorelement wird zudem eine Auswerteelektronik benötigt. Die Auswert
 
 
 \section{Optische Näherungssensoren}
+\label{sec:OptischeSensoren}
 Optische Näherungssensoren gehören zu den berührungslos arbeitenden Sensoren und werden zur Erfassung von Objekten oder Abständen eingesetzt, ohne dass ein mechanischer Kontakt erforderlich ist. Um diese Eigenschaft zu ermöglichen, bestehen optische Näherungssensoren grundsätzlich aus einem Sender und einem Empfänger.
 Die Komponenten basieren auf den grundlegenden physikalischen Prinzipien der Elektrodynamik \cite{Roddeck:2023}. Mithilfe von elektromagnetischer Strahlung können diese Sensoren physikalische Messgrößen aufnehmen und messen. Im Grundlegenden bestehen diese Sensoren ebenfalls aus Sensorelement und Auswerteelektronik, jedoch sind die Sensorelemente in ihrem Komplexitätsgrad als deutlich höher einzustufen. Oftmals werden Halbleitermaterialien und -komponenten für diese Sensorelemente verwendet \cite{Roddeck:2023}, \cite{Loeffler-Mang:2012}. Die in Halbleitermaterialien auftretenden physikalischen Effekte bei der Zufuhr von Energie sind entscheidend für die Funktionsweise vieler optischer Sensoren. Dabei werden insbesondere Prozesse wie die Absorption und Emission von Photonen sowie die daraus resultierende Erzeugung und Trennung von Ladungsträgern genutzt \cite{Feynman:2020}. 
 Typische Empfängerelemente sind Photodioden oder Phototransistoren, die bei Lichteinfall einen messbaren Strom oder eine Spannungsänderung erzeugen. Als Strahlungsquellen werden häufig Leuchtdioden (LEDs) oder Laserdioden eingesetzt, da diese eine definierte Wellenlänge und hohe Intensität bereitstellen können. \cite{Loeffler-Mang:2012}
@@ -403,8 +404,7 @@ Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebss
 	\end{figure}
 \end{center}
  
-\section{Bibliothek}
-\subsection{Beschriebung}
+\subsection{Bibliothek}
 	Für die Verwendung von dieser Lichtschranke wird keine Bibliothek zwangsläufig benötigt, jedoch kann die standardmäßig in der Arduino IDE verwendete Bibliothek zur Ausgabe verwendet werden diese ist in \ref{sec:ArduinoIDEInstallation} beschrieben. 
 %\subsection{Installation}
 %\subsection{Functions}
@@ -437,7 +437,7 @@ Um die Signale der Lichtschranke verarbeiten und intepretieren zu können muss d
 
 
 
-\section{Kalibirerung und Justierung}
+\subsection{Kalibirerung und Justierung}
 
 %\subsection{Einrichtung der Abstandserkennung}
 
@@ -472,13 +472,13 @@ Sollte der Abstand zwischen Sensor und Reflektorfläche verändert worden sein, 
 %\section{Simple Code}
 
 
-\section{Anwendungsbeschreibung der Lichtschranke E18-D80NK}
+\subsection{Anwendungsbeschreibung der Lichtschranke E18-D80NK}
 
 Im Rahmen einer Anwendung wird die Lichtschranke an einem Tischförderband eingesetzt, um das Passieren eines Objektes zu erkennen und darauf basierend einen Motor zu steuern. Ziel ist es, eine zuverlässige Objekterkennung zu gewährleisten, sodass die Lichtschranke eindeutig erkennt, wenn ein Objekt den Lichtstrahl  unterbricht, ohne durch kurze Störungen oder Signalflanken mehrfach ausgelöst zu werden.
 Der Aufbau besteht aus einem Tischförderband, einer über dem Band montierten Lichtschranke sowie einem Arduino zur Signalauswertung. 
 Im Betrieb fährt das Objekt in  die Lichtschranke und unterbricht den Lichtstrahl, wodurch am Arduino ein LOW-Signal erkannt wird. Solange der Lichtstrahl nicht unterbrochen ist, wird ein konstantes Logiksignal erzeugt, welches vom Arduino zur Ansteuerung eines Motortreibers verwendet wird.
 
-\section{Tests}
+\subsection{Tests}
 Um sicherzustellen, dass ein System ordnungsgemäß funktionstüchtig ist, ist es sinnvoll alle Komponenten des Systemes zu testen. 
 Hierzu können einzelne Komponenten für sich oder im Verbund getestet werden. Das nachfolgende Kapitel beschreibt einen einfachen Test der Funktion der Lichtschranke.
 \subsection{Einfacher Funktionstest}
@@ -510,13 +510,13 @@ Nachfolgend wird der benötigte Code zum Testen der Lichtschranke beschrieben. D
 
 %\subsection{Test all Functions}
 %
-\section{Zusatzinformationen und weiterführende Literatur }
-
+\subsection{Zusatzinformationen und weiterführende Literatur }
 Die Auswahl einer Lichtschranke ist ein kritischer Schritt, der maßgeblich von den spezifischen Anwendungsvoraussetzungen abhängt. Insbesondere in sicherheitstechnischen Anwendungen, wie beispielsweise in Rauchmeldern, spielt die Lichtschranke eine entscheidende Rolle bei der Erkennung von Veränderungen im Lichtweg. Hier wird ein Lichtstrahl innerhalb des Geräts erzeugt, dessen Unterbrechung oder Beeinflussung als Indikator für eine erhöhte Rauchkonzentration interpretiert wird \cite{Hesse:2009}. Die zugrundeliegende physikalische Wirkung beruht auf der Streuung des Lichtes an Rauchpartikeln, die den ursprünglichen Lichtstrahl beeinflusst und somit eine Detektion ermöglicht \cite{Hesse:2009}. Dieses Beispiel verdeutlicht, dass die optischen Eigenschaften der Objekte, die den Lichtstrahl passieren, einen entscheidenden Einfluss auf die Funktionalität der Lichtschranke ausüben.
 Insbesondere reflektierende Oberflächen können die Funktion der Lichtschranke beeinträchtigen, da sie den Lichtstrahl zurückwerfen oder umlenken können. Dies führt möglicherweise zu einem unerwünschten Signal, da der Empfänger weiterhin Licht empfängt, obwohl der direkte Lichtweg unterbrochen ist. Solche Effekte sind besonders relevant in Umgebungen mit komplexen geometrischen Gegebenheiten oder reflektierenden Materialien, wo die Lichtausbreitung nicht mehr rein geradlinig erfolgt .
 Um solche systembedingten Störungen zu minimieren und die Zuverlässigkeit der Lichtschranke zu gewährleisten, ist eine sorgfältige Auswahl des Gerätes erforderlich. Dabei sind mehrere Aspekte zu berücksichtigen: Der Aufbau der Lichtschranke insbesondere die Art der Lichtquelle (Laser oder LED) und die Empfängerempfindlichkeit beeinflusst die Robustheit gegenüber Umwelteinflüssen. Zudem sind die optischen Eigenschaften, wie die Wellenlänge des emittierten Lichts und die Strahlgeometrie, entscheidend für die Interaktion mit den zu detektierenden Objekten. Die Wellenlänge des emittierten Lichtes ist zudem entscheidend für die benötigten Sicherheitsvorkehrungen. So kann eine Laserlichtschranke eine Schutzvorrichtung zum Verhindern von einer direkten Sichtlinie in die Strahlachse benötigen. Wohingegen die Ausrichtung der Lichtschranke aufgrund der Sichtbarkeit des Fokuspunktes hier erleichtert werden kann. Bei einer Infrarotlichtschranke ist die Ausrichtung der Lichtschrnake erschwert, da es keinen sichtbaren Fokuspunkt gibt. Jedoch wird keine Schutzeinrichtung zum Schutz des Benutzers benötigt. 
 Schließlich spielt auch die elektrische Logik der Schranke eine Rolle: Die Art der Ausgabe (logisch aktiv oder deaktiv) und die Implementierung von Filtermechanismen zur Unterdrückung von kurzzeitigen Störungen tragen zur Stabilität des Systems bei \cite{Roddeck:2023}. 
 %Auch ist es notwendig, das Lichtschranken bei Ihrer Auswahl auf art und weise des emittierten Lichtes unterschieden werden. Lichtschranken mit Laserlicht können die Augen von Benutzenden schädigen, wohingegen Lichtschrankten mit Infrarotlicht für den Benutzer keine sichtbaren Lichtstrahl erzeugen. Dies jedoch erhöt den Aufwand bei der Ausrichtung der Lichtschranke \cite{Loeffler-Mang:2012}.  
+
 Zusammenfassend lässt sich festhalten, dass die Funktion einer Lichtschranke nicht allein durch ihre technische Ausführung bestimmt wird, sondern stark von der Wechselwirkung zwischen Lichtstrahl, detektierten Objekten und der Umgebung abhängt. Eine fundierte Auswahl unter Berücksichtigung der physikalischen Prinzipien, der spezifischen Anwendungssituation und der technischen Parameter ist daher unerlässlich, um eine zuverlässige und störungsfreie Funktionsweise zu gewährleisten.
 
 All diese und weiterführende Informationen finden sich in folgender Literatur: 
@@ -526,3 +526,92 @@ All diese und weiterführende Informationen finden sich in folgender Literatur:
 		\item \cite{Roddeck:2023}, Dieses Buch behandelt jegliche mechatronischen Komponenten, sowohl Aktoren als auch Sensoren werden ausführlich beschrieben. Besonders Schnittstellen und Einbindungen werden hier wiedergegeben. 
 	\end{enumerate}
 \end{center}
+
+
+\section{Einweg Lichtschranke F249}
+Die Einweg Lichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messung von Impulsen, Geschwindigkeiten und Drehzahlen \cite{Roboter-Bausatz:2026c}. Durch den Aufbau als Einweg Lichtschranke eignet sich der Sensor besonders gut zu Messung von Drehzahl und Geschwindigkeit (vgl. \ref{sec:OptischeSensoren}), da er unabhängig der Reflektion des Gegenstandes zwischen  Sender- und Empfängerdiode.  
+
+\begin{center}
+	\begin{figure}
+		\includegraphics{../../Images/F249/F249Pic.png} 
+		\caption{Abbildung des F249 Drehzahlsensors nach \cite{Roboter-Bausatz:2026c}}
+		\label{pic:F249}
+	\end{figure}
+\end{center} 
+
+
+\subsection{Technische Daten der Lichtschranke} 
+Die Lichtschranke F249 lässt sich mittels 4 Pins an den Microkontroller anschließen. Hierzu werden die 5V Spannungsversorgung,  die Masse und die Ausgänge verbunden. Bei den Ausgängen können sowohl digitale als auch analoge Signale ausgegeben werden \cite{Roboter-Bausatz:2026c}. Abhängig vom Anwendungsfall muss lediglich ein Signalausgang mit dem Microkontroller verbunden werden. 
+
+\begin{center}
+	\begin{figure}[h!]
+		\includegraphics[scale=0.5]{../../Images/F249/F249SP.png} 
+		\caption{Schaltplan des Sensor nach \cite{SunFounder:2025}}
+		\label{pic:SchaltplanF249}
+	\end{figure}
+\end{center}
+
+
+\begin{table}[h!]
+	\caption{Spezifikationen des F249 Infrarot Geschwindigkeits-/Drehzahlsensors \cite{Roboter-Bausatz:2026c}}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Parameter} & \textbf{Wert/Detail}\\
+			\hline
+			Modell & F249 Infrarotsensor\\
+			\hline
+			Sensormodul & LM393 Komparator\\
+			\hline 
+			Betriebsspannung & 3.3 V -- 5 V DC\\
+			\hline
+			Digitaler Ausgang & DO (Digital Output)\\
+			\hline
+			Analoger Ausgang & AO (Analog Output)\\
+			\hline
+			Versorgungspin & VCC\\
+			\hline
+			Masseanschluss & GND\\
+			\hline
+			Gewicht & ca. 8 g\\
+			\hline
+			Abmessungen & 32 mm x 14 mm x 7 mm\\
+			\hline
+			Montagebohrung & 5 mm\\
+			\hline
+			Anschluss & Pinleiste / Dupont-kompatibel\\
+			\hline
+		\end{tabular}
+		\label{TabelleSpezifikationF249}
+	\end{center}
+\end{table}
+\subsection{Bibliothek}
+\subsubsection{Beschreibung}
+\subsection{Handbuch und Inbetriebnahme des Sensors}
+Folgende Vorgehensweise kann zum Anschluss und Inbetriebnahme der Lichtschranke verwendet werden. 
+\subsection{Anschlussbeispiel}
+\subsection{Code}
+
+%\subsection{Files}
+\subsection{Kalibirerung und Justierung}
+%\section{Simple Code}
+\subsection{Anwendungsbeschreibung der Lichtschranke E18-D80NK}
+
+
+
+\subsection{Tests}
+
+\subsection{Einfacher Funktionstest}
+
+
+\begin{center}
+	\captionof{figure}{Dieser Code liest den digitalen Eingang 8 des Mikrocontrollers ein und erkennt anhand des Signals der Lichtschranke, ob ein Objekt den Lichtstrahl unterbricht. Der Zustand wird anschließend über die serielle Schnittstelle ausgegeben.} 
+	\ArduinoExternal{}{../../Code/TestLichtschranke/TestLichtschranke.ino}
+\end{center}
+
+
+%\subsection{Test all Functions}
+%
+\subsection{Zusatzinformationen und weiterführende Literatur }
+
+
