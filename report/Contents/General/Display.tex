@@ -12,18 +12,18 @@
 
 \chapter{Display}
 
-\subsection{Allgemeine Beschreibung}
+\section{Allgemeine Beschreibung}
 
 Flüssigkristallanzeige, LCD (Abk. für engl. liquid crystal display), eine auf dem Lichtstreuverhalten von flüssigen Kristallen basierende Anzeige (Display). Flüssige Kristalle sind Systeme von Molekülen wie z.B. Cholesterin, die nur innerhalb größerer oder kleinerer Bereiche geordnet sind, und zwar sind die Hauptachsen der Moleküle parallel zueinander orientiert.
 
 Durch schwache äußere elektrische Felder können ausgedehnte Proben einheitlich orientiert werden. In dünnen Schichten aufgetragene Kristalle können daher merkliche Farbänderungen oder Veränderungen des Lichtstreuverhaltens zeigen, wenn eine angelegte Elektrodenspannung – oder auch die Temperatur – verändert wird. 
 %\cite{}	(https://www.spektrum.de/lexikon/optik/fluessigkristallanzeige/1033)
 
-\subsection{SERIELLES I2C 20X4 LCD MODUL}
+\section{SERIELLES I2C 20X4 LCD MODUL}
 
 Dieses 20x4 Zeichen LCD eignet sich bestens für Ihr Projekt. Es arbeitet mit dem PCF8574 Adapterchip und hat eine blaue Hintergrundbeleuch-tung. Des Weiteren entspricht es auch dem HD44780 Industriestandard.
 
-\subsection{Specifkation}
+\section{Specifkation}
 
 Nachfolgende Tabelle (\ref{JoyIt}) zeigt die im Datenblatt %\cite{} entnommen technischen Eigenschaften des SERIELLES I2C 20X4 LCD MODUL.
 
@@ -72,7 +72,7 @@ Nachfolgende Tabelle (\ref{JoyIt}) zeigt die im Datenblatt %\cite{} entnommen te
 
 %\cite{} (https://cdn-reichelt.de/documents/datenblatt/A300/SBC-LCD20X4-DATENBLATT2.pdf )
 
-\subsection{Dimension}
+\section{Dimension}
 
 Das Modul ist für die serielle Kommunikation via I2C-Bus konzipiert und weist einen standardisierten Formfaktor auf, der primär durch die Trägerplatine und den Metallrahmen des Displays determiniert wird.
 
@@ -90,8 +90,14 @@ Dieses Display hat die folgenden geometrischen Kenndaten:
 Aus der Abbildung geht hervor, dass die Anordnung der Anschlusspins (SDA, SCL, VCC, GND) am I2C-Interface rechtwinklig zur Platinenebene erfolgt, was bei der Planung der Gehäusetiefe berücksichtigt werden muss.
 %\cite{} (%\cite{} (https://cdn-reichelt.de/documents/datenblatt/A300/SBC-LCD20X4-DATENBLATT2.pdf ) Gleiches Display selbe specs, auf der Website, aber in dem Dokument Grünes Hintergrundlicht
 
+\begin{center}
+	\includegraphics[width=\textwidth]{../../Images/Display/Maße2004.png}
+	\captionof{figure}{Maße des 2004 Display}
+	\label{pic:2004D}
+\end{center}
 
-\subsection{Software}
+
+\section{Software}
 
 \begin{itemize}{
 		\item \textbf{Flüssigkristallanzeige (LiquidCrystal-Klasse)}
@@ -100,17 +106,8 @@ Aus der Abbildung geht hervor, dass die Anordnung der Anschlusspins (SDA, SCL, V
 		Um diese Bibliothek zu verwenden, geben Sie Folgendes an \#include <liquidcrystal.h>.
 		
 } \end{itemize}
-\subsection{I2c}
-Das I2C-Protokoll nutzt zwei Leitungen zum Senden und Empfangen von Daten: einen seriellen Takt-Pin (SCL), den das Arduino-Controller-Board in regelmäßigen Abständen mit Impulsen versorgt, und einen seriellen Daten-Pin (SDA), über den Daten zwischen den beiden Geräten übertragen werden.
+\section{I2c}
 
-Bei I2C gibt es ein Controller-Gerät, an dessen SCL- und SDA-Leitungen ein oder mehrere Peripheriegeräte angeschlossen sind.
+Detaillierte Spezifikationen zur Datenübertragung des Arduino R4 sind dem Kapitel \ref{I2C} zu entnehmen.
 
-Wenn die Taktleitung von Low auf High wechselt (bekannt als steigende Flanke des Taktimpulses), wird ein einzelnes Informationsbit über die SDA-Leitung vom Board an das I2C-Gerät übertragen. Während die Taktleitung weiter pulsiert, werden immer mehr Bits gesendet, bis eine Folge aus einer 7- oder 8-Bit-Adresse sowie einem Befehl oder Daten gebildet ist. Wenn diese Informationen – Bit für Bit – gesendet werden, führt das aufgerufene Gerät die Anforderung aus und sendet seine Daten – falls erforderlich – über dieselbe Leitung unter Verwendung des vom Controller auf SCL weiterhin erzeugten Taktsignals als Zeitgeber zurück an die Platine.
-
-Jedes Gerät im I2C-Bus ist funktional unabhängig vom Controller, antwortet jedoch mit Informationen, wenn es vom Controller dazu aufgefordert wird.
-
-Da das I2C-Protokoll jedem aktivierten Gerät eine eigene eindeutige Adresse zuweist und sowohl der Controller als auch die Peripheriegeräte abwechselnd über eine einzige Leitung kommunizieren, ist es möglich, dass Ihr Arduino-Board (abwechselnd) mit vielen Geräten oder anderen Boards kommuniziert, während es nur zwei Pins Ihres Mikrocontrollers nutzt.
-% \cite{}(https://docs.arduino.cc/learn/communication/wire/?_gl=1*11psmf3*_up*MQ..*_ga*NDE4ODczNzIxLjE3NzgyMjYzNzY.*_ga_NEXN8H46L5*czE3NzgyMzA2OTMkbzIkZzAkdDE3NzgyMzA2OTMkajYwJGwwJGg5MjM2Njc5OTM.)
-
-
-\subsection{Code}
+\section{Code}

@@ -15,27 +15,26 @@
 
 \chapter{Mikrokontroller}
 
-\section{Mikrocontroller}
+\section{Definition}
 
-Als Mikrocontroller bezeichnet man einen Chip, auf dem neben einem Mikroprozessor weitere Module mit unterschiedlichen Funktionen integriert sind. Häufig zählen dazu Programm und Arbeitsspeicher, digitale und analoge Ein und Ausgänge, Timer und Schnittstellen zur Kommunikation. Der Vorteil eines solchen System on a Chip's (SoC) ist, dass zum Betrieb nur wenige externe Bauteile benötigt werden. Im einfachsten Fall arbeitet ein programmierter (U+03BC) bereits mit Versorgungsspannung, möchte man weitere Peripheriefunktionen nutzen, erhöht sich entsprechend der Bauteil und Verschaltungsaufwand.
+	Als Mikrocontroller bezeichnet man einen Chip, auf dem neben einem Mikroprozessor weitere Module mit unterschiedlichen Funktionen integriert sind. Häufig zählen dazu Programm und Arbeitsspeicher, digitale und analoge Ein und Ausgänge, Timer und Schnittstellen zur Kommunikation. Der Vorteil eines solchen System on a Chip's (SoC) ist, dass zum Betrieb nur wenige externe Bauteile benötigt werden. Im einfachsten Fall arbeitet ein programmierter (U+03BC) bereits mit Versorgungsspannung, möchte man weitere Peripheriefunktionen nutzen, erhöht sich entsprechend der Bauteil und Verschaltungsaufwand.
 
 %\cite{}(https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.medit.hia.rwth-aachen.de/fileadmin/user_upload/05_Publication/Books/MSP430_Buch_html_UTF/msp_html_buchse1.html&ved=2ahUKEwij9I_10auUAxWz1wIHHdnxAzEQFnoECCoQAQ&usg=AOvVaw1s2FdjcUbRWGJoMsTIgzdp)
 
-\subsection{Funktionsprinzip Arduino}
+\section{Funktionsprinzip Arduino}
 
-Arduino stellt eine quelloffene Plattform dar, die auf modularen, anwenderorientierten Hardware- und Softwarekomponenten basiert. Die Plattform stellt integrierte Entwicklungsumgebungen für Mikrocontroller und Mikroprozessoren bereit, welche die Konzeption und Realisierung komplexer digitaler sowie analoger Systeme ermöglichen. Das Kernstück einer jeden Systemplatine ist der Mikrocontroller – ein hochintegrierter Schaltkreis, der die wesentlichen Funktionen eines Rechensystems auf minimalem Raum vereint.
-In der konventionellen Schaltungstechnik erfordert der Betrieb solcher Mikrocontroller eine präzise Dimensionierung peripherer elektronischer Bauelemente, wie etwa Dioden, Widerstände, Kondensatoren und Transistoren, um die Spannungsstabilisierung und Signalintegrität zu gewährleisten. Die Arduino-Architektur abstrahiert diese Schaltungskomplexität durch die Integration notwendiger Schutz- und Regelschaltkreise direkt auf der Leiterplatte. Dieser Ansatz minimiert die Hardware-Barrieren für den Anwender und verlagert den Schwerpunkt auf die softwarebasierte Steuerung. Der Arbeitsablauf reduziert sich im Wesentlichen auf die Bereitstellung der Betriebsspannung sowie die Übertragung des Programmcodes, was eine effiziente Umsetzung von Logiken ermöglicht.
-Infolge der fortschreitenden Innovationen in der Halbleiter- und Elektronikindustrie werden klassische mechanische und elektromechanische Schaltlösungen zunehmend durch programmierbare Mikrocontroller substituiert. Ungeachtet der spezifischen Modellvariante fungiert bei allen Plattformen eine Mikrocontrollereinheit als zentrale Recheneinheit. Diese bildet die Grundlage für die Entwicklung moderner Anwendungen zur dezentralen Datenverarbeitung. % \cite{} (https://docs.arduino.cc/learn/starting-guide/whats-arduino/)
+	Arduino stellt eine quelloffene Plattform dar, die auf modularen, anwenderorientierten Hardware- und Softwarekomponenten basiert. Die Plattform stellt integrierte Entwicklungsumgebungen für Mikrocontroller und Mikroprozessoren bereit, welche die Konzeption und Realisierung komplexer digitaler sowie analoger Systeme ermöglichen. Das Kernstück einer jeden Systemplatine ist der Mikrocontroller ein hochintegrierter Schaltkreis, der die wesentlichen Funktionen eines Rechensystems auf minimalem Raum vereint.
+	In der konventionellen Schaltungstechnik erfordert der Betrieb solcher Mikrocontroller eine präzise Dimensionierung peripherer elektronischer Bauelemente, wie etwa Dioden, Widerstände, Kondensatoren und Transistoren, um die Spannungsstabilisierung und Signalintegrität zu gewährleisten. Die Arduino-Architektur abstrahiert diese Schaltungskomplexität durch die Integration notwendiger Schutz- und Regelschaltkreise direkt auf der Leiterplatte. Dieser Ansatz minimiert die Hardware-Barrieren für den Anwender und verlagert den Schwerpunkt auf die softwarebasierte Steuerung. Der Arbeitsablauf reduziert sich im Wesentlichen auf die Bereitstellung der Betriebsspannung sowie die Übertragung des Programmcodes, was eine effiziente Umsetzung von Logiken ermöglicht. Infolge der fortschreitenden Innovationen in der Halbleiter- und Elektronikindustrie werden klassische mechanische und elektromechanische Schaltlösungen zunehmend durch programmierbare Mikrocontroller substituiert. Ungeachtet der spezifischen Modellvariante fungiert bei allen Plattformen eine Mikrocontrollereinheit als zentrale Recheneinheit. Diese bildet die Grundlage für die Entwicklung moderner Anwendungen zur dezentralen Datenverarbeitung. % \cite{} (https://docs.arduino.cc/learn/starting-guide/whats-arduino/)
 
-\section{Arduino Uno R4 WiFi}
+\chapter{Arduino Uno R4 WiFi}
 
-Das UNO R4 WiFi gehört zur ersten UNO-Serie von 32-Bit-Entwicklungsboards, die zuvor auf 8-Bit-AVR-Mikrocontrollern basierte.
-Es gibt Tausende von Anleitungen, Tutorials und Büchern zum UNO-Board, und das UNO R4 WiFi setzt diese Tradition fort.
-Das Board verfügt über 14 digitale I/O-Ports, 6 analoge Kanäle sowie dedizierte Pins für I2C-, SPI- und UART-Verbindungen. Es verfügt über einen deutlich größeren Speicher: 8-mal mehr Flash-Speicher (256 kB) und 16-mal mehr SRAM (32 kB). Mit einer Taktfrequenz von 48 MHz ist es zudem dreimal schneller als seine Vorgänger.
-Darüber hinaus verfügt es über ein ESP32-S3-Modul für Wi-Fi®- und Bluetooth®-Konnektivität sowie eine integrierte 12x8-LED-Matrix, was es zu einem der optisch einzigartigsten Arduino-Boards bis heute macht. Die LED-Matrix ist vollständig programmierbar, sodass Sie alles von Standbildern bis hin zu benutzerdefinierten Animationen laden können.
-Einsteigerprojekte: Wenn dies Ihr erstes Projekt im Bereich Programmierung und Elektronik ist, ist das UNO R4 WiFi eine gute Wahl. Der Einstieg ist einfach und es gibt umfangreiche Online-Dokumentation.
-Einfache IoT-Anwendungen: Erstellen Sie Projekte in der Arduino Cloud, ohne Netzwerkcode schreiben zu müssen. Überwachen Sie Ihr Board, verbinden Sie es mit anderen Boards und Diensten und entwickeln Sie coole IoT-Projekte.
-LED-Matrix: Die 12x8-LED-Matrix auf dem Board kann zum Anzeigen von Animationen, für Lauftexte, zum Erstellen von Minispielen und vielem mehr verwendet werden – die perfekte Funktion, um deinem Projekt mehr Persönlichkeit zu verleihen.
+	Das UNO R4 WiFi gehört zur ersten UNO-Serie von 32-Bit-Entwicklungsboards, die zuvor auf 8-Bit-AVR-Mikrocontrollern basierte.
+	Es gibt Tausende von Anleitungen, Tutorials und Büchern zum UNO-Board, und das UNO R4 WiFi setzt diese Tradition fort.
+	Das Board verfügt über 14 digitale I/O-Ports, 6 analoge Kanäle sowie dedizierte Pins für I2C-, SPI- und UART-Verbindungen. Es verfügt über einen deutlich größeren Speicher: 8-mal mehr Flash-Speicher (256 kB) und 16-mal mehr SRAM (32 kB). Mit einer Taktfrequenz von 48 MHz ist es zudem dreimal schneller als seine Vorgänger.
+	Darüber hinaus verfügt es über ein ESP32-S3-Modul für Wi-Fi®- und Bluetooth®-Konnektivität sowie eine integrierte 12x8-LED-Matrix, was es zu einem der optisch einzigartigsten Arduino-Boards bis heute macht. Die LED-Matrix ist vollständig programmierbar, sodass Sie alles von Standbildern bis hin zu benutzerdefinierten Animationen laden können.
+	Einsteigerprojekte: Wenn dies Ihr erstes Projekt im Bereich Programmierung und Elektronik ist, ist das UNO R4 WiFi eine gute Wahl. 	Der Einstieg ist einfach und es gibt umfangreiche Online-Dokumentation.
+	Einfache IoT-Anwendungen: Erstellen Sie Projekte in der Arduino Cloud, ohne Netzwerkcode schreiben zu müssen. Überwachen Sie Ihr Board, verbinden Sie es mit anderen Boards und Diensten und entwickeln Sie coole IoT-Projekte.
+	LED-Matrix: Die 12x8-LED-Matrix auf dem Board kann zum Anzeigen von Animationen, für Lauftexte, zum Erstellen von Minispielen und vielem mehr verwendet werden – die perfekte Funktion, um deinem Projekt mehr Persönlichkeit zu verleihen.
 %
 %Die Arduino-Uno-Serie stellt eine etablierte Plattform für das Rapid Prototyping in der Mikrocontroller-Technik dar. Mit der Einführung des Arduino Uno R4 WiFi wurde die klassische Architektur grundlegend modernisiert, um den Anforderungen an höhere Rechenleistung und integrierte Konnektivität gerecht zu werden, ohne die Kompatibilität zum weit verbreiteten Uno-Formfaktor aufzugeben.
 %Prozessorarchitektur und Leistungsmerkmale
@@ -64,9 +63,66 @@ LED-Matrix: Die 12x8-LED-Matrix auf dem Board kann zum Anzeigen von Animationen,
 
  % \cite{}Arduino Handbuch
 
-\subsection{Technische Daten}
+\section{Technische Daten}
 
-\subsection{Verbautenliste}
+Der R7FA4M1AB3CFM AA0, in diesem Datenblatt häufig als RA4M1 bezeichnet, ist die Haupt-MCU des UNO R4 WiFi und ist mit allen Pin-Leisten auf der Platine sowie allen Kommunikationsbussen verbunden.
+
+
+\begin{itemize}{
+		\item \textbf{Übersicht:}
+			\item 48 MHz Arm Cortex M4 Mikroprozessor mit Gleitkommaeinheit (FPU)
+			\item 5 V Betriebsspannung
+			\item Echtzeituhr (RTC)
+			\item Speicherschutz-Einheit (MPU)
+			\item Digital-Analog-Wandler (DAC)
+		\item \textbf{Speicher}
+			\item 256 kB Flash-Speicher
+			\item 32 kB SRAM
+			\item 8 kB Datenspeicher (EEPROM)
+		\item \textbf{Peripheriegeräte}
+			\item Kapazitive Berührungserkennungseinheit (CTSU)
+			\item USB 2.0 Full Speed Modul (USBFS)
+			\item 14 BitADC
+			\item Bis zu 12 Bit DAC
+			\item Operationsverstärker (OPAMP)
+		\item \textbf{Stromversorgung}
+			\item Die Betriebsspannung für RA4M1 beträgt 5 V
+			\item Die empfohlene Eingangsspannung (VIN) beträgt 6–24 V
+			\item Hohlstecker am VIN-Pin (6–24 V)
+			\item Stromversorgung über USB-C mit 5 V
+		\item \textbf{Kommunikation}
+			\item 1x UART (Pin D0, D1)
+			\item 1x SPI (Pin D10–D13, ICSP-Header)
+			\item 2x I2C (Pin A4, A5, SDA, SCL), (Qwiic-Anschluss)
+			\item 1x CAN (Pin D4, D5, externer Transceiver erforderlich)
+} \end{itemize} 
+
+\subsection{Maße}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\textwidth]{../../Images/ArduinoR4/Dimensionen.png}
+		\caption{figure}{Maße des Arduino Uno R4 wifi }
+		\label{pic:MaßeR4}
+	\end{center}
+\end{figure}
+
+
+Die Abbildung Arduino Maße \ref{MaßeR4} liefert die notwendigen Konstruktionsdaten für die mechanische Einpassung der Mikrocontroller-Plattform. Die Bemaßung erfolgt in metrischen Einheiten ($mm$).
+
+\subsubsection{Primäre Maße und Formfaktor}
+
+In der Draufsicht wird der standardisierte Footprint spezifiziert:
+\begin{itemize}{
+		\item \textbf{Abreißkanten-Außenmaße:} 
+		Die totale Länge beträgt $68,58\,\text{mm}$ bei einer Breite von $53,34\,\text{mm}$.
+		\item \textbf{Ecken-Modifikation:} 
+		Zwei Ecken weisen eine Fase von $3,6\,\text{mm} \times 45^\circ$ auf, was die mechanische Zentrierung in Gehäuseführungen unterstützt.
+		\item \textbf{PCB-Stärke:}	
+		Das Substrat besitzt eine nominelle Dicke von $1,0\,\text{mm}$.
+} \end{itemize}
+
+\section{Verbautenliste}
 Nachfolgende Tabelle (\ref{VerbaulisteR4}) zeigt die im Datenblatt \cite{Arduino:2026} entnommen technischen Eigenschaften des Arduino's.
 
 \begin{table}[h!]
@@ -129,88 +185,68 @@ Nachfolgende Tabelle (\ref{VerbaulisteR4}) zeigt die im Datenblatt \cite{Arduino
 	\end{center}
 \end{table} 
 
-\subsection{Anschlüsse}
+
+\subsection{ESP32-S3-MINI-1-N8}
+Dieses Modul wird mit 3,3 V betrieben und kommuniziert mit dem RA4M1 über einen Logikpegelwandler (TXB0108DQSR).
+\begin{itemize}
+	\item \textbf{Übersicht}
+		\item Xtensa Dual Core 32 Bit LX7 Mikroprozessor
+		\item 3,3 V Betriebsspannung
+		\item 40 MHz Quarzoszillator
+	\item \textbf{WiFi}
+		\item WiFi Unterstützung mit 802.11 b/g/n Standard (WiFi 4)
+		\item Bitrate von bis zu 150 Mbit/s
+		\item 2,4-GHz-Band
+	\item \textbf{Bluetooth}
+		\item Bluetooth 5
+	
+\end{itemize}
+
+\subsection{Ein- und Ausgänge}
 \subsubsection{USB Anschluss}
 
-Das UNO R4 WiFi verfügt über einen USB-C-Anschluss, der zur Stromversorgung und Programmierung des Boards sowie zum Senden und Empfangen serieller
-Daten dient.
-Hinweis: Das Board sollte über den USB-C-Anschluss nicht mit mehr als 5 V versorgt werden.
+	Das UNO R4 WiFi verfügt über einen USB-C-Anschluss, der zur Stromversorgung und Programmierung des Boards sowie zum Senden und Empfangen serieller Daten dient.
+	Hinweis: Das Board sollte über den USB-C-Anschluss nicht mit mehr als 5 V versorgt werden.
  % \cite{}Arduino Handbuch
 
 \subsubsection{LED Matrix}
-Das UNO R4 WiFi verfügt über eine 12×8-Matrix aus roten LEDs (U-LEDMATRIX), die nach der als
-„Charlieplexing“ bekannten Technik angeschlossen sind.
-Auf diese LEDs kann mithilfe der speziellen Bibliothek als Array zugegriffen werden. 
-Diese Matrix eignet sich für eine Vielzahl von Projekten und Prototypen und unterstützt beispielsweise Animationen, einfache Spieledesigns und Lauftexte.
+	Das UNO R4 WiFi verfügt über eine 12×8-Matrix aus roten LEDs (U-LEDMATRIX), die nach der als „Charlieplexing“ bekannten Technik angeschlossen sind.
+	Auf diese LEDs kann mithilfe der speziellen Bibliothek als Array zugegriffen werden. 
+	Diese Matrix eignet sich für eine Vielzahl von Projekten und Prototypen und unterstützt beispielsweise Animationen, einfache Spieledesigns und Lauftexte.
  % \cite{}Arduino Handbuch
 
 \subsubsection{Digital Pins}
-Die Pins des Arduino können entweder als Ein- oder als Ausgänge konfiguriert werden. In diesem Abschnitt wird die Funktionsweise der Pins in diesen Modi erläutert. Auch wenn sich der Titel dieses Abschnittes auf digitale Pins bezieht, ist es wichtig zu beachten, dass die überwiegende Mehrheit der analogen Pins des Arduino auf genau dieselbe Weise wie digitale Pins konfiguriert und verwendet werden kann.
+	Die Pins des Arduino können entweder als Ein- oder als Ausgänge konfiguriert werden. In diesem Abschnitt wird die Funktionsweise der Pins in diesen Modi erläutert. Auch wenn sich der Titel dieses Abschnittes auf digitale Pins bezieht, ist es wichtig zu beachten, dass die überwiegende Mehrheit der analogen Pins des Arduino auf genau dieselbe Weise wie digitale Pins konfiguriert und verwendet werden kann.
  % \cite{}Arduino Handbuch
 
 \subsubsection{Eigenschaften von als INPUT konfigurierten Pins}
 
-Arduino-Pins sind standardmäßig als Eingänge konfiguriert, sodass sie nicht explizit mit
+	Arduino-Pins sind standardmäßig als Eingänge konfiguriert, sodass sie nicht explizit mit \SHELL{pinMode()} als Eingänge deklariert werden müssen, wenn Sie sie als Eingänge verwenden. Pins, die auf diese Weise konfiguriert sind, befinden sich in einem hochohmigen Zustand. Eingangspins stellen extrem geringe Anforderungen an die Schaltung, die sie abtasten, was einem Vorwiderstand von 100 MOhm vor dem Pin entspricht. Das bedeutet, dass nur sehr wenig Strom benötigt wird, um den Eingangspin von einem Zustand in einen anderen zu versetzen, wodurch sich die Pins für Aufgaben wie die Implementierung eines kapazitiven Berührungssensors, das Auslesen einer LED als Fotodiode oder das Auslesen eines analogen Sensors mit einem Schema wie RCTime eignen.
 
-pinMode()
+	Dies bedeutet jedoch auch, dass Pins, die mit \python{pinMode(pin, INPUT)} konfiguriert sind und an die nichts angeschlossen ist oder an die Drähte angeschlossen sind, die nicht mit anderen Schaltungen verbunden sind, scheinbar zufällige Änderungen des Pin-Zustands melden, da sie elektrisches Rauschen aus der Umgebung aufnehmen oder den Zustand eines benachbarten Pins kapazitiv koppeln. Pull-up-Widerstände bei als INPUT konfigurierten Pins
 
-als Eingänge deklariert werden müssen, wenn Sie sie als Eingänge verwenden. Pins, die auf diese Weise konfiguriert sind, befinden sich in einem hochohmigen Zustand. Eingangspins stellen extrem geringe Anforderungen an die Schaltung, die sie abtasten, was einem Vorwiderstand von 100 MOhm vor dem Pin entspricht. Das bedeutet, dass nur sehr wenig Strom benötigt wird, um den Eingangspin von einem Zustand in einen anderen zu versetzen, wodurch sich die Pins für Aufgaben wie die Implementierung eines kapazitiven Berührungssensors, das Auslesen einer LED als Fotodiode oder das Auslesen eines analogen Sensors mit einem Schema wie RCTime eignen.
-
-Dies bedeutet jedoch auch, dass Pins, die mit
-
-%pinMode(pin, INPUT)
-
-konfiguriert sind und an die nichts angeschlossen ist oder an die Drähte angeschlossen sind, die nicht mit anderen Schaltungen verbunden sind, scheinbar zufällige Änderungen des Pin-Zustands melden, da sie elektrisches Rauschen aus der Umgebung aufnehmen oder den Zustand eines benachbarten Pins kapazitiv koppeln.
-Pull-up-Widerstände bei als INPUT konfigurierten Pins
-
-Oft ist es sinnvoll, einen Eingangs-Pin auf einen bekannten Zustand zu setzen, wenn kein Eingangssignal anliegt. Dies kann durch Hinzufügen eines Pull-up-Widerstands (an +5 VDC) oder eines Pull-down-Widerstands (Widerstand an GND) am Eingang erreicht werden. Ein 10-kOhm-Widerstand ist ein guter Wert für einen Pull-up- oder Pull-down-Widerstand.
-Eigenschaften von Pins, die als INPUT-PULLUP konfiguriert sind.
+	Oft ist es sinnvoll, einen Eingangs-Pin auf einen bekannten Zustand zu setzen, wenn kein Eingangssignal anliegt. Dies kann durch Hinzufügen eines Pull-up-Widerstands (an +5 VDC) oder eines Pull-down-Widerstands (Widerstand an GND) am Eingang erreicht werden. Ein 10-kOhm-Widerstand ist ein guter Wert für einen Pull-up- oder Pull-down-Widerstand.
+	Eigenschaften von Pins, die als INPUT-PULLUP konfiguriert sind.
 %\cite{bibid} (https://docs.arduino.cc/learn/microcontrollers/digital-pins/)
 
 \subsubsection{Eigenschaften von als OUTPUT konfigurierten Pins}
 
-Pins, die mit pinMode() als OUTPUT konfiguriert wurden, befinden sich in einem Zustand mit niedriger Impedanz. Das bedeutet, dass sie anderen Schaltungen eine beträchtliche Strommenge zuführen können. ATmega-Pins können bis zu 40 mA (Milliampere) Strom an andere Geräte/Schaltungen liefern (positiver Strom) oder aufnehmen (negativer Strom). Dies ist beispielsweise ausreichend, um eine LED hell leuchten zu lassen (vergessen Sie den Vorwiderstand nicht) oder viele Sensoren zu betreiben, reicht jedoch nicht aus, um die meisten Relais, Magnetventile oder Motoren zu betreiben.
+	Pins, die mit \python{pinMode()} als OUTPUT konfiguriert wurden, befinden sich in einem Zustand mit niedriger Impedanz. Das bedeutet, dass sie anderen Schaltungen eine beträchtliche Strommenge zuführen können. ATmega-Pins können bis zu 40 mA (Milliampere) Strom an andere Geräte/Schaltungen liefern (positiver Strom) oder aufnehmen (negativer Strom). Dies ist beispielsweise ausreichend, um eine LED hell leuchten zu lassen (vergessen Sie den Vorwiderstand nicht) oder viele Sensoren zu betreiben, reicht jedoch nicht aus, um die meisten Relais, Magnetventile oder Motoren zu betreiben.
 
-Kurzschlüsse an Arduino-Pins oder der Versuch, Geräte mit hohem Strombedarf über diese Pins zu betreiben, können die Ausgangstransistoren im Pin beschädigen oder zerstören oder den gesamten ATmega-Chip beschädigen. Oft führt dies zu einem „toten“ Pin im Mikrocontroller, aber der restliche Chip funktioniert weiterhin einwandfrei. Aus diesem Grund ist es ratsam,
-
-OUTPUT-Pins über 470-Ohm- oder 1-kOhm-Widerstände an andere Geräte anzuschließen, es sei denn, für eine bestimmte Anwendung ist die maximale Stromaufnahme der Pins erforderlich.
+	Kurzschlüsse an Arduino-Pins oder der Versuch, Geräte mit hohem Strombedarf über diese Pins zu betreiben, können die Ausgangstransistoren im Pin beschädigen oder zerstören oder den gesamten ATmega-Chip beschädigen. Oft führt dies zu einem „toten“ Pin im Mikrocontroller, aber der restliche Chip funktioniert weiterhin einwandfrei. Aus diesem Grund ist es ratsam, \python{OUTPUT}-Pins über 470-Ohm- oder 1-kOhm-Widerstände an andere Geräte anzuschließen, es sei denn, für eine bestimmte Anwendung ist die maximale Stromaufnahme der Pins erforderlich.
 
 %\cite{bibid} (https://docs.arduino.cc/learn/microcontrollers/digital-pins/)
 
 \subsubsection{Analog Pins}
 
-Die für den Arduino verwendeten ATmega-Controller enthalten einen 
-Onboard-6-Kanal-Charakter-Charakter-Wandler mit 6 Kanälen auf dem Mini und Nano, 16 auf dem Analog-Digital-Wandler Mega) (A/D). Der Konverter hat eine 10-Bit-Auflösung, die ganze Zahlen von 0 bis 1023 zurückgibt. Während die Hauptfunktion der analogen Pins für die meisten Arduino-Benutzer das Lesen von analogen Sensoren ist, haben die analogen Pins auch die gesamte Funktionalität von allgemeinen Ein- / Ausgangs-Pins (gleiche wie digitale Pins 0-13).
+	Die für den Arduino verwendeten ATmega-Controller enthalten einen Onboard-6-Kanal-Charakter-Charakter-Wandler mit 6 Kanälen auf dem Mini und Nano, 16 auf dem Analog-Digital-Wandler Mega) (A/D). Der Konverter hat eine 10-Bit-Auflösung, die ganze Zahlen von 0 bis 1023 zurückgibt. Während die Hauptfunktion der analogen Pins für die meisten Arduino-Benutzer das Lesen von analogen Sensoren ist, haben die analogen Pins auch die gesamte Funktionalität von allgemeinen Ein- / Ausgangs-Pins (gleiche wie digitale Pins 0-13).
 
-Wenn ein Benutzer daher mehr allgemeine Ein- / Ausgangspins benötigt und alle analogen Pins nicht verwendet werden, können die analogen Pins für GPIO verwendet werden.
+	Wenn ein Benutzer daher mehr allgemeine Ein- / Ausgangspins benötigt und alle analogen Pins nicht verwendet werden, können die analogen Pins für GPIO verwendet werden.
 
 %\cite{bibid} (https://docs.arduino.cc/learn/microcontrollers/analog-input/?_gl=1*zz2g31*_up*MQ..*_ga*NDE4ODczNzIxLjE3NzgyMjYzNzY.*_ga_NEXN8H46L5*czE3NzgyMjYzNzQkbzEkZzAkdDE3NzgyMjYzNzQkajYwJGwwJGg1NDE2NzM0OTg.)
 
 
-\subsection{Maße}
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=\textwidth]{../../Images/ArduinoR4/Dimensionen.png}
-		\caption{figure}{Maße des Arduino Uno R4 wifi }
-		\label{fig:MaßeR4}
-	\end{center}
-\end{figure}
-
-
-Die Abbildung Arduino Maße \ref{MaßeR4} liefert die notwendigen Konstruktionsdaten für die mechanische Einpassung der Mikrocontroller-Plattform. Die Bemaßung erfolgt in metrischen Einheiten ($mm$).
-
-\subsubsection{Primäre Maße und Formfaktor}
-
-In der Draufsicht wird der standardisierte Footprint spezifiziert:
-\begin{itemize}{
-		\item \textbf{Abreißkanten-Außenmaße:} 
-		Die totale Länge beträgt $68,58\,\text{mm}$ bei einer Breite von $53,34\,\text{mm}$.
-		\item \textbf{Ecken-Modifikation:} 
-		Zwei Ecken weisen eine Fase von $3,6\,\text{mm} \times 45^\circ$ auf, was die mechanische Zentrierung in Gehäuseführungen unterstützt.
-		\item \textbf{PCB-Stärke:}	
-		Das Substrat besitzt eine nominelle Dicke von $1,0\,\text{mm}$.
-} \end{itemize}
 
 
 \subsubsection{Vertikale Komponenten-Topologie (Z-Achse)}
@@ -248,24 +284,16 @@ Dokumentiert wird die exakte Lage der Pin-Header-Reihen:
 } \end{itemize}
 %\cite{} Datenblatt Arduino
 
-\subsection{Inbetriebnahme (Einschränkungen/Einsatzbereich)}
+\subsection{Inbetriebnahme (Einsatzbereich)}
 
 
 
+\subsection{Datenübertragung}
 
-\subsection{Anwendungsbeschreibung (Daten/Strukturen/Typen)}
+	Das UNO R4 WiFi basiert auf dem 32-Bit-Mikrocontroller der RA4M1-Serie, dem R7FA4M1AB3CFM-AA0 von Renesas, der einen 48-MHz-Arm-Cortex-M4-Mikroprozessor mit einer Gleitkommaeinheit (FPU) verwendet.
+	Die Betriebsspannung des RA4M1 ist auf 5 V festgelegt, um die Hardwarekompatibilität mit Shields, Zubehör und Schaltungen auf Basis früherer Arduino-UNO-Boards zu gewährleisten.
+	Der R7FA4M1AB3CFM-AA0 verfügt über:
 
-
-
-\subsection{Software und Protokolle}
-
-\subsubsection{Datenübertragung}
-
-Das UNO R4 WiFi basiert auf dem 32-Bit-Mikrocontroller der RA4M1-Serie, dem R7FA4M1AB3CFM-AA0 von Renesas,
-der einen 48-MHz-Arm-Cortex-M4-Mikroprozessor mit einer Gleitkommaeinheit (FPU) verwendet.
-Die Betriebsspannung des RA4M1 ist auf 5 V festgelegt, um die Hardwarekompatibilität mit Shields, Zubehör und Schaltungen
-auf Basis früherer Arduino-UNO-Boards zu gewährleisten.
-Der R7FA4M1AB3CFM-AA0 verfügt über:
 \begin{itemize}{
 		\item 256 kB Flash / 32 kB SRAM / 8 kB Daten-Flash (EEPROM)
 		\item Echtzeituhr (RTC)
@@ -275,33 +303,34 @@ Der R7FA4M1AB3CFM-AA0 verfügt über:
 		\item OPAMP
 		\item CAN-Bus
 } \end{itemize}
-Weitere technische Details zu diesem Mikrocontroller finden Sie in der offiziellen Dokumentation der Renesas RA4M1-Serie.
+	Weitere technische Details zu diesem Mikrocontroller finden Sie in der offiziellen Dokumentation der Renesas RA4M1-Serie.
 
 % \cite{}Arduino Handbuch
 
-\subsubsection{Pulsbreitenmodulation}
+\subsubsection{Pulsweitenmodulation}
 
-Pulse Width Modulation, oder PWM, ist eine Technik, um analoge Ergebnisse mit digitalen Mitteln zu erhalten. Digitale Steuerung wird verwendet, um eine Rechteckwelle zu erzeugen, ein Signal, das zwischen Ein- und Ausschaltung geschaltet wird. Dieses Ein-Aus-Muster kann Spannungen zwischen dem gesamten Vcc der Platine (z. B. 5 V auf UNO, 3,3 V auf einer MKR-Platte) und aus (0 Volt) simulieren, indem der Teil der Zeit, für die das Signal verbringt, gegenüber der Zeit, die das Signal ausgibt, geändert wird. Die Dauer von "Einschaltzeit" wird als Pulsbreite bezeichnet. Um unterschiedliche analoge Werte zu erhalten, ändern oder modulieren Sie diese Pulsbreite. Wenn Sie dieses Ein-Aus-Muster beispielsweise schnell genug mit einer LED wiederholen, ist das Ergebnis, als ob das Signal eine konstante Spannung zwischen 0 und Vcc ist, die die Helligkeit der LED steuert.
+Pulsweitenmodulation (PWM) ist eine Methode, um analoge Signale mithilfe digitaler Technik zu erzeugen. Dabei nutzt man eine digitale Steuerung, um eine Rechteckwelle zu generieren – ein Signal, das abwechselnd zwischen Ein- und Aus-Zustand schaltet. Durch das Verhältnis der Zeit, in der das Signal eingeschaltet ist, zu der Zeit, in der es ausgeschaltet bleibt, können Spannungen zwischen der Betriebsspannung der Platine (z.B. 5 V beim UNO oder 3,3 V bei einer MKR-Platine) und 0 V simuliert werden. Die Dauer der „Ein“ Phase wird als Pulsweite bezeichnet. Um verschiedene analoge Werte zu erzeugen, verändert man diese Pulsweite man moduliert sie also. Wenn dieses Ein-Aus-Signal beispielsweise schnell genug an eine LED ausgegeben wird, erscheint es, als würde die LED mit einer konstanten Spannung zwischen 0 V und Vcc betrieben, wodurch ihre Helligkeit gesteuert wird.
 
-In der folgenden Grafik stellen die grünen Linien einen regelmäßigen Zeitraum dar. Diese Dauer oder Periode ist die Umkehrung der PWM-Frequenz. Mit anderen Worten, mit Arduinos PWM-Frequenz bei etwa 500Hz würden die grünen Linien jeweils 2 Millisekunden messen. Ein Anruf bei analogWrite() auf einer Skala von 0 - 255, so dass analogWrite(255) fordert einen 100\%-Zollzyklus (immer weiter) und 
-analogWrite(127) ist zum Beispiel ein 50\%-Einsatzzyklus (auf halber Zeit).
+In der folgenden Abbildung \ref{pic:PWM} zeigen die grünen Linien die regelmäßigen Zeitintervalle. Diese Periode entspricht dem Kehrwert der PWM-Frequenz. Mit einer typischen PWM-Frequenz von etwa 500 Hz bei Arduino beträgt eine Periode etwa 2 Millisekunden. Ein Aufruf von \python{analogWrite()} verwendet einen Wertebereich von 0 bis 255:
+\python{analogWrite(255)} erzeugt einen 100 \% Duty Cycle (immer an), während analogWrite(127) einem 50 \% Duty Cycle entspricht (das Signal ist die Hälfte der Zeit eingeschaltet).
+
+%\cite{bibid} ( https://docs.arduino.cc/learn/microcontrollers/analog-output/  )
 
 
 \begin{center}
 	\includegraphics[width=\textwidth]{../../Images/ArduinoR4/PWM.png}
-	\captionof{figure}{Pulsbreitenmodulation 0\% - 100\% }
-	\label{fig:PWM}
+	\captionof{figure}{Pulsweitenmodulation 0\% - 100\% }
+	\label{pic:PWM}
 \end{center}
 
-Bei einigen Mikrocontrollern ist PWM nur auf ausgewählten Pins verfügbar. Bitte beachten Sie das Pin-Out-Diagramm Ihres Boards, um herauszufinden, welche Sie für PWM verwenden können. Sie sind mit einem Tildezeichen ($~$) gekennzeichnet.
-
-Sobald Sie dieses Beispiel zum Laufen gebracht haben, schnappen Sie sich Ihren Arduino und schütteln Sie ihn hin und her. Was Sie hier tun, ist im Wesentlichen die Abbildung der Zeit im gesamten Raum. Für unsere Augen verschwimmt die Bewegung jede LED in eine Linie. Wenn die LED ein- und ausgeht, werden diese kleinen Linien in der Länge wachsen und schrumpfen. Jetzt sehen Sie die Pulsbreite.
+	Bei einigen Mikrocontrollern ist PWM nur auf ausgewählten Pins verfügbar. Bitte beachten Sie das Pin-Out-Diagramm Ihres Boards, um herauszufinden, welche Sie für PWM verwenden können. Sie sind mit einem Tildezeichen ($~$) gekennzeichnet.
+	
+	Sobald Sie dieses Beispiel zum Laufen gebracht haben, schnappen Sie sich Ihren Arduino und schütteln Sie ihn hin und her. Was Sie hier tun, ist im Wesentlichen die Abbildung der Zeit im gesamten Raum. Für unsere Augen verschwimmt die Bewegung jede LED in eine Linie. Wenn die LED ein- und ausgeht, werden diese kleinen Linien in der Länge wachsen und schrumpfen. Jetzt sehen Sie die Pulsbreite.
 
 \subsubsection{Wi-Fi-/Bluetooth}
 
-Das Wi-Fi-/Bluetooth LE-Modul des UNO R4 WiFi basiert auf den ESP32-S3-SoCs. Es verfügt über die Xtensa®-Dual-Core-
-32-Bit-LX7-MCU, eine integrierte Antenne und unterstützt das 2,4-GHz-Band.
-Das ESP32-S3-MINI-1-N8 bietet:
+	Das Wi-Fi-/Bluetooth LE-Modul des UNO R4 WiFi basiert auf den ESP32-S3-SoCs. Es verfügt über die Xtensa®-Dual-Core-32-Bit-LX7-MCU, eine integrierte Antenne und unterstützt das 2,4-GHz-Band.
+	Das ESP32-S3-MINI-1-N8 bietet:
 \begin{itemize}{
 		\item Wi-Fi 4 – 2,4-GHz-Band
 		\item Unterstützung für Bluetooth 5 LE
@@ -310,25 +339,22 @@ Das ESP32-S3-MINI-1-N8 bietet:
 		\item 512 kB SRAM
 		\item Bis zu 150 Mbit/s Bitrate
 } \end{itemize}
-Dieses Modul fungiert als sekundäre MCU auf dem UNO R4 WiFi und kommuniziert mit der RA4M1-MCU über einen Logikpegel-Übersetzer. Beachten Sie, dass dieses Modul mit 3,3 V betrieben wird, im Gegensatz zur Betriebsspannung von 5 V des RA4M1.
+	Dieses Modul fungiert als sekundäre MCU auf dem UNO R4 WiFi und kommuniziert mit der RA4M1-MCU über einen Logikpegel-Übersetzer. Beachten Sie, dass dieses Modul mit 3,3 V betrieben wird, im Gegensatz zur Betriebsspannung von 5 V des RA4M1.
 % \cite{}Arduino Handbuch
 
 \subsubsection{I2C}
+\label{I2C}
 
-Das I2C-Protokoll nutzt zwei Leitungen zum Senden und Empfangen von Daten: einen seriellen Takt-Pin (SCL), den das Arduino-Controller-Board in regelmäßigen Abständen mit Impulsen versorgt, und einen seriellen Daten-Pin (SDA), über den Daten zwischen den beiden Geräten übertragen werden.
+	Das I2C-Protokoll nutzt zwei Leitungen zum Senden und Empfangen von Daten: einen seriellen Takt-Pin (SCL), den das Arduino-Controller-Board in regelmäßigen Abständen mit Impulsen versorgt, und einen seriellen Daten-Pin (SDA), über den Daten zwischen den beiden Geräten übertragen werden.
+	
+	Bei I2C gibt es ein Controller-Gerät, an dessen SCL- und SDA-Leitungen ein oder mehrere Peripheriegeräte angeschlossen sind.
+	
+	Wenn die Taktleitung von Low auf High wechselt (bekannt als steigende Flanke des Taktimpulses), wird ein einzelnes Informationsbit über die SDA-Leitung vom Board an das I2C-Gerät übertragen. Während die Taktleitung weiter pulsiert, werden immer mehr Bits gesendet, bis eine Folge aus einer 7- oder 8-Bit-Adresse sowie einem Befehl oder Daten gebildet ist. Wenn diese Informationen – Bit für Bit – gesendet werden, führt das aufgerufene Gerät die Anforderung aus und sendet seine Daten – falls erforderlich – über dieselbe Leitung unter Verwendung des vom Controller auf SCL weiterhin erzeugten Taktsignals als Zeitgeber zurück an die Platine.
+	
+	Jedes Gerät im I2C-Bus ist funktional unabhängig vom Controller, antwortet jedoch mit Informationen, wenn es vom Controller dazu aufgefordert wird.
 
-Bei I2C gibt es ein Controller-Gerät, an dessen SCL- und SDA-Leitungen ein oder mehrere Peripheriegeräte angeschlossen sind.
-
-Wenn die Taktleitung von Low auf High wechselt (bekannt als steigende Flanke des Taktimpulses), wird ein einzelnes Informationsbit über die SDA-Leitung vom Board an das I2C-Gerät übertragen. Während die Taktleitung weiter pulsiert, werden immer mehr Bits gesendet, bis eine Folge aus einer 7- oder 8-Bit-Adresse sowie einem Befehl oder Daten gebildet ist. Wenn diese Informationen – Bit für Bit – gesendet werden, führt das aufgerufene Gerät die Anforderung aus und sendet seine Daten – falls erforderlich – über dieselbe Leitung unter Verwendung des vom Controller auf SCL weiterhin erzeugten Taktsignals als Zeitgeber zurück an die Platine.
-
-Jedes Gerät im I2C-Bus ist funktional unabhängig vom Controller, antwortet jedoch mit Informationen, wenn es vom Controller dazu aufgefordert wird.
-
-Da das I2C-Protokoll jedem aktivierten Gerät eine eigene eindeutige Adresse zuweist und sowohl der Controller als auch die Peripheriegeräte abwechselnd über eine einzige Leitung kommunizieren, ist es möglich, dass Ihr Arduino-Board (abwechselnd) mit vielen Geräten oder anderen Boards kommuniziert, während es nur zwei Pins Ihres Mikrocontrollers nutzt.
+	Da das I2C-Protokoll jedem aktivierten Gerät eine eigene eindeutige Adresse zuweist und sowohl der Controller als auch die Peripheriegeräte abwechselnd über eine einzige Leitung kommunizieren, ist es möglich, dass Ihr Arduino-Board (abwechselnd) mit vielen Geräten oder anderen Boards kommuniziert, während es nur zwei Pins Ihres Mikrocontrollers nutzt.
 % \cite{}(https://docs.arduino.cc/learn/communication/wire/?_gl=1*11psmf3*_up*MQ..*_ga*NDE4ODczNzIxLjE3NzgyMjYzNzY.*_ga_NEXN8H46L5*czE3NzgyMzA2OTMkbzIkZzAkdDE3NzgyMzA2OTMkajYwJGwwJGg5MjM2Njc5OTM.)
-
-
-\subsection{Tests}
-
 
 
 \section{Anschlussbeispiel}
@@ -337,17 +363,29 @@ Da das I2C-Protokoll jedem aktivierten Gerät eine eigene eindeutige Adresse zuw
 	\begin{center}
 		\includegraphics[width=\textwidth]{../../Images/ArduinoR4/Blink.png}
 		\caption{figure}{Anschlussbeispiel für Arduino R4}
-		\label{fig:Blink}
+		\label{pic:Blink}
 	\end{center}
 \end{figure}
 
-In Abbildung \ref{fig:blink} ist der schematische Aufbau einer einfachen LED-Ansteuerung dargestellt. Der Versuchsaufbau nutzt einen Arduino Uno R4 WiFi als Steuerungseinheit. Die Schaltung besteht aus einer Leuchtdiode (LED) und einem in Reihe geschalteten Vorwiderstand zur Strombegrenzung.
-Details zum Aufbau:
+	In Abbildung \ref{pic:blink} ist der schematische Aufbau einer einfachen LED-Ansteuerung dargestellt. Der Versuchsaufbau nutzt einen Arduino Uno R4 WiFi als Steuerungseinheit. Die Schaltung besteht aus einer Leuchtdiode (LED) und einem in Reihe geschalteten Vorwiderstand zur Strombegrenzung.
+	Details zum Aufbau:
 \begin{itemize}{
-\item Anode: Die Anode der LED (langes Bein) ist über einen Widerstand mit dem digitalen Pin 13 verbunden.Kathode: Die Kathode (kurzes Bein) ist direkt mit dem GND-Pin (Masse) des Arduinos verbunden.
-\item Funktion: Durch das Schalten des digitalen Ausgangs auf ein hohes Potenzial ($5\,V$ bzw. $3,3\,V$) wird der Stromkreis geschlossen und die LED emittiert Licht.
+	\item Anode: Die Anode der LED (langes Bein) ist über einen Widerstand mit dem digitalen Pin 13 verbunden.Kathode: Die Kathode (kurzes Bein) ist direkt mit dem GND-Pin (Masse) des Arduinos verbunden.
+	\item Funktion: Durch das Schalten des digitalen Ausgangs auf ein hohes Potenzial ($5\,V$ bzw. $3,3\,V$) wird der Stromkreis geschlossen und die LED emittiert Licht.
 } \end{itemize}
+
+
+
 \subsection{Code}
+
+
+%
+%\begin{center}
+%	\captionof{figure}{Dieser Code liest den digitalen Eingang 8 des Mikrocontrollers ein und erkennt anhand des Signals der Lichtschranke, ob ein Objekt den Lichtstrahl unterbricht. Der Zustand wird anschließend über die serielle Schnittstelle ausgegeben.} 
+%	\ArduinoExternal{}{../../Code/TestLichtschranke/TestLichtschranke.ino}
+%\end{center}
+%
+
 
 /*
 * This Arduino UNO R4 code was developed by newbiely.com
