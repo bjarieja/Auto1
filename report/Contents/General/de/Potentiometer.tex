@@ -30,11 +30,22 @@
 Der potentiometrische Wandler auf Basis eines gleitend-reibenden Kontaktelements auf
 einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. (Czechowicz, 2025)
 Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. (Czechowicz, 2025)
+
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.25]{../../Images/PC16/UebersichtPotentiometer.png}
+		\caption{Bauformen von Potentiometern nach (Czechowicz, 2025)} 
+		\label{pic:PotiRotLin}
+	\end{figure}
+\end{center}
+
 Mit Hilfe des variablen Widerstands eines Potenziometers lässt sich ein Spannungsteiler realisieren, bei dem die Spannungsteilung einstellbar ist. (Meier und Stübbe, 2022)
 
 \section{Drehpotentiometer PIHER PC-16}
 
-Das Drehpotentiometer (PC-16 - 16mm panel mount potentiometer, 2026)
+Das Drehpotentiometer PC-16 ist ein 16 mm Carbon-Potentiometer zur Montage auf Bedienpaneelen (PC-16 - 16mm panel mount potentiometer, 2026).
+Aufgrund seiner schlanken Bauweise eignet es sich hervorragend zum einbau in kleineren Elektrogeräten.
+Das Drehpotentiometer soll beim elektrischen Tischförderband zur Vorwahl der Bandgeschwindigkeit eingesetzt werden.
 
 \section{Spezifikationen}
 
@@ -78,28 +89,57 @@ Das Drehpotentiometer (PC-16 - 16mm panel mount potentiometer, 2026)
 \end{table} 
 
 
-Der Motortreiber besitzt wie in \ref{pic:POTI10k} erkenntlich drei Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
+Das Drehpotentiometer besitzt wie in \ref{pic:POTI10k} erkenntlich drei Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
 \begin{enumerate}
-		\item \textbf{A}: Positiver Spannungsanschluss (10$-$14 $V$ DC)
-		\item \textbf{S}: Negativer Spannungsanschluss (Masse)
-		\item \textbf{E}: Negativer Spannungsanschluss (Masse)		
+		\item \textbf{A}: Spannungsanschluss 1
+		\item \textbf{S}: Signalanschluss
+		\item \textbf{E}: Spannungsanschluss 2
 \end{enumerate}
+Diese Anschlüsse A und E beschreiben die Endlagen des jeweiligen Potentiometers. Die Polung der Anschlüsse ist Bauart und Anwendungsabhängig.
+
+\section{Bibliothek}
+Für die Verwendung eines einfachen Drehpotentiometers mit drei Anschlüssen wird in der Regel keine zusätzliche Bilbiothek benötigt.
+
+\section{Anwendungsbeispiel}
+\label{sec:AnwendungPC16}
+Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden. 
+%Hier beschreibung
+
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.35]{../../Code/Potentiometer/AnalogInput/schematic}
+		\caption{Anschlussbeispiel des PC16 nach Arduino} 
+		\label{pic:PC16Anschluss} 
+	\end{figure}
+\end{center}
 
 
-\section{Library}
 
-\subsection{Description}
+\subsection{Code}
 
-\subsection{Installation}
+\subsection{Einfacher Funktionstest}
+Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es sinnvoll dieses vor der Verwendung zu testen. Hierfür kann die in \ref{pic:PC16Anschluss} gezeigte Schaltung verwendet werden. Um die Funktion des Drehpotentiometers am Arduino zu prüfen kann folgendes Vorgehen befolgt werden: 
 
-\begin{itemize}
-    \item data types
-    \item data structure
-    \item data quantity
-    \item data quality
-\end{itemize}
+\begin{center}
+	\begin{enumerate}
+		\item Alle Anschlüsse und Verbindungen nach \ref{pic:PC16Anschluss} verbinden und auf festen Sitz prüfen. 
+		\item Den Arduino mit einem Computer VerbindenSpannungsversorgung (12V) einschalten.   
+		\item Prüfen ob der Motor sich mit konstanter Drehzahl dreht. 
+	\end{enumerate}  
+\end{center}
 
-\subsection{Functions}
+
+
+
+\section{weiterführende Literatur} 
+\begin{center}
+	\begin{enumerate}
+		
+		%Hier Literatur anfügen
+		
+	\end{enumerate}
+\end{center}
+
 
 \section{Example}
 
@@ -116,12 +156,16 @@ In this section, a simple example is described in detail, which demonstrates how
 
 
 
-\section{Calibration}
+\section{Kalibrierung}
+%Endlagenkalibrierung
 
-cite method
-
-\section{Simple Code}
-
+\section{Einfacher Code}
+Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussPC16} zeigt dieses auf. Es wird ein Eingangssignal und seine Schnittstelle definiert um anschließend ausgewertet zu werden. Das eingelesene Signal wird dem Benutzer visuell über eine LED zurückgegeben.
+\begin{center}
+	\captionof{figure}{Dieser Code liest den analogen Eingang A0 des Mikrocontrollers ein und moduliert anhand der Signalstärke des Drehpotentiometers die Frequenz mit der die Eingebaute LED auf dem digitalen Pin D13 blinkt.} 
+	\label{CodeAnschlussPC16}
+	\ArduinoExternal{}{../../Code/Potentiometer/AnalogInput/AnalogInput.ino}
+\end{center}
 
 \section{Simple Application}
 

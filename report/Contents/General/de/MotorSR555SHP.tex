@@ -42,7 +42,7 @@ cite board
 			\hline
 			\textbf{Parameter} &\textbf{Wert/Detail}\\
 			\hline
-			Modell &  SR555SHP\\
+			Modell & Motraxx SR555SHP\\
 			\hline
 			Typ  & DC-Gleichstrommotor\\
 			\hline 
@@ -85,26 +85,24 @@ Der Motortreiber besitzt wie in \ref{pic:SR555SHP} erkenntlich zwei Anschlüsse.
 
 \section{Anwendungsbeispiel}
 \label{sec:AnwendungSR555SHP}
-Der Motortreiber lässt sich mit kleinem Aufwand anschließen und verwenden. 
-Es muss sichergestellt sein, das sowohl eine Versorgungsspannung und ein angeschlossener Motor vorhanden sind. Hierfür können einfach zwei Kabel des Motors mittels Aderendhülsen in die Schraubklemmen auf dem Board angeschlossen werdne. Hierfür ist unabdingbar  den positiven Motorausgang \glqq M+ \grqq  sowie den negativen Motorausgang \glqq M- \grqq mit dem Motor zu verbinden. Anschließend kann ebenfalls ein Mikrocontroller mit dem Motortreiber verbunden werden \ref{pic:BTS7960Anschluss}. Die RPWM- und LPWM-Eingänge des Motortreibers werden für die PWM-Steuerung der Motorgeschwindigkeit und -richtung verwendet.
-Die R\_EN- und L\_EN-Pins müssen auf 5V gelegt werden, um den Treiber zu
-aktivieren (vgl. \ref{pic:SR555SHPAnschluss}). VCC und GND des Motortreibes sollten ebenfalls mit dem Mikrokontroller verbunden werden, und dienen zur Versorgung der Treiberlogik mit 5V. Nun kann zusätzlich ein Potentiometer zur Erzeugung eines Eingangssignals am Microkontroller genutzt werden, mithilfe des Potentiometers kann dann eine Eingangsvariable erzeugt werden,welche das PWM-Ausgangssignal des Mikrocontrollers modifiziert. Hierfür kann das Potentiometer mit der Logikspannung versorgt werden, und der Fühlerabgriff kann auf einen Analogen Eingangspin des ikrokontrollers gelegt werden (vgl. \ref{pic:BTS7960Anschluss})
-Anschließend kann der Motortreiber mit einer externen Spannungsquelle verbunden werden. 
+Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden. 
+%Hier beschreibung
+
 \begin{center}
 	\begin{figure}
-		\includegraphics[scale=0.35]{Bild Anschluss}
+		\includegraphics[scale=0.35]{Bild Anschluss} %tikz oder bild noch erstellen
 		\caption{Anschlussbeispiel des SR555SHP nach Quelle} 
-		\label{pic:SR555SHPAnschluss}
+		\label{pic:SR555SHPAnschluss} 
 	\end{figure}
 \end{center}
 
 
 
 \subsection{Code}
-%Keiner notwendig
+Zum testen des Motraxx SR555SHP ist kein Mikrocontroller und somit auch kein Code notwendig.
 
 \subsection{Einfacher Funktionstest}
-Um die Ordnungsgemäße Funktion des Motors sicherzustellen, ist es sinnvoll ihn vor der Verwendung zu testen. Hierfür kann die in (S.O.) Verschaltung der Komponenten erneut verwendet werden. Um die Funktion des Motors zu prüfen kann folgendes Vorgehen befolgt werden: 
+Um die Ordnungsgemäße Funktion des Motors sicherzustellen, ist es sinnvoll ihn vor der Verwendung zu testen. Hierfür kann die in \ref{pic:SR555SHPAnschluss} gezeigte Schaltung verwendet werden. Um die Funktion des Motors zu prüfen kann folgendes Vorgehen befolgt werden: 
 
 \begin{center}
 	\begin{enumerate}
@@ -114,15 +112,16 @@ Um die Ordnungsgemäße Funktion des Motors sicherzustellen, ist es sinnvoll ihn
 	\end{enumerate}  
 \end{center}
 
-Sollte es zu keiner Drehzahlveränderung kommen, so sollten zunächst alle Verbindungen auf korrekten Anschluss sowie festen Sitz überprüft werden. Ein Austausch der Steckverbindungsleitungen kann zudem Kabelbrüche als mögliche Fehlerursache ausschließen.
-Eine Kalibrierung des Motortreibers im klassischen Sinne ist nicht notwendig. Dennoch kann es sinnvoll sein, die Auswertelogik an die gewünschten Ergebnisse anzupassen. Hierzu kann beispielsweise das Verhältnis zwischen Eingabe- und Ausgabewert verändert werden. Zusätzlich lässt sich der Wertebereich des digitalen Eingangssignals anpassen.
-So kann etwa definiert werden, dass die Motordrehzahl im Bereich von 0 bis 200 Umdrehungen pro Minute liegen soll. Der Eingangswert des Potentiometers variiert dabei zwischen 0 und 1023. Daraus ergibt sich theoretisch eine Auflösung von etwa 0,2 Umdrehungen pro Minute pro Schritt.
+Sollte sich der Motor nicht drehen oder unregelmäßig laufen, so sollten zunächst alle Verbindungen auf korrekten Anschluss sowie festen Sitz überprüft werden. Ein Austausch der Steckverbindungsleitungen kann zudem Kabelbrüche als mögliche Fehlerursache ausschließen.
+Eine Kalibrierung des Motors im klassischen Sinne ist nicht möglich. Dennoch kann es sinnvoll sein, die Last-Drehzahl von 4800 $U/min$ zu überprüfen, um möglichen Verschleiß oder Reibung 
 
 
 
 \section{weiterführende Literatur} 
 \begin{center}
 	\begin{enumerate}
+		
 	%Hier Literatur anfügen
+	
 	\end{enumerate}
 \end{center}
