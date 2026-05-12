@@ -66,10 +66,6 @@ LED-Matrix: Die 12x8-LED-Matrix auf dem Board kann zum Anzeigen von Animationen,
 
 \subsection{Technische Daten}
 
-<<<<<<< Updated upstream
-\subsection{Verbautenliste}
-Nachfolgende Tabelle (\ref{VerbaulisteR4}) zeigt die im Datenblatt QUELLE entnommen technischen Eigenschaften des Arduino's.
-=======
 Der R7FA4M1AB3CFM AA0, in diesem Datenblatt häufig als RA4M1 bezeichnet, ist die Haupt-MCU des UNO R4 WiFi und ist mit allen Pin-Leisten auf der Platine sowie allen Kommunikationsbussen verbunden.
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
 
@@ -129,7 +125,7 @@ In der Draufsicht wird der standardisierte Footprint spezifiziert:
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
 \section{Verbauliste}
 
->>>>>>> Stashed changes
+
 
 \begin{figure}
 	\begin{center}
@@ -146,11 +142,7 @@ Die nachfolgende Tabelle (\ref{VerbaulisteR4}) zeigt die dem Datenblatt entnomme
 
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
 \begin{table}[h!]
-<<<<<<< Updated upstream
-	\caption{Verbauliste Arduino Uno R4 WiFi QUELLE}
-=======
 	\caption{Darstellung der auf dem Arduino Uno R4 WiFi verbauten Komponenten einschließlich ihrer Referenzbezeichnungen. }
->>>>>>> Stashed changes
 	\begin{center}
 		\begin{tabular}{|l|l|l|}
 			\hline
@@ -209,26 +201,6 @@ Die nachfolgende Tabelle (\ref{VerbaulisteR4}) zeigt die dem Datenblatt entnomme
 	\end{center}
 \end{table} 
 
-<<<<<<< Updated upstream
-\subsection{Anschlüsse}
-\subsubsection{USB Anschluss}
-
-Das UNO R4 WiFi verfügt über einen USB-C-Anschluss, der zur Stromversorgung und Programmierung des Boards sowie zum Senden und Empfangen serieller
-Daten dient.
-Hinweis: Das Board sollte über den USB-C-Anschluss nicht mit mehr als 5 V versorgt werden.
- % \cite{}Arduino Handbuch
-
-\subsubsection{LED Matrix}
-Das UNO R4 WiFi verfügt über eine 12×8-Matrix aus roten LEDs (U-LEDMATRIX), die nach der als
-„Charlieplexing“ bekannten Technik angeschlossen sind.
-Auf diese LEDs kann mithilfe der speziellen Bibliothek als Array zugegriffen werden. 
-Diese Matrix eignet sich für eine Vielzahl von Projekten und Prototypen und unterstützt beispielsweise Animationen, einfache Spieledesigns und Lauftexte.
- % \cite{}Arduino Handbuch
-
-\subsubsection{Digital Pins}
-Die Pins des Arduino können entweder als Ein- oder als Ausgänge konfiguriert werden. In diesem Abschnitt wird die Funktionsweise der Pins in diesen Modi erläutert. Auch wenn sich der Titel dieses Abschnittes auf digitale Pins bezieht, ist es wichtig zu beachten, dass die überwiegende Mehrheit der analogen Pins des Arduino auf genau dieselbe Weise wie digitale Pins konfiguriert und verwendet werden kann.
- % \cite{}Arduino Handbuch
-=======
 
 \subsection{ESP32-S3-MINI-1-N8}
 Dieses Modul wird mit 3,3 V betrieben und kommuniziert mit dem RA4M1 über einen Logikpegelwandler (TXB0108DQSR).
@@ -262,7 +234,6 @@ Dieses Modul wird mit 3,3 V betrieben und kommuniziert mit dem RA4M1 über einen
 \subsubsection{Digital Pins}
 	Die Pins des Arduino können entweder als Ein- oder als Ausgänge konfiguriert werden. In diesem Abschnitt wird die Funktionsweise der Pins in diesen Modi erläutert. Auch wenn sich der Titel dieses Abschnittes auf digitale Pins bezieht, ist es wichtig zu beachten, dass die überwiegende Mehrheit der analogen Pins des Arduino auf genau dieselbe Weise wie digitale Pins konfiguriert und verwendet werden kann.
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
->>>>>>> Stashed changes
 
 \subsubsection{Eigenschaften von als INPUT konfigurierten Pins}
 
@@ -302,7 +273,6 @@ Wenn ein Benutzer daher mehr allgemeine Ein- / Ausgangspins benötigt und alle a
 
 %\cite{bibid} (https://docs.arduino.cc/learn/microcontrollers/analog-input/?_gl=1*zz2g31*_up*MQ..*_ga*NDE4ODczNzIxLjE3NzgyMjYzNzY.*_ga_NEXN8H46L5*czE3NzgyMjYzNzQkbzEkZzAkdDE3NzgyMjYzNzQkajYwJGwwJGg1NDE2NzM0OTg.)
 
-<<<<<<< Updated upstream
 
 \subsection{Maße}
 
@@ -330,8 +300,6 @@ In der Draufsicht wird der standardisierte Footprint spezifiziert:
 } \end{itemize}
 
 
-=======
->>>>>>> Stashed changes
 \subsubsection{Vertikale Komponenten-Topologie (Z-Achse)}
 
 Die Seitenprojektion definiert die vertikale Raumbelegung:
@@ -368,17 +336,13 @@ Dokumentiert wird die exakte Lage der Pin-Header-Reihen:
 %\cite{} Datenblatt Arduino
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
 
-<<<<<<< Updated upstream
-\subsection{Inbetriebnahme (Einschränkungen/Einsatzbereich)}
-=======
 
 %\subsection{Inbetriebnahme (Einsatzbereich)}
->>>>>>> Stashed changes
 
 
 
 
-<<<<<<< Updated upstream
+
 \subsection{Anwendungsbeschreibung (Daten/Strukturen/Typen)}
 
 
@@ -387,17 +351,11 @@ Dokumentiert wird die exakte Lage der Pin-Header-Reihen:
 
 \subsubsection{Datenübertragung}
 
-Das UNO R4 WiFi basiert auf dem 32-Bit-Mikrocontroller der RA4M1-Serie, dem R7FA4M1AB3CFM-AA0 von Renesas,
-der einen 48-MHz-Arm-Cortex-M4-Mikroprozessor mit einer Gleitkommaeinheit (FPU) verwendet.
-Die Betriebsspannung des RA4M1 ist auf 5 V festgelegt, um die Hardwarekompatibilität mit Shields, Zubehör und Schaltungen
-auf Basis früherer Arduino-UNO-Boards zu gewährleisten.
-Der R7FA4M1AB3CFM-AA0 verfügt über:
-=======
 	Das UNO R4 WiFi basiert auf dem 32-Bit-Mikrocontroller der RA4M1-Serie, dem R7FA4M1AB3CFM-AA0 von Renesas, der einen 48-MHz-Arm-Cortex-M4-Mikroprozessor mit einer Gleitkommaeinheit (FPU) verwendet.
 	Die Betriebsspannung des RA4M1 ist auf 5 V festgelegt, um die Hardwarekompatibilität mit Shields, Zubehör und Schaltungen auf Basis früherer Arduino-UNO-Boards zu gewährleisten.
 	Der R7FA4M1AB3CFM-AA0 verfügt über:
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
->>>>>>> Stashed changes
+
 \begin{itemize}{
 		\item 256 kB Flash / 32 kB SRAM / 8 kB Daten-Flash (EEPROM)
 		\item Echtzeituhr (RTC)
@@ -410,46 +368,33 @@ Der R7FA4M1AB3CFM-AA0 verfügt über:
 Weitere technische Details zu diesem Mikrocontroller finden Sie in der offiziellen Dokumentation der Renesas RA4M1-Serie.
 
 % \cite{}Arduino Handbuch
-<<<<<<< Updated upstream
 
-\subsubsection{Pulsbreitenmodulation}
-=======
 %\cite{} https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf
 \subsubsection{Pulsweitenmodulation}
->>>>>>> Stashed changes
 
-Pulse Width Modulation, oder PWM, ist eine Technik, um analoge Ergebnisse mit digitalen Mitteln zu erhalten. Digitale Steuerung wird verwendet, um eine Rechteckwelle zu erzeugen, ein Signal, das zwischen Ein- und Ausschaltung geschaltet wird. Dieses Ein-Aus-Muster kann Spannungen zwischen dem gesamten Vcc der Platine (z. B. 5 V auf UNO, 3,3 V auf einer MKR-Platte) und aus (0 Volt) simulieren, indem der Teil der Zeit, für die das Signal verbringt, gegenüber der Zeit, die das Signal ausgibt, geändert wird. Die Dauer von "Einschaltzeit" wird als Pulsbreite bezeichnet. Um unterschiedliche analoge Werte zu erhalten, ändern oder modulieren Sie diese Pulsbreite. Wenn Sie dieses Ein-Aus-Muster beispielsweise schnell genug mit einer LED wiederholen, ist das Ergebnis, als ob das Signal eine konstante Spannung zwischen 0 und Vcc ist, die die Helligkeit der LED steuert.
 
-In der folgenden Grafik stellen die grünen Linien einen regelmäßigen Zeitraum dar. Diese Dauer oder Periode ist die Umkehrung der PWM-Frequenz. Mit anderen Worten, mit Arduinos PWM-Frequenz bei etwa 500Hz würden die grünen Linien jeweils 2 Millisekunden messen. Ein Anruf bei analogWrite() auf einer Skala von 0 - 255, so dass analogWrite(255) fordert einen 100\%-Zollzyklus (immer weiter) und 
-analogWrite(127) ist zum Beispiel ein 50\%-Einsatzzyklus (auf halber Zeit).
+	Pulse Width Modulation, oder PWM, ist eine Technik, um analoge Ergebnisse mit digitalen Mitteln zu erhalten. Digitale Steuerung wird verwendet, um eine Rechteckwelle zu erzeugen, ein Signal, das zwischen Ein- und Ausschaltung geschaltet wird. Dieses Ein-Aus-Muster kann Spannungen zwischen dem gesamten Vcc der Platine (z. B. 5 V auf UNO, 3,3 V auf einer MKR-Platte) und aus (0 Volt) simulieren, indem der Teil der Zeit, für die das Signal verbringt, gegenüber der Zeit, die das Signal ausgibt, geändert wird. Die Dauer von "Einschaltzeit" wird als Pulsbreite bezeichnet. Um unterschiedliche analoge Werte zu erhalten, ändern oder modulieren Sie diese Pulsbreite. Wenn Sie dieses Ein-Aus-Muster beispielsweise schnell genug mit einer LED wiederholen, ist das Ergebnis, als ob das Signal eine konstante Spannung zwischen 0 und Vcc ist, die die Helligkeit der LED steuert.
+
+	In der folgenden Grafik stellen die grünen Linien einen regelmäßigen Zeitraum dar. Diese Dauer oder Periode ist die Umkehrung der PWM-Frequenz. Mit anderen Worten, mit Arduinos PWM-Frequenz bei etwa 500Hz würden die grünen Linien jeweils 2 Millisekunden messen. Ein Anruf bei analogWrite() auf einer Skala von 0 - 255, so dass analogWrite(255) fordert einen 100\%-Zollzyklus (immer weiter) und analogWrite(127) ist zum Beispiel ein 50\%-Einsatzzyklus (auf halber Zeit).
 
 
 \begin{center}
 	\includegraphics[width=\textwidth]{../../Images/ArduinoR4/PWM.png}
-<<<<<<< Updated upstream
 	\captionof{figure}{Pulsbreitenmodulation 0\% - 100\% }
+	%\cite{}https://docs.arduino.cc/learn/microcontrollers/analog-output/
 	\label{fig:PWM}
-\end{center}
-
-Bei einigen Mikrocontrollern ist PWM nur auf ausgewählten Pins verfügbar. Bitte beachten Sie das Pin-Out-Diagramm Ihres Boards, um herauszufinden, welche Sie für PWM verwenden können. Sie sind mit einem Tildezeichen ($~$) gekennzeichnet.
-
-Sobald Sie dieses Beispiel zum Laufen gebracht haben, schnappen Sie sich Ihren Arduino und schütteln Sie ihn hin und her. Was Sie hier tun, ist im Wesentlichen die Abbildung der Zeit im gesamten Raum. Für unsere Augen verschwimmt die Bewegung jede LED in eine Linie. Wenn die LED ein- und ausgeht, werden diese kleinen Linien in der Länge wachsen und schrumpfen. Jetzt sehen Sie die Pulsbreite.
-
-\begin{center}
-	\captionof{figure}{Pulsweitenmodulation 0\% - 100\%  } %\cite{}https://docs.arduino.cc/learn/microcontrollers/analog-output/
-	\label{pic:PWM}
 \end{center}
 
 	Bei einigen Mikrocontrollern ist PWM nur auf ausgewählten Pins verfügbar. Bitte beachten Sie das Pin-Out-Diagramm Ihres Boards, um herauszufinden, welche Sie für PWM verwenden können. Sie sind mit einem Tildezeichen ($~$) gekennzeichnet.
 	
 	Sobald Sie dieses Beispiel zum Laufen gebracht haben, schnappen Sie sich Ihren Arduino und schütteln Sie ihn hin und her. Was Sie hier tun, ist im Wesentlichen die Abbildung der Zeit im gesamten Raum. Für unsere Augen verschwimmt die Bewegung jede LED in eine Linie. Wenn die LED ein- und ausgeht, werden diese kleinen Linien in der Länge wachsen und schrumpfen. Jetzt sehen Sie die Pulsbreite.
+
 %https://docs.arduino.cc/learn/microcontrollers/analog-output/
->>>>>>> Stashed changes
+
 \subsubsection{Wi-Fi-/Bluetooth}
 
-Das Wi-Fi-/Bluetooth LE-Modul des UNO R4 WiFi basiert auf den ESP32-S3-SoCs. Es verfügt über die Xtensa®-Dual-Core-
-32-Bit-LX7-MCU, eine integrierte Antenne und unterstützt das 2,4-GHz-Band.
-Das ESP32-S3-MINI-1-N8 bietet:
+	Das Wi-Fi-/Bluetooth LE-Modul des UNO R4 WiFi basiert auf den ESP32-S3-SoCs. Es verfügt über die Xtensa®-Dual-Core- 32-Bit-LX7-MCU, eine integrierte Antenne und unterstützt das 2,4-GHz-Band.
+	Das ESP32-S3-MINI-1-N8 bietet:
 \begin{itemize}{
 		\item Wi-Fi 4 – 2,4-GHz-Band
 		\item Unterstützung für Bluetooth 5 LE
@@ -458,7 +403,7 @@ Das ESP32-S3-MINI-1-N8 bietet:
 		\item 512 kB SRAM
 		\item Bis zu 150 Mbit/s Bitrate
 } \end{itemize}
-Dieses Modul fungiert als sekundäre MCU auf dem UNO R4 WiFi und kommuniziert mit der RA4M1-MCU über einen Logikpegel-Übersetzer. Beachten Sie, dass dieses Modul mit 3,3 V betrieben wird, im Gegensatz zur Betriebsspannung von 5 V des RA4M1.
+	Dieses Modul fungiert als sekundäre MCU auf dem UNO R4 WiFi und kommuniziert mit der RA4M1-MCU über einen Logikpegel-Übersetzer. Beachten Sie, dass dieses Modul mit 3,3 V betrieben wird, im Gegensatz zur Betriebsspannung von 5 V des RA4M1.
 % \cite{}Arduino Handbuch
 
 \subsubsection{I2C}
@@ -484,13 +429,9 @@ Da das I2C-Protokoll jedem aktivierten Gerät eine eigene eindeutige Adresse zuw
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\textwidth]{../../Images/ArduinoR4/Blink.png}
-<<<<<<< Updated upstream
-		\caption{figure}{Anschlussbeispiel für Arduino R4}
-		\label{fig:Blink}
-=======
+
 		\caption{figure}{Anschlussbeispiel für Arduino R4} %\cite{	} https://fritzing.org/
 		\label{pic:Blink}
->>>>>>> Stashed changes
 	\end{center}
 \end{figure}
 
