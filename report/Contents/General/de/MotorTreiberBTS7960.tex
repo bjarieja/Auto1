@@ -12,7 +12,7 @@
 %%%%%%%%%%%%
 
 % Structure
-\chapter{Motortreiber BTS7960}
+\chapter{Motortreiber}
 Gleichstrommotoren funktionieren grundsätzlich über die Erzeugung eines Magnetfeldes, mithilfe dessen eine Welle in Rotation versetzt wird \cite{Roddeck:2023}.
 Aus den grundlegenden physikalischen Zusammenhängen der Elektrodynamik folgt zudem, dass die Stärke des Magnetfeldes direkt vom Strom im Leiter abhängt, der dieses Feld erzeugt.
 Dementsprechend lässt sich auch die Drehzahl eines Elektromotors über den fließenden Strom beeinflussen \cite{Feynman:2020}.
@@ -110,7 +110,7 @@ und Drain zu steuern. Üblicherweise werden zudem Zehnerdioden beim verschalten 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.75]{../Images/BTS7960/MosfetSchaltplanSimpel}
-		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a} udn \cite{Specovius:2017}}
+		\caption{Aufbau eines Mosfets nach \cite{Bartlett:2023a} und \cite{Specovius:2017}}
 		\label{pic:MosfetAufbauSimpel}
 	\end{figure}
 \end{center}
@@ -122,8 +122,8 @@ Moderne integrierte Motortreiber kombinieren mehrere Funktionen in einem Baustei
 Während der Ausschaltphasen muss der Motorstrom weiterhin fließen können. Dies wird über Freilaufpfade realisiert, beispielsweise durch die Body-Dioden der MOSFETs. Ergänzend verfügen solche Treiber über Schutzfunktionen wie Überstrom-, Übertemperatur- und Kurzschlussschutz sowie einen Unterspannungsschutz, um einen sicheren Betrieb zu gewährleisten.
 Die entstehenden Verluste setzen sich aus Leit- und Schaltverlusten zusammen. Bei niedrigen Schaltfrequenzen überwiegen die Leitverluste, während bei höheren Frequenzen die Schaltverluste stärker ins Gewicht fallen \cite{Bartlett:2023a}.
 Durch die Integration der einzelnen Komponenten ergeben sich mehrere Vorteile. Dazu zählen eine kompakte Bauweise, ein geringerer externer Schaltungsaufwand sowie eine erhöhte Zuverlässigkeit.  In der Praxis werden häufig zwei Halbbrücken zu einer vollständigen H-Brücke kombiniert, um den Motor in beide Richtungen betreiben zu können \cite{Bartlett:2023a}.
-Insgesamt stellen MOSFET-Motortreiber eine effiziente und leistungsfähige Lösung zur Ansteuerung von Elektromotoren dar. Besonders integrierte Varianten bieten durch ihre Kombination aus Leistungsfähigkeit, Schutzfunktionen und einfacher Ansteuerung deutliche Vorteile.
-\section{Motortreiber BTS7960}
+Insgesamt stellen MOSFET-Motortreiber eine effiziente und leistungsfähige Lösung zur Ansteuerung von Elektromotoren dar. Besonders integrierte Varianten bieten durch ihre Kombination aus Leistungsfähigkeit, Schutzfunktionen und einfacher Ansteuerung deutliche Vorteile \cite{Bartlett:2023a}.
+\section{BTS7960}
 Der BTS7960 Mototreiber in H Brücken Schaltung ist eine Komponenten welche sich durch Ihre Leistungseigenschaften asuzeichnet. Durch das Verwenden von MOSFETs anstelle herkömmlicher Bipolar-Transistoren kann die Verlustleistung minimiert werden. 
 
 \section{Spezifikationen}
@@ -161,7 +161,7 @@ Der BTS7960 Mototreiber in H Brücken Schaltung ist eine Komponenten welche sich
 		\label{TabelleSpezifikationLS}
 	\end{center}
 \end{table} 
-Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
+Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden (nach \cite{Roboter-Bausatz:2026c}): 
 \begin{enumerate}
 	\item \textbf{Leistungsanschlüsse}
 	\begin{itemize}
@@ -180,7 +180,7 @@ Der Motortreiber besitzt wie in \ref{pic:BTS7960} erkenntlich  verschiedene Ansc
 		\item \textbf{L\_IS}: Stromsensor-Ausgang für Rückwärtsrichtung (optional)
 		\item \textbf{VCC}: 5V Logikversorgung
 		\item \textbf{GND}: Masse für Logikversorgung
-	\end{itemize}
+	\end{itemize} 
 \end{enumerate}
 
 
