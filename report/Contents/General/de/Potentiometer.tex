@@ -28,22 +28,22 @@
 
 \section{Allgemeines}
 Der potentiometrische Wandler auf Basis eines gleitend-reibenden Kontaktelements auf
-einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. (Czechowicz, 2025)
-Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. (Czechowicz, 2025)
+einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. \cite{Czechowicz:2025}
+Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. \cite{Czechowicz:2025}
 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.25]{../../Images/PC16/UebersichtPotentiometer.png}
-		\caption{Bauformen von Potentiometern nach (Czechowicz, 2025)} 
+		\caption{Bauformen von Potentiometern nach \cite{Czechowicz:2025}} 
 		\label{pic:PotiRotLin}
 	\end{figure}
 \end{center}
 
-Mit Hilfe des variablen Widerstands eines Potenziometers lässt sich ein Spannungsteiler realisieren, bei dem die Spannungsteilung einstellbar ist. (Meier und Stübbe, 2022)
+Mit Hilfe des variablen Widerstands eines Potenziometers lässt sich ein Spannungsteiler realisieren, bei dem die Spannungsteilung einstellbar ist. \cite{Meier:2022}
 
 \section{Drehpotentiometer PIHER PC-16}
 
-Das Drehpotentiometer PC-16 ist ein 16 mm Carbon-Potentiometer zur Montage auf Bedienpaneelen (PC-16 - 16mm panel mount potentiometer, 2026).
+Das Drehpotentiometer PC-16 ist ein 16 mm Carbon-Potentiometer zur Montage auf Bedienpaneelen. \cite{PIHER:2024}
 Aufgrund seiner schlanken Bauweise eignet es sich hervorragend zum einbau in kleineren Elektrogeräten.
 Das Drehpotentiometer soll beim elektrischen Tischförderband zur Vorwahl der Bandgeschwindigkeit eingesetzt werden.
 
@@ -51,7 +51,7 @@ Das Drehpotentiometer soll beim elektrischen Tischförderband zur Vorwahl der Ba
 
 \begin{center}
 	\begin{figure}
-		\includegraphics[scale=0.25]{../../Images/BOM/Drehpotentiometer_10kOhm_linear_6mm.jpg}
+		\includegraphics[scale=0.25]{../../Images/BOM/Drehpotentiometer10kOhm.jpg}
 		\caption{Drehpotentiometer PIHER PC16 nach (QUELLE)} 
 		\label{pic:POTI10k}
 	\end{figure}
@@ -68,19 +68,19 @@ Das Drehpotentiometer soll beim elektrischen Tischförderband zur Vorwahl der Ba
 			\hline
 			Typ  & Drehpotentiometer\\
 			\hline 
-			Widerstand & 10 $k\omega$, linear\\
+			Widerstand & 10 $k\Omega$, linear\\
 			\hline
 			Nennlast & 0,2 $W$\\ 
 			\hline 
-			Spannungsfestigkeit & 250 $V$ DC\\
+			Spannungsfestigkeit & 250 $V$\\
 			\hline
-			Drehwinkel & 300 $°$\\
+			Drehwinkel & 300 °\\
 			\hline
 			Achse & 6 $mm$\\
 			\hline 
 			Befestigung & Gewinde M10\\
 			\hline 
-			Max. Betriebstemperatur & 70 $°C$\\
+			Max. Betriebstemperatur & 70 °C\\
 			\hline 
 			
 		\end{tabular}
@@ -102,20 +102,16 @@ Für die Verwendung eines einfachen Drehpotentiometers mit drei Anschlüssen wir
 
 \section{Anwendungsbeispiel}
 \label{sec:AnwendungPC16}
-Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden. 
+Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden. Dazu wie in \ref{pic:PC16Anschluss} gezeigt 
 %Hier beschreibung
 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.35]{../../Code/Potentiometer/AnalogInput/schematic}
-		\caption{Anschlussbeispiel des PC16 nach Arduino} 
+		\caption{Anschlussbeispiel des PC16 nach QuelleArduino} 
 		\label{pic:PC16Anschluss} 
 	\end{figure}
 \end{center}
-
-
-
-\subsection{Code}
 
 \subsection{Einfacher Funktionstest}
 Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es sinnvoll dieses vor der Verwendung zu testen. Hierfür kann die in \ref{pic:PC16Anschluss} gezeigte Schaltung verwendet werden. Um die Funktion des Drehpotentiometers am Arduino zu prüfen kann folgendes Vorgehen befolgt werden: 
@@ -127,34 +123,6 @@ Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es 
 		\item Prüfen ob der Motor sich mit konstanter Drehzahl dreht. 
 	\end{enumerate}  
 \end{center}
-
-
-
-
-\section{weiterführende Literatur} 
-\begin{center}
-	\begin{enumerate}
-		
-		%Hier Literatur anfügen
-		
-	\end{enumerate}
-\end{center}
-
-
-\section{Example}
-
-In this section, a simple example is described in detail, which demonstrates how the library supports the sensor/actor.
-
-
-\subsection{Manual}
-
-\subsection{Inside the Example}
-
-\subsection{Code}
-
-\subsection{Files}
-
-
 
 \section{Kalibrierung}
 %Endlagenkalibrierung
@@ -169,8 +137,6 @@ Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können mu
 
 \section{Simple Application}
 
-
-
 \section{Tests}
 
 \subsection{Simple Function Test}
@@ -178,6 +144,12 @@ Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können mu
 \subsection{Test all Functions}
 
 
-
-\section{Further Readings}
+\section{weiterführende Literatur} 
+\begin{center}
+	\begin{enumerate}
+		
+		%Hier Literatur anfügen
+		
+	\end{enumerate}
+\end{center}
 
