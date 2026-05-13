@@ -27,6 +27,7 @@
 %https://www.reichelt.de/de/de/shop/produkt/drehpotentiometer_10_kohm_linear_6_mm-232554
 
 \section{Allgemeines}
+\label{sec:AllgPoti}
 Der potentiometrische Wandler auf Basis eines gleitend-reibenden Kontaktelements auf
 einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. \cite{Czechowicz:2025}
 Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. \cite{Czechowicz:2025}
@@ -95,20 +96,20 @@ Das Drehpotentiometer besitzt wie in \ref{pic:POTI10k} erkenntlich drei Anschlü
 		\item \textbf{S}: Signalanschluss
 		\item \textbf{E}: Spannungsanschluss 2
 \end{enumerate}
-Diese Anschlüsse A und E beschreiben die Endlagen des jeweiligen Potentiometers. Die Polung der Anschlüsse ist Bauart und Anwendungsabhängig.
+Diese Anschlüsse A und E beschreiben die Endlagen des jeweiligen Potentiometers, der Anschluss S beschreibt den Signalanschluss, der abhängig von der Stellung des Schaftes . Die Polung der Anschlüsse ist Bauart und Anwendungsabhängig.
 
 \section{Bibliothek}
 Für die Verwendung eines einfachen Drehpotentiometers mit drei Anschlüssen wird in der Regel keine zusätzliche Bilbiothek benötigt.
 
 \section{Anwendungsbeispiel}
 \label{sec:AnwendungPC16}
-Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden. Dazu wie in \ref{pic:PC16Anschluss} gezeigt 
-%Hier beschreibung
+Das Drehpotentiometer lässt sich mit kleinem Aufwand anschließen. Man kann es sowohl in analogen Schaltkreisen wie in \ref{sec:AllgPoti} Allgemeines als variablen Widerstand oder Spannungsteiler verwenden, als auch als analogen Signalgeber an einem Mikrocontroller.
+Das folgende Anwendungsbeispiel demonstriert den Anschluss an einem Arduino mit eingebauter LED und nutzt das Drehpotentiometer, um das Leuchtverhalten der LED zu steuern.
 
 \begin{center}
 	\begin{figure}
 		\includegraphics[scale=0.35]{../../Code/Potentiometer/AnalogInput/schematic}
-		\caption{Anschlussbeispiel des PC16 nach QuelleArduino} 
+		\caption{Anschlussbeispiel des PC16 nach \cite{ArduinoAnalog:2026}} 
 		\label{pic:PC16Anschluss} 
 	\end{figure}
 \end{center}
@@ -128,21 +129,21 @@ Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es 
 %Endlagenkalibrierung
 
 \section{Einfacher Code}
-Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussPC16} zeigt dieses auf. Es wird ein Eingangssignal und seine Schnittstelle definiert um anschließend ausgewertet zu werden. Das eingelesene Signal wird dem Benutzer visuell über eine LED zurückgegeben.
+Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussPC16} von \cite{ArduinoAnalog:2026} zeigt eine mögliche Umsetzung. 
+
+Zu Beginn dieses Sketches wird die Variable \python{sensorPin} auf den Analog-Pin 0 gesetzt, an dem das Drehpotentiometer angeschlossen ist. Der Ausgang \python{ledPin} wird auf den Digital-Pin 13 gesetzt. Außerdem wird eine weitere Variable \python{sensorValue} definiert, um die vom Sensor gelesenen Werte zu speichern.
+Der Befehl \python{analogRead()} wandelt den Eingangsspannungsbereich von 0 bis 5 Volt in einen digitalen Wert zwischen 0 und 1023 um. Dies geschieht durch eine Schaltung im Mikrocontroller, die als Analog-Digital-Wandler oder ADC bezeichnet wird.
+Durch Drehen der Welle des Drehpotentiometers verändern sich die relativen Widerstände zwischen dem Signalanschluss und den beiden äußeren Anschlüssen, wodurch Sie eine variable Spannung am Analogeingang erhalten. Wenn die Welle ganz in eine Richtung gedreht wird, besteht kein Widerstand zwischen dem Signalanschluss und dem mit Masse verbundenen Stift. Die Spannung am Signalanschluss beträgt dann 0 Volt und \python{analogRead()} gibt 0 zurück. Wenn die Welle ganz in die andere Richtung gedreht wird, besteht kein Widerstand zwischen dem Signalanschluss und dem mit +5 Volt verbundenen Anschluss. 
+Die Spannung am Signalanschluss beträgt dann 5 Volt, und \python{analogRead()} gibt den Wert 1023 zurück. Dazwischen gibt analogRead()
+einen Wert zwischen 0 und 1023 zurück, der proportional zur am Pin anliegenden Spannung ist.
+Dieser Wert, der in \python{sensorValue} gespeichert ist, wird verwendet, um eine \python{delay()} für den Blinkzyklus festzulegen. Je höher der Wert, desto länger der Zyklus; je kleiner der Wert, desto kürzer der Zyklus. Der Wert wird zu Beginn des Zyklus gelesen, daher ist die Ein- und Ausschaltzeit immer gleich.
+
+
 \begin{center}
-	\captionof{figure}{Dieser Code liest den analogen Eingang A0 des Mikrocontrollers ein und moduliert anhand der Signalstärke des Drehpotentiometers die Frequenz mit der die Eingebaute LED auf dem digitalen Pin D13 blinkt.} 
+	\captionof{figure}{Mit der Arduino IDE gelieferter Code zum Testen analoger Eingänge \cite{ArduinoAnalog:2026}} 
 	\label{CodeAnschlussPC16}
 	\ArduinoExternal{}{../../Code/Potentiometer/AnalogInput/AnalogInput.ino}
 \end{center}
-
-\section{Simple Application}
-
-\section{Tests}
-
-\subsection{Simple Function Test}
-
-\subsection{Test all Functions}
-
 
 \section{weiterführende Literatur} 
 \begin{center}
