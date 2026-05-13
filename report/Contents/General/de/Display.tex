@@ -16,7 +16,7 @@
 
 Flüssigkristallanzeige, LCD (Abk. für engl. liquid crystal display), eine auf dem Lichtstreuverhalten von flüssigen Kristallen basierende Anzeige (Display). Flüssige Kristalle sind Systeme von Molekülen wie z.B. Cholesterin, die nur innerhalb größerer oder kleinerer Bereiche geordnet sind, und zwar sind die Hauptachsen der Moleküle parallel zueinander orientiert.
 
-Durch schwache äußere elektrische Felder können ausgedehnte Proben einheitlich orientiert werden. In dünnen Schichten aufgetragene Kristalle können daher merkliche Farbänderungen oder Veränderungen des Lichtstreuverhaltens zeigen, wenn eine angelegte Elektrodenspannung – oder auch die Temperatur – verändert wird. 
+Durch schwache äußere elektrische Felder können ausgedehnte Proben einheitlich orientiert werden. In dünnen Schichten aufgetragene Kristalle können daher merkliche Farbänderungen oder Veränderungen des Lichtstreuverhaltens zeigen, wenn eine angelegte Elektrodenspannung – oder auch die Temperatur – verändert wird. \cite{Spektrum:1999}
 %\cite{}	(https://www.spektrum.de/lexikon/optik/fluessigkristallanzeige/1033)
 
 \section{SERIELLES I2C 20X4 LCD MODUL}
@@ -25,10 +25,10 @@ Dieses 20x4 Zeichen LCD eignet sich bestens für Ihr Projekt. Es arbeitet mit de
 
 \section{Spezifikation}
 
-Nachfolgende Tabelle (\ref{JoyIt}) zeigt die im Datenblatt %\cite{} entnommen technischen Eigenschaften des SERIELLES I2C 20X4 LCD MODUL.
+Nachfolgende Tabelle (\ref{JoyIt}) zeigt die im Datenblatt \cite{Simac:2020} %entnommen technischen Eigenschaften des SERIELLES I2C 20X4 LCD MODUL.
 
 \begin{table}[h!]
-	\caption{SupraBolt} %
+	\caption{Technische Spezifikationen des Displays gemäß Herstellerdokumentation \cite{Simac:2020}.} 
 	\begin{center}
 		\begin{tabular}{|l|l|}
 			\hline
@@ -76,7 +76,7 @@ Nachfolgende Tabelle (\ref{JoyIt}) zeigt die im Datenblatt %\cite{} entnommen te
 
 Das Modul ist für die serielle Kommunikation via I2C-Bus konzipiert und weist einen standardisierten Formfaktor auf, der primär durch die Trägerplatine und den Metallrahmen des Displays determiniert wird.
 
-Dieses Display hat die folgenden geometrischen Kenndaten:
+Dieses Display \cite{Simac:2020} hat die folgenden geometrischen Kenndaten:
 \begin{itemize}{
 \item \textbf{Außenabmessungen (PCB):} Die totale Grundfläche des Moduls beträgt ca. 98,0 mm × 60,0 mm.
 %\cite{} (https://cdn-reichelt.de/documents/datenblatt/A300/SBC-LCD20X4-DATENBLATT2.pdf )
@@ -88,11 +88,11 @@ Dieses Display hat die folgenden geometrischen Kenndaten:
 \item \textbf{Einbautiefe:} In der Seitenansicht ist zu sehen, dass durch die Kombination aus LCD-Einheit und dem rückseitig aufgelöteten I2C-Adapter (PCF8574-Backpack) eine Gesamttiefe von ca. 14,0 mm bis 16,0 mm resultiert.
 } \end{itemize}
 Aus der Abbildung geht hervor, dass die Anordnung der Anschlusspins (SDA, SCL, VCC, GND) am I2C-Interface rechtwinklig zur Platinenebene erfolgt, was bei der Planung der Gehäusetiefe berücksichtigt werden muss.
-%\cite{} (%\cite{} (https://cdn-reichelt.de/documents/datenblatt/A300/SBC-LCD20X4-DATENBLATT2.pdf ) Gleiches Display selbe specs, auf der Website, aber in dem Dokument Grünes Hintergrundlicht
+%Gleiches Display selbe specs, auf der Website, aber in dem Dokument Grünes Hintergrundlicht
 
 \begin{center}
 	\includegraphics[width=\textwidth]{../../Images/Display/Maße2004.png}
-	\captionof{figure}{Maße des 2004 Display}
+	\captionof{figure}{Maße des 2004 Display\cite{Simac:2020}}
 	\label{pic:2004D}
 \end{center}
 
@@ -103,7 +103,7 @@ Aus der Abbildung geht hervor, dass die Anordnung der Anschlusspins (SDA, SCL, V
 		\item \textbf{Flüssigkristallanzeige (LiquidCrystal-Klasse)}
 		
 		Diese Bibliothek ermöglicht es einem Arduino-Board, Liquid Crystal Displays (LCDs) basierend auf dem Hitachi HD44780 (oder einem kompatiblen) Chipsatz zu steuern, der auf den meisten textbasierten LCDs zu finden ist. Die Bibliothek arbeitet entweder mit 4- oder 8-Bit-Modus (d.h. zusätzlich zu den rs 4 oder 8 Datenzeilen, aktivieren und optional die rw-Steuerleitungen).
-		Um diese Bibliothek zu verwenden, geben Sie Folgendes an \#include <liquidcrystal.h>.
+		Um diese Bibliothek zu verwenden, geben Sie Folgendes an \#include <liquidcrystal.h>. %(https://www.renesas.com/en/products/gadget-renesas/reference/gr-rose/library-liquid?srsltid=AfmBOoq04teay6jaOZtCl3BjtGM_L6hWni4345fnIm2JRUE_HfkQ9-E9)
 		
 } \end{itemize}
 \section{I2c}
