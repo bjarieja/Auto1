@@ -45,7 +45,7 @@ Um Fehler zu vermeiden ist es zudem sinnvoll, das System erneut zu entwickeln un
 \end{center} 
 
 Aus dieser zweiten Darstellung konnte dann ein neues, überarbeites Flussdiagram erstellt werden. Diese neue Flussdiagramm konnte einige Fehler beseitigen. 
-Die verbesserte Version (vgl. \ref{pic:FlowChart2}) des ablauforientierten Flussdiagrammes ist zudem Farblich charakterisiert, und zeigt die einzelnen Sequenzen der Bedienung, welcher der Nutzer durchläuft übersichtlich und strukturiert auf. 
+Die verbesserte Version (vgl. \ref{pic:FlowChart2}) des ablauforientierten Flussdiagrammes ist zudem farblich charakterisiert, und zeigt die einzelnen Sequenzen der Bedienung, welcher der Nutzer durchläuft übersichtlich und strukturiert auf. 
 
 \begin{center}
 \begin{figure}
@@ -53,7 +53,18 @@ Die verbesserte Version (vgl. \ref{pic:FlowChart2}) des ablauforientierten Fluss
 	\caption{Zweite Version des Flussdiagramms, ablauforientiert sowie mit Farblicher Hervorhebung einzelner Seuqenzen } 
 	\label{pic:FlowChart2}
 \end{figure}
-\end{center}  
+\end{center}   
+Für den Aufbau der Ansteureung auf Softwareseite eignet sich eine objektorientierte Programmierung, da diese mit geringem Aufwand angepasst werden kann. Hierfür wurden folgende Klassen definiert :  
+\begin{center}
+	\begin{enumerate}
+		\item \textbf{display.cpp}: Diese Klasse steuert die gesamte Kommunikation zwischen Mikrocontroller und Display. Zudem werden alle Ausgaben des Displays hier konfiguriert und gesteuert. 
+		\item \textbf{fehler.cpp}: Diese Klasse ist verantwortlich für das gesamte Fehlermanagement. Jeder Fehler des Systems wird hier definiert und dann mittels Funktion in display.cpp ausgegeben. 
+		\item \textbf{motor.cpp}: In dieser Klasse wird die gesamte Steuerung und Regelung des Motors durchgeführt. Hier werden Ausgangssignale definiert. 
+		\item  \textbf{sensoren.cpp}: Diese Klasse wertet alle Sensoren aus und übergibt diese dann anschließend an den Mikrocontroller weiter
+		\item \textbf{steuerung.cpp}: Diese Klasse bildet die Kernlogik des Tischförderbands, hier werden alle einzelen Funktionen gemäß des Flussdiagrams \ref{pic:FlowChart2} verknüpft um sie dann ansteuern zu können. 
+		
+	\end{enumerate}
+\end{center}
 
 
 
