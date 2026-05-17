@@ -10,4 +10,30 @@
 %%%
 
 
-\chapter{\textcolor{red}{Algorithm XY}}
+\chapter{PI Regelung von Motoren} 
+
+\section{Allgemeines} 
+In der Automatisierungs- und Regelungstechnik werden Regler eingesetzt, um physikalische Größen wie Drehzahl, Position, Temperatur oder Druck gezielt auf einen vorgegebenen Sollwert einzustellen. Hierbei unterscheidet man grundsätzlich zwischen offenen und geschlossenen Regelkreisen. Bei einem offenen Regelkreis erfolgt keine Rückführung der Ausgangsgröße. Die Stellgröße wird ausschließlich anhand eines vorgegebenen Eingangssignals erzeugt, ohne die tatsächliche Reaktion des Systems zu berücksichtigen. Ändern sich beispielsweise äußere Einflüsse oder Lastbedingungen, kann der offene Regelkreis diese Abweichungen nicht selbstständig kompensieren. Solche Systeme werden häufig als Steuerungen bezeichnet.
+\cite{Lunze:2020}
+Im Gegensatz dazu besitzen geschlossene Regelkreise eine kontinuierliche Rückführung der Regelgröße. Hierbei wird die tatsächliche Ausgangsgröße mithilfe eines Sensors erfasst und mit dem gewünschten Sollwert verglichen. Die dabei entstehende Regelabweichung dient anschließend als Eingangsgröße des Reglers. Der Regler erzeugt daraufhin eine Stellgröße, welche die Regelabweichung möglichst klein halten soll. Geschlossene Regelkreise ermöglichen dadurch eine deutlich höhere Genauigkeit sowie eine automatische Kompensation von Störungen und Laständerungen. Besonders in der Motorregelung mit Encodern werden deshalb nahezu ausschließlich geschlossene Regelkreise verwendet. \cite{Lunze:2020}
+
+\section{Reglertypen} 
+Der einfachste Reglertyp ist der P-Regler. Der proportionale Anteil erzeugt eine Stellgröße, die direkt proportional zur Regelabweichung ist. Je größer die Abweichung zwischen Soll- und Istwert ist, desto stärker greift der Regler ein. P-Regler besitzen ein schnelles Ansprechverhalten und sind einfach zu realisieren. Allerdings verbleibt häufig eine bleibende Regelabweichung, sodass der Sollwert nicht vollständig erreicht wird \cite{Lunze:2020}. 
+
+
+\textbf{Hier formeln und Mathematik} 
+
+Um diese bleibende Regelabweichung zu vermeiden, wird der I-Anteil verwendet. Der integrale Anteil summiert die Regelabweichung über die Zeit auf und verändert die Stellgröße solange, bis die Abweichung vollständig verschwindet. Regler mit I-Anteil eignen sich daher besonders für Anwendungen, bei denen eine hohe stationäre Genauigkeit gefordert wird. Allerdings reagiert der I-Anteil vergleichsweise langsam und kann das dynamische Verhalten des Systems verschlechtern \cite{Lunze:2020}.
+\textbf{Hier formeln und Mathematik} 
+
+Der D-Anteil arbeitet hingegen differenzierend und reagiert auf die zeitliche Änderung der Regelabweichung. Ändert sich die Regelabweichung sehr schnell, erzeugt der D-Anteil bereits frühzeitig eine starke Stellgröße. Dadurch kann das Übergangsverhalten beschleunigt sowie das Überschwingen reduziert werden. Gleichzeitig reagiert der D-Anteil jedoch empfindlich auf Messrauschen und hochfrequente Störungen, weshalb dieser Anteil nur bei ausreichend gefilterten Sensorsignalen verwendet werden sollte \cite{Lunze:2020}.
+\textbf{Hier formeln und Mathematik} 
+
+Der PID-Regler kombiniert alle drei Regelanteile miteinander und gehört zu den am häufigsten eingesetzten Reglertypen der industriellen Regelungstechnik. Die Stellgröße setzt sich hierbei aus einem proportionalen, integralen und differentiellen Anteil zusammen. Durch die Kombination dieser Eigenschaften kann der PID-Regler sowohl schnell auf Änderungen reagieren als auch bleibende Regelabweichungen verhindern und gleichzeitig ein stabiles Übergangsverhalten ermöglichen.
+
+In praktischen Anwendungen entstehen aus dem PID-Regler verschiedene Spezialfälle. Der PI-Regler kombiniert proportionalen und integralen Anteil und wird besonders häufig für Drehzahlregelungen elektrischer Motoren verwendet. Der P-Regler wird bei einfachen und schnellen Regelungsaufgaben eingesetzt, während PD-Regler häufig bei Positionieraufgaben verwendet werden. Reine I-Regler finden hingegen aufgrund ihres langsamen Verhaltens nur selten Anwendung.
+
+Die Wahl der geeigneten Reglerstruktur hängt wesentlich von den Eigenschaften der Regelstrecke sowie den Anforderungen an die Regelgüte ab. Besitzt die Regelstrecke bereits ein integrales Verhalten, kann oftmals ein einfacher P-Regler ausreichend sein. Zeigt die Regelstrecke hingegen proportionales Verhalten, ist in der Regel ein zusätzlicher I-Anteil notwendig, um bleibende Regelabweichungen zu vermeiden. P- und D-Anteile verbessern grundsätzlich die Dynamik des Systems, können jedoch bei ungeeigneter Parametrierung zu Schwingungen oder Instabilitäten führen.
+
+Besonders in der Motorregelung mit Encodern werden häufig PI- oder PID-Regler eingesetzt. Der Encoder dient hierbei zur kontinuierlichen Erfassung der Drehzahl oder Position des Motors und liefert die notwendige Rückführung für den geschlossenen Regelkreis. PI-Regler haben sich insbesondere bei Drehzahlregelungen bewährt, da sie eine gute Kombination aus Stabilität, Genauigkeit und einfacher Parametrierung ermöglichen. PID-Regler werden dagegen vor allem bei hochdynamischen oder präzisen Positionieraufgaben eingesetzt.
+
