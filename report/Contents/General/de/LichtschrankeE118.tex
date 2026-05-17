@@ -394,12 +394,12 @@ Als Sender dient eine Infrarot-LED, die elektromagnetische Strahlung im nicht si
 Der Empfänger besteht aus einer Photodiode oder einem Phototransistor.  Verbaut ist zwangsläufig ein Modul \textit{ähnlich} dem Modul vom Typ TCRT5000 IR \cite{Roboter-Bausatz:2026}. Jedoch gibt es keinen analogen Ausgang und die Signalverstärkung ist deutlich erhöht. Der Grundsätzliche, elektrische Aufbau einer Infrarot Lichtschranke ist jedoch immer sehr ähnlich \cite{Loeffler-Mang:2012} 
 Ein Filter reduziert Störungen durch Fremdlicht. Ein Komparator vergleicht das Signal mit einem eingestellten Schwellwert. Dieser wird über ein Potentiometer eingestellt und bestimmt die Schaltschwelle.
 Der Ausgang ist als NPN-Open-Collector-Schaltung ausgeführt und liefert ein digitales Schaltsignal gegen Masse. So wird dauerhaft ein \glqq HIGH \grqq \space  auf der Signalleitung ausgegeben, solange der Sensor nicht auslöst und auf die Photodiote ein Lichtstrahl trifft. 
-Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR\cite{AZ:2026}.  
+Eine interne Spannungsaufbereitung versorgt die Schaltung mit stabiler Betriebsspannung. Linsen im optischen System bündeln den Lichtstrahl. um die Reichweite zu Erhöhen und die Empfindlichkeit gegenüber Fremdlicht zu reduzieren \cite{Roboter-Bausatz:2026}. Nachfolgende Grafik \ref{SchaltplanLS} zeigt einen beispielhaften Schaltplan für eine Reflex Lichtschranke mit Infrarotlicht am Beispiel des Moduls TCRT5000 IR\cite{Vishay:2026}.  
 
 \begin{center}
 	\begin{figure}[h!]
 		\includegraphics{../Images/E18D80NK/TCRT5000IR} 
-		\caption{Beispielhafte Darstellung der Schaltung  einer  Infrarot-Lichtschranke anhand des  Moduls TCRT5000 IR \cite{Hesse:2009}, ein Modul ähnlich dem der E18-D80NK }
+		\caption{Beispielhafte Darstellung der Schaltung  einer  Infrarot-Lichtschranke anhand des  Moduls TCRT5000IR \cite{Vishay:2026} \cite{Hesse:2009}, ein Modul ähnlich dem der E18-D80NK }
 		\label{SchaltplanLS}
 	\end{figure}
 \end{center}
