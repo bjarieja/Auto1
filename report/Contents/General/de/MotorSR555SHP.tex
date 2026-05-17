@@ -29,14 +29,14 @@ cite board
 
 \begin{center}
 	\begin{figure}
-		\includegraphics[scale=0.25]{../../Images/BOM/Motraxx_SR555SHP-3247S-75_Universal_Brushed_Elektromotor.jpg}
+		\includegraphics[scale=0.15]{../../Images/BOM/MotraxxSR555SHPBrushedElektromotor.jpg}
 		\caption{Der Motor Motraxx SR555SHP nach (QUELLE)} 
 		\label{pic:SR555SHP}
 	\end{figure}
 \end{center}
 
 \begin{table}[h!]
-	\caption{Spezifikationen des Motors (QUELLE)}
+	\caption{Spezifikationen des Motors \cite{Motraxx:2026a}}
 	\begin{center}
 		\begin{tabular}{|l|l|}
 			\hline
@@ -76,8 +76,8 @@ Der Motortreiber besitzt wie in \ref{pic:SR555SHP} erkenntlich zwei Anschlüsse.
 \begin{enumerate}
 	\item \textbf{Leistungsanschlüsse}
 	\begin{itemize}
-		\item \textbf{+V}: Positiver Spannungsanschluss (10$-$14 $V$ DC)
-		\item \textbf{-V}: Negativer Spannungsanschluss (Masse)
+		\item \textbf{$+$V}: Positiver Spannungsanschluss (10$-$14 $V$ DC)
+		\item \textbf{$-$V}: Negativer Spannungsanschluss (Masse)
 	\end{itemize}
 \end{enumerate}
 
@@ -89,14 +89,61 @@ Der Motor lässt sich mit kleinem Aufwand anschließen und verwenden.
 %Hier beschreibung
 
 \begin{center}
-	\begin{figure}
-		\includegraphics[scale=0.35]{Bild Anschluss} %tikz oder bild noch erstellen
-		\caption{Anschlussbeispiel des SR555SHP nach Quelle} 
+		\begin{figure}[!ht]
+			\centering
+			
+			\begin{tikzpicture}[
+			line width=1.4pt,
+			line cap=round,
+			line join=round,
+			every node/.style={
+				font=\fontsize{18pt}{22pt}\selectfont
+			}
+			]
+			
+			% Koordinaten
+			\coordinate (LT) at (1.25,10.875);   % links oben
+			\coordinate (LB) at (1.25,5.875);    % links unten
+			\coordinate (RT) at (11.25,10.875);  % rechts oben
+			\coordinate (RB) at (11.25,5.875);   % rechts unten
+			
+			\coordinate (P) at (5,5.875);        % Plus-Anschluss
+			\coordinate (M) at (7.5,5.875);      % Minus-Anschluss
+			
+			% Leitungen
+			\draw (LT) -- (3.75,10.875);
+			\draw (8.75,10.875) -- (RT);
+			
+			\draw (LT) -- (LB);
+			\draw (RT) -- (RB);
+			
+			% Untere Leitungen bis kurz vor die Kreise
+			\draw (LB) -- ($(P)+(-0.12,0)$);
+			\draw ($(M)+(0.12,0)$) -- (RB);
+			
+			% Anschlusskreise
+			\draw[fill=white] (P) circle (0.2);
+			\draw[fill=white] (M) circle (0.2);
+			
+			% Motor
+			\draw (6.25,10.875) circle (2.5cm);
+			
+			% Beschriftung
+			\node[fill=white] at (6.25,10.875) {Motor};
+			
+			% Roter Punkt
+			\fill[red] (4.375,11.25) circle (0.25cm);
+			
+			% Plus / Minus
+			\node[fill=white] at (5,5.25) {$+$};
+			\node[fill=white] at (7.5,5.25) {$-$};
+			
+		\end{tikzpicture}
+			
+		\caption{Anschlussbeispiel des SR555SHP abgeleitet aus \cite{Motraxx:2026b}} 
 		\label{pic:SR555SHPAnschluss} 
 	\end{figure}
 \end{center}
-
-
 
 \subsection{Code}
 Zum testen des Motraxx SR555SHP ist kein Mikrocontroller und somit auch kein Code notwendig.

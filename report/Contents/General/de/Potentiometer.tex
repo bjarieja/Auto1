@@ -30,7 +30,7 @@
 \label{sec:AllgPoti}
 Der potentiometrische Wandler auf Basis eines gleitend-reibenden Kontaktelements auf
 einer elektrischen Widerstandsbahn wird in Kurzform Potentiometer genannt. \cite{Czechowicz:2025}
-Es werden drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. \cite{Czechowicz:2025}
+Wie in Abbildung \ref{pic:PotiRotLin} drehbare- und lineare Potentiometer eingesetzt, mit denen respektiv Stellwinkel oder Stellwege erfasst werden können. \cite{Czechowicz:2025}
 
 \begin{center}
 	\begin{figure}
@@ -90,7 +90,7 @@ Das Drehpotentiometer soll beim elektrischen Tischförderband zur Vorwahl der Ba
 \end{table} 
 
 
-Das Drehpotentiometer besitzt wie in \ref{pic:POTI10k} erkenntlich drei Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
+Das Drehpotentiometer besitzt wie in Abbildung \ref{pic:POTI10k} erkenntlich drei Anschlüsse. Diese Anschlüsse können wie folgt beschrieben werden: 
 \begin{enumerate}
 		\item \textbf{A}: Spannungsanschluss 1
 		\item \textbf{S}: Signalanschluss
@@ -125,17 +125,13 @@ Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es 
 	\end{enumerate}  
 \end{center}
 
-\section{Kalibrierung}
-%Endlagenkalibrierung
-
 \section{Einfacher Code}
 Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussPC16} von \cite{ArduinoAnalog:2026} zeigt eine mögliche Umsetzung. 
 
 Zu Beginn dieses Sketches wird die Variable \python{sensorPin} auf den Analog-Pin 0 gesetzt, an dem das Drehpotentiometer angeschlossen ist. Der Ausgang \python{ledPin} wird auf den Digital-Pin 13 gesetzt. Außerdem wird eine weitere Variable \python{sensorValue} definiert, um die vom Sensor gelesenen Werte zu speichern.
 Der Befehl \python{analogRead()} wandelt den Eingangsspannungsbereich von 0 bis 5 Volt in einen digitalen Wert zwischen 0 und 1023 um. Dies geschieht durch eine Schaltung im Mikrocontroller, die als Analog-Digital-Wandler oder ADC bezeichnet wird.
 Durch Drehen der Welle des Drehpotentiometers verändern sich die relativen Widerstände zwischen dem Signalanschluss und den beiden äußeren Anschlüssen, wodurch Sie eine variable Spannung am Analogeingang erhalten. Wenn die Welle ganz in eine Richtung gedreht wird, besteht kein Widerstand zwischen dem Signalanschluss und dem mit Masse verbundenen Stift. Die Spannung am Signalanschluss beträgt dann 0 Volt und \python{analogRead()} gibt 0 zurück. Wenn die Welle ganz in die andere Richtung gedreht wird, besteht kein Widerstand zwischen dem Signalanschluss und dem mit +5 Volt verbundenen Anschluss. 
-Die Spannung am Signalanschluss beträgt dann 5 Volt, und \python{analogRead()} gibt den Wert 1023 zurück. Dazwischen gibt analogRead()
-einen Wert zwischen 0 und 1023 zurück, der proportional zur am Pin anliegenden Spannung ist.
+Die Spannung am Signalanschluss beträgt dann 5 Volt, und \python{analogRead()} gibt den Wert 1023 zurück. Dazwischen gibt \python{analogRead()} einen Wert zwischen 0 und 1023 zurück, der proportional zur am Pin anliegenden Spannung ist.
 Dieser Wert, der in \python{sensorValue} gespeichert ist, wird verwendet, um eine \python{delay()} für den Blinkzyklus festzulegen. Je höher der Wert, desto länger der Zyklus; je kleiner der Wert, desto kürzer der Zyklus. Der Wert wird zu Beginn des Zyklus gelesen, daher ist die Ein- und Ausschaltzeit immer gleich.
 
 
