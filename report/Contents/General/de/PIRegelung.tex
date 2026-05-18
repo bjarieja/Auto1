@@ -15,7 +15,7 @@
 \section{Allgemeines} 
 In der Automatisierungs- und Regelungstechnik werden Regler eingesetzt, um physikalische Größen wie Drehzahl, Position, Temperatur oder Druck gezielt auf einen vorgegebenen Sollwert einzustellen. Hierbei unterscheidet man grundsätzlich zwischen offenen und geschlossenen Regelkreisen. Bei einem offenen Regelkreis erfolgt keine Rückführung der Ausgangsgröße. Die Stellgröße wird ausschließlich anhand eines vorgegebenen Eingangssignals erzeugt, ohne die tatsächliche Reaktion des Systems zu berücksichtigen. Ändern sich beispielsweise äußere Einflüsse oder Lastbedingungen, kann der offene Regelkreis diese Abweichungen nicht selbstständig kompensieren. Solche Systeme werden häufig als Steuerungen bezeichnet.
 \cite{Lunze:2020}
-Im Gegensatz dazu besitzen geschlossene Regelkreise eine kontinuierliche Rückführung der Regelgröße. Hierbei wird die tatsächliche Ausgangsgröße mithilfe eines Sensors erfasst und mit dem gewünschten Sollwert verglichen. Die dabei entstehende Regelabweichung dient anschließend als Eingangsgröße des Reglers. Der Regler erzeugt daraufhin eine Stellgröße, welche die Regelabweichung möglichst klein halten soll. Geschlossene Regelkreise ermöglichen dadurch eine deutlich höhere Genauigkeit sowie eine automatische Kompensation von Störungen und Laständerungen. Besonders in der Motorregelung mit Encodern werden deshalb nahezu ausschließlich geschlossene Regelkreise verwendet. \cite{Lunze:2020}
+Im Gegensatz dazu besitzen geschlossene Regelkreise eine kontinuierliche Rückführung der Regelgröße. Hierbei wird die tatsächliche Ausgangsgröße mithilfe eines Sensors erfasst und mit dem gewünschten Sollwert verglichen \cite{Loose:2026}. Die dabei entstehende Regelabweichung dient anschließend als Eingangsgröße des Reglers. Der Regler erzeugt daraufhin eine Stellgröße, welche die Regelabweichung möglichst klein halten soll. Geschlossene Regelkreise ermöglichen dadurch eine deutlich höhere Genauigkeit sowie eine automatische Kompensation von Störungen und Laständerungen. Besonders in der Motorregelung mit Encodern werden deshalb nahezu ausschließlich geschlossene Regelkreise verwendet. \cite{Lunze:2020}
 
 \section{Reglertypen} 
 Der einfachste Reglertyp ist der P-Regler. Der proportionale Anteil erzeugt eine Stellgröße, die direkt proportional zur Regelabweichung ist. Je größer die Abweichung zwischen Soll- und Istwert ist, desto stärker greift der Regler ein. P-Regler besitzen ein schnelles Ansprechverhalten und sind einfach zu realisieren. Allerdings verbleibt häufig eine bleibende Regelabweichung, sodass der Sollwert nicht vollständig erreicht wird \cite{Lunze:2020}. Dieser proportionale Zuyammenhang kann  Mathematisch wie folgt dargestellt werden, wobei $K_s$ die Übertragungsfunktion der Laufvariable s darstellt : 
@@ -25,25 +25,25 @@ Der einfachste Reglertyp ist der P-Regler. Der proportionale Anteil erzeugt eine
 	\end{equation}
 \end{center}
 
-Um diese bleibende Regelabweichung zu vermeiden, wird der I-Anteil verwendet. Der integrale Anteil summiert die Regelabweichung über die Zeit auf und verändert die Stellgröße solange, bis die Abweichung vollständig verschwindet. Regler mit I-Anteil eignen sich daher besonders für Anwendungen, bei denen eine hohe stationäre Genauigkeit gefordert wird. Allerdings reagiert der I-Anteil vergleichsweise langsam und kann das dynamische Verhalten des Systems verschlechtern \cite{Lunze:2020}. 
-
+Um diese bleibende Regelabweichung zu vermeiden, wird der I-Anteil verwendet. Der integrale Anteil summiert die Regelabweichung über die Zeit auf und verändert die Stellgröße solange, bis die Abweichung vollständig verschwindet. Regler mit I-Anteil (vgl. \eqref{eq:IPart}) eignen sich daher besonders für Anwendungen, bei denen eine hohe stationäre Genauigkeit gefordert wird. Allerdings reagiert der I-Anteil vergleichsweise langsam und kann das dynamische Verhalten des Systems verschlechtern \cite{Lunze:2020}. 
 \begin{center}
 	\begin{equation}
 		K_I(s) =  \frac{k_P}{T_{I}s}
 	\end{equation}
+	\label{eq:IPart}
 \end{center}
 Hierbei wird $ T_I =  \frac{k_P}{k_I}$ als Nachstellzeit und  $T_D = \frac{k_D}{k_P}$ als Vorhaltezeit definiert \cite{Lunze:2020}.
 
 Der D-Anteil arbeitet hingegen differenzierend und reagiert auf die zeitliche Änderung der Regelabweichung. Ändert sich die Regelabweichung sehr schnell, erzeugt der D-Anteil bereits frühzeitig eine starke Stellgröße. Dadurch kann das Übergangsverhalten beschleunigt sowie das Überschwingen reduziert werden. Gleichzeitig reagiert der D-Anteil jedoch empfindlich auf Messrauschen und hochfrequente Störungen, weshalb dieser Anteil nur bei ausreichend gefilterten Sensorsignalen verwendet werden sollte \cite{Lunze:2020}.
-
-Alle drei dieser Bausteine lassen sich dann als folgende Formel (vgl. \ref{eq:PID}) für PID-Regler zusammenfassen: 
+Alle drei dieser Bausteine lassen sich dann als folgende Formel (vgl. \eqref{eq:PID}) für PID-Regler zusammenfassen: 
 \begin{center}
 \begin{equation}
 	K_{PID}(s) = k_p + \frac{k_I}{s}+ k_{D}s = k_{P} (1+\frac{1}{T_{I}s} + T_{D}s)  
 \end{equation} 
+%\caption{Übertragungsfunktion einer PID-Regelung}
 \label{eq:PID}
 \end{center}
-Der PID-Regler kombiniert alle drei Regelanteile miteinander und gehört zu den am häufigsten eingesetzten Reglertypen der industriellen Regelungstechnik. Die Stellgröße setzt sich hierbei aus einem proportionalen, integralen und differentiellen Anteil zusammen. Durch die Kombination dieser Eigenschaften kann der PID-Regler sowohl schnell auf Änderungen reagieren als auch bleibende Regelabweichungen verhindern und gleichzeitig ein stabiles Übergangsverhalten ermöglichen \cite{Lunze:2020}. Dies ist zudem in Abbildung \ref{pic:PID} ersichtlich. 
+Der PID-Regler kombiniert alle drei Regelanteile miteinander (vgl. \eqref{eq:PID}) und gehört zu den am häufigsten eingesetzten Reglertypen der industriellen Regelungstechnik . Die Stellgröße setzt sich hierbei aus einem proportionalen, integralen und differentiellen Anteil zusammen. Durch die Kombination dieser Eigenschaften kann der PID-Regler sowohl schnell auf Änderungen reagieren als auch bleibende Regelabweichungen verhindern und gleichzeitig ein stabiles Übergangsverhalten ermöglichen \cite{Lunze:2020}. Dies ist zudem in Abbildung \ref{pic:PID} ersichtlich. 
 In praktischen Anwendungen entstehen aus dem PID-Regler verschiedene Spezialfälle. Der PI-Regler kombiniert proportionalen und integralen Anteil und wird besonders häufig für Drehzahlregelungen elektrischer Motoren verwendet. Der P-Regler wird bei einfachen und schnellen Regelungsaufgaben eingesetzt, während PD-Regler häufig bei Positionieraufgaben verwendet werden. Reine I-Regler finden hingegen aufgrund ihres langsamen Verhaltens nur selten Anwendung. 
 \begin{center}
 	\begin{figure}
@@ -56,5 +56,8 @@ Die Wahl der geeigneten Reglerstruktur hängt wesentlich von den Eigenschaften d
 Besonders in der Motorregelung mit Encodern werden häufig PI- oder PID-Regler eingesetzt. Der Encoder dient hierbei zur kontinuierlichen Erfassung der Drehzahl oder Position des Motors und liefert die notwendige Rückführung für den geschlossenen Regelkreis. PI-Regler haben sich insbesondere bei Drehzahlregelungen bewährt, da sie eine gute Kombination aus Stabilität, Genauigkeit und einfacher Parametrierung ermöglichen. PID-Regler werden dagegen vor allem bei hochdynamischen oder präzisen Positionieraufgaben eingesetzt \cite{Lunze:2020}. 
 
 \section{Drehzahlregelung mit einem PI-Regelkreis}  
+PI-Regelungen eignen sich durch Ihre Stabilität und dem geringen Komplexitätsgrad besonders gut zur Regelung von Motoren \cite{Lunze:2020}. In diesem Beispiel wird mithilfe einer Lichtschrnake und einer Lochscheibe die Drehzahl an einer Welle gemessen. Hierfür wird die Anzahl der Unterbechungen des Lichtstrahles gezählt und darasu dann die Drehzahl berechnet. Durch mehrere Löcher in der Lochscheibe kann zudem die Drehzahländerung genauer und vorallem schneller aufgefasst werden. Durch iterativ kleiner werdende Zeitintervalle zwischen den Unterbrechungen des Lichtstrahls kann so auch ein Beschleunigungsvorgang festgestellt werden. Durch gleichbleibende Zeitintervalle und die Zählung der Lichtstrahlunterbrechungen kann auch die Drehzahl der Welle gemessen werden.  
+
+
 
 
