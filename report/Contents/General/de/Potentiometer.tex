@@ -120,12 +120,15 @@ Um die Ordnungsgemäße Funktion des Drehpotentiometers sicherzustellen, ist es 
 \begin{center}
 	\begin{enumerate}
 		\item Alle Anschlüsse und Verbindungen nach \ref{pic:PC16Anschluss} verbinden und auf festen Sitz prüfen. 
-		\item Den Arduino mit einem Computer VerbindenSpannungsversorgung (12V) einschalten.   
-		\item Prüfen ob der Motor sich mit konstanter Drehzahl dreht. 
+		\item Den Arduino mit einem Computer verbinden.
+		\item Spannungsversorgung (12V) einschalten.   
+		\item Die Welle des Drehpotentiometers langsam von einem Anschlag zum anderen drehen.
+		\item Auf dem Seriellen Monitor die Veränderung der Werte beobachten (s. \ref{sec:codePoti})Prüfen ob der Motor sich mit konstanter Drehzahl dreht. 
 	\end{enumerate}  
 \end{center}
 
 \section{Einfacher Code}
+\label{sec:codePoti}
 Um das Signal des Drehpotentiometers verarbeiten und intepretieren zu können muss das Signal durch den Mikrocontroller eingelesen und anschließend ausgewertet werden. Der Code \ref{CodeAnschlussPC16} von \cite{ArduinoAnalog:2026} zeigt eine mögliche Umsetzung. 
 
 Zu Beginn dieses Sketches wird die Variable \python{sensorPin} auf den Analog-Pin 0 gesetzt, an dem das Drehpotentiometer angeschlossen ist. Der Ausgang \python{ledPin} wird auf den Digital-Pin 13 gesetzt. Außerdem wird eine weitere Variable \python{sensorValue} definiert, um die vom Sensor gelesenen Werte zu speichern.
