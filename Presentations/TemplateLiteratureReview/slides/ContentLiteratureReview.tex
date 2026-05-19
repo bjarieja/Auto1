@@ -1,23 +1,230 @@
-%%%%%%
+%%%%%%%
+%%
+%% $Author: Sadegh Naderi $
+%% $Datum: 2023-10-15  $
+%% $Pfad: ML23-01-Keyword-Spotting-with-an-Arduino-Nano-33-BLE-Sense\Presentations\SadeghNaderi\LiteratureReview\slides\ContentLiteratureReview.tex $
+%% $Version: 3.0 $
+%% $Review Date: 2023-12-16 $
+%%
+%%
+%% !TeX encoding = utf8
+%% !TeX root = Rename
+%%
+%%%%%%%
 %
-% $Author: Sadegh Naderi $
-% $Datum: 2023-10-15  $
-% $Pfad: ML23-01-Keyword-Spotting-with-an-Arduino-Nano-33-BLE-Sense\Presentations\SadeghNaderi\LiteratureReview\slides\ContentLiteratureReview.tex $
-% $Version: 3.0 $
-% $Review Date: 2023-12-16 $
+%
+%\Mysection{Automatic Speed Control of DC Series Motor by Arduino  }
+%
+%\STANDARD{Description}
+%{ 
+%	 Der Artikel  \cite{Ali:2023} beschäftigt sich mit Gleichstrom-Reihenschlussmotoren und deren Eigenschaften, insbesondere dem hohen Anlaufdrehmoment und dem veränderlichen Drehzahl-Drehmoment-Verhalten. Ein Schwerpunkt liegt auf verschiedenen Methoden zur Drehzahlregelung, wobei die Steuerung über die Klemmenspannung hervorgehoben wird.r 
+%	
+%	\bigskip
+%	
+%	\textbf{Abgrenzung:} während der Artikel sich mit der automatischen Geschwindigkeitsregulierung von Gleichstrommotoren beschäftig, geht er wenig auf die eigentlichen Regelungsalorithmen und Methoden ein. Er beschäftigt sich vorwiegend mit Analogen Methoden. 
+%	
+%	\scriptsize{\textbf{Keywords:} Motor, Arduino, Speed Control, motor controller, voltag}
+%}
 %
 %
-% !TeX encoding = utf8
-% !TeX root = Rename
 %
-%%%%%%
+%
+%\Mysection{BLDC Motor Speed Control Based on MPC Sliding
+%	Mode Multi-Loop Control Strategy – Implementation
+%	on Matlab and Arduino Software}
+%\STANDARD{Description}
+%{ 
+%	
+%Dieser Konferenzartikel \cite{Aghaee:2018}  behandelt die Entwicklung, Modellierung und praktische Umsetzung eines fortschrittlichen Regelverfahrens für BLDC-Motoren. Hierbei geht es um einen neurartigen Kaskadenregler aus zwei Regelkreisen ( Slide-Mode Regler für Motorstrom und Model-Predictive-Controller, Drehzahl auf soll Gesteuert), mit dem Zielfokus auf schnelle und stabile Drehzahlregelung, Robustheit gegenüber Laständerungen und Modellunsicherheiten
+%und der Einhaltung von Stromgrenzen. 
+%	
+%	\bigskip
+%	
+%	\textbf{Limitation:} Der Artikel erwähnt zwar herkömmliche Methoden zu Drehzahlregulierung, führt jedoch keinen qunatitativen Vergleich durch. Somit werden Potenzial aufgezeigt, jedoch nicht messbar begründet. Auch werden Rechenaufwand für MPC und nichtideale Motoreffekte nicht näher beleuchtet. 
+%	
+%	\scriptsize{\textbf{Keywords:} PID, motor control, Matlab, BLDC, control methods,   }
+%}
+%
+%
+%\Mysection{PID wihtoud a Phd }
+%\STANDARD{Description}
+%{ 
+%	
+%	Dieser Artikel \cite{Wescott:2018}	erläutert die grundlegende Funktionsweise der PID Regelung anschaulich anhand eines Elektromotors. Zudem zeigt er Unterschiede einzelner aus der PID abgeleiteter Methoden quantifiziert auf. 
+%	\bigskip
+%	
+%	\textbf{Limitation:} Dieser Artikel stamm einzig von einem Berater für Regelungstechnik und eignet sich somit nur bedingt als Grundlage für einen Bericht. 
+%	
+%	\scriptsize{\textbf{Keywords:} PID, PID controll, BLDC, control systems, proportional integral control. }
+%}
+%
+%
+%
+%\Mysection{PID-basierte digitale
+%	Regelungstechnik}
+%\STANDARD{Description}
+%{ 
+%Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Es geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
+%	
+%	\bigskip
+%	
+%	\textbf{Limitation:} keine 
+%	
+%	\scriptsize{\textbf{Keywords:} Arduino Uno, Mikrocontroller, PID, Regelungstechnik, Sensoren, Elektronik, Kommunikation }
+%}
+%
+%\Mysection{ Motorsteuerung mit Microcontollern}
+%\STANDARD{Description}
+%{ 
+%	Diese Arbeit  \cite{Niemeyer:2015} behandelt die Ansteuerung von Motoren mithilfe von Mikrocontrollern. Hierbei wird die grundlegende Funktionsweise der Schnittstellen erläutert und anschließend beispielhaft angewendet. Ebenfalls werden Sensoren und Ihre Relevanz in der Motorsteuerung beleuchtet. 
+%	
+%	\textbf{Limitation:} Dies ist eine von der TUM veröffentlichte Studentische Arbeit. Ihre Zuverlässigkeit ist als gering zu betrachten, da lediglich wenige Personen diese Veröffentlichung gelesen bzw. korrigiert haben. 
+%	
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Lochscheibe, Regelungstechnik, Sensoren, Elektronik, Kommunikation, Servomotor }
+%}
+%\Mysection{PID-basierte digitale
+%	Regelungstechnik}
+%\STANDARD{Description}
+%{ 
+%	Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Ers geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
+%	
+%	\bigskip
+%	
+%	\textbf{Limitation:} keine 
+%	
+%	\scriptsize{\textbf{Keywords:} Arduino Uno, Mikrocontroller, PID, Regelungstechnik, Sensoren, Elektronik, Kommunikation }
+%} 
+%
+%\Mysection{Arduino I2C Protokoll }
+%\STANDARD{Description}
+%{ 
+%	  Die Quelle \cite{ArduinoI2C:2024} beschreibt das Kommunikationsprotokoll I2C. I2C benötigt lediglich zwei Kommunikationsschnittstellen udn eigent sich besonders gut für die Steuerungen von Aktoren zur Anzeige von Text. Gängige LCD Displays für den Arduino verwenden dieses Protokoll
+%	
+%	\textbf{Limitation:} Die Dokumetation behandelt 
+%	
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Display, I2C, Protokoll}
+%}
+%\Mysection{PID-basierte digitale
+%	Regelungstechnik}
+%\STANDARD{Description}
+%{ 
+%	Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Ers geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
+%	
+%	\bigskip
+%	
+%	\textbf{Limitation:} keine 
+%	
+%	\scriptsize{\textbf{Keywords:} Arduino Uno, Mikrocontroller, PID, Regelungstechnik, Sensoren, Elektronik, Kommunikation }
+%}
+%\Mysection{Arduino Pins }
+%\STANDARD{Description}
+%{ 
+%	Die Quelle \cite{ArduinoPins:2024} beschreibt die Eingänge des Arduinos anschaulich und geht auf vershciede Konfigurationen der Eingänge ein. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Eingänge, Input Pullup}
+%} 
+%\Mysection{Arduino Puls-Weiten-Modulation }
+%\STANDARD{Description}
+%{ 
+%	In der Dokumetation \cite{ArduinoPWM:2024} wird auf die Puls-Weiten-Modulation zur Stuerung eines Motors eingegangen. Die Puls-Weiten-Modulation wird grundlegend erläutert.
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Motorsteuerung, PWM, Motor}
+%} 
+%\Mysection{Datenblatt Lichtschrankenmodul TRCT500-IR}
+%\STANDARD{Description}
+%{ Das Datenblatt \cite{AZ:2026} erläutert die Funktionsweise von Modulen des Typs TCRT5000-IR, welche als Reflex-Lichtschranken für Mikrokontroller konzipiert sind. 
+%		\textbf{Limitation:} Diese Quelle kann nur als Beispiel für eine Möglichkeit des Aufbaus einer Lichtschranke. Zudem ist die Quelle ein Datenblatt, dessen technische Richtigkeit nur bedingt überprüft werden kann. 
+%		\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Lichtschranke, Infrarot, Photodiode, Phototransistor}
+%} 
+%\Mysection{Buch: Elektronik für Einsteiger: Eine praktische Einführung – Schaltpläne, Schaltkreise und Mikrocontroller}
+%\STANDARD{Description}
+%{ 
+%	 Das Buch \cite{Bartlett:2023a} vermittelt praxisnah die Grundlagen der Elektronik, vom Verständnis einfacher Schaltungen bis hin zur Anwendung von Mikrocontrollern.
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Versorgungsspannung, Kondensatoren, Widerstände, Schaltkreise, Elektrotechnische Grundlagen  }
+%}  
+%
+%\Mysection{Die Arduino IDE  }
+%\STANDARD{Beschreibung}
+%{ 
+%	Der Artikel \cite{Fezari:2018a} beschreibt die Arduino IDE. Zudem wird beschrieben, wie die IDE installiert und konfiguriert werden kann. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Arduino IDE, Serielle Schnittstelle }
+%}  
+%
+%\Mysection{Buch: Sensoren für die Prozess- und Fabrikautomation. Funktion - Ausführung - Anwendung.}
+%\STANDARD{Beschreibung}
+%{ 
+%	Das Buch \cite{Hesse:2009} behandelt Sensoren im Bereich der Automatiserungstechnik. Es werden zudem die physikalischen Grundlagen als auch die Applikation der Sensoren im industriellen Kontext behandelt. Zudem gibt es ein Glossar der gängigen Fachtermini. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Sensoren, Prozessautomatiserung,  }
+%}  
+%\Mysection{Buch: Sensoren in Wissenschaft und Technik}
+%\STANDARD{Beschreibung}
+%{ 
+%	Im Buch \cite{Hering:2023a} werden die wichtigsten physikalischen Grundlagen von Sensoren beschrieben und erläutert. Es werden konkrete Anwendungsbeispiele zur Darstellung der Einsatzmöglichkeiten und Funktionsweisen
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Sensoren, Optische Näherungssensoren, Photodioden, Phototransistor, Halbleiter}
+%}  
+%
+%\Mysection{Buch:Optische Sensorik}
+%\STANDARD{Beschreibung}
+%{ 
+%	Im Buch \cite{Loeffler-Mang:2012} werden die wichtigsten physikalischen Grundlagen von Optischen Sensoren beschrieben und erläutert.  Es werden zudem einzelne Komponenten optischer Sensoren, sowie die Arten von Optischen Sensoren detailliert beschrieben. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Sensoren, Optische Näherungssensoren, Lichtschranken, LED}
+%}  
+%\Mysection{Buch:Feynman Lectures on Physics}
+%\STANDARD{Beschreibung}
+%{ 
+%	Die als Buch erschienene Vorlesungsreihe \cite{Feynman:2020} behandelt die Grundlagen der Mechanik, Elektrodynamik sowie der Quantenmechanik verständlich und untermauert diese mit anschaulichen jedoch tiefsinnigen Überlegungen. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Wellenlänge, Halbleiterphysik, Elektrodynamik, Elektronen, Photonen}
+%}  
+%\Mysection{Buch:Einführung in die Mechatronik}
+%\STANDARD{Beschreibung}
+%{ 
+%	Das Buch \cite{Roddeck:2023} behandelt die einzelnen Fachgebieter der Mechatronik ausführlich und geht zudem detailliert auf einzelne Komponenten und Methoden ihrer Anwendung ein. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Sensoren, Mikrokontroller, Anschluss, Lichtschranke, Widerstand, Strom, Spannung, }
+%}  
+%\Mysection{Buch:Regelungstechnik}
+%\STANDARD{Beschreibung}
+%{ 
+%	Das Buch \cite{Lunze:2020} beschreibt Grundlegenden Methoden der Regelungstechnik mit industriellem Bezug. Es werden zudem praxisorientierte Leitfäden zur Auswahl des Regelung vorgestellt und beschrieben. 
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Regelung, Encoder Drehzahlmessung, Drehzahlregelung, PID }
+%}  
+%\Mysection{Buch:Regelungstechnik}
+%\STANDARD{Beschreibung}
+%{ 
+%	Das Buch \cite{Loose:2026} beschreibt Grundlegenden Methoden der Regelungstechnik mit industriellem Bezug. Es werden anschauliche Beispiele zur Unterstützung des Verständnis gegeben. Hierbei werden zudem direkte Methoden zur Ermittlung von Parametern, der Anwendungs- und Regelungstrategie sowie weitere Empfehlungen gegeben.  
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Regelung, Encoder Drehzahlmessung, Drehzahlregelung, PID }
+%}  
+%\Mysection{Datenblätter Motortreiber BTS7960}
+%\STANDARD{Beschreibung}
+%{ 
+%	Das Datenblatt \cite{Infineon:2004} beschreibt die Doppel H Brücke  in Ihren Eigenschaften detailliert. Es werden Leistungskurven, der Elektrische Aufbau und die Spezifikationen dargestellt. 
+%	Das Datenblatt \cite{anzado:2026}beschreibt das Modul, welches den Mototreiber verwendet, ansteuert und passiv kühlt. Es werden Anschlüsse und einfache Funktionen dargestellt und erläutert. \\ 
+%	
+%	\textbf{Limitation:} keine 
+%	\scriptsize{\textbf{Keywords:}  Motortreiber, H-Brücke, MOSFET, Integrated Circuit}
+%}  
+%
+%\Mysection{Quellen to do }
+%\STANDARD{}{
+%	   
+%} 
+
 
 
 \Mysection{Automatic Speed Control of DC Series Motor by Arduino  }
 
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
-	 Der Artikel  \cite{Ali:2023} beschäftigt sich mit Gleichstrom-Reihenschlussmotoren und deren Eigenschaften, insbesondere dem hohen Anlaufdrehmoment und dem veränderlichen Drehzahl-Drehmoment-Verhalten. Ein Schwerpunkt liegt auf verschiedenen Methoden zur Drehzahlregelung, wobei die Steuerung über die Klemmenspannung hervorgehoben wird.r 
+	Der Artikel  \cite{Ali:2023} beschäftigt sich mit Gleichstrom-Reihenschlussmotoren und deren Eigenschaften, insbesondere dem hohen Anlaufdrehmoment und dem veränderlichen Drehzahl-Drehmoment-Verhalten. Ein Schwerpunkt liegt auf verschiedenen Methoden zur Drehzahlregelung, wobei die Steuerung über die Klemmenspannung hervorgehoben wird.r 
 	
 	\bigskip
 	
@@ -32,11 +239,11 @@
 \Mysection{BLDC Motor Speed Control Based on MPC Sliding
 	Mode Multi-Loop Control Strategy – Implementation
 	on Matlab and Arduino Software}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	
-Dieser Konferenzartikel \cite{Aghaee:2018}  behandelt die Entwicklung, Modellierung und praktische Umsetzung eines fortschrittlichen Regelverfahrens für BLDC-Motoren. Hierbei geht es um einen neurartigen Kaskadenregler aus zwei Regelkreisen ( Slide-Mode Regler für Motorstrom und Model-Predictive-Controller, Drehzahl auf soll Gesteuert), mit dem Zielfokus auf schnelle und stabile Drehzahlregelung, Robustheit gegenüber Laständerungen und Modellunsicherheiten
-und der Einhaltung von Stromgrenzen. 
+	Dieser Konferenzartikel \cite{Aghaee:2018}  behandelt die Entwicklung, Modellierung und praktische Umsetzung eines fortschrittlichen Regelverfahrens für BLDC-Motoren. Hierbei geht es um einen neurartigen Kaskadenregler aus zwei Regelkreisen ( Slide-Mode Regler für Motorstrom und Model-Predictive-Controller, Drehzahl auf soll Gesteuert), mit dem Zielfokus auf schnelle und stabile Drehzahlregelung, Robustheit gegenüber Laständerungen und Modellunsicherheiten
+	und der Einhaltung von Stromgrenzen. 
 	
 	\bigskip
 	
@@ -47,7 +254,7 @@ und der Einhaltung von Stromgrenzen.
 
 
 \Mysection{PID wihtoud a Phd }
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	
 	Dieser Artikel \cite{Wescott:2018}	erläutert die grundlegende Funktionsweise der PID Regelung anschaulich anhand eines Elektromotors. Zudem zeigt er Unterschiede einzelner aus der PID abgeleiteter Methoden quantifiziert auf. 
@@ -62,9 +269,9 @@ und der Einhaltung von Stromgrenzen.
 
 \Mysection{PID-basierte digitale
 	Regelungstechnik}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
-Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Es geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
+	Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Es geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
 	
 	\bigskip
 	
@@ -74,7 +281,7 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 }
 
 \Mysection{ Motorsteuerung mit Microcontollern}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	Diese Arbeit  \cite{Niemeyer:2015} behandelt die Ansteuerung von Motoren mithilfe von Mikrocontrollern. Hierbei wird die grundlegende Funktionsweise der Schnittstellen erläutert und anschließend beispielhaft angewendet. Ebenfalls werden Sensoren und Ihre Relevanz in der Motorsteuerung beleuchtet. 
 	
@@ -84,7 +291,7 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 }
 \Mysection{PID-basierte digitale
 	Regelungstechnik}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Ers geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
 	
@@ -96,9 +303,9 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 } 
 
 \Mysection{Arduino I2C Protokoll }
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
-	  Die Quelle \cite{ArduinoI2C:2024} beschreibt das Kommunikationsprotokoll I2C. I2C benötigt lediglich zwei Kommunikationsschnittstellen udn eigent sich besonders gut für die Steuerungen von Aktoren zur Anzeige von Text. Gängige LCD Displays für den Arduino verwenden dieses Protokoll
+	Die Quelle \cite{ArduinoI2C:2024} beschreibt das Kommunikationsprotokoll I2C. I2C benötigt lediglich zwei Kommunikationsschnittstellen udn eigent sich besonders gut für die Steuerungen von Aktoren zur Anzeige von Text. Gängige LCD Displays für den Arduino verwenden dieses Protokoll
 	
 	\textbf{Limitation:} Die Dokumetation behandelt 
 	
@@ -106,7 +313,7 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 }
 \Mysection{PID-basierte digitale
 	Regelungstechnik}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik anschaulich. Ers geht vordergründig um die Anwendung von PID Regelung bei Mikrocontrollern wie dem Arduino Uno. Hierbei werden gängigen Komponenten von Regelungsystemen erklärt und anschaulich für Beispiele verwendet. 
 	
@@ -117,30 +324,30 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 	\scriptsize{\textbf{Keywords:} Arduino Uno, Mikrocontroller, PID, Regelungstechnik, Sensoren, Elektronik, Kommunikation }
 }
 \Mysection{Arduino Pins }
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	Die Quelle \cite{ArduinoPins:2024} beschreibt die Eingänge des Arduinos anschaulich und geht auf vershciede Konfigurationen der Eingänge ein. 
 	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Eingänge, Input Pullup}
 } 
 \Mysection{Arduino Puls-Weiten-Modulation }
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
 	In der Dokumetation \cite{ArduinoPWM:2024} wird auf die Puls-Weiten-Modulation zur Stuerung eines Motors eingegangen. Die Puls-Weiten-Modulation wird grundlegend erläutert.
 	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Motorsteuerung, PWM, Motor}
 } 
 \Mysection{Datenblatt Lichtschrankenmodul TRCT500-IR}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { Das Datenblatt \cite{AZ:2026} erläutert die Funktionsweise von Modulen des Typs TCRT5000-IR, welche als Reflex-Lichtschranken für Mikrokontroller konzipiert sind. 
-		\textbf{Limitation:} Diese Quelle kann nur als Beispiel für eine Möglichkeit des Aufbaus einer Lichtschranke. Zudem ist die Quelle ein Datenblatt, dessen technische Richtigkeit nur bedingt überprüft werden kann. 
-		\textbf{Limitation:} keine 
+	\textbf{Limitation:} Diese Quelle kann nur als Beispiel für eine Möglichkeit des Aufbaus einer Lichtschranke. Zudem ist die Quelle ein Datenblatt, dessen technische Richtigkeit nur bedingt überprüft werden kann. 
+	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Lichtschranke, Infrarot, Photodiode, Phototransistor}
 } 
 \Mysection{Buch: Elektronik für Einsteiger: Eine praktische Einführung – Schaltpläne, Schaltkreise und Mikrocontroller}
-\STANDARD{Description}
+\STANDARD{Beschreibung}
 { 
-	 Das Buch \cite{Bartlett:2023a} vermittelt praxisnah die Grundlagen der Elektronik, vom Verständnis einfacher Schaltungen bis hin zur Anwendung von Mikrocontrollern.
+	Das Buch \cite{Bartlett:2023a} vermittelt praxisnah die Grundlagen der Elektronik, vom Verständnis einfacher Schaltungen bis hin zur Anwendung von Mikrocontrollern.
 	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Mikrocontroller, Versorgungsspannung, Kondensatoren, Widerstände, Schaltkreise, Elektrotechnische Grundlagen  }
 }  
@@ -203,7 +410,7 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Regelung, Encoder Drehzahlmessung, Drehzahlregelung, PID }
 }  
-\Mysection{Daten blätter Motortreiber BTS7960}
+\Mysection{Datenblätter Motortreiber BTS7960}
 \STANDARD{Beschreibung}
 { 
 	Das Datenblatt \cite{Infineon:2004} beschreibt die Doppel H Brücke  in Ihren Eigenschaften detailliert. Es werden Leistungskurven, der Elektrische Aufbau und die Spezifikationen dargestellt. 
@@ -212,11 +419,4 @@ Diese Buch  \cite{Ibrahim:2023} erläutert die PID-basierte Regelungstechnik ans
 	\textbf{Limitation:} keine 
 	\scriptsize{\textbf{Keywords:}  Motortreiber, H-Brücke, MOSFET, Integrated Circuit}
 }  
-
-\Mysection{Quellen to do }
-\STANDARD{}{
-	   
-} 
-
-
 
