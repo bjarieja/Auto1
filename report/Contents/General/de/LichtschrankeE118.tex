@@ -528,8 +528,9 @@ All diese und weiterführende Informationen finden sich in folgender Literatur:
 \end{center}
 
 
-\section{Einweg Lichtschranke F249}
-Die Einweg-Lichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messung von Impulsen, Geschwindigkeiten und Drehzahlen \cite{Roboter-Bausatz:2026c}. Durch den Aufbau als Einweg-Lichtschranke eignet sich der Sensor besonders gut zur Messung von Drehzahlen und Geschwindigkeiten (vgl. \ref{sec:OptischeSensoren}), da er unabhängig von der Reflexion des Gegenstandes zwischen Sender- und Empfängerdiode arbeitet.  
+\section{Gabellichtschranke F249} 
+\label{sec:F249}
+Die Gabellichtschranke Typ F249 (vgl. \ref{pic:F249}) ist ein Sensor zur Messung von Impulsen, Geschwindigkeiten und Drehzahlen \cite{Roboter-Bausatz:2026c}. Durch den Aufbau als Einweg-Lichtschranke eignet sich der Sensor besonders gut zur Messung von Drehzahlen und Geschwindigkeiten (vgl. \ref{sec:OptischeSensoren}), da er unabhängig von der Reflexion des Gegenstandes zwischen Sender- und Empfängerdiode arbeitet.  
 \begin{center}
 	\begin{figure}
 		\includegraphics{../../Images/F249/F249Pic.png} 
@@ -626,7 +627,7 @@ Hiefür wird die Lichtschranke mit der 5 $V$ Versorgung und der Masse des Mikrok
 \subsection{Code}
 
 \begin{center}
-		\captionof{figure}{Der Code zählt, wie oft die Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.}  
+		\captionof{figure}{Der Code zählt, wie oft der Lichtstrahl der Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.}  
 		\label{code:F249}
 	\ArduinoExternal{}{../../Code/F249/F249Drehzahl/F249Drehzahl.ino}
 \end{center}

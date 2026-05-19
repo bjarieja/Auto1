@@ -43,21 +43,56 @@ Alle drei dieser Bausteine lassen sich dann als folgende Formel (vgl. \eqref{eq:
 %\caption{Übertragungsfunktion einer PID-Regelung}
 \label{eq:PID}
 \end{center}
-Der PID-Regler kombiniert alle drei Regelanteile miteinander (vgl. \eqref{eq:PID}) und gehört zu den am häufigsten eingesetzten Reglertypen der industriellen Regelungstechnik . Die Stellgröße setzt sich hierbei aus einem proportionalen, integralen und differentiellen Anteil zusammen. Durch die Kombination dieser Eigenschaften kann der PID-Regler sowohl schnell auf Änderungen reagieren als auch bleibende Regelabweichungen verhindern und gleichzeitig ein stabiles Übergangsverhalten ermöglichen \cite{Lunze:2020}. Dies ist zudem in Abbildung \ref{pic:PID} ersichtlich. 
-In praktischen Anwendungen entstehen aus dem PID-Regler verschiedene Spezialfälle. Der PI-Regler kombiniert proportionalen und integralen Anteil und wird besonders häufig für Drehzahlregelungen elektrischer Motoren verwendet. Der P-Regler wird bei einfachen und schnellen Regelungsaufgaben eingesetzt, während PD-Regler häufig bei Positionieraufgaben verwendet werden. Reine I-Regler finden hingegen aufgrund ihres langsamen Verhaltens nur selten Anwendung. 
+Der PID-Regler kombiniert alle drei Regelanteile miteinander und gehört zu den am häufigsten eingesetzten Reglertypen der industriellen Regelungstechnik \cite{Lunze:2020}. Die Stellgröße setzt sich hierbei aus einem proportionalen, integralen und differentiellen Anteil zusammen \cite{Loose:2026}. Durch die Kombination dieser Eigenschaften kann der PID-Regler sowohl schnell auf Änderungen reagieren als auch bleibende Regelabweichungen verhindern und gleichzeitig ein stabiles Übergangsverhalten ermöglichen \cite{Lunze:2020}. Dies ist zudem in Abbildung \ref{pic:PID} ersichtlich. 
+In praktischen Anwendungen entstehen aus dem PID-Regler verschiedene Spezialfälle. Der PI-Regler kombiniert proportionalen und integralen Anteil und wird besonders häufig für Drehzahlregelungen elektrischer Motoren verwendet. Der P-Regler wird bei einfachen und schnellen Regelungsaufgaben eingesetzt, während PD-Regler häufig bei Positionieraufgaben verwendet werden. Reine I-Regler finden hingegen aufgrund ihres langsamen Verhaltens nur selten Anwendung \cite{Lunze:2020}. 
 \begin{center}
 	\begin{figure}
 		\includegraphics{../../Images/Regelung/PID} 
 		\caption{Darstellung einzelner Reglanteile auf den Sollwert $h_w$ nach \cite{Lunze:2020}}
 		\label{pic:PID}
 	\end{figure}
-\end{center}
+\end{center} 
+
 Die Wahl der geeigneten Reglerstruktur hängt wesentlich von den Eigenschaften der Regelstrecke sowie den Anforderungen an die Regelgüte ab. Besitzt die Regelstrecke bereits ein integrales Verhalten, kann oftmals ein einfacher P-Regler ausreichend sein. Zeigt die Regelstrecke hingegen proportionales Verhalten, ist in der Regel ein zusätzlicher I-Anteil notwendig, um bleibende Regelabweichungen zu vermeiden. P- und D-Anteile verbessern grundsätzlich die Dynamik des Systems, können jedoch bei ungeeigneter Parametrierung zu Schwingungen oder Instabilitäten führen \cite{Lunze:2020}.
 Besonders in der Motorregelung mit Encodern werden häufig PI- oder PID-Regler eingesetzt. Der Encoder dient hierbei zur kontinuierlichen Erfassung der Drehzahl oder Position des Motors und liefert die notwendige Rückführung für den geschlossenen Regelkreis. PI-Regler haben sich insbesondere bei Drehzahlregelungen bewährt, da sie eine gute Kombination aus Stabilität, Genauigkeit und einfacher Parametrierung ermöglichen. PID-Regler werden dagegen vor allem bei hochdynamischen oder präzisen Positionieraufgaben eingesetzt \cite{Lunze:2020}. 
 
-\section{Drehzahlregelung mit einem PI-Regelkreis}  
-PI-Regelungen eignen sich durch Ihre Stabilität und dem geringen Komplexitätsgrad besonders gut zur Regelung von Motoren \cite{Lunze:2020}. In diesem Beispiel wird mithilfe einer Lichtschrnake und einer Lochscheibe die Drehzahl an einer Welle gemessen. Hierfür wird die Anzahl der Unterbechungen des Lichtstrahles gezählt und darasu dann die Drehzahl berechnet. Durch mehrere Löcher in der Lochscheibe kann zudem die Drehzahländerung genauer und vorallem schneller aufgefasst werden. Durch iterativ kleiner werdende Zeitintervalle zwischen den Unterbrechungen des Lichtstrahls kann so auch ein Beschleunigungsvorgang festgestellt werden. Durch gleichbleibende Zeitintervalle und die Zählung der Lichtstrahlunterbrechungen kann auch die Drehzahl der Welle gemessen werden.  
+%\section{Drehzahlregelung mit einem PI-Regelkreis}  
+%PI-Regelungen eignen sich durch Ihre Stabilität und dem geringen Komplexitätsgrad besonders gut zur Regelung von Motoren \cite{Lunze:2020}. In diesem Beispiel wird mithilfe einer Lichtschrnake und einer Lochscheibe die Drehzahl an einer Welle gemessen. Hierfür wird die Anzahl der Unterbechungen des Lichtstrahles gezählt und darasu dann die Drehzahl berechnet. Durch mehrere Löcher in der Lochscheibe kann zudem die Drehzahländerung genauer und vorallem schneller aufgefasst werden. Durch iterativ kleiner werdende Zeitintervalle zwischen den Unterbrechungen des Lichtstrahls kann so auch ein Beschleunigungsvorgang festgestellt werden. Durch gleichbleibende Zeitintervalle und die Zählung der Lichtstrahlunterbrechungen kann auch die Drehzahl der Welle gemessen werden.  
+%
+%\subsection{Beispielhafter Aufbau} 
+%Zur Regelung der Drehzahl eines Gleichstrommotors kann ein PI-Regler in Kombination mit einer Lochscheibe und einer F249-Gabellichtschranke (vgl. Kapitel \ref{sec:F249}) eingesetzt werden. Der Aufbau eignet sich besonders für Anwendungen, bei denen eine konstante Drehzahl trotz Laständerungen eingehalten werden soll.
+%Die Lochscheibe wird hierbei direkt mit der Motorwelle verbunden. Während der Rotation erzeugt die F249-Gabellichtschranke Impulse, welche vom Arduino UNO R4 erfasst werden.
+%Der PI-Regler vergleicht die gemessene Drehzahl mit der vorgegebenen Soll-Drehzahl. Aus der entstehenden Regeldifferenz berechnet der Regler anschließend eine Stellgröße für das PWM-Signal des Motors. Der proportionale Anteil reagiert unmittelbar auf die aktuelle Regelabweichung, während der integrale Anteil verbleibende Abweichungen ausgleicht. Dadurch kann eine stabile und genaue Drehzahlregelung erreicht werden.
+%\section{Funktionsweise des Reglers}
+%Die Lichtschranke erzeugt bei jeder Unterbrechung des Lichtstrahls einen Impuls. Diese Impulse werden mithilfe eines Interrupts gezählt. Alle 100 ms erfolgt anschließend die Berechnung der aktuellen Drehzahl.
+%Der PI-Regler berechnet aus der Differenz zwischen Soll- und Ist-Drehzahl eine neue Stellgröße für das PWM-Signal. Der proportionale Anteil reagiert direkt auf Änderungen der Drehzahl, während der integrale Anteil verbleibende Regelabweichungen kompensiert.
+%Durch die PWM-Ansteuerung kann die Motorspannung effektiv angepasst werden. Eine höhere Stellgröße führt hierbei zu einer höheren mittleren Motorspannung und damit zu einer höheren Drehzahl.
 
 
 
+\section{Drehzahlregelung mit einem PI-Regelkreis}
+PI-Regelungen eignen sich aufgrund ihrer Stabilität sowie des vergleichsweise geringen Komplexitätsgrades besonders gut zur Regelung elektrischer Motoren \cite{Lunze:2020}. In diesem Beispiel wird die Drehzahl einer Welle mithilfe einer Lochscheibe und einer F249-Gabellichtschranke (vgl. Kapitel \ref{sec:F249}) erfasst und anschließend durch einen PI-Regler geregelt. Der Aufbau eignet sich insbesondere für Anwendungen, bei denen eine konstante Drehzahl trotz wechselnder Lastbedingungen eingehalten werden soll.
+Die Lochscheibe wird hierbei direkt mit der Motorwelle verbunden und besitzt mehrere gleichmäßig verteilte Öffnungen entlang ihres Umfangs. Während der Rotation unterbrechen die Stege der Lochscheibe periodisch den Lichtstrahl der Gabellichtschranke. Dadurch entstehen digitale Impulse, welche vom Arduino UNO R4 mithilfe eines Interrupts erfasst werden. Aus der Anzahl der Impulse innerhalb eines definierten Zeitintervalls kann anschließend die aktuelle Drehzahl berechnet werden.
+Durch eine höhere Anzahl an Löchern in der Lochscheibe kann die Drehzahländerung genauer und schneller erfasst werden. Besonders bei Beschleunigungs- oder Bremsvorgängen verändern sich die Zeitintervalle zwischen den einzelnen Impulsen kontinuierlich. Dadurch können dynamische Änderungen der Drehzahl frühzeitig erkannt werden. Bei konstanten Zeitintervallen ergibt sich dagegen eine gleichmäßige Drehbewegung der Welle.
+Der PI-Regler vergleicht die gemessene Ist-Drehzahl kontinuierlich mit der vorgegebenen Soll-Drehzahl. Aus der entstehenden Regeldifferenz berechnet der Regler anschließend eine Stellgröße für das PWM-Signal des Motors. Der proportionale Anteil reagiert unmittelbar auf Änderungen der Drehzahl, während der integrale Anteil verbleibende Regelabweichungen über die Zeit kompensiert. Dadurch kann eine stabile und genaue Drehzahlregelung erreicht werden.
+Die berechnete Stellgröße wird anschließend über ein PWM-Signal an die Motorsteuerung ausgegeben. Durch die Anpassung des Tastverhältnisses kann die mittlere Motorspannung verändert werden. Eine höhere Stellgröße führt hierbei zu einer höheren Motorspannung und damit zu einer größeren Drehzahl des Motors.
+
+
+
+\subsection{Beispielcode für einen Arduino UNO R4}
+Im folgenden Beispiel wird eine PI-Drehzahlregelung für einen Gleichstrommotor dargestellt (vgl. \ref{code:PI}). Die Drehzahlmessung erfolgt mithilfe einer Lochscheibe mit 20 Löchern und einer F249-Gabellichtschranke. Der Motor wird über ein PWM-Signal angesteuert.
+
+\begin{center}
+\captionof{figure}{Der Code zählt, wie oft die Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.}  
+\label{code:PI}
+\ArduinoExternal{}{../../Code/Regelung/MotorControlPI/MotorControlPI.ino}
+\end{center}
+\subsection{Testprinzipien der PI-Regelung}
+Zur Überprüfung der Funktion des PI-Reglers sollten verschiedene Testverfahren durchgeführt werden. Zunächst kann das Verhalten beim Einschalten untersucht werden. Hierbei wird überprüft, wie schnell die Soll-Drehzahl erreicht wird und ob Überschwingungen auftreten.
+Anschließend kann das Verhalten bei Laständerungen getestet werden. Hierzu wird die Motorwelle beispielsweise leicht mechanisch belastet. Der Regler sollte die entstehende Drehzahlabweichung erkennen und die PWM-Stellgröße automatisch anpassen.
+Weiterhin sollte die Parametrierung der Reglerkonstanten untersucht werden. Ein zu hoher proportionaler Anteil kann Schwingungen verursachen, während ein zu großer Integralanteil zu langsamen Einschwingvorgängen führen kann. Durch schrittweise Anpassung von $K_p$ und $K_i$ kann eine stabile und schnelle Regelung erreicht werden.
+Für eine weiterführende Analyse kann zusätzlich der zeitliche Verlauf der Drehzahl über den seriellen Monitor aufgezeichnet werden. Dadurch lassen sich Einschwingverhalten, Regelabweichungen und mögliche Instabilitäten genauer untersuchen.
+
+
+\section{weiterführende Literatur}
 
