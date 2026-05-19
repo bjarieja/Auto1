@@ -17,7 +17,7 @@
  * - F249 forked light barrier
  * - Slotted disc with 20 holes
  *
- * Author: Example Application
+ * Author: Bjarne Janssen 
  * Date: 2026
  */
 

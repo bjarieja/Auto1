@@ -79,8 +79,16 @@ Die berechnete Stellgröße wird anschließend über ein PWM-Signal an die Motor
 
 
 
-\subsection{Beispielcode für einen Arduino UNO R4}
-Im folgenden Beispiel wird eine PI-Drehzahlregelung für einen Gleichstrommotor dargestellt (vgl. \ref{code:PI}). Die Drehzahlmessung erfolgt mithilfe einer Lochscheibe mit 20 Löchern und einer F249-Gabellichtschranke. Der Motor wird über ein PWM-Signal angesteuert.
+\subsection{Anwendungsbeispiel für einen Arduino UNO R4}
+Im folgenden Beispiel wird eine PI-Drehzahlregelung für einen Gleichstrommotor dargestellt (vgl.  \ref{code:PI}, \ref{pic:RegelungAnschluss}). Die Drehzahlmessung erfolgt mithilfe einer Lochscheibe mit 20 Löchern und einer F249-Gabellichtschranke. Der Motor wird über ein PWM-Signal angesteuert.
+\begin{center}
+	\begin{figure}
+		\includegraphics[scale=0.5]{../../Images/Regelung/regelungSteckplatine.png}
+		\caption{Anschlussbeispiel für eine Drehzahlregelung eines Gleichstrommotors mit einem Arduino UNO R4 ()vgl. \ref{sec:F249})}
+		\label{pic:RegelungAnschluss}
+	\end{figure}
+\end{center}
+
 
 \begin{center}
 \captionof{figure}{Der Code zählt, wie oft die Gabellichtschranke durch die Lochscheibe unterbrochen wird, um daraus die Drehzahl zu bestimmen.}  
@@ -95,4 +103,11 @@ Für eine weiterführende Analyse kann zusätzlich der zeitliche Verlauf der Dre
 
 
 \section{weiterführende Literatur}
+In den verwendeten Quellen werden nicht nur die Grundlagen sondern ebenfalls anwendungsorinetierte Grundlagen dargestellt.
 
+\begin{center}
+	\begin{enumerate}
+		\item Das Buch \cite{Lunze:2020} bietet Einblick in die Grundlagen der Regelungstechnik. Weiterführend ermöglicht es Einblick in die gängisten industriellen Methoden für Regelungstechnik anhand von Beispielen.  
+		\item  Das Buch \cite{Loose:2026} ermöglicht Einblick in die Ermittlung geeigneter Parameter für Regelkreise. Hier werden empirische wie theoretische Verfahren zur Ermittlung dargestellt
+	\end{enumerate}
+\end{center}
