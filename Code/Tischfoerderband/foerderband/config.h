@@ -1,9 +1,14 @@
-%Diese Datei ist die Headfer Datei, in welcher alle globalen Definitionen sowie die Zusammenführung der einzelnen COdes geschehen soll 
-
-/*
- * config.h
- * Zentrale Konfigurationsdatei – Pins, Konstanten, Enumerationen
- * Tischförderband Steuerung v1.0
+/**
+ * @file config.h
+ * @brief Zentrale Konfigurationsdatei für die Tischfoerderband-Steuerung.
+ *
+ * Diese Datei enthaelt:
+ * - Pinbelegungen
+ * - Mechanische Konstanten
+ * - Zeitkonstanten
+ * - Reglerparameter
+ * - Fehlercodes
+ * - Zustands- und Modusdefinitionen
  */
 
 #ifndef CONFIG_H
@@ -11,97 +16,163 @@
 
 #include <Arduino.h>
 
-// ============================================================
+// 
 //  PIN-DEFINITIONEN
-// ============================================================
+// 
 
-// --- BTS7960 Motortreiber ---
-// RPWM  = Rechtslauf PWM
-// LPWM  = Linkslauf  PWM
-// R_EN  = Rechtslauf Enable
-// L_EN  = Linkslauf  Enable
-#define PIN_MOTOR_RPWM      5    // PWM-fähiger Pin
-#define PIN_MOTOR_LPWM      6    // PWM-fähiger Pin
+/** @brief PWM-Pin für Rechtslauf des Motors. */
+#define PIN_MOTOR_RPWM      5
+
+/** @brief PWM-Pin für Linkslauf des Motors. */
+#define PIN_MOTOR_LPWM      6
+
+/** @brief Enable-Pin für Rechtslauf. */
 #define PIN_MOTOR_R_EN      7
+
+/** @brief Enable-Pin für Linkslauf. */
 #define PIN_MOTOR_L_EN      8
 
-// --- Lichtschranken E18-D80NK (NPN, LOW = unterbrochen) ---
-#define PIN_LS1             2    // Lichtschranke 1 (links)
-#define PIN_LS2             3    // Lichtschranke 2 (rechts)
+/** @brief Lichtschranke 1 (linke Position). */
+#define PIN_LS1             2
 
-// --- Encoder F249 Gabellichtschranke ---
-#define PIN_ENCODER         18   // Interrupt-fähiger Pin (UNO R4: alle digital)
+/** @brief Lichtschranke 2 (rechte Position). */
+#define PIN_LS2             3
 
-// --- Bedienelemente ---
-#define PIN_TASTER          9    // Quittierungs-/Stop-Taster (LOW aktiv)
-#define PIN_MODUS_L         10   // Wippschalter Position L
-#define PIN_MODUS_R         11   // Wippschalter Position R
-// Modus A (Automatik) = beide LOW
+/**
+ * @brief Encoder-Eingang.
+ *
+ * Muss interruptfähig sein.
+ */
+#define PIN_ENCODER         18
 
-// --- Drehpotentiometer Geschwindigkeit ---
+/** @brief Quittierungs- bzw. Stopptaster. */
+#define PIN_TASTER          9
+
+/** @brief Wippschalter Position Links. */
+#define PIN_MODUS_L         10
+
+/** @brief Wippschalter Position Rechts. */
+#define PIN_MODUS_R         11
+
+/** @brief Analogeingang für Geschwindigkeits-Potentiometer. */
 #define PIN_POTI            A0
 
-// --- Status-LED (optional) ---
+/** @brief Fehler- oder Status-LED. */
 #define PIN_LED_FEHLER      12
 
-// ============================================================
 //  LCD-DISPLAY (I2C – LiquidCrystal_I2C)
-// ============================================================
+
+
+/** @brief I2C-Adresse des LCD-Displays. */
 #define LCD_ADRESSE         0x27
+
+/** @brief Anzahl der LCD-Spalten. */
 #define LCD_SPALTEN         16
+
+/** @brief Anzahl der LCD-Zeilen. */
 #define LCD_ZEILEN          2
 
-// ============================================================
+// 
 //  MECHANISCHE / PHYSIKALISCHE KONSTANTEN
-// ============================================================
+// 
 
-// Encoder / Lochscheibe
-#define ENCODER_LOECHER     20        // Löcher auf der Lochscheibe
-#define TROMMEL_UMFANG_MM   62.8f     // Umfang der Antriebstrommel in mm
-                                      // (Ø 20 mm → π × 20 ≈ 62,8 mm)
+/** @brief Anzahl der Loecher der Encoderscheibe. */
+#define ENCODER_LOECHER     20
 
-// Bandgeschwindigkeit
-#define V_MIN_CM_S          3.0f      // cm/s  (einstellbar ab 3 cm/s)
-#define V_MAX_CM_S          8.0f      // cm/s  (max. 8 cm/s laut Spezifikation)
-#define BESCHLEUNIGUNG      2.0f      // cm/s² laut Spezifikation
+/**
+ * @brief Umfang der Antriebstrommel in Millimetern.
+ *
+ * Berechnet aus einem Trommeldurchmesser von 20 mm.
+ */
+#define TROMMEL_UMFANG_MM   62.8f
 
-// ============================================================
-//  ZEITKONSTANTEN  (alle in Millisekunden)
-// ============================================================
-#define TIMEOUT_TRANSPORT_MS        30000UL  // 30 s max. Transportzeit
-#define WARTEZEIT_ZIEL_MS           5000UL   // 5 s Ruhezeit am Ziel (Automatik)
-#define WARTEZEIT_START_MS          2000UL   // 2 s Wartezeit nach Erkennung
-#define ENTPRELL_LS_MS              80UL     // Entprellzeit Lichtschranken
-#define ENTPRELL_TASTER_MS          50UL     // Entprellzeit Taster
-#define ENTPRELL_SCHALTER_MS        100UL    // Entprellzeit Wippschalter
-#define MODUS_ANZEIGE_MS            3000UL   // Anzeigedauer Modusname
-#define REGELUNG_INTERVALL_MS       50UL     // PID-Regelintervall
-#define ENCODER_TIMEOUT_MS          500UL    // kein Signal → Geschw. = 0
+/** @brief Minimale Bandgeschwindigkeit in cm/s. */
+#define V_MIN_CM_S          3.0f
 
-// ============================================================
-//  REGLER-PARAMETER  (PI-Regler für Geschwindigkeit)
-// ============================================================
+/** @brief Maximale Bandgeschwindigkeit in cm/s. */
+#define V_MAX_CM_S          8.0f
+
+/** @brief Beschleunigung des Foerderbandes in cm/s². */
+#define BESCHLEUNIGUNG      2.0f
+
+// 
+//  ZEITKONSTANTEN
+//
+
+/** @brief Maximale Transportdauer bis Timeout. */
+#define TIMEOUT_TRANSPORT_MS        30000UL
+
+/** @brief Wartezeit am Ziel in Millisekunden. */
+#define WARTEZEIT_ZIEL_MS           5000UL
+
+/** @brief Wartezeit nach Objekterkennung. */
+#define WARTEZEIT_START_MS          2000UL
+
+/** @brief Entprellzeit der Lichtschranken. */
+#define ENTPRELL_LS_MS              80UL
+
+/** @brief Entprellzeit des Tasters. */
+#define ENTPRELL_TASTER_MS          50UL
+
+/** @brief Entprellzeit der Wippschalter. */
+#define ENTPRELL_SCHALTER_MS        100UL
+
+/** @brief Dauer der Modusanzeige auf dem Display. */
+#define MODUS_ANZEIGE_MS            3000UL
+
+/** @brief Intervall der PI-Regelung. */
+#define REGELUNG_INTERVALL_MS       50UL
+
+/** @brief Timeout für fehlende Encoder-Signale. */
+#define ENCODER_TIMEOUT_MS          500UL
+
+// 
+//  REGLER-PARAMETER
+// 
+/** @brief Proportionalanteil des Reglers. */
 #define KP                  8.0f
+
+/** @brief Integralanteil des Reglers. */
 #define KI                  2.5f
+
+/** @brief Differentialanteil des Reglers. */
 #define KD                  0.5f
 
-// PWM-Grenzen
+/** @brief Minimaler PWM-Wert. */
 #define PWM_MIN             0
+
+/** @brief Maximaler PWM-Wert. */
 #define PWM_MAX             255
-#define PWM_ANLAUF          60       // Mindest-PWM zum Überwinden der Haftreibung
 
-// ============================================================
+/** @brief Mindest-PWM zum Überwinden der Haftreibung. */
+#define PWM_ANLAUF          60
+
+// 
 //  FEHLERCODES
-// ============================================================
-#define FEHLER_KEIN         0x00
-#define FEHLER_TIMEOUT      0x01     // Objekt erreicht Ziel nicht rechtzeitig
-#define FEHLER_GESCHW       0x02     // Zielgeschwindigkeit nicht erreichbar
-#define FEHLER_SENSOR       0x03     // Sensor liefert keine Daten
-#define FEHLER_UEBERHITZ    0x04     // Motor überhitzt (zukünftig via NTC)
+//
 
-// ============================================================
+/** @brief Kein Fehler vorhanden. */
+#define FEHLER_KEIN         0x00
+
+/** @brief Objekt erreicht Ziel nicht rechtzeitig. */
+#define FEHLER_TIMEOUT      0x01
+
+/** @brief Zielgeschwindigkeit nicht erreichbar. */
+#define FEHLER_GESCHW       0x02
+
+/** @brief Sensorfehler erkannt. */
+#define FEHLER_SENSOR       0x03
+
+/** @brief Motorueberhitzung erkannt. */
+#define FEHLER_UEBERHITZ    0x04
+
+// 
 //  ZUSTÄNDE DES AUTOMATEN
-// ============================================================
+// 
+/**
+ * @enum Systemzustand
+ * @brief Zustaende der Anlagensteuerung.
+ */
 enum Systemzustand {
     ZUSTAND_INIT,
     ZUSTAND_STARTBILDSCHIRM,
@@ -117,18 +188,27 @@ enum Systemzustand {
     ZUSTAND_MODUSWECHSEL
 };
 
-// ============================================================
+// 
 //  BETRIEBSMODI
-// ============================================================
+// 
+
+/**
+ * @enum Betriebsmodus
+ * @brief Unterstuetzte Betriebsarten der Anlage.
+ */
 enum Betriebsmodus {
-    MODUS_LINKS,       // L – Transport von LS2 → LS1
-    MODUS_RECHTS,      // R – Transport von LS1 → LS2
-    MODUS_AUTOMATIK    // A – Pendelbetrieb
+    MODUS_LINKS,
+    MODUS_RECHTS,
+    MODUS_AUTOMATIK
 };
 
-// ============================================================
+// 
 //  RICHTUNG
-// ============================================================
+// 
+/**
+ * @enum Richtung
+ * @brief Bewegungsrichtungen des Foerderbandes.
+ */
 enum Richtung {
     RICHTUNG_STOP,
     RICHTUNG_LINKS,
@@ -136,4 +216,3 @@ enum Richtung {
 };
 
 #endif // CONFIG_H
-
